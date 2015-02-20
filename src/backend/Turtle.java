@@ -1,15 +1,16 @@
-package backend
+package backend;
 
-import java.util.Math;
+import java.lang.Math;
+import java.awt.*;
 
-public Class Turtle {
+public class Turtle {
 
   private Image image;
   private Point location;
   private Heading heading;
   private Color penColor;
 
-  public Turle(Image image, Point location, Heading heading, Color penColor) {
+  public Turtle(Image image, Point location, Heading heading, Color penColor) {
     this.image = image;
     this.location = location;
     this.heading = heading;
@@ -17,13 +18,13 @@ public Class Turtle {
   }
 
   protected void move(int magnitude) {
-    int newX = Math.cos(heading.getAngleRads()) * magnitude;
-    int newY = Math.sin(heading.getAngleRads()) * magnitude;
+    int newX = (int) Math.cos(heading.getAngleRads()) * magnitude;
+    int newY = (int) Math.sin(heading.getAngleRads()) * magnitude;
     location = new Point(newX, newY);
   }
 
   protected void rotate(double degrees) {
-    heading.setAngleDeg(heading.getAngleDeg() + degrees);
+    heading.setAngle(heading.getAngle() + degrees);
   }
 
   public void setImage(Image newImage) {
@@ -32,6 +33,10 @@ public Class Turtle {
 
   public void setPenColor(Color newPenColor) {
     penColor = newPenColor;
+  }
+
+  public Image getImage() {
+    return image;
   }
 
   public Point getLocation() {
