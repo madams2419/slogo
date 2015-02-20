@@ -65,6 +65,8 @@ At the top of the screen there will be a menu bar. This menu bar will allow the 
 
 ## Design Details
 
+Please see the overview section for details on the design implementation. The only major aspects of the implementation not addressed are command parsing and creation of command objects. Command parsing will be done recursively and use a factory pattern to generate new commands. A CommandFactory class is provided (not shown in UML) with a getCommand(String st, double[] params) method. The CommandFactory hides all Command creation logic, and can be modified easily to support new commands.
+
 ## API Example Code
 > The user types 'fd 50' in the command window, presses 'run,' and sees the turtle move in the display window leaving a trail.
 
