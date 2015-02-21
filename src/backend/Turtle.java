@@ -6,17 +6,19 @@ import java.util.ArrayList;
 
 public class Turtle {
 
-	private Image image;
+	private String imagePath;
 	private Point location;
 	private Heading heading;
 	private Color penColor;
+	private boolean penDown;
 	private ArrayList<Line> lines;
 
-	public Turtle(Image image, Point location, Heading heading, Color penColor) {
-		this.image = image;
+	public Turtle(String imagePath, Point location, Heading heading, Color penColor) {
+		this.imagePath = imagePath;
 		this.location = location;
 		this.heading = heading;
 		this.penColor = penColor;
+		penDown = false;
 		lines = new ArrayList<>();
 	}
 
@@ -25,7 +27,7 @@ public class Turtle {
 		int newY = (int) Math.sin(heading.getAngleRads()) * magnitude;
 		Point nextLocation = new Point(newX, newY);
 
-		Line newLine = new Line(location, nextLocation, penColor);
+		Line newLine = new Line(location, nextLocation, (penDown) ? penColor : null);
 
 		location = nextLocation;
 		lines.add(newLine);
@@ -35,16 +37,16 @@ public class Turtle {
 		heading.setAngle(heading.getAngle() + degrees);
 	}
 
-	public void setImage(Image newImage) {
-		image = newImage;
+	public void setImagePath(String imagePath) {
+		this.imagePath = imagePath;
 	}
 
 	public void setPenColor(Color newPenColor) {
 		penColor = newPenColor;
 	}
 
-	public Image getImage() {
-		return image;
+	public String getImagePath() {
+		return imagePath;
 	}
 
 	public Point getLocation() {
