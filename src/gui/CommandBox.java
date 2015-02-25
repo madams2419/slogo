@@ -7,13 +7,17 @@ public class CommandBox extends Region {
 
 	protected double overlayWidth;
 	protected double overlayHeight;
+	protected double widthPct;
+	protected double heightPct;
 
-	public CommandBox(double overlayWidth, double overlayHeight) {
+	public CommandBox(double overlayWidth, double overlayHeight, double widthPct, double heightPct) {
 
 
 		this.overlayWidth = overlayWidth;
 		this.overlayHeight = overlayHeight;
-		this.getStyleClass().add("overlay-color");
+		this.widthPct = widthPct;
+		this.heightPct = heightPct;
+		this.setStyle("-fx-border-color: black;");
 		createCommandBox();
 
 	}
@@ -24,13 +28,15 @@ public class CommandBox extends Region {
 		// JScrollPane scrollPane = new JScrollPane(textArea);
 		// root
 
-		TextArea textArea = new TextArea("Type Commands Here");
+		TextArea textArea = new TextArea();
+		textArea.setPromptText("Type Commands Here...");
+		textArea.getText();
 		textArea.setPrefRowCount(10);
 		textArea.setLayoutX(0);
-		textArea.setPrefWidth(.5 * overlayWidth);
-		textArea.setPrefHeight(overlayHeight * .25);
-		this.setPrefHeight(.25 * overlayHeight);
-		this.setWidth(.5 * overlayWidth);
+		textArea.setPrefWidth(widthPct * overlayWidth);
+		textArea.setPrefHeight(overlayHeight * heightPct);
+		this.setPrefHeight(heightPct * overlayHeight);
+		this.setWidth(widthPct * overlayWidth);
 		this.getChildren().add(textArea);
 		
 		

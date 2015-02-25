@@ -11,12 +11,14 @@ public class TopMenu extends Region {
 
 	protected double overlayWidth;
 	protected double overlayHeight;
+	protected double heightPct;
 
-	public TopMenu(double overlayWidth, double overlayHeight) {
+	public TopMenu(double overlayWidth, double overlayHeight, double heightPct) {
 
 
 		this.overlayWidth = overlayWidth;
 		this.overlayHeight = overlayHeight;
+		this.heightPct = heightPct;
 //		this.setMinSize(overlayWidth, overlayHeight);
 //		this.setMaxSize(overlayWidth, overlayHeight);
 //		this.getStyleClass().add("overlay-color");
@@ -34,7 +36,7 @@ public class TopMenu extends Region {
 		MenuBar menuBar = new MenuBar();
 		menuBar.getMenus().addAll(menu1,menu2,menu3,menu4);		
 		menuBar.setPrefWidth(overlayWidth);
-		menuBar.setPrefHeight(.05 * overlayHeight);
+		menuBar.setPrefHeight(heightPct * overlayHeight);
 		this.getChildren().add(menuBar);
 		
 		

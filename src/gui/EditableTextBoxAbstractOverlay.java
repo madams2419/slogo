@@ -23,6 +23,7 @@ public class EditableTextBoxAbstractOverlay extends Region {
 		this.overlayHeight = overlayHeight;
 		this.overlayWidth = overlayWidth;
 		this.initText = initText;
+		this.setStyle("-fx-border-color: black;");
 		makeTextBox();
 		
 	}
