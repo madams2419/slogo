@@ -53,6 +53,10 @@ public abstract class Command {
 		return parent != null;
 	}
 
+	public Double getParamValue(int paramIndex) {
+		return params[paramIndex].execute();
+	}
+
 	public Double getReturnVal() {
 		return (returnVal != null) ? returnVal : execute();
 	}

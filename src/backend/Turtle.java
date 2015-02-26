@@ -23,7 +23,7 @@ public class Turtle {
 		lines = new ArrayList<>();
 	}
 
-	protected void move(int magnitude) {
+	public void move(int magnitude) {
 		int newX = (int) Math.cos(heading.getAngleRads()) * magnitude;
 		int newY = (int) Math.sin(heading.getAngleRads()) * magnitude;
 		Point nextLocation = new Point(newX, newY);
@@ -34,8 +34,18 @@ public class Turtle {
 		lines.add(newLine);
 	}
 
-	protected void rotate(double degrees) {
-		heading.setAngle(heading.getAngle() + degrees);
+	public void setHeading(double degrees) {
+		heading.setAngle(degrees);
+	}
+
+	public void rotateRight(double degrees) {
+		double newHeading = heading.getAngle() + degrees;
+		setHeading(newHeading);
+	}
+
+	public void rotateLeft(double degrees) {
+		double newHeading = heading.getAngle() - degrees;
+		setHeading(newHeading);
 	}
 
 	public void setImagePath(String imagePath) {
