@@ -1,20 +1,11 @@
 package gui;
 
-import javax.swing.JScrollPane;
-
-import javafx.css.*;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.application.Application;
 import javafx.geometry.Rectangle2D;
 import javafx.scene.Group;
 import javafx.scene.Scene;
-import javafx.scene.canvas.GraphicsContext;
-import javafx.scene.control.Menu;
-import javafx.scene.control.MenuBar;
-import javafx.scene.control.TextArea;
-import javafx.scene.paint.Color;
-import javafx.scene.shape.ArcType;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 
@@ -28,6 +19,8 @@ public class Main extends Application {
 	private double commandBoxWidthPct = .5;
 	private double commandBoxHeightPct = .25;
 	private double topMenuHeightPct = .05;
+	
+	
 	Stage stage;
 	Scene scene;
 
@@ -47,20 +40,21 @@ public class Main extends Application {
 		Group root = new Group();
 		scene = new Scene(root, screenHeight, screenWidth);
 
-		CommandBox commandBox = new CommandBox(screenWidth, screenHeight, commandBoxWidthPct, commandBoxHeightPct);
+		EditableTextBox commandBox = new EditableTextBox(commandBoxHeightPct, commandBoxWidthPct, 0, screenHeight * (1 - commandBoxHeightPct), screenWidth,
+				screenHeight, "Type a Command...", true);
 
-		EditableTextBoxAbstractOverlay statusBox = new EditableTextBoxAbstractOverlay(
+		EditableTextBox statusBox = new EditableTextBox(
 				.25, infoBoxWidthPct, (1 - infoBoxWidthPct) * screenWidth, .75 * screenHeight, screenWidth,
-				screenHeight, "Status");
-		EditableTextBoxAbstractOverlay userFunctionsBox = new EditableTextBoxAbstractOverlay(
+				screenHeight, "Status", false);
+		EditableTextBox userFunctionsBox = new EditableTextBox(
 				.25, infoBoxWidthPct, (1 - infoBoxWidthPct) * screenWidth, .5 * screenHeight, screenWidth,
-				screenHeight, "User Defined Functions and Commands");
-		EditableTextBoxAbstractOverlay userVariablesBox = new EditableTextBoxAbstractOverlay(
+				screenHeight, "User Defined Functions and Commands", false);
+		EditableTextBox userVariablesBox = new EditableTextBox(
 				.25, infoBoxWidthPct, (1 - infoBoxWidthPct) * screenWidth, .25 * screenHeight, screenWidth,
-				screenHeight, "User Defined Variables");
-		EditableTextBoxAbstractOverlay prevCommandsBox = new EditableTextBoxAbstractOverlay(
+				screenHeight, "User Defined Variables", false);
+		EditableTextBox prevCommandsBox = new EditableTextBox(
 				.2, infoBoxWidthPct, (1 - infoBoxWidthPct) * screenWidth, (float)0.05 * (float) screenHeight, screenWidth,
-				screenHeight, "Previously Executed Commands");
+				screenHeight, "Previously Executed Commands", false);
 
 		TopMenu topMenu = new TopMenu(screenWidth, screenHeight, topMenuHeightPct);
 		
@@ -73,8 +67,8 @@ public class Main extends Application {
 		// TODO
 		// Determine this location based on other values
 
-		commandBox.setLayoutY(screenHeight - commandBox.getPrefHeight());
-		commandBox.setLayoutX(0);
+		commandBox.setLayoutX(commandBox.xLocation);
+		commandBox.setLayoutY(commandBox.yLocation);
 		
 		turtlePanel.setLayoutX(0);
 		turtlePanel.setLayoutY(screenHeight * topMenuHeightPct);
