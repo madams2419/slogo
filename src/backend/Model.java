@@ -25,8 +25,8 @@ public class Model {
 
 	private Grid grid;
 	private Queue<Command> pendingCommands;
-	private Stack<Command> executedCommands;
-	private HashMap<String, Double> userVariables;
+	private static Stack<Command> executedCommands;
+	private HashMap<String, Double> userVariables; 
 	private HashMap<String, Command> userFunctions;
 	private String helpPagePath;
 
@@ -63,7 +63,7 @@ public class Model {
 		return grid;
 	}
 
-	public Stack<Command> getExecutedCommands() {
+	public static Stack<Command> getExecutedCommands() {
 		return executedCommands;
 	}
 
