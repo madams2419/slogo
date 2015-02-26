@@ -1,6 +1,7 @@
 package gui;
 
 import backend.Model;
+import backend.Turtle;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.Menu;
@@ -8,6 +9,7 @@ import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
 import javafx.scene.input.KeyCombination;
 import javafx.scene.layout.Region;
+import javafx.stage.Stage;
 
 public class TopMenu extends Region {
 
@@ -29,17 +31,17 @@ public class TopMenu extends Region {
 		Menu menuFile = new Menu("File");
 		createFileMenuItems(menuFile);
 
-		Menu menuTurtle = new Menu("Turtle Options");
-		createTurtleMenuItems(menuTurtle);
+		Menu menuDisplay = new Menu("Display");
+		createDisplayMenuItems(menuDisplay);
 
 		Menu menuLanguage = new Menu("Language");
-		createLanguageMenuItems(menuLanguage);
+		createLanguageMenuItems(menuLanguage); 
 
 		Menu menuHelp = new Menu("Help");
 		createHelpMenuItems(menuHelp);
 
 		MenuBar menuBar = new MenuBar();
-		menuBar.getMenus().addAll(menuFile, menuTurtle, menuLanguage, menuHelp);
+		menuBar.getMenus().addAll(menuFile, menuDisplay, menuLanguage, menuHelp);
 		menuBar.setPrefWidth(overlayWidth);
 		menuBar.setPrefHeight(heightPct * overlayHeight);
 		this.getChildren().add(menuBar);
@@ -69,11 +71,34 @@ public class TopMenu extends Region {
 		file.getItems().addAll(save, load);
 
 	}
-
-	public void createTurtleMenuItems(Menu turtle) {
+ 
+	public void createDisplayMenuItems(Menu turtle) {
 
 		MenuItem chooseTurtle = new MenuItem("Choose Turtle Image");
+		chooseTurtle.setOnAction(new EventHandler<ActionEvent>() {
+			public void handle(ActionEvent t){
+				// Turtle.setImage();
+				System.out.println("You are choosing a new Turtle");
+			}
+		});
+		
 		MenuItem chooseBackgroundColor = new MenuItem("Background Color");
+		chooseBackgroundColor.setOnAction(new EventHandler<ActionEvent>() {
+			public void handle(ActionEvent t){
+				System.out.println("You are choosing a new Background Color");
+				openColorPicker();
+				//Grid.setBGColor(color); 
+			}
+		});
+		MenuItem choosePenColor = new MenuItem("Pen Color");
+		choosePenColor.setOnAction(new EventHandler<ActionEvent>() {
+			public void handle(ActionEvent t){
+				System.out.println("You are choosing a new Pen color");
+				openColorPicker();
+				//Grid.setPenColor(color)
+			}
+		});
+		
 		turtle.getItems().addAll(chooseTurtle, chooseBackgroundColor);
 	}
 
@@ -119,6 +144,13 @@ public class TopMenu extends Region {
 
 		help.getItems().addAll(documentation);
 
+	}
+	
+	public void openColorPicker(){
+		
+		ColorPickingScreen colorPicker = new ColorPickingScreen();
+		Stage s = new Stage();
+		colorPicker.start(s);
 	}
 
 }
