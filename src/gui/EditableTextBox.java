@@ -1,5 +1,9 @@
 package gui;
 
+import java.util.Stack;
+
+import backend.Command;
+import backend.Model;
 import javafx.scene.control.TextArea;
 import javafx.scene.layout.Region;
 
@@ -71,6 +75,21 @@ public class EditableTextBox extends Region {
 
 		this.getChildren().add(this.textArea);
 
+	}
+	
+	public void makeExecutedCommandsList(){
+		
+		Stack<Command> executedCommands = Model.getExecutedCommands();
+		StringBuilder sb = new StringBuilder();
+		while(!executedCommands.isEmpty()){
+			sb.append("\n" + executedCommands.pop());
+		}
+		
+		textArea.setText(textArea.getText() + sb.toString());
+		
+		
+		
+		
 	}
 
 }
