@@ -3,13 +3,14 @@ package backend;
 import java.lang.Math;
 import java.awt.*;
 import java.util.ArrayList;
+import javafx.scene.paint.Color;
 
 public class Turtle {
 
 	private String imagePath;
 	private Point location;
 	private Heading heading;
-	private Color penColor;
+	private static Color penColor;
 	private boolean penDown;
 	private ArrayList<Line> lines;
 
@@ -41,7 +42,7 @@ public class Turtle {
 		this.imagePath = imagePath;
 	}
 
-	public void setPenColor(Color newPenColor) {
+	public static void setPenColor(Color newPenColor) {
 		penColor = newPenColor;
 	}
 

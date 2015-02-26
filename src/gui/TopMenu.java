@@ -1,5 +1,6 @@
 package gui;
 
+import backend.Grid;
 import backend.Model;
 import backend.Turtle;
 import javafx.event.ActionEvent;
@@ -9,6 +10,7 @@ import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
 import javafx.scene.input.KeyCombination;
 import javafx.scene.layout.Region;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 public class TopMenu extends Region {
@@ -87,6 +89,7 @@ public class TopMenu extends Region {
 			public void handle(ActionEvent t){
 				System.out.println("You are choosing a new Background Color");
 				openColorPicker();
+				Grid.setBGColor(openColorPicker());
 				//Grid.setBGColor(color); 
 			}
 		});
@@ -94,7 +97,7 @@ public class TopMenu extends Region {
 		choosePenColor.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent t){
 				System.out.println("You are choosing a new Pen color");
-				openColorPicker();
+				Turtle.setPenColor(openColorPicker());
 				//Grid.setPenColor(color)
 			}
 		});
@@ -146,11 +149,13 @@ public class TopMenu extends Region {
 
 	}
 	
-	public void openColorPicker(){
+	public Color openColorPicker(){
 		
 		ColorPickingScreen colorPicker = new ColorPickingScreen();
 		Stage s = new Stage();
 		colorPicker.start(s);
+		System.out.println(colorPicker.getColor()); 
+		return colorPicker.getColor();
 	}
 
 }

@@ -1,13 +1,14 @@
 package backend;
 
-import java.awt.Color;
-import java.awt.Dimension;
+
+import java.awt.Dimension; 
 import java.util.ArrayList;
+import javafx.scene.paint.Color;
 
 public class Grid {
 
 	private Dimension size;
-	private Color bgColor;
+	protected static Color bgColor;
 	private ArrayList<Turtle> turtles;
 
 	public Grid(Dimension size, Color bgColor) {
@@ -21,7 +22,7 @@ public class Grid {
 		turtles.add(turtle);
 	}
 
-	protected void setBGColor(Color newBGColor) {
+	public static void setBGColor(Color newBGColor) {
 		bgColor = newBGColor;
 	}
 

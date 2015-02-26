@@ -12,7 +12,7 @@ import javafx.stage.Stage;
  
 public class ColorPickingScreen extends Application {    
 	
-	
+	private static Color color;
     public static void main(String[] args) {
         launch(args);
     }
@@ -20,21 +20,25 @@ public class ColorPickingScreen extends Application {
     @Override
     public void start(Stage stage) {
         stage.setTitle("ColorPicker");
-        Scene scene = new Scene(new HBox(20), 400, 100);
+        Scene scene = new Scene(new HBox(20), 250, 45);
         HBox box = (HBox) scene.getRoot();
         box.setPadding(new Insets(5, 5, 5, 5));          
              
         final ColorPicker colorPicker = new ColorPicker();
-        colorPicker.setValue(Color.CORAL);
+        colorPicker.setValue(Color.BLACK);
         
-        final Text text = new Text("Try the color picker!");
-        text.setFont(Font.font ("Verdana", 20));
-        text.setFill(colorPicker.getValue());
+        final Text text = new Text("Select a Color");
+        text.setFont(Font.font ("Verdana", 25));
+        text.setFill(Color.BLACK);
         
         colorPicker.setOnAction(new EventHandler<ActionEvent>() {
-            public void handle(ActionEvent t) {
-                text.setFill(colorPicker.getValue());               
+            public void handle(ActionEvent t) {  
+                System.out.println(colorPicker.getValue());
+                setColor(colorPicker.getValue());
+                
             }
+
+			
 
         });
  
@@ -43,4 +47,18 @@ public class ColorPickingScreen extends Application {
         stage.setScene(scene);
         stage.show();
     }
+
+
+	public Color getColor() {
+		return color;
+	}
+
+	public static void setColor(Color color) {
+		ColorPickingScreen.color = color;
+	}
+    
+    
+    
+    
+    
 }

@@ -1,6 +1,6 @@
 package backend;
 
-import java.awt.Color;
+import javafx.scene.paint.Color;
 import java.awt.Dimension;
 import java.awt.Point;
 import java.util.HashMap;
