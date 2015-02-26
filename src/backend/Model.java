@@ -55,7 +55,7 @@ public class Model {
 		userVariables.put(name, value);
 	}
 
-	public void setLanguage(String language) {
+	public static void setLanguage(String language) {
 		//TODO
 	}
 
