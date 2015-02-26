@@ -1,12 +1,15 @@
 package backend;
 
 import javafx.scene.paint.Color;
+
 import java.awt.Dimension;
 import java.awt.Point;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Stack;
+
+import backend.command.Command;
 
 public class Model {
 

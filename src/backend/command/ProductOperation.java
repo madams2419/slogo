@@ -1,4 +1,5 @@
-package backend;
+package backend.command;
+
 
 public class ProductOperation extends BinaryMathOperation {
 

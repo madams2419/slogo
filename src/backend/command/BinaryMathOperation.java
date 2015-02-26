@@ -1,4 +1,4 @@
-package backend;
+package backend.command;
 
 public abstract class BinaryMathOperation extends Command {
 

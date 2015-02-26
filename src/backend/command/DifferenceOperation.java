@@ -1,4 +1,4 @@
-package backend;
+package backend.command;
 
 public class DifferenceOperation extends BinaryMathOperation {
 

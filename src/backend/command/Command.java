@@ -1,4 +1,4 @@
-package backend;
+package backend.command;
 
 import java.util.function.BiFunction;
 

@@ -1,4 +1,5 @@
-package backend;
+package backend.command;
+
 
 public class MinusOperation extends UnaryMathOperation {
 
