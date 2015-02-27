@@ -1,11 +1,11 @@
 package backend;
 
-import StringPair;
-
 import java.util.AbstractMap.SimpleEntry;
 import java.util.Enumeration;
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Queue;
 import java.util.Map.Entry;
 import java.util.ResourceBundle;
 import java.util.Scanner;
@@ -14,40 +14,41 @@ import java.util.regex.Pattern;
 import backend.command.*;
 
 public class SLogoParser {
-	
+
 	private CommandFactory comFactory;
 	private List<Entry<String, Pattern>> patterns;
 	private String language;
-	
+
 	public SLogoParser(CommandFactory comFactory, String language) {
 		this.comFactory = comFactory;
 		this.language = language;
 		genPatternList();
 	}
-	
+
 	public SLogoParser(CommandFactory comFactory) {
 		this(comFactory, "English");
 	}
-	
+
 	public void genPatternList() {
 		patterns = new ArrayList<>();
 		patterns.addAll(makePatterns("resources/languages/" + language));
 		patterns.addAll(makePatterns("resources/languages/Syntax"));
 	}
-	
+
 	public void changeLanguage(String newLanguage) {
 		language = newLanguage;
 		genPatternList();
 	}
-	
-	public ArrayList<Command> parseProgram(String prog) {
+
+	public Queue<Command> parseProgram(String prog) {
 
 		ArrayList<StringPair> spList = genPropertyList(prog.split("\\p{Space}"), patterns);
 
 		Command targetNode = null;
-		ArrayList<Command> parseTreeList = new ArrayList<>();
+		Queue<Command> commandQueue = new LinkedList<>();
 
 		for(StringPair sp : spList) {
+			// assumption is that targetNode is null or needs more params
 			if (targetNode == null) {
 				targetNode = comFactory.getCommand(sp);
 
@@ -57,30 +58,36 @@ public class SLogoParser {
 
 				if (newNode.needsParams()) {
 					targetNode = newNode;
-				}
-
-				// find first incomplete node. if no incomplete node is found, add root node to treelist and create new target node
-				while (!targetNode.needsParams()) {
-					if (targetNode.hasParent()) {
-						targetNode = targetNode.getParent();
-					} else { // target node is root
-						parseTreeList.add(targetNode);
-						targetNode = null;
+					continue;
+				} else {
+					// find first incomplete node. if no incomplete node is found, add root node to treelist and create new target node
+					while (!targetNode.needsParams()) {
+						if (targetNode.hasParent()) {
+							targetNode = targetNode.getParent();
+						} else {
+							break;
+						}
 					}
 				}
 			}
+			
+			// push targetNode to queue if it is root and needs no params
+			if(!targetNode.needsParams() && !targetNode.hasParent()) {
+				commandQueue.add(targetNode);
+				targetNode = null;
+			}
 		}
-		
-		return parseTreeList;
+
+		return commandQueue;
 	}
-	
+
 	private boolean match (String input, Pattern regex) {
 		// THIS IS THE KEY LINE
 		return regex.matcher(input).matches();
 		// basic strings can match also, but not using a Pattern
 		// return input.matches(regex);
 	}
-	
+
 	private List<Entry<String, Pattern>> makePatterns (String syntax) {
 		ResourceBundle resources = ResourceBundle.getBundle(syntax);
 		List<Entry<String, Pattern>> patterns = new ArrayList<>();
@@ -94,7 +101,7 @@ public class SLogoParser {
 		}
 		return patterns;
 	}
-	
+
 	private ArrayList<StringPair> genPropertyList(String[] tests, List<Entry<String, Pattern>> patterns) {
 		ArrayList<StringPair> propList = new ArrayList<>();
 		for (String s : tests) {

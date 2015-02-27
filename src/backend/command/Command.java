@@ -31,6 +31,7 @@ public abstract class Command {
 
 	public void setParam(Command newParam) {
 		params[curNumParams] = newParam;
+		curNumParams++;
 	}
 
 	public Double[] evaluateParams() {

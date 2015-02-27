@@ -1,11 +1,8 @@
 package backend;
 
-import ParseNode;
-import StringPair;
-import javafx.scene.paint.Color;
-
 import java.awt.Dimension;
 import java.awt.Point;
+import java.awt.Color;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -17,6 +14,7 @@ import java.util.Map.Entry;
 import java.util.regex.Pattern;
 
 import backend.command.Command;
+import backend.command.CommandFactory;
 
 public class Model {
 
@@ -39,6 +37,8 @@ public class Model {
 	private HashMap<String, Double> userVariables; 
 	private HashMap<String, Command> userFunctions;
 	private String helpPagePath;
+	private CommandFactory comFactory;
+	private SLogoParser parser;
 
 	public Model() {
 		Turtle turtle = new Turtle(turtleImgPath, new Point(0, 0), new Heading(90), turtlePenColor);
@@ -48,10 +48,12 @@ public class Model {
 		userVariables = new HashMap<>();
 		userFunctions = new HashMap<>();
 		helpPagePath = helpPgPath;
+		comFactory = new CommandFactory(grid);
+		parser = new SLogoParser(comFactory);
 	}
 
 	public void parseProgram(String prog) {
-
+		pendingCommands = parser.parseProgram(prog);
 	}
 
 	public Command executeNextCommand() {
