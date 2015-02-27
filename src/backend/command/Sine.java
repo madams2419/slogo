@@ -1,9 +1,9 @@
 package backend.command;
 
 
-public class SineOperation extends UnaryMathOperation {
+public class Sine extends UnaryMathOperation {
 
-	public SineOperation() {
+	public Sine() {
 		super("SIN");
 	}
 

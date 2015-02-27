@@ -1,9 +1,9 @@
 package backend.command;
 
 
-public class RandomOperation extends UnaryMathOperation {
+public class Random extends UnaryMathOperation {
 
-	public RandomOperation() {
+	public Random() {
 		super("RANDOM");
 	}
 

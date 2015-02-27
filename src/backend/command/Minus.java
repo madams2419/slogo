@@ -1,9 +1,9 @@
 package backend.command;
 
 
-public class MinusOperation extends UnaryMathOperation {
+public class Minus extends UnaryMathOperation {
 
-	public MinusOperation() {
+	public Minus() {
 		super("MINUS");
 	}
 

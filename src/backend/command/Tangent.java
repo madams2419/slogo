@@ -1,9 +1,9 @@
 package backend.command;
 
 
-public class TangentOperation extends UnaryMathOperation {
+public class Tangent extends UnaryMathOperation {
 
-	public TangentOperation() {
+	public Tangent() {
 		super("COS");
 	}
 

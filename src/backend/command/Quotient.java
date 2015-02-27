@@ -1,9 +1,9 @@
 package backend.command;
 
 
-public class QuotientOperation extends BinaryMathOperation {
+public class Quotient extends BinaryMathOperation {
 
-	public QuotientOperation() {
+	public Quotient() {
 		super("QUOTIENT");
 	}
 

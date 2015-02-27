@@ -1,9 +1,9 @@
 package backend.command;
 
 
-public class RemainderOperation extends BinaryMathOperation {
+public class Remainder extends BinaryMathOperation {
 
-	public RemainderOperation() {
+	public Remainder() {
 		super("REMAINDER");
 	}
 

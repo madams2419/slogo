@@ -2,9 +2,9 @@ package backend.command;
 
 import backend.Turtle;
 
-public class SetHeadingCommand extends TurtleCommand {
+public class SetHeading extends TurtleCommand {
 
-	public SetHeadingCommand(Turtle turtle) {
+	public SetHeading(Turtle turtle) {
 		super("SETHEADING", 1, turtle);
 	}
 

@@ -1,8 +1,8 @@
 package backend.command;
 
-public class DifferenceOperation extends BinaryMathOperation {
+public class Difference extends BinaryMathOperation {
 
-	public DifferenceOperation() {
+	public Difference() {
 		super("DIFFERENCE");
 	}
 

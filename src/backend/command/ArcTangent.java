@@ -1,9 +1,9 @@
 package backend.command;
 
 
-public class ArctangentOperation extends UnaryMathOperation {
+public class ArcTangent extends UnaryMathOperation {
 
-	public ArctangentOperation() {
+	public ArcTangent() {
 		super("ATAN");
 	}
 

@@ -2,9 +2,9 @@ package backend.command;
 
 import backend.Turtle;
 
-public class ForwardCommand extends TurtleCommand {
+public class Forward extends TurtleCommand {
 
-	public ForwardCommand(Turtle turtle) {
+	public Forward(Turtle turtle) {
 		super("FORWARD", 1, turtle);
 	}
 

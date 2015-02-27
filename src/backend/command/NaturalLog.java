@@ -1,9 +1,9 @@
 package backend.command;
 
 
-public class LogOperation extends UnaryMathOperation {
+public class NaturalLog extends UnaryMathOperation {
 
-	public LogOperation() {
+	public NaturalLog() {
 		super("LOG");
 	}
 

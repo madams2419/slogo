@@ -1,9 +1,9 @@
 package backend.command;
 
 
-public class ProductOperation extends BinaryMathOperation {
+public class Product extends BinaryMathOperation {
 
-	public ProductOperation() {
+	public Product() {
 		super("PRODUCT");
 	}
 

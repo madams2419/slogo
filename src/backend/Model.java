@@ -1,13 +1,20 @@
 package backend;
 
+import ParseNode;
+import StringPair;
 import javafx.scene.paint.Color;
 
 import java.awt.Dimension;
 import java.awt.Point;
+import java.io.FileNotFoundException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Queue;
 import java.util.Stack;
+import java.util.Map.Entry;
+import java.util.regex.Pattern;
 
 import backend.command.Command;
 
@@ -44,7 +51,7 @@ public class Model {
 	}
 
 	public void parseProgram(String prog) {
-		//TODO
+
 	}
 
 	public Command executeNextCommand() {
@@ -80,6 +87,31 @@ public class Model {
 
 	public String getHelpPagePath() {
 		return helpPagePath;
+	}
+	
+	public static void main (String[] args) {
+		String[] examples = {
+				"# foo",
+				"foo #",
+				"#",
+				"",
+				"fd",
+				"FD",
+				"forwardd",
+				"allOrNothing",
+				"all_or_nothing",
+				"allOr_nothing?",
+				"allOr?nothing_",
+				":allornothing",
+				"90",
+				"9.09",
+				"9.0.0",
+				"[",
+				"]",
+				"(",
+				")"
+		};
+		String userInput = "# fd 50 rt 90 BACK :distance Left :angle";
 	}
 
 }

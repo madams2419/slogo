@@ -1,9 +1,9 @@
 package backend.command;
 
 
-public class SumOperation extends BinaryMathOperation {
+public class Sum extends BinaryMathOperation {
 
-	public SumOperation() {
+	public Sum() {
 		super("SUM");
 	}
 

@@ -2,9 +2,9 @@ package backend.command;
 
 import backend.Turtle;
 
-public class RightCommand extends TurtleCommand {
+public class Right extends TurtleCommand {
 
-	public RightCommand(Turtle turtle) {
+	public Right(Turtle turtle) {
 		super("RIGHT", 1, turtle);
 	}
 

@@ -1,9 +1,9 @@
 package backend.command;
 
 
-public class CosineOperation extends UnaryMathOperation {
+public class Cosine extends UnaryMathOperation {
 
-	public CosineOperation() {
+	public Cosine() {
 		super("COS");
 	}
 

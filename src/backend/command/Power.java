@@ -1,9 +1,9 @@
 package backend.command;
 
 
-public class PowerOperation extends BinaryMathOperation {
+public class Power extends BinaryMathOperation {
 
-	public PowerOperation() {
+	public Power() {
 		super("POW");
 	}
 
