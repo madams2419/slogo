@@ -2,7 +2,6 @@ package backend;
 
 import java.awt.*;
 import java.awt.geom.Line2D;
-import javafx.scene.paint.Color;
 
 public class Line extends Line2D.Double {
 

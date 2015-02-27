@@ -9,11 +9,11 @@ public class StringPair {
 		value = val;
 	}
 	
-	public String getProp() {
+	public String getProperty() {
 		return property;
 	}
 	
-	public String getVal() { 
+	public String getValue() { 
 		return value;
 	}
 }

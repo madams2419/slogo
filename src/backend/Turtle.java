@@ -3,7 +3,6 @@ package backend;
 import java.lang.Math;
 import java.awt.*;
 import java.util.ArrayList;
-import javafx.scene.paint.Color;
 
 public class Turtle {
 

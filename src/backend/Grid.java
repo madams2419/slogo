@@ -1,9 +1,8 @@
 package backend;
 
-
 import java.awt.Dimension; 
 import java.util.ArrayList;
-import javafx.scene.paint.Color;
+import java.awt.Color;
 
 public class Grid {
 
@@ -26,7 +25,7 @@ public class Grid {
 		bgColor = newBGColor;
 	}
 
-	protected void addTurtle(Turtle newTurtle) {
+	public void addTurtle(Turtle newTurtle) {
 		turtles.add(newTurtle);
 	}
 
@@ -40,6 +39,10 @@ public class Grid {
 
 	public ArrayList<Turtle> getTurtles() {
 		return turtles;
+	}
+	
+	public Turtle getActiveTurtle() {
+		return turtles.get(0);
 	}
 
 	public ArrayList<Line> getLines() {
