@@ -2,17 +2,19 @@ package backend.command;
 
 import java.util.function.BiFunction;
 
+import backend.StringPair;
+
 
 public abstract class Command {
 
-	private String name;
+	private StringPair stringPair;
 	protected int numParams, curNumParams;
 	protected Command[] params;
 	protected Command parent;
 	protected Double returnVal;
 
-	public Command(String name, int numParams, Command parent) {
-		this.name = name;
+	public Command(StringPair stringPair, int numParams, Command parent) {
+		this.stringPair = stringPair;
 		this.numParams = numParams;
 		this.parent = parent;
 		curNumParams = 0;
@@ -23,7 +25,11 @@ public abstract class Command {
 	public abstract Double execute();
 
 	public String toString() {
-		return name;
+		return stringPair.getProperty();
+	}
+	
+	public String getTypedString() {
+		return stringPair.getValue();
 	}
 
 	public boolean needsParams() {

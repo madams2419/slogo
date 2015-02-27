@@ -81,8 +81,8 @@ public class Model {
 		}
 	}
 
-	public void setVariable(String name, double value) {
-		userVariables.put(name, value);
+	public void setVariable(String name, Double val) {
+		userVariables.put(name, val);
 	}
 
 	public static void setLanguage(String language) {
