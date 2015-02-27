@@ -23,9 +23,9 @@ public class Turtle {
 	}
 
 	public void move(int magnitude) {
-		int newX = (int) Math.cos(heading.getAngleRads()) * magnitude;
-		int newY = (int) Math.sin(heading.getAngleRads()) * magnitude;
-		Point nextLocation = new Point(newX, newY);
+		int deltaX = (int) Math.cos(heading.getAngleRads()) * magnitude;
+		int deltaY = (int) Math.sin(heading.getAngleRads()) * magnitude;
+		Point nextLocation = new Point(location.x + deltaX, location.y + deltaY);
 
 		Line newLine = new Line(location, nextLocation, (penDown) ? penColor : null);
 

@@ -16,9 +16,11 @@ public class CommandFactory {
 		this.grid = grid;
 	}
 	
-	public Command getCommand(StringPair csp) {
+	public Command getCommand(StringPair csp, Command parent) {
 		Command newCommand;
 		String comClassName = "backend.command." + csp.getProperty();
+		
+		System.out.println(comClassName);
 		
 		try {
 			Class<?> comClass = Class.forName(comClassName);
@@ -26,9 +28,12 @@ public class CommandFactory {
 			Constructor<?>[] comConstructors = comClass.getDeclaredConstructors();
 			
 			if(comSuperName.contains("TurtleCommand")) {
-				newCommand = (Command) comConstructors[0].newInstance(grid.getActiveTurtle());
+				newCommand = (Command) comConstructors[0].newInstance(parent, grid.getActiveTurtle());
 			} else {
-				newCommand = (Command) comConstructors[0].newInstance();
+				if(comClass.getName().contains("Constant")) 
+					newCommand = (Command) comConstructors[0].newInstance(parent, Double.parseDouble(csp.getValue()));
+				else
+					newCommand = (Command) comConstructors[0].newInstance(parent);
 			}
 			
 		} catch (Exception e) {
@@ -41,21 +46,4 @@ public class CommandFactory {
 		
 	}
 	
-	public static void main(String[] args) {
-		Grid g = new Grid(new Dimension(100,100), Color.RED);
-		
-		Turtle t = new Turtle("testPath", new Point(0,0), new Heading(90),Color.BLACK);
-		
-		g.addTurtle(t);
-		
-		CommandFactory cf = new CommandFactory(g);
-		
-		StringPair testSp = new StringPair("Forward", "FWD");
-		
-		Command c = cf.getCommand(testSp);
-		
-		System.out.println(c.needsParams());
-		
-		
-	}
 }

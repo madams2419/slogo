@@ -41,7 +41,6 @@ public class SLogoParser {
 	}
 
 	public Queue<Command> parseProgram(String prog) {
-
 		ArrayList<StringPair> spList = genPropertyList(prog.split("\\p{Space}"), patterns);
 
 		Command targetNode = null;
@@ -50,10 +49,10 @@ public class SLogoParser {
 		for(StringPair sp : spList) {
 			// assumption is that targetNode is null or needs more params
 			if (targetNode == null) {
-				targetNode = comFactory.getCommand(sp);
+				targetNode = comFactory.getCommand(sp, null);
 
 			} else {
-				Command newNode = comFactory.getCommand(sp);
+				Command newNode = comFactory.getCommand(sp, targetNode);
 				targetNode.setParam(newNode);
 
 				if (newNode.needsParams()) {
@@ -112,7 +111,7 @@ public class SLogoParser {
 						System.out.println(String.format("%s matches %s", s, p.getKey()));
 						propList.add(new StringPair(p.getKey(), s));
 						matched = true;
-						//break;
+						break;
 					}
 				}
 				if (! matched) {

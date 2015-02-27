@@ -11,9 +11,10 @@ public abstract class Command {
 	protected Command parent;
 	protected Double returnVal;
 
-	public Command(String name, int numParams) {
+	public Command(String name, int numParams, Command parent) {
 		this.name = name;
 		this.numParams = numParams;
+		this.parent = parent;
 		curNumParams = 0;
 		params = new Command[numParams];
 		returnVal = null;
@@ -56,6 +57,10 @@ public abstract class Command {
 
 	public Double getParamValue(int paramIndex) {
 		return params[paramIndex].execute();
+	}
+	
+	public Command[] getParams() {
+		return params;
 	}
 
 	public Double getReturnVal() {

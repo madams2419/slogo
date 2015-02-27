@@ -54,6 +54,7 @@ public class Model {
 
 	public void parseProgram(String prog) {
 		pendingCommands = parser.parseProgram(prog);
+		printCommandTree();
 	}
 
 	public Command executeNextCommand() {
@@ -61,6 +62,23 @@ public class Model {
 		targetCommand.execute();
 		executedCommands.push(targetCommand);
 		return targetCommand;
+	}
+	
+	public void printCommandTree() {
+		Command root = pendingCommands.peek();
+		
+		System.out.println(root);
+		
+		printCommands(root.getParams());
+	}
+	
+	public void printCommands(Command[] params) {
+		for(Command c : params) {
+			System.out.println(c);
+			
+			Command[] subParams = c.getParams();
+			printCommands(subParams);
+		}
 	}
 
 	public void setVariable(String name, double value) {
@@ -92,28 +110,19 @@ public class Model {
 	}
 	
 	public static void main (String[] args) {
-		String[] examples = {
-				"# foo",
-				"foo #",
-				"#",
-				"",
-				"fd",
-				"FD",
-				"forwardd",
-				"allOrNothing",
-				"all_or_nothing",
-				"allOr_nothing?",
-				"allOr?nothing_",
-				":allornothing",
-				"90",
-				"9.09",
-				"9.0.0",
-				"[",
-				"]",
-				"(",
-				")"
-		};
-		String userInput = "# fd 50 rt 90 BACK :distance Left :angle";
+		String userInput = "fd fd 50\nfd 100";
+		
+		Model m = new Model();
+		
+		m.parseProgram(userInput);
+		
+		m.executeNextCommand();
+		
+		m.executeNextCommand();
+		
+		Turtle t = m.getGrid().getActiveTurtle();
+		
+		System.out.println("Turtle (x,y): " + t.getLocation().getX() + ", " + t.getLocation().getY());
 	}
 
 }
