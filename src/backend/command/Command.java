@@ -24,8 +24,12 @@ public abstract class Command implements Cloneable {
 		return stringPair.getProperty();
 	}
 
-	public String getTypedString() {
+	public String getValue() {
 		return stringPair.getValue();
+	}
+
+	public String getProperty() {
+		return stringPair.getProperty();
 	}
 
 	public boolean needsParams() {
@@ -36,12 +40,16 @@ public abstract class Command implements Cloneable {
 		params.add(newParam);
 	}
 
+	public Command getParam(int index) {
+		return params.get(index);
+	}
+
 	public boolean hasParent() {
 		return parent != null;
 	}
 
 	public Double getParamValue(int paramIndex) {
-		return params.get(0).execute();
+		return params.get(paramIndex).execute();
 	}
 
 	public ArrayList<Command> getParams() {

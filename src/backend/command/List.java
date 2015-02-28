@@ -16,12 +16,8 @@ public class List extends Command {
 		return !listComplete;
 	}
 
-	@Override
-	public void setParam(Command newParam) {
-		if(newParam.toString() == "ListEnd")
-			listComplete = true;
-		else
-			super.setParam(newParam);
+	public void setComplete() {
+		listComplete = true;
 	}
 
 	public Double execute() {
