@@ -40,6 +40,7 @@ public class SLogoParser {
 		genPatternList();
 	}
 
+	// Should probably refactor this into a recursive implementation (that will be much cleaner)
 	public Queue<Command> parseProgram(String prog) {
 		ArrayList<StringPair> spList = genPropertyList(prog.split("\\p{Space}"), patterns);
 
@@ -47,6 +48,14 @@ public class SLogoParser {
 		Queue<Command> commandQueue = new LinkedList<>();
 
 		for(StringPair sp : spList) {
+			if (sp.getProperty() == "ListEnd") {
+				if (targetNode.getProperty() == "List")
+					((backend.command.List)targetNode).setComplete();
+				else
+					System.out.println("ERROR: list ending where there shouldn't be one.");
+					//TODO error, throw some sort of exception or something
+			}
+
 			// assumption is that targetNode is null or needs more params
 			if (targetNode == null) {
 				targetNode = comFactory.getCommand(sp, null);
@@ -69,7 +78,7 @@ public class SLogoParser {
 					}
 				}
 			}
-			
+
 			// push targetNode to queue if it is root and needs no params
 			if(!targetNode.needsParams() && !targetNode.hasParent()) {
 				commandQueue.add(targetNode);
