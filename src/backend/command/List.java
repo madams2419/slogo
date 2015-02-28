@@ -20,6 +20,10 @@ public class List extends Command {
 		listComplete = true;
 	}
 
+	public Command get(int index) {
+		return params.get(index);
+	}
+
 	public Double execute() {
 		Double returnVal = 0.0;
 		for(Command param : params) {
