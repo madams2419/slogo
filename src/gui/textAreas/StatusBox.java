@@ -1,4 +1,5 @@
-package gui;
+package gui.textAreas;
+
 
 public class StatusBox extends AbstractEditableTextBox {
 

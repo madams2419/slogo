@@ -1,4 +1,4 @@
-package gui;
+package gui.textAreas;
 
 import java.util.Stack;
 
@@ -11,8 +11,8 @@ public abstract class AbstractEditableTextBox extends Region{
 	
 	protected double prefHeightRatio;
 	protected double prefWidthRatio;
-	protected double xLocation;
-	protected double yLocation;
+	public double xLocation;
+	public double yLocation;
 	protected double overlayWidth;
 	protected double overlayHeight;
 	protected String initText;

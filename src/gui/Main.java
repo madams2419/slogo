@@ -1,5 +1,10 @@
 package gui;
 
+import gui.textAreas.CommandBox;
+import gui.textAreas.PreviousCommandsBox;
+import gui.textAreas.StatusBox;
+import gui.textAreas.UserFunctionsAndCommands;
+import gui.textAreas.UserVariablesBox;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.application.Application;

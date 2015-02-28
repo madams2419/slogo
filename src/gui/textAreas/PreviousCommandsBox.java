@@ -1,4 +1,4 @@
-package gui;
+package gui.textAreas;
 
 import java.util.Stack;
 
@@ -40,7 +40,8 @@ public class PreviousCommandsBox extends AbstractEditableTextBox {
 	
 	public String makeExecutedCommandsList(){
 			
-			Stack<Command> executedCommands = Model.getExecutedCommands();
+			//Need to change Model.getExecutedCommands() to static
+			//Stack<Command> executedCommands = Model.getExecutedCommands();
 			StringBuilder sb = new StringBuilder();
 			while(!executedCommands.isEmpty()){
 				sb.append("\n" + executedCommands.pop());
