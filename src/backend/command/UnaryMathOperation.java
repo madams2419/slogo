@@ -9,7 +9,7 @@ public abstract class UnaryMathOperation extends Command {
 	}
 
 	public Double execute() {
-		return operate(params[0].execute());
+		return operate(params.get(0).execute());
 	}
 
 	public abstract Double operate(Double expr);

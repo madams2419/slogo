@@ -82,11 +82,11 @@ public class Model {
 		printCommands(root.getParams());
 	}
 
-	public void printCommands(Command[] params) {
+	public void printCommands(ArrayList<Command> params) {
 		for(Command c : params) {
 			System.out.println(c);
 
-			Command[] subParams = c.getParams();
+			ArrayList<Command> subParams = c.getParams();
 			printCommands(subParams);
 		}
 	}
@@ -120,9 +120,9 @@ public class Model {
 	}
 
 	public static void main (String[] args) {
-		//String userInput = "fd fd 50\n" + "fd 100";
+		String userInput = "fd fd 50\n" + "fd 100";
 
-		String userInput = "make :test fd 50\n" + "fd :test\n" + "fd :test\n"; 
+		//String userInput = "make :test fd 50\n" + "fd :test\n" + "fd :test\n"; 
 		
 		Model m = new Model();
 

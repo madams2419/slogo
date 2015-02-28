@@ -9,7 +9,7 @@ public abstract class BinaryMathOperation extends Command {
 	}
 
 	public Double execute() {
-		return operate(params[0].execute(), params[1].execute());
+		return operate(params.get(0).execute(), params.get(1).execute());
 	}
 
 	public abstract Double operate(Double expr1, Double expr2);

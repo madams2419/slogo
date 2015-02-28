@@ -1,23 +1,21 @@
 package backend.command;
 
-import java.util.function.BiFunction;
-
+import java.util.ArrayList;
 import backend.StringPair;
 
 
 public abstract class Command implements Cloneable {
 
 	private StringPair stringPair;
-	protected int numParams, curNumParams;
-	protected Command[] params;
+	protected int numParams;
+	protected ArrayList<Command> params;
 	protected Command parent;
 
 	public Command(StringPair stringPair, int numParams, Command parent) {
 		this.stringPair = stringPair;
 		this.numParams = numParams;
 		this.parent = parent;
-		curNumParams = 0;
-		params = new Command[numParams];
+		params = new ArrayList<>();
 	}
 
 	public abstract Double execute();
@@ -31,28 +29,11 @@ public abstract class Command implements Cloneable {
 	}
 
 	public boolean needsParams() {
-		return curNumParams < numParams;
+		return params.size() < numParams;
 	}
 
 	public void setParam(Command newParam) {
-		params[curNumParams] = newParam;
-		curNumParams++;
-	}
-
-	public Double[] evaluateParams() {
-		Double[] paramVals = new Double[numParams];
-		for(int i = 0; i < params.length; i++) {
-			paramVals[i] = params[i].execute();
-		}
-		return paramVals;
-	}
-
-	public Double operateOnParams(BiFunction<Command, Double, Double> func) {
-		Double result = new Double(0);
-		for(Command param : params) {
-			result = func.apply(param, result);
-		}
-		return result;
+		params.add(newParam);
 	}
 
 	public boolean hasParent() {
@@ -60,10 +41,10 @@ public abstract class Command implements Cloneable {
 	}
 
 	public Double getParamValue(int paramIndex) {
-		return params[paramIndex].execute();
+		return params.get(0).execute();
 	}
 
-	public Command[] getParams() {
+	public ArrayList<Command> getParams() {
 		return params;
 	}
 

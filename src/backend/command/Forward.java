@@ -10,7 +10,7 @@ public class Forward extends TurtleCommand {
 	}
 
 	public Double execute() {
-		Double pixels = params[0].execute();
+		Double pixels = params.get(0).execute();
 		turtle.move(pixels.intValue());
 		return pixels;
 	}
