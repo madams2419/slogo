@@ -89,7 +89,7 @@ public class TopMenu extends Region {
 		chooseBackgroundColor.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent t){
 				System.out.println("You are choosing a new Background Color");
-				Grid.setBGColor(openColorPicker());
+				Grid.setBGColor(paintToAwt(openColorPicker()));
 				//Grid.setBGColor(color); 
 			}
 		});
@@ -97,13 +97,14 @@ public class TopMenu extends Region {
 		choosePenColor.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent t){
 				System.out.println("You are choosing a new Pen color");
-				Turtle.setPenColor(openColorPicker());
+				Turtle.setPenColor(paintToAwt(openColorPicker()));
 				//Grid.setPenColor(color)
 			}
 		});
 		
 		turtle.getItems().addAll(chooseTurtle, chooseBackgroundColor);
 	}
+
 
 	public void createLanguageMenuItems(Menu language) {
 
@@ -157,6 +158,13 @@ public class TopMenu extends Region {
 		System.out.println(colorPicker.getColor()); 
 		colorPicker.getColor().toString();
 		return colorPicker.getColor();
+	}
+	
+	/*
+	 * (takes) javafx.scene.paint.Color --> (returns) java.awt.Color
+	 */
+	public java.awt.Color paintToAwt(javafx.scene.paint.Color c){
+		return new java.awt.Color((float)c.getRed(), (float)c.getGreen(), (float)c.getBlue());
 	}
 
 }
