@@ -11,8 +11,8 @@ public class UserVariablesBox extends AbstractEditableTextBox {
 
 		this.prefHeightRatio = prefHeightRatio;
 		this.prefWidthRatio = prefWidthRatio;
-		this.xLocation = xLocation;
-		this.yLocation = yLocation;
+		this.setxLocation(xLocation);
+		this.setyLocation(yLocation);
 		this.overlayHeight = overlayHeight;
 		this.overlayWidth = overlayWidth;
 		this.initText = initText;

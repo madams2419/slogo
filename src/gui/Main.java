@@ -21,11 +21,13 @@ public class Main extends Application {
 	private Group root;
 	private long lastTime;
 	private double infoBoxWidthPct = .2;
+	private double infoBoxHeightPct = .475;
 	private double commandBoxWidthPct = .5;
 	private double commandBoxHeightPct = .25;
 	private double topMenuHeightPct = .05;
-	
-	
+	private double buttonWidthPct = .1;
+	private double buttonHeightPct = .25;
+
 	Stage stage;
 	Scene scene;
 
@@ -45,69 +47,77 @@ public class Main extends Application {
 		Group root = new Group();
 		scene = new Scene(root, screenHeight, screenWidth);
 
-		CommandBox commandBox = new CommandBox(commandBoxHeightPct, commandBoxWidthPct, infoBoxWidthPct * screenWidth, screenHeight * (1 - commandBoxHeightPct), screenWidth,
-				screenHeight, "Type a Command...", true);
+		CommandBox commandBox = new CommandBox(commandBoxHeightPct,
+				commandBoxWidthPct, infoBoxWidthPct * screenWidth, screenHeight
+						* (1 - commandBoxHeightPct), screenWidth, screenHeight,
+				"Type a Command...", true);
 
-		StatusBox statusBox = new StatusBox(
-				.43, infoBoxWidthPct, 0, .05 * screenHeight, screenWidth,
-				screenHeight, "Status", false);
+		StatusBox statusBox = new StatusBox(infoBoxHeightPct, infoBoxWidthPct,
+				0, topMenuHeightPct * screenHeight, screenWidth, screenHeight,
+				"Status", false);
 		UserFunctionsAndCommands userFunctionsBox = new UserFunctionsAndCommands(
-				.42, infoBoxWidthPct, 0, .48 * screenHeight, screenWidth,
-				screenHeight, "User Defined Functions and Commands", false);
+				infoBoxHeightPct, infoBoxWidthPct, 0,
+				(topMenuHeightPct + infoBoxHeightPct) * screenHeight,
+				screenWidth, screenHeight,
+				"User Defined Functions and Commands", false);
 		UserVariablesBox userVariablesBox = new UserVariablesBox(
-				.42, infoBoxWidthPct, (1 - infoBoxWidthPct) * screenWidth, .05 * screenHeight, screenWidth,
-				screenHeight, "User Defined Variables", false);
+				infoBoxHeightPct, infoBoxWidthPct, (1 - infoBoxWidthPct)
+						* screenWidth, topMenuHeightPct * screenHeight,
+				screenWidth, screenHeight, "User Defined Variables", false);
 		PreviousCommandsBox prevCommandsBox = new PreviousCommandsBox(
-				.43, infoBoxWidthPct, (1 - infoBoxWidthPct) * screenWidth, .48 * screenHeight, screenWidth,
-				screenHeight, "Previously Executed Commands", false);
+				infoBoxHeightPct, infoBoxWidthPct, (1 - infoBoxWidthPct)
+						* screenWidth, (topMenuHeightPct + infoBoxHeightPct)
+						* screenHeight, screenWidth, screenHeight,
+				"Previously Executed Commands", false);
 
-		TopMenu topMenu = new TopMenu(screenWidth, screenHeight, topMenuHeightPct);
-		
-		RunButtons runButtons = new RunButtons(screenWidth, screenHeight);
-		
-		DrawingArea turtlePanel = new DrawingArea(screenWidth - (screenWidth * infoBoxWidthPct), 
-				screenHeight - (screenHeight * (commandBoxHeightPct + topMenuHeightPct)), 0, screenHeight - (screenHeight * topMenuHeightPct));
-		
+		TopMenu topMenu = new TopMenu(screenWidth, screenHeight,
+				topMenuHeightPct);
+
+		RunButtons runButtons = new RunButtons(screenWidth, screenHeight,
+				buttonWidthPct, buttonHeightPct,
+				(infoBoxWidthPct + commandBoxWidthPct) * screenWidth,
+				(1 - buttonHeightPct) * screenHeight);
+
+		DrawingArea turtlePanel = new DrawingArea(screenWidth
+				- (screenWidth * infoBoxWidthPct), screenHeight
+				- (screenHeight * (commandBoxHeightPct + topMenuHeightPct)),
+				infoBoxWidthPct, screenHeight
+						- (screenHeight * topMenuHeightPct));
 
 		// TODO
 		// Determine this location based on other values
 
-		commandBox.setLayoutX(commandBox.xLocation);
-		commandBox.setLayoutY(commandBox.yLocation);
-		
+		commandBox.setLayoutX(commandBox.getxLocation());
+		commandBox.setLayoutY(commandBox.getyLocation());
+
 		turtlePanel.setLayoutX(0);
 		turtlePanel.setLayoutY(screenHeight * topMenuHeightPct);
-		
-		
-		statusBox.setLayoutX(statusBox.xLocation);
-		statusBox.setLayoutY(statusBox.yLocation);
-		
-		userFunctionsBox.setLayoutX(userFunctionsBox.xLocation);
-		userFunctionsBox.setLayoutY(userFunctionsBox.yLocation);
-		
-		userVariablesBox.setLayoutX(userVariablesBox.xLocation);
-		userVariablesBox.setLayoutY(userVariablesBox.yLocation);
-		
-		prevCommandsBox.setLayoutX(prevCommandsBox.xLocation);
-		prevCommandsBox.setLayoutY(prevCommandsBox.yLocation);
 
-		
-		
+		statusBox.setLayoutX(statusBox.getxLocation());
+		statusBox.setLayoutY(statusBox.getyLocation());
+
+		userFunctionsBox.setLayoutX(userFunctionsBox.getxLocation());
+		userFunctionsBox.setLayoutY(userFunctionsBox.getyLocation());
+
+		userVariablesBox.setLayoutX(userVariablesBox.getxLocation());
+		userVariablesBox.setLayoutY(userVariablesBox.getyLocation());
+
+		prevCommandsBox.setLayoutX(prevCommandsBox.getxLocation());
+		prevCommandsBox.setLayoutY(prevCommandsBox.getyLocation());
 
 		root.getChildren().add(topMenu);
 
 		root.getChildren().add(commandBox);
-		
+
 		root.getChildren().add(runButtons);
-		
+
 		root.getChildren().add(statusBox);
 		root.getChildren().add(userFunctionsBox);
 		root.getChildren().add(userVariablesBox);
 		root.getChildren().add(prevCommandsBox);
-		
 
 		root.getChildren().add(turtlePanel);
-		
+
 		// ApplicationView av = new ApplicationView(screenWidth, screenHeight);
 		primaryStage.setScene(scene);
 		primaryStage.show();
@@ -136,7 +146,6 @@ public class Main extends Application {
 		return screenWidth;
 
 	}
-	
 
 	public static void main(String[] args) {
 		launch(args);

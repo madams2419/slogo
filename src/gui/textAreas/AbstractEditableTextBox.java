@@ -11,8 +11,8 @@ public abstract class AbstractEditableTextBox extends Region{
 	
 	protected double prefHeightRatio;
 	protected double prefWidthRatio;
-	public double xLocation;
-	public double yLocation;
+	private double xLocation;
+	private double yLocation;
 	protected double overlayWidth;
 	protected double overlayHeight;
 	protected String initText;
@@ -26,12 +26,12 @@ public abstract class AbstractEditableTextBox extends Region{
 
 		this.prefHeightRatio = prefHeightRatio;
 		this.prefWidthRatio = prefWidthRatio;
-		this.xLocation = xLocation;
-		this.yLocation = yLocation;
+		this.setxLocation(xLocation);
+		this.setyLocation(yLocation);
 		this.overlayHeight = overlayHeight; 
 		this.overlayWidth = overlayWidth;
 		this.initText = initText;
-		this.setStyle("-fx-border-color: black;");
+		//this.setStyle("-fx-border-color: black;");
 		this.isPrompt = isPrompt;
 		
 		this.textArea = makeTextArea();
@@ -77,6 +77,24 @@ public abstract class AbstractEditableTextBox extends Region{
 
 	}
 	
+	
+	
 	public abstract void updateText();
+
+	public double getxLocation() {
+		return xLocation;
+	}
+
+	public void setxLocation(double xLocation) {
+		this.xLocation = xLocation;
+	}
+
+	public double getyLocation() {
+		return yLocation;
+	}
+
+	public void setyLocation(double yLocation) {
+		this.yLocation = yLocation;
+	}
 
 }

@@ -8,16 +8,13 @@ import javafx.scene.layout.VBox;
 
 public class RunButtons extends Region{
 	
-	protected double overlayWidth;
-	protected double overlayHeight;
+	
 
-	public RunButtons(double overlayWidth, double overlayHeight) {
+	public RunButtons(double screenHeight, double screenWidth, double overlayWidthPct, double overlayHeightPct, double xLocation, double yLocation) {
 
 
-		this.overlayWidth = overlayWidth;
-		this.overlayHeight = overlayHeight;
-		this.setLayoutX(.5 * overlayWidth);
-		this.setLayoutY(.25 * overlayHeight);
+		this.setLayoutX(xLocation);
+		this.setLayoutY(yLocation);
 		
 //		addRunButton();
 //		addStepButton();
@@ -32,20 +29,21 @@ public class RunButtons extends Region{
 
 		runButton.setMaxWidth(Double.MAX_VALUE);
 		stepButton.setMaxWidth(Double.MAX_VALUE);
+		
 
 
 		VBox vbButtons = new VBox(); 
-		vbButtons.setSpacing(.05 * overlayHeight);
-		vbButtons.setPadding(new Insets(0, 20, 20, 20)); 
+		vbButtons.setSpacing(.03 * screenHeight);
+		vbButtons.setPadding(new Insets(40, 20, 30, 40)); 
 		vbButtons.getChildren().addAll(runButton, stepButton);
+		
+		System.out.println(vbButtons.getHeight());
 		
 		
 		this.getChildren().add(vbButtons);
-		
-		this.setLayoutX(.7 * overlayWidth);
-		this.setLayoutY(.8 * overlayHeight); 
-		this.setPrefHeight(.25 * overlayHeight); 
-		this.setPrefWidth(.1 * overlayWidth); 
+		 
+		this.setPrefHeight(overlayHeightPct * screenHeight); 
+		this.setPrefWidth(overlayWidthPct * screenWidth); 
 		
 		
 	}
