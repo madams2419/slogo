@@ -15,7 +15,7 @@ public class Main extends Application {
 	private KeyFrame keyFrame;
 	private Group root;
 	private long lastTime;
-	private double infoBoxWidthPct = .4;
+	private double infoBoxWidthPct = .2;
 	private double commandBoxWidthPct = .5;
 	private double commandBoxHeightPct = .25;
 	private double topMenuHeightPct = .05;
@@ -40,20 +40,20 @@ public class Main extends Application {
 		Group root = new Group();
 		scene = new Scene(root, screenHeight, screenWidth);
 
-		EditableTextBox commandBox = new EditableTextBox(commandBoxHeightPct, commandBoxWidthPct, 0, screenHeight * (1 - commandBoxHeightPct), screenWidth,
+		CommandBox commandBox = new CommandBox(commandBoxHeightPct, commandBoxWidthPct, infoBoxWidthPct * screenWidth, screenHeight * (1 - commandBoxHeightPct), screenWidth,
 				screenHeight, "Type a Command...", true);
 
-		EditableTextBox statusBox = new EditableTextBox(
-				.25, infoBoxWidthPct, (1 - infoBoxWidthPct) * screenWidth, .75 * screenHeight, screenWidth,
+		StatusBox statusBox = new StatusBox(
+				.43, infoBoxWidthPct, 0, .05 * screenHeight, screenWidth,
 				screenHeight, "Status", false);
-		EditableTextBox userFunctionsBox = new EditableTextBox(
-				.25, infoBoxWidthPct, (1 - infoBoxWidthPct) * screenWidth, .5 * screenHeight, screenWidth,
+		UserFunctionsAndCommands userFunctionsBox = new UserFunctionsAndCommands(
+				.42, infoBoxWidthPct, 0, .48 * screenHeight, screenWidth,
 				screenHeight, "User Defined Functions and Commands", false);
-		EditableTextBox userVariablesBox = new EditableTextBox(
-				.25, infoBoxWidthPct, (1 - infoBoxWidthPct) * screenWidth, .25 * screenHeight, screenWidth,
+		UserVariablesBox userVariablesBox = new UserVariablesBox(
+				.42, infoBoxWidthPct, (1 - infoBoxWidthPct) * screenWidth, .05 * screenHeight, screenWidth,
 				screenHeight, "User Defined Variables", false);
-		EditableTextBox prevCommandsBox = new EditableTextBox(
-				.2, infoBoxWidthPct, (1 - infoBoxWidthPct) * screenWidth, (float)0.05 * (float) screenHeight, screenWidth,
+		PreviousCommandsBox prevCommandsBox = new PreviousCommandsBox(
+				.43, infoBoxWidthPct, (1 - infoBoxWidthPct) * screenWidth, .48 * screenHeight, screenWidth,
 				screenHeight, "Previously Executed Commands", false);
 
 		TopMenu topMenu = new TopMenu(screenWidth, screenHeight, topMenuHeightPct);

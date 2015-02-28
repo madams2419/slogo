@@ -1,9 +1,13 @@
 package gui;
 
+import java.util.Stack;
 
-public class CommandBox extends AbstractEditableTextBox {
+import backend.Model;
+import backend.command.Command;
 
-	public CommandBox(double prefHeightRatio, double prefWidthRatio,
+public class PreviousCommandsBox extends AbstractEditableTextBox {
+
+	public PreviousCommandsBox(double prefHeightRatio, double prefWidthRatio,
 			double xLocation, double yLocation, double overlayWidth,
 			double overlayHeight, String initText, boolean isPrompt) {
 		super(prefHeightRatio, prefWidthRatio, xLocation, yLocation, overlayWidth,
@@ -24,15 +28,27 @@ public class CommandBox extends AbstractEditableTextBox {
 
 		setRegionPreferences();
 		addTextAreaToRegion();
+		
 	}
 
 	@Override
 	public void updateText() {
-		// TODO Auto-generated method stub
 		
+		textArea.setText(makeExecutedCommandsList()); 
 		
 	}
+	
+	public String makeExecutedCommandsList(){
+			
+			Stack<Command> executedCommands = Model.getExecutedCommands();
+			StringBuilder sb = new StringBuilder();
+			while(!executedCommands.isEmpty()){
+				sb.append("\n" + executedCommands.pop());
+			}
+			
+			return sb.toString();
+			
+			
+		}
 
-
-		
 }

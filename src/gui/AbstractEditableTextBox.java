@@ -7,8 +7,8 @@ import backend.Model;
 import javafx.scene.control.TextArea;
 import javafx.scene.layout.Region;
 
-public class EditableTextBox extends Region {
-
+public abstract class AbstractEditableTextBox extends Region{
+	
 	protected double prefHeightRatio;
 	protected double prefWidthRatio;
 	protected double xLocation;
@@ -19,8 +19,7 @@ public class EditableTextBox extends Region {
 	protected TextArea textArea;
 	public boolean isPrompt;
 	
-
-	public EditableTextBox(double prefHeightRatio,
+	public AbstractEditableTextBox(double prefHeightRatio,
 			double prefWidthRatio, double xLocation, double yLocation,
 			double overlayWidth, double overlayHeight, String initText,
 			boolean isPrompt) {
@@ -41,7 +40,7 @@ public class EditableTextBox extends Region {
 		addTextAreaToRegion();
 
 	}
-
+	
 	public TextArea makeTextArea() {
 
 		TextArea textArea = new TextArea();
@@ -53,7 +52,7 @@ public class EditableTextBox extends Region {
 		return textArea;
 
 	}
-
+	
 	private void addTextToTextArea(TextArea ta) {
 		if (this.isPrompt) {
 			ta.setPromptText(this.initText);
@@ -64,33 +63,20 @@ public class EditableTextBox extends Region {
 		}
 
 	}
-
+	
 	public void setRegionPreferences() {
 
 		this.setPrefHeight(prefHeightRatio * overlayHeight);
 		this.setWidth(prefWidthRatio * overlayWidth);
 
 	}
-
+	
 	public void addTextAreaToRegion() {
 
 		this.getChildren().add(this.textArea);
 
 	}
 	
-	public void makeExecutedCommandsList(){
-		
-		Stack<Command> executedCommands = Model.getExecutedCommands();
-		StringBuilder sb = new StringBuilder();
-		while(!executedCommands.isEmpty()){
-			sb.append("\n" + executedCommands.pop());
-		}
-		
-		textArea.setText(textArea.getText() + sb.toString());
-		
-		
-		
-		
-	}
+	public abstract void updateText();
 
 }

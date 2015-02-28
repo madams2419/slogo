@@ -1,15 +1,13 @@
 package gui;
 
+public class UserFunctionsAndCommands extends AbstractEditableTextBox{
 
-public class CommandBox extends AbstractEditableTextBox {
-
-	public CommandBox(double prefHeightRatio, double prefWidthRatio,
-			double xLocation, double yLocation, double overlayWidth,
-			double overlayHeight, String initText, boolean isPrompt) {
+	public UserFunctionsAndCommands(double prefHeightRatio,
+			double prefWidthRatio, double xLocation, double yLocation,
+			double overlayWidth, double overlayHeight, String initText,
+			boolean isPrompt) {
 		super(prefHeightRatio, prefWidthRatio, xLocation, yLocation, overlayWidth,
 				overlayHeight, initText, isPrompt);
-		
-		
 		this.prefHeightRatio = prefHeightRatio;
 		this.prefWidthRatio = prefWidthRatio;
 		this.xLocation = xLocation;
@@ -30,9 +28,6 @@ public class CommandBox extends AbstractEditableTextBox {
 	public void updateText() {
 		// TODO Auto-generated method stub
 		
-		
 	}
 
-
-		
 }

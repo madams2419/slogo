@@ -42,7 +42,7 @@ public class RunButtons extends Region{
 		
 		this.getChildren().add(vbButtons);
 		
-		this.setLayoutX(.5 * overlayWidth);
+		this.setLayoutX(.7 * overlayWidth);
 		this.setLayoutY(.8 * overlayHeight); 
 		this.setPrefHeight(.25 * overlayHeight); 
 		this.setPrefWidth(.1 * overlayWidth); 
