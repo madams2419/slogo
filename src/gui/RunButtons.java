@@ -15,10 +15,7 @@ public class RunButtons extends Region{
 
 		this.setLayoutX(xLocation);
 		this.setLayoutY(yLocation);
-		
-//		addRunButton();
-//		addStepButton();
-//		
+
 		BorderPane border = new BorderPane();
 		border.setPadding(new Insets(0, 0, 20, 20));
 
@@ -37,9 +34,7 @@ public class RunButtons extends Region{
 		vbButtons.setPadding(new Insets(40, 20, 30, 40)); 
 		vbButtons.getChildren().addAll(runButton, stepButton);
 		
-		System.out.println(vbButtons.getHeight());
-		
-		
+			
 		this.getChildren().add(vbButtons);
 		 
 		this.setPrefHeight(overlayHeightPct * screenHeight); 
