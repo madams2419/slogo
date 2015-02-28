@@ -18,14 +18,16 @@ public class Turtle {
 		this.location = location;
 		this.heading = heading;
 		this.penColor = penColor;
-		penDown = false;
+		penDown = true; // DEBUG
 		lines = new ArrayList<>();
 	}
 
-	public void move(int magnitude) {
-		int deltaX = (int) Math.cos(heading.getAngleRads()) * magnitude;
-		int deltaY = (int) Math.sin(heading.getAngleRads()) * magnitude;
-		Point nextLocation = new Point(location.x + deltaX, location.y + deltaY);
+	public void move(Double magnitude) {
+		double deltaX = Math.cos(heading.getAngleRads()) * magnitude;
+		double deltaY = Math.sin(heading.getAngleRads()) * magnitude;
+		Point nextLocation = new Point(location.x + (int) deltaX, location.y + (int) deltaY);
+		
+		System.out.println("Next loc: " + nextLocation);
 
 		Line newLine = new Line(location, nextLocation, (penDown) ? penColor : null);
 
@@ -38,12 +40,12 @@ public class Turtle {
 	}
 
 	public void rotateRight(double degrees) {
-		double newHeading = heading.getAngle() + degrees;
+		double newHeading = heading.getAngle() - degrees;
 		setHeading(newHeading);
 	}
 
 	public void rotateLeft(double degrees) {
-		double newHeading = heading.getAngle() - degrees;
+		double newHeading = heading.getAngle() + degrees;
 		setHeading(newHeading);
 	}
 

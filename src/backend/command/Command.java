@@ -41,7 +41,7 @@ public abstract class Command implements Cloneable {
 	}
 
 	public Double getParamValue(int paramIndex) {
-		return params.get(0).execute();
+		return params.get(paramIndex).execute();
 	}
 
 	public ArrayList<Command> getParams() {

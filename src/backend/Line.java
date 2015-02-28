@@ -2,6 +2,7 @@ package backend;
 
 import java.awt.*;
 import java.awt.geom.Line2D;
+import java.awt.geom.Point2D;
 
 public class Line extends Line2D.Double {
 
@@ -26,17 +27,25 @@ public class Line extends Line2D.Double {
 	}
 
 	protected Point getStartPoint() {
-		return (Point) super.getP1();
+		return convertDoublePoint(super.getP1());
 	}
 
-	protected Point getEndPoints() {
-		return (Point) super.getP2();
+	protected Point getEndPoint() {
+		return convertDoublePoint(super.getP2());
+	}
+	
+	private Point convertDoublePoint(Point2D ptd) {
+		return new Point((int) ptd.getX(), (int) ptd.getY());
 	}
 
 	protected double getLength() {
 		double dx = super.getX1() - super.getX2();
 		double dy = super.getY1() - super.getY2();
 		return Math.sqrt(dx*dx + dy*dy);
+	}
+	
+	public String toString() {
+		return String.format ("Line: (%d, %d) -> (%d, %d)", getStartPoint().x, getStartPoint().y, getEndPoint().x, getEndPoint().y);
 	}
 
 }

@@ -10,7 +10,7 @@ public class Backward extends TurtleCommand {
 
 	public Double execute() {
 		Double pixels = params.get(0).execute();
-		turtle.move(-pixels.intValue());
+		turtle.move(-pixels);
 		return pixels;
 	}
 

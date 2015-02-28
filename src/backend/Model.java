@@ -120,7 +120,7 @@ public class Model {
 	}
 
 	public static void main (String[] args) {
-		String userInput = "fd fd 50\n" + "fd 100";
+		String userInput = "fd 50\n" + "right 45\n" + "fd 100";
 
 		//String userInput = "make :test fd 50\n" + "fd :test\n" + "fd :test\n"; 
 		
@@ -129,6 +129,12 @@ public class Model {
 		m.parseProgram(userInput);
 		
 		m.executeAllCommands();
+		
+		ArrayList<Line> lines = m.getGrid().getLines();
+		
+		for(Line l : lines) {
+			System.out.println(l);
+		}
 	}
 
 }
