@@ -1,10 +1,11 @@
 package backend.command;
 
+import backend.StringPair;
 
 public class Cosine extends UnaryMathOperation {
-
-	public Cosine() {
-		super("COS");
+	
+	public Cosine(StringPair stringPair, Command parent) {
+		super(stringPair, parent);
 	}
 
 	public Double operate(Double degrees) {

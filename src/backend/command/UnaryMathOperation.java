@@ -1,10 +1,11 @@
 package backend.command;
 
+import backend.StringPair;
 
 public abstract class UnaryMathOperation extends Command {
 
-	public UnaryMathOperation(String name) {
-		super(name, 1);
+	public UnaryMathOperation(StringPair stringPair, Command parent) {
+		super(stringPair, 1, parent);
 	}
 
 	public Double execute() {

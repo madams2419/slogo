@@ -1,11 +1,11 @@
 package backend.command;
 
-import backend.Turtle;
+import backend.*;
 
 public class Backward extends TurtleCommand {
 
-	public Backward(Turtle turtle) {
-		super("BACK", 1, turtle);
+	public Backward(StringPair stringPair, Command parent, Turtle turtle) {
+		super(stringPair, 1, parent, turtle);
 	}
 
 	public Double execute() {

@@ -11,7 +11,6 @@ public abstract class Command {
 	protected int numParams, curNumParams;
 	protected Command[] params;
 	protected Command parent;
-	protected Double returnVal;
 
 	public Command(StringPair stringPair, int numParams, Command parent) {
 		this.stringPair = stringPair;
@@ -19,7 +18,6 @@ public abstract class Command {
 		this.parent = parent;
 		curNumParams = 0;
 		params = new Command[numParams];
-		returnVal = null;
 	}
 
 	public abstract Double execute();
@@ -27,7 +25,7 @@ public abstract class Command {
 	public String toString() {
 		return stringPair.getProperty();
 	}
-	
+
 	public String getTypedString() {
 		return stringPair.getValue();
 	}
@@ -64,13 +62,9 @@ public abstract class Command {
 	public Double getParamValue(int paramIndex) {
 		return params[paramIndex].execute();
 	}
-	
+
 	public Command[] getParams() {
 		return params;
-	}
-
-	public Double getReturnVal() {
-		return (returnVal != null) ? returnVal : execute();
 	}
 
 	public Command getParent() {

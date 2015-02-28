@@ -34,7 +34,7 @@ public class Model {
 	private Grid grid;
 	private Queue<Command> pendingCommands;
 	private static Stack<Command> executedCommands;
-	private HashMap<String, Double> userVariables; 
+	private HashMap<String, Double> userVariables;
 	private HashMap<String, Command> userFunctions;
 	private String helpPagePath;
 	private CommandFactory comFactory;
@@ -63,19 +63,19 @@ public class Model {
 		executedCommands.push(targetCommand);
 		return targetCommand;
 	}
-	
+
 	public void printCommandTree() {
 		Command root = pendingCommands.peek();
-		
+
 		System.out.println(root);
-		
+
 		printCommands(root.getParams());
 	}
-	
+
 	public void printCommands(Command[] params) {
 		for(Command c : params) {
 			System.out.println(c);
-			
+
 			Command[] subParams = c.getParams();
 			printCommands(subParams);
 		}
@@ -108,20 +108,20 @@ public class Model {
 	public String getHelpPagePath() {
 		return helpPagePath;
 	}
-	
+
 	public static void main (String[] args) {
 		String userInput = "fd fd 50\nfd 100";
-		
+
 		Model m = new Model();
-		
+
 		m.parseProgram(userInput);
-		
+
 		m.executeNextCommand();
-		
+
 		m.executeNextCommand();
-		
+
 		Turtle t = m.getGrid().getActiveTurtle();
-		
+
 		System.out.println("Turtle (x,y): " + t.getLocation().getX() + ", " + t.getLocation().getY());
 	}
 

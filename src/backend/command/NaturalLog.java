@@ -1,10 +1,12 @@
 package backend.command;
 
+import backend.StringPair;
+
 
 public class NaturalLog extends UnaryMathOperation {
-
-	public NaturalLog() {
-		super("LOG");
+	
+	public NaturalLog(StringPair stringPair, Command parent) {
+		super(stringPair, parent);
 	}
 
 	public Double operate(Double expr) {

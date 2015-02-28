@@ -1,13 +1,13 @@
 package backend.command;
 
-import backend.Turtle;
+import backend.*;
 
 public abstract class TurtleCommand extends Command {
 
 	protected Turtle turtle;
 
-	public TurtleCommand(String name, int numParams, Command parent, Turtle turtle) {
-		super(name, numParams, parent);
+	public TurtleCommand(StringPair stringPair, int numParams, Command parent, Turtle turtle) {
+		super(stringPair, numParams, parent);
 		this.turtle = turtle;
 	}
 

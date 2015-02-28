@@ -1,10 +1,12 @@
 package backend.command;
 
+import backend.StringPair;
+
 
 public class Remainder extends BinaryMathOperation {
 
-	public Remainder() {
-		super("REMAINDER");
+	public Remainder(StringPair stringPair, Command parent) {
+		super(stringPair, parent);
 	}
 
 	public Double operate(Double expr1, Double expr2) {

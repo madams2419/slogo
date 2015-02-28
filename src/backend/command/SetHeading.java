@@ -1,11 +1,12 @@
 package backend.command;
 
+import backend.StringPair;
 import backend.Turtle;
 
 public class SetHeading extends TurtleCommand {
 
-	public SetHeading(Turtle turtle) {
-		super("SETHEADING", 1, turtle);
+	public SetHeading(StringPair stringPair, Command parent, Turtle turtle) {
+		super(stringPair, 1, parent, turtle);
 	}
 
 	public Double execute() {

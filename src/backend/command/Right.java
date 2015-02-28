@@ -1,11 +1,12 @@
 package backend.command;
 
+import backend.StringPair;
 import backend.Turtle;
 
 public class Right extends TurtleCommand {
 
-	public Right(Turtle turtle) {
-		super("RIGHT", 1, turtle);
+	public Right(StringPair stringPair, Command parent, Turtle turtle) {
+		super(stringPair, 1, parent, turtle);
 	}
 
 	public Double execute() {

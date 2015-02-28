@@ -1,9 +1,11 @@
 package backend.command;
 
-public abstract class BinaryMathOperation extends Command {
+import backend.StringPair;
 
-	public BinaryMathOperation(String name) {
-		super(name, 2);
+public abstract class BinaryMathOperation extends Command {
+	
+	public BinaryMathOperation(StringPair stringPair, Command parent) {
+		super(stringPair, 2, parent);
 	}
 
 	public Double execute() {
