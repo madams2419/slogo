@@ -103,7 +103,7 @@ public class Model {
 		return grid;
 	}
 
-	public static Stack<Command> getExecutedCommands() {
+	public Stack<Command> getExecutedCommands() {
 		return executedCommands;
 	}
 
