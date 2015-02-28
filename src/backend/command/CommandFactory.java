@@ -5,15 +5,18 @@ import java.awt.Dimension;
 import java.awt.Point;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
+import java.util.HashMap;
 
 import backend.*;
 
 public class CommandFactory {
 
 	Grid grid;
+	HashMap<String, Double> userVariables;
 
-	public CommandFactory(Grid grid) {
+	public CommandFactory(Grid grid, HashMap<String, Double> userVariables) {
 		this.grid = grid;
+		this.userVariables = userVariables;
 	}
 
 	public Command getCommand(StringPair stringPair, Command parent) {
@@ -32,6 +35,8 @@ public class CommandFactory {
 			} else {
 				if(comClass.getName().contains("Constant"))
 					newCommand = (Command) comConstructors[0].newInstance(stringPair, parent);
+				else if(comClass.getName().contains("Variable"))
+					newCommand = (Command) comConstructors[0].newInstance(stringPair, userVariables, parent);
 				else
 					newCommand = (Command) comConstructors[0].newInstance(stringPair, parent);
 			}

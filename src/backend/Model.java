@@ -48,7 +48,7 @@ public class Model {
 		userVariables = new HashMap<>();
 		userFunctions = new HashMap<>();
 		helpPagePath = helpPgPath;
-		comFactory = new CommandFactory(grid);
+		comFactory = new CommandFactory(grid, userVariables);
 		parser = new SLogoParser(comFactory);
 	}
 
@@ -62,6 +62,16 @@ public class Model {
 		targetCommand.execute();
 		executedCommands.push(targetCommand);
 		return targetCommand;
+	}
+	
+	public Stack<Command> executeAllCommands() {
+		while(!pendingCommands.isEmpty()) {
+			executeNextCommand();
+			Turtle t = grid.getActiveTurtle();
+			System.out.println("Turtle (x,y): " + t.getLocation().getX() + ", " + t.getLocation().getY());
+		}
+		
+		return executedCommands;
 	}
 
 	public void printCommandTree() {
@@ -110,19 +120,15 @@ public class Model {
 	}
 
 	public static void main (String[] args) {
-		String userInput = "fd fd 50\nfd 100";
+		//String userInput = "fd fd 50\n" + "fd 100";
 
+		String userInput = "make :test fd 50\n" + "fd :test\n" + "fd :test\n"; 
+		
 		Model m = new Model();
 
 		m.parseProgram(userInput);
-
-		m.executeNextCommand();
-
-		m.executeNextCommand();
-
-		Turtle t = m.getGrid().getActiveTurtle();
-
-		System.out.println("Turtle (x,y): " + t.getLocation().getX() + ", " + t.getLocation().getY());
+		
+		m.executeAllCommands();
 	}
 
 }

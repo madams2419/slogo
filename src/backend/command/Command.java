@@ -5,7 +5,7 @@ import java.util.function.BiFunction;
 import backend.StringPair;
 
 
-public abstract class Command {
+public abstract class Command implements Cloneable {
 
 	private StringPair stringPair;
 	protected int numParams, curNumParams;
