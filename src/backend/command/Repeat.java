@@ -4,26 +4,15 @@ import java.util.HashMap;
 
 import backend.StringPair;
 
-public class Repeat extends Command {
-
-	HashMap<String, Double> userVariables;
+public class Repeat extends DoTimes {
 
 	public Repeat(StringPair stringPair, HashMap<String, Double> userVariables, Command parent) {
-		super(stringPair, 2, parent);
-		this.userVariables = userVariables;
+		super(stringPair, userVariables, parent);
 	}
 
 	public Double execute() {
-		int numReps = getParamValue(0).intValue();
-		Double returnVal = 0.0;
-
-		for(int i = 1; i <= numReps; i++) {
-			// refactor duplicted code
-			userVariables.put(":repcount", new Double(i));
-			returnVal = getParamValue(1);
-		}
-
-		return returnVal;
+		int limit = getParamValue(0).intValue();
+		return doTimes(limit, ":repcount");
 	}
 
 }

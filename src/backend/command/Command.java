@@ -40,6 +40,10 @@ public abstract class Command implements Cloneable {
 		params.add(newParam);
 	}
 
+	public Command getParam(int index) {
+		return params.get(index);
+	}
+
 	public boolean hasParent() {
 		return parent != null;
 	}

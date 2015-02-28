@@ -124,7 +124,7 @@ public class Model {
 
 		//String userInput = "make :test fd 50\n" + "fd :test\n" + "fd :test\n";
 
-		String userInput = "repeat 5 [ fd 10 ]";
+		String userInput = "dotimes [ :test 5 ] [ fd :test ]";
 
 		Model m = new Model();
 
