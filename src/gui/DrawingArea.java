@@ -28,7 +28,7 @@ public class DrawingArea extends Region {
 		this.getChildren().add(drawingCanvas);
 		this.setHeight(drawingAreaHeight);
 		this.setWidth(drawingAreaWidth);
-		this.setStyle("-fx-border-color: black;");
+		//this.setStyle("-fx-border-color: black;");
 
 	}
 

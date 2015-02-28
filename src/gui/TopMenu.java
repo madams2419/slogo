@@ -18,6 +18,7 @@ public class TopMenu extends Region {
 	protected double overlayWidth;
 	protected double overlayHeight;
 	protected double heightPct;
+	protected Model model = new Model();
 
 	public TopMenu(double overlayWidth, double overlayHeight, double heightPct) {
 
@@ -88,8 +89,7 @@ public class TopMenu extends Region {
 		chooseBackgroundColor.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent t){
 				System.out.println("You are choosing a new Background Color");
-				openColorPicker();
-				Grid.setBGColor(openColorPicker());
+				Grid.setBGColor(paintToAwt(openColorPicker()));
 				//Grid.setBGColor(color); 
 			}
 		});
@@ -97,7 +97,7 @@ public class TopMenu extends Region {
 		choosePenColor.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent t){
 				System.out.println("You are choosing a new Pen color");
-				Turtle.setPenColor(openColorPicker());
+				Turtle.setPenColor(paintToAwt(openColorPicker()));
 				//Grid.setPenColor(color)
 			}
 		});
@@ -105,19 +105,20 @@ public class TopMenu extends Region {
 		turtle.getItems().addAll(chooseTurtle, chooseBackgroundColor);
 	}
 
+
 	public void createLanguageMenuItems(Menu language) {
 
 		MenuItem English = new MenuItem("English");
 		English.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent t) {
-				Model.setLanguage(English.getText());
+				model.setLanguage(English.getText());
 				System.out.println("Your Language Choice is: English");
 			}
 		});
 		MenuItem French = new MenuItem("French");
 		French.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent t) {
-				Model.setLanguage(French.getText());
+				model.setLanguage(French.getText());
 				System.out.println("Your Language Choice is: French");
 			}
 		});
@@ -125,14 +126,14 @@ public class TopMenu extends Region {
 		MenuItem Italian = new MenuItem("Italian");
 		Italian.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent t) {
-				Model.setLanguage(Italian.getText());
+				model.setLanguage(Italian.getText());
 				System.out.println("Your Language Choice is: Italian");
 			}
 		});
 		MenuItem German = new MenuItem("German");
 		German.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent t) {
-				Model.setLanguage(German.getText());
+				model.setLanguage(German.getText());
 				System.out.println("Your Language Choice is: German");
 			}
 		});
@@ -155,7 +156,15 @@ public class TopMenu extends Region {
 		Stage s = new Stage();
 		colorPicker.start(s);
 		System.out.println(colorPicker.getColor()); 
+		colorPicker.getColor().toString();
 		return colorPicker.getColor();
+	}
+	
+	/*
+	 * (takes) javafx.scene.paint.Color --> (returns) java.awt.Color
+	 */
+	public java.awt.Color paintToAwt(javafx.scene.paint.Color c){
+		return new java.awt.Color((float)c.getRed(), (float)c.getGreen(), (float)c.getBlue());
 	}
 
 }
