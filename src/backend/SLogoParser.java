@@ -48,16 +48,17 @@ public class SLogoParser {
 		Queue<Command> commandQueue = new LinkedList<>();
 
 		for(StringPair sp : spList) {
-			if (sp.getProperty() == "ListEnd") {
-				if (targetNode.getProperty() == "List")
+			if (sp.getProperty().equals("ListEnd")) {
+				if (targetNode.getProperty().equals("List")) {
 					((backend.command.List)targetNode).setComplete();
-				else
+					targetNode = bubbleUp(targetNode);
+				} else {
 					System.out.println("ERROR: list ending where there shouldn't be one.");
 					//TODO error, throw some sort of exception or something
-			}
+				}
 
-			// assumption is that targetNode is null or needs more params
-			if (targetNode == null) {
+				// assumption is that targetNode is null or needs more params
+			} else if (targetNode == null) {
 				targetNode = comFactory.getCommand(sp, null);
 
 			} else {
@@ -69,13 +70,7 @@ public class SLogoParser {
 					continue;
 				} else {
 					// find first incomplete node. if no incomplete node is found, add root node to treelist and create new target node
-					while (!targetNode.needsParams()) {
-						if (targetNode.hasParent()) {
-							targetNode = targetNode.getParent();
-						} else {
-							break;
-						}
-					}
+					targetNode = bubbleUp(targetNode);
 				}
 			}
 
@@ -87,6 +82,17 @@ public class SLogoParser {
 		}
 
 		return commandQueue;
+	}
+
+	private Command bubbleUp(Command targetNode) {
+		while (!targetNode.needsParams()) {
+			if (targetNode.hasParent()) {
+				targetNode = targetNode.getParent();
+			} else {
+				break;
+			}
+		}
+		return targetNode;
 	}
 
 	private boolean match (String input, Pattern regex) {

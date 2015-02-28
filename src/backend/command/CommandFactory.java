@@ -35,7 +35,7 @@ public class CommandFactory {
 			} else {
 				if(comClass.getName().contains("Constant"))
 					newCommand = (Command) comConstructors[0].newInstance(stringPair, parent);
-				else if(comClass.getName().contains("Variable"))
+				else if(comClass.getName().contains("Variable") || comClass.getName().contains("Repeat"))
 					newCommand = (Command) comConstructors[0].newInstance(stringPair, userVariables, parent);
 				else
 					newCommand = (Command) comConstructors[0].newInstance(stringPair, parent);
