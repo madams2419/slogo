@@ -4,32 +4,19 @@ import java.util.HashMap;
 
 import backend.StringPair;
 
-public class DoTimes extends Command {
+public class DoTimes extends For {
 
-	HashMap<String, Double> userVariables;
 
 	public DoTimes(StringPair stringPair, HashMap<String, Double> userVariables, Command parent) {
-		super(stringPair, 2, parent);
-		this.userVariables = userVariables;
+		super(stringPair, userVariables, parent);
 	}
 
 	public Double execute() {
 		int limit = getParam(0).getParamValue(1).intValue();
 		String countVar = getParam(0).getParam(0).getValue();
 
-		return doTimes(limit, countVar);
+		return forLoop(1, limit, 1, countVar);
 	}
 
-	protected Double doTimes(int limit, String countVar) {
-		Double returnVal = 0.0;
-
-		for(int i = 1; i <= limit; i++) {
-			// refactor duplicted code
-			userVariables.put(countVar, new Double(i));
-			returnVal = getParam(1).execute();
-		}
-
-		return returnVal;
-	}
 
 }
