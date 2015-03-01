@@ -4,8 +4,16 @@ import java.util.Stack;
 
 import backend.command.*;
 import backend.Model;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
+import javafx.scene.layout.Border;
+import javafx.scene.layout.BorderStroke;
 import javafx.scene.layout.Region;
+import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
+import javafx.scene.text.Text;
+import javafx.scene.text.TextAlignment;
 
 public abstract class AbstractEditableTextBox extends Region{
 	
@@ -31,11 +39,27 @@ public abstract class AbstractEditableTextBox extends Region{
 		this.overlayHeight = overlayHeight; 
 		this.overlayWidth = overlayWidth;
 		this.initText = initText;
-		//this.setStyle("-fx-border-color: black;");
+		
+	
+		this.setStyle("-fx-border-width: 20;");
+		this.setStyle("-fx-border-style: dashed;");
+		//this.setStyle("-fx-border-radius: 20;");
+		//this.setStyle("-fx-border-insets: 5;");
+		this.setStyle("-fx-border-color: red;");
+		
+		final String cssDefault = "-fx-border-color: blue;\n"
+                + "-fx-border-insets: 5;\n"
+                + "-fx-border-width: 3;\n"
+                + "-fx-border-style: dashed;\n";
+       
+   
+        //this.setStyle(cssDefault);
+		
+
 		this.isPrompt = isPrompt;
 		
 		this.textArea = makeTextArea();
-
+		//this.setBorder(new Border(new BorderStroke(Color.BLACK, )))
 		setRegionPreferences();
 		addTextAreaToRegion();
 
@@ -59,8 +83,24 @@ public abstract class AbstractEditableTextBox extends Region{
 			ta.getText();
 			
 		} else {
-			ta.setText(this.initText);
+			//ta.setText(this.initText);
+			makeTitle(this.initText);
 		}
+
+	}
+	
+	//LOTS OF HARD CODED CONSTANTS HERE
+	
+	private void makeTitle(String titleText){
+		System.out.println(titleText);
+		Label title = new Label(titleText);
+		//title.setTextFill(Color.RED);
+		//title.setTextAlignment(TextAlignment.CENTER);
+		//title.setFont(new Font(14)); 
+		title.setStyle("-fx-background-color: linear-gradient(#2A5058, #61a2b1);");
+		//title.setStyle("-fx-fill: blue;");
+		this.getChildren().add(title);
+		
 
 	}
 	
@@ -76,8 +116,6 @@ public abstract class AbstractEditableTextBox extends Region{
 		this.getChildren().add(this.textArea);
 
 	}
-	
-	
 	
 	public abstract void updateText();
 

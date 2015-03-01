@@ -43,9 +43,9 @@ public class PreviousCommandsBox extends AbstractEditableTextBox {
 			//Need to change Model.getExecutedCommands() to static
 			//Stack<Command> executedCommands = Model.getExecutedCommands();
 			StringBuilder sb = new StringBuilder();
-			while(!executedCommands.isEmpty()){
-				sb.append("\n" + executedCommands.pop());
-			}
+			//while(!executedCommands.isEmpty()){
+				//sb.append("\n" + executedCommands.pop());
+			//}
 			
 			return sb.toString();
 			
