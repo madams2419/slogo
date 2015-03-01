@@ -21,6 +21,7 @@ import javafx.stage.Stage;
 import javafx.scene.shape.*;
 import backend.Line;
 import backend.Model;
+import backend.Turtle;
 import backend.command.Command;
 
 
@@ -42,6 +43,8 @@ public class Main extends Application {
 	private RunButtons runButtons;
 	private CommandBox commandBox;
 	private DrawingArea turtlePanel;
+	private PreviousCommandsBox prevCommandsBox;
+	private StatusBox statusBox;
 	//these shouldn't be instance variables
 	/////////////////////////////////////////
 	
@@ -75,7 +78,7 @@ public class Main extends Application {
 						* (1 - commandBoxHeightPct), screenWidth, screenHeight,
 				"Type a Command...", true);
 
-		StatusBox statusBox = new StatusBox(infoBoxHeightPct, infoBoxWidthPct,
+		statusBox = new StatusBox(infoBoxHeightPct, infoBoxWidthPct,
 				0, topMenuHeightPct * screenHeight, screenWidth, screenHeight,
 				"Status", false);
 		UserFunctionsAndCommands userFunctionsBox = new UserFunctionsAndCommands(
@@ -87,7 +90,7 @@ public class Main extends Application {
 				infoBoxHeightPct, infoBoxWidthPct, (1 - infoBoxWidthPct)
 						* screenWidth, topMenuHeightPct * screenHeight,
 				screenWidth, screenHeight, "User Defined Variables", false);
-		PreviousCommandsBox prevCommandsBox = new PreviousCommandsBox(
+		prevCommandsBox = new PreviousCommandsBox(
 				infoBoxHeightPct, infoBoxWidthPct, (1 - infoBoxWidthPct)
 						* screenWidth, (topMenuHeightPct + infoBoxHeightPct)
 						* screenHeight, screenWidth, screenHeight,
@@ -148,6 +151,23 @@ public class Main extends Application {
 		primaryStage.show();
 	}
 
+	private void updatePanels(){
+		Stack<Command> comList = myModel.getExecutedCommands();
+		StringBuilder s = new StringBuilder();
+		for (Command c : comList){
+			s.append(c.toString() + "\n");
+		}
+		prevCommandsBox.setText(s.toString());
+		
+		s.setLength(0);
+		for (Turtle t : this.myModel.getGrid().getTurtles()){
+			s.append("Turtle\n" + t.getLocation().getX() + ", " + t.getLocation().getY());
+			
+		}
+		statusBox.setText(s.toString());
+		
+	}
+	
 	private void setButtonActions(){
 		Button runButton = runButtons.getRunButton();
 		Button stepButton = runButtons.getStepButton();
@@ -163,22 +183,28 @@ public class Main extends Application {
 			/////////////////////////////////////////////
 			String s = commandBox.getText();
 			myModel.parseProgram(s);
-			Stack<Command> allCommands = myModel.executeAllCommands();
-			for (Command c : allCommands)
-				c.execute();
-			ArrayList<backend.Line> backLines = myModel.getGrid().getLines();
-			turtlePanel.drawLines(backLines);
+			myModel.executeAllCommands();
 			
+			ArrayList<backend.Line> backLines = myModel.getGrid().getLines();
+			turtlePanel.drawLines(backLines);			
 			ArrayList<backend.Turtle> turtles = myModel.getGrid().getTurtles();
 			turtlePanel.drawTurtles(turtles);
-			
-			//this should be in Main
-			/////////////////////////////////////////////
-		    System.out.println("RUN BUTTON");
+			updatePanels();
+
 		});
 		
 		stepButton.setOnAction((event) -> {
-		    System.out.println("STEP BUTTON");
+			String s = commandBox.getText();
+			myModel.parseProgram(s);
+			myModel.executeNextCommand();
+			
+			//Null check here?
+			
+			ArrayList<backend.Line> backLines = myModel.getGrid().getLines();
+			turtlePanel.drawLines(backLines);			
+			ArrayList<backend.Turtle> turtles = myModel.getGrid().getTurtles();
+			turtlePanel.drawTurtles(turtles);
+			
 		});
 		
 	}

@@ -51,6 +51,8 @@ public class Model {
 		comFactory = new CommandFactory(grid, userVariables);
 		parser = new SLogoParser(comFactory);
 	}
+	
+	
 
 	public void parseProgram(String prog) {
 		pendingCommands = parser.parseProgram(prog);

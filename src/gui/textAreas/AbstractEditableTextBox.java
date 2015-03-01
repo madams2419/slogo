@@ -65,6 +65,10 @@ public abstract class AbstractEditableTextBox extends Region{
 
 	}
 	
+	public void setText(String s){
+		this.textArea.setText(s);
+	}
+	
 	public TextArea makeTextArea() {
 
 		TextArea textArea = new TextArea();

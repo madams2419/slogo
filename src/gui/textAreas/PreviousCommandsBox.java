@@ -25,7 +25,8 @@ public class PreviousCommandsBox extends AbstractEditableTextBox {
 		this.isPrompt = isPrompt;
 		
 		this.textArea = makeTextArea();
-
+		this.textArea.setEditable(false);
+		
 		setRegionPreferences();
 		addTextAreaToRegion();
 		
@@ -34,22 +35,10 @@ public class PreviousCommandsBox extends AbstractEditableTextBox {
 	@Override
 	public void updateText() {
 		
-		textArea.setText(makeExecutedCommandsList()); 
+		//textArea.setText(makeExecutedCommandsList()); 
 		
 	}
 	
-	public String makeExecutedCommandsList(){
-			
-			//Need to change Model.getExecutedCommands() to static
-			//Stack<Command> executedCommands = Model.getExecutedCommands();
-			StringBuilder sb = new StringBuilder();
-			//while(!executedCommands.isEmpty()){
-				//sb.append("\n" + executedCommands.pop());
-			//}
-			
-			return sb.toString();
-			
-			
-		}
+
 
 }
