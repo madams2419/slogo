@@ -28,4 +28,8 @@ public class CommandList extends Command {
 		return returnVal;
 	}
 
+	public int size() {
+		return params.size();
+	}
+
 }

@@ -18,7 +18,7 @@ public class MakeVariable extends Command {
 		Double value = params.get(1).execute();
 
 		// add variable to model list
-		userVariables.put(params.get(0).getValue(), value);
+		userVariables.put(params.get(0).getTypedString(), value);
 
 		return value;
 	}

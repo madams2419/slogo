@@ -13,7 +13,7 @@ public class Variable extends Command {
 	}
 
 	public Double execute() {
-		return userVariables.get(getValue());
+		return userVariables.get(getTypedString());
 	}
 
 }

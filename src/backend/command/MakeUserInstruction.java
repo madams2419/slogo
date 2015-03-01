@@ -7,24 +7,22 @@ import backend.StringPair;
 public class MakeUserInstruction extends Command {
 
 	HashMap<String, Double> userVariables;
-	HashMap<String, Command> userInstructions;
+	HashMap<String, UserInstructionContainer> userInstructions;
 
-	public MakeUserInstruction(StringPair stringPair, HashMap<String, Command> userInstructions, HashMap<String, Double> userVariables, Command parent) {
+	public MakeUserInstruction(StringPair stringPair, HashMap<String, UserInstructionContainer> userInstructions, HashMap<String, Double> userVariables, Command parent) {
 		super(stringPair, 3, parent);
 		this.userInstructions = userInstructions;
 		this.userVariables = userVariables;
 	}
 
 	public Double execute() {
-		String instName = getParam(0).getValue();
+		String instName = getParam(0).getTypedString();
 		CommandList paramNames = (CommandList) getParam(1);
 		CommandList commandList = (CommandList) getParam(2);
-		StringPair newSP = new StringPair("Command", instName);
-
-		InstructionDefinition newInstDef = new InstructionDefinition(newSP, paramNames, commandList, userVariables, null);
+		UserInstructionContainer newUIC = new UserInstructionContainer(paramNames, commandList);
 
 		// add instruction definition to model list
-		userInstructions.put(instName, newInstDef);
+		userInstructions.put(instName, newUIC);
 
 		return 1.0;
 	}

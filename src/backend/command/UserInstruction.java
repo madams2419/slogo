@@ -1,22 +1,41 @@
 package backend.command;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 
-import backend.Model;
 import backend.StringPair;
 
 public class UserInstruction extends Command {
 
-	HashMap<String, InstructionDefinition> userCommands;
+	HashMap<String, Double> userVariables;
+	HashMap<String, UserInstructionContainer> userInstructions;
 
-	public UserInstruction(StringPair sp, HashMap<String, InstructionDefinition> userCommands, Command parent) {
-		super(sp, 2, parent);
-		this.userCommands = userCommands;
+	public UserInstruction(StringPair stringPair, HashMap<String, UserInstructionContainer> userInstructions, HashMap<String, Double> userVariables, Command parent) {
+		super(stringPair, 2, parent);
+		this.userInstructions = userInstructions;
+		this.userVariables = userVariables;
 	}
 
 	public Double execute() {
-		return userCommands.get(getValue()).execute((CommandList) getParam(0));
+		String instrName = getTypedString();
+
+		//TODO error checking here in case command is not defined
+		UserInstructionContainer uic = userInstructions.get(instrName);
+
+		CommandList varNames = uic.getVarNames();
+		CommandList varValues = (CommandList) getParam(0);
+		genVariables(varNames, varValues);
+
+		CommandList commands = uic.getCommands();
+
+		return commands.execute();
+	}
+
+	private void genVariables(CommandList varNames, CommandList varValues) {
+		for(int i = 0; i < varNames.size(); i++) {
+			String varName = varNames.getParam(i).getTypedString();
+			Double varValue = varValues.getParam(i).execute();
+			userVariables.put(varName, varValue);
+		}
 	}
 
 }

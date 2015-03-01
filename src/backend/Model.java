@@ -15,8 +15,7 @@ import java.util.Stack;
 import java.util.Map.Entry;
 import java.util.regex.Pattern;
 
-import backend.command.Command;
-import backend.command.CommandFactory;
+import backend.command.*;
 
 public class Model {
 
@@ -37,7 +36,7 @@ public class Model {
 	private Queue<Command> pendingCommands;
 	private static Stack<Command> executedCommands;
 	private HashMap<String, Double> userVariables;
-	private HashMap<String, Command> userFunctions;
+	private HashMap<String, UserInstructionContainer> userFunctions;
 	private String helpPagePath;
 	private CommandFactory comFactory;
 	private SLogoParser parser;
@@ -113,7 +112,7 @@ public class Model {
 		return userVariables;
 	}
 
-	public HashMap<String, Command> getUserFunctions() {
+	public HashMap<String, UserInstructionContainer> getUserFunctions() {
 		return userFunctions;
 	}
 

@@ -24,7 +24,7 @@ public abstract class Command implements Cloneable {
 		return stringPair.getProperty();
 	}
 
-	public String getValue() {
+	public String getTypedString() {
 		return stringPair.getValue();
 	}
 

@@ -13,7 +13,7 @@ public class DoTimes extends For {
 
 	public Double execute() {
 		int limit = getParam(0).getParamValue(1).intValue();
-		String countVar = getParam(0).getParam(0).getValue();
+		String countVar = getParam(0).getParam(0).getTypedString();
 
 		return forLoop(1, limit, 1, countVar);
 	}
