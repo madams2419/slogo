@@ -36,7 +36,7 @@ public class Model {
 	private Queue<Command> pendingCommands;
 	private static Stack<Command> executedCommands;
 	private HashMap<String, Double> userVariables;
-	private HashMap<String, UserInstructionContainer> userFunctions;
+	private HashMap<String, UserInstructionContainer> userInstructions;
 	private String helpPagePath;
 	private CommandFactory comFactory;
 	private SLogoParser parser;
@@ -47,9 +47,9 @@ public class Model {
 		pendingCommands = new LinkedList<>();
 		executedCommands = new Stack<>();
 		userVariables = new HashMap<>();
-		userFunctions = new HashMap<>();
+		userInstructions = new HashMap<>();
 		helpPagePath = helpPgPath;
-		comFactory = new CommandFactory(grid, userVariables);
+		comFactory = new CommandFactory(grid, userInstructions, userVariables);
 		parser = new SLogoParser(comFactory);
 	}
 
@@ -113,7 +113,7 @@ public class Model {
 	}
 
 	public HashMap<String, UserInstructionContainer> getUserFunctions() {
-		return userFunctions;
+		return userInstructions;
 	}
 
 	public String getHelpPagePath() {

@@ -1,7 +1,9 @@
-repeat 1 [
-   dotimes [ :t 360 ] 
-   [
-      fd 1
-      rt / sin :t 2
-   ]
+to square [ :distance ]
+[
+  repeat 4 [
+    fd :distance
+    rt 90
+  ]
 ]
+
+square 4

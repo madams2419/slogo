@@ -12,18 +12,20 @@ import backend.*;
 public class CommandFactory {
 
 	Grid grid;
+	HashMap<String, UserInstructionContainer> userInstructions;
 	HashMap<String, Double> userVariables;
 
-	public CommandFactory(Grid grid, HashMap<String, Double> userVariables) {
+	public CommandFactory(Grid grid, HashMap<String, UserInstructionContainer> userInstructions, HashMap<String, Double> userVariables) {
 		this.grid = grid;
+		this.userInstructions = userInstructions;
 		this.userVariables = userVariables;
 	}
 
 	public Command getCommand(StringPair stringPair, Command parent) {
 		Command newCommand;
 		String comClassName = "backend.command." + stringPair.getProperty();
-
-		System.out.println(comClassName);
+		
+		System.out.println("Command created: " + stringPair.getProperty());
 
 		try {
 			Class<?> comClass = Class.forName(comClassName);
@@ -37,8 +39,10 @@ public class CommandFactory {
 					newCommand = (Command) comConstructors[0].newInstance(stringPair, parent);
 				else if(comClass.getName().contains("Variable") || comClass.getName().contains("Repeat") || comClass.getName().contains("For")|| comClass.getName().contains("DoTimes"))
 					newCommand = (Command) comConstructors[0].newInstance(stringPair, userVariables, parent);
-				else if(comClass.getName().contains("MakeUserInstruction") || comClass.getName().contains("Repeat") || comClass.getName().contains("DoTimes"))
+				else if(comClass.getName().contains("Repeat") || comClass.getName().contains("DoTimes"))
 					newCommand = (Command) comConstructors[0].newInstance(stringPair, userVariables, parent);
+				else if(comClass.getName().contains("UserInstruction"))
+					newCommand = (Command) comConstructors[0].newInstance(stringPair, userInstructions, userVariables, parent);
 				else
 					newCommand = (Command) comConstructors[0].newInstance(stringPair, parent);
 			}

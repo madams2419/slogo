@@ -1,5 +1,6 @@
 package backend.command;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 import backend.StringPair;
@@ -8,21 +9,31 @@ public class UserInstruction extends Command {
 
 	HashMap<String, Double> userVariables;
 	HashMap<String, UserInstructionContainer> userInstructions;
+	UserInstructionContainer uic;
 
 	public UserInstruction(StringPair stringPair, HashMap<String, UserInstructionContainer> userInstructions, HashMap<String, Double> userVariables, Command parent) {
-		super(stringPair, 2, parent);
+		super(stringPair, 0, parent);
 		this.userInstructions = userInstructions;
 		this.userVariables = userVariables;
+
+		if(parent == null || !parent.getProperty().equals("MakeUserInstruction"))
+			if((uic = getUIC()) == null)
+				System.out.println("Error: No command defintion found."); //TODO proper error handling
+			else
+				numParams = getNumParams();
+	}
+
+	private UserInstructionContainer getUIC() {
+		return userInstructions.get(getTypedString());
+	}
+
+	private int getNumParams() {
+		return uic.getVarNames().size();
 	}
 
 	public Double execute() {
-		String instrName = getTypedString();
-
-		//TODO error checking here in case command is not defined
-		UserInstructionContainer uic = userInstructions.get(instrName);
-
 		CommandList varNames = uic.getVarNames();
-		CommandList varValues = (CommandList) getParam(0);
+		ArrayList<Command> varValues = params;
 		genVariables(varNames, varValues);
 
 		CommandList commands = uic.getCommands();
@@ -30,10 +41,10 @@ public class UserInstruction extends Command {
 		return commands.execute();
 	}
 
-	private void genVariables(CommandList varNames, CommandList varValues) {
+	private void genVariables(CommandList varNames, ArrayList<Command> varValues) {
 		for(int i = 0; i < varNames.size(); i++) {
 			String varName = varNames.getParam(i).getTypedString();
-			Double varValue = varValues.getParam(i).execute();
+			Double varValue = varValues.get(i).execute();
 			userVariables.put(varName, varValue);
 		}
 	}
