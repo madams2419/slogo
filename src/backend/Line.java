@@ -26,11 +26,11 @@ public class Line extends Line2D.Double {
 		return color;
 	}
 
-	protected Point getStartPoint() {
+	public Point getStartPoint() {
 		return convertDoublePoint(super.getP1());
 	}
 
-	protected Point getEndPoint() {
+	public Point getEndPoint() {
 		return convertDoublePoint(super.getP2());
 	}
 	

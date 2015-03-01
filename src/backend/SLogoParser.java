@@ -54,7 +54,7 @@ public class SLogoParser {
 					targetNode = bubbleUp(targetNode);
 				} else {
 					System.out.println("ERROR: list ending where there shouldn't be one.");
-					//TODO error, throw some sort of exception or something
+					//TODO error, throw some sort of exception or somethings
 				}
 
 				// assumption is that targetNode is null or needs more params

@@ -7,9 +7,9 @@ public class CommandBox extends AbstractEditableTextBox {
 	public CommandBox(double prefHeightRatio, double prefWidthRatio,
 			double xLocation, double yLocation, double overlayWidth,
 			double overlayHeight, String initText, boolean isPrompt) {
+		
 		super(prefHeightRatio, prefWidthRatio, xLocation, yLocation, overlayWidth,
 				overlayHeight, initText, isPrompt);
-		
 		
 		this.prefHeightRatio = prefHeightRatio;
 		this.prefWidthRatio = prefWidthRatio;
@@ -18,7 +18,9 @@ public class CommandBox extends AbstractEditableTextBox {
 		this.overlayHeight = overlayHeight; 
 		this.overlayWidth = overlayWidth;
 		this.initText = initText;
-		this.setStyle("-fx-border-color: black;");
+		
+		//this.setStyle("-fx-border-color: black;");
+		
 		this.isPrompt = isPrompt;
 		
 		this.textArea = makeTextArea();
@@ -27,6 +29,10 @@ public class CommandBox extends AbstractEditableTextBox {
 		addTextAreaToRegion();
 	}
 
+	public String getText(){
+		return this.textArea.getText(); // Right method call?
+	}
+	
 	@Override
 	public void updateText() {
 		// TODO Auto-generated method stub

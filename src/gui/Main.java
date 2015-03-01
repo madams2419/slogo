@@ -5,14 +5,24 @@ import gui.textAreas.PreviousCommandsBox;
 import gui.textAreas.StatusBox;
 import gui.textAreas.UserFunctionsAndCommands;
 import gui.textAreas.UserVariablesBox;
+
+import java.util.ArrayList;
+import java.util.Stack;
+
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.application.Application;
 import javafx.geometry.Rectangle2D;
 import javafx.scene.Group;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
+import javafx.scene.shape.*;
+import backend.Line;
+import backend.Model;
+import backend.command.Command;
+
 
 public class Main extends Application {
 
@@ -27,6 +37,19 @@ public class Main extends Application {
 	private double topMenuHeightPct = .05;
 	private double buttonWidthPct = .1;
 	private double buttonHeightPct = .25;
+	
+	//////////////////////////////////////////
+	private RunButtons runButtons;
+	private CommandBox commandBox;
+	private DrawingArea turtlePanel;
+	//these shouldn't be instance variables
+	/////////////////////////////////////////
+	
+	
+	
+	
+	private Model myModel = new Model();
+
 
 	Stage stage;
 	Scene scene;
@@ -47,7 +70,7 @@ public class Main extends Application {
 		Group root = new Group();
 		scene = new Scene(root, screenHeight, screenWidth);
 
-		CommandBox commandBox = new CommandBox(commandBoxHeightPct,
+		commandBox = new CommandBox(commandBoxHeightPct,
 				commandBoxWidthPct, infoBoxWidthPct * screenWidth, screenHeight
 						* (1 - commandBoxHeightPct), screenWidth, screenHeight,
 				"Type a Command...", true);
@@ -73,13 +96,15 @@ public class Main extends Application {
 		TopMenu topMenu = new TopMenu(screenWidth, screenHeight,
 				topMenuHeightPct);
 
-		RunButtons runButtons = new RunButtons(screenWidth, screenHeight,
+		runButtons = new RunButtons(screenWidth, screenHeight,
 				buttonWidthPct, buttonHeightPct,
 				(infoBoxWidthPct + commandBoxWidthPct) * screenWidth,
 				(1 - buttonHeightPct) * screenHeight);
+		
+		setButtonActions();
 
-		DrawingArea turtlePanel = new DrawingArea(screenWidth
-				- (screenWidth * infoBoxWidthPct), screenHeight
+	   turtlePanel = new DrawingArea(screenWidth
+				- 2*(screenWidth * infoBoxWidthPct), screenHeight
 				- (screenHeight * (commandBoxHeightPct + topMenuHeightPct)),
 				infoBoxWidthPct, screenHeight
 						- (screenHeight * topMenuHeightPct));
@@ -90,7 +115,7 @@ public class Main extends Application {
 		commandBox.setLayoutX(commandBox.getxLocation());
 		commandBox.setLayoutY(commandBox.getyLocation());
 
-		turtlePanel.setLayoutX(0);
+		turtlePanel.setLayoutX(statusBox.getWidth());
 		turtlePanel.setLayoutY(screenHeight * topMenuHeightPct);
 
 		statusBox.setLayoutX(statusBox.getxLocation());
@@ -123,6 +148,41 @@ public class Main extends Application {
 		primaryStage.show();
 	}
 
+	private void setButtonActions(){
+		Button runButton = runButtons.getRunButton();
+		Button stepButton = runButtons.getStepButton();
+		
+		runButton.setOnAction((event) -> {
+			//Send backend text using a call to Model
+			//receive and store commands
+			//update various boxes in front end
+			//DRAW
+			// a. do ALL of the commands on the pane
+			// b. DISPLAY it
+			//UPDATE TURTLE POSITION
+			/////////////////////////////////////////////
+			String s = commandBox.getText();
+			myModel.parseProgram(s);
+			Stack<Command> allCommands = myModel.executeAllCommands();
+			for (Command c : allCommands)
+				c.execute();
+			ArrayList<backend.Line> backLines = myModel.getGrid().getLines();
+			turtlePanel.drawLines(backLines);
+			
+			ArrayList<backend.Turtle> turtles = myModel.getGrid().getTurtles();
+			turtlePanel.drawTurtles(turtles);
+			
+			//this should be in Main
+			/////////////////////////////////////////////
+		    System.out.println("RUN BUTTON");
+		});
+		
+		stepButton.setOnAction((event) -> {
+		    System.out.println("STEP BUTTON");
+		});
+		
+	}
+	
 	private void setStageToFillWindow(Double screenWidth, Double screenHeight) {
 
 		stage.setX(0);

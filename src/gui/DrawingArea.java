@@ -1,10 +1,14 @@
 package gui;
 
+import java.util.ArrayList;
+
+import backend.Turtle;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.layout.Region;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.ArcType;
+import javafx.scene.shape.Polygon;
 
 public class DrawingArea extends Region {
 
@@ -31,6 +35,37 @@ public class DrawingArea extends Region {
 		//this.setStyle("-fx-border-color: black;");
 
 	}
+	
+	protected void drawLines(ArrayList<backend.Line> lines){
+		this.drawingCanvas.getGraphicsContext2D().setLineWidth(5);
+		this.drawingCanvas.getGraphicsContext2D().setStroke(Color.BLUE);
+		for (backend.Line l : lines){
+			
+			this.drawingCanvas.getGraphicsContext2D().strokeLine(l.getStartPoint().getX(), l.getStartPoint().getY(), 
+					l.getEndPoint().getX(), l.getEndPoint().getY());
+		}
+		
+		System.out.println("drawLines complete");
+	}
+	
+	protected void drawTurtles(ArrayList<Turtle> turtles){
+		this.drawingCanvas.getGraphicsContext2D().setLineWidth(50);
+		this.drawingCanvas.getGraphicsContext2D().setStroke(Color.RED);
+		
+		
+		for (Turtle t: turtles){
+			double x = t.getLocation().getX();
+			double y = t.getLocation().getY();
+			double[] xlocs = {x - 10, x + 10, x};
+			double[] ylocs = {y, y, y + 20};
+			Polygon p = new Polygon(xlocs[0], ylocs[0], xlocs[1], ylocs[1], xlocs[2], ylocs[2]);
+			//this.drawingCanvas.getGraphicsContext2D().
+			this.drawingCanvas.getGraphicsContext2D().fillPolygon(xlocs, ylocs, 3);
+			
+			
+		}
+	}
+
 
 	private void drawShapes(GraphicsContext gc) {
 		gc.setFill(Color.GREEN);
