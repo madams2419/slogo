@@ -41,10 +41,10 @@ public abstract class AbstractEditableTextBox extends Region{
 		this.initText = initText;
 		
 	
-		this.setStyle("-fx-border-width: 20;");
+		this.setStyle("-fx-border-width: 200;");
 		this.setStyle("-fx-border-style: dashed;");
-		//this.setStyle("-fx-border-radius: 20;");
-		//this.setStyle("-fx-border-insets: 5;");
+		this.setStyle("-fx-border-radius: 20;");
+		this.setStyle("-fx-border-insets: 67;");
 		this.setStyle("-fx-border-color: red;");
 		
 		final String cssDefault = "-fx-border-color: blue;\n"
@@ -83,15 +83,15 @@ public abstract class AbstractEditableTextBox extends Region{
 			ta.getText();
 			
 		} else {
-			//ta.setText(this.initText);
-			makeTitle(this.initText);
+			ta.setText(this.initText);
+			//makeTitle(this.initText);
 		}
 
 	}
 	
 	//LOTS OF HARD CODED CONSTANTS HERE
 	
-	private void makeTitle(String titleText){
+	/*private void makeTitle(String titleText){
 		System.out.println(titleText);
 		Label title = new Label(titleText);
 		//title.setTextFill(Color.RED);
@@ -102,7 +102,7 @@ public abstract class AbstractEditableTextBox extends Region{
 		this.getChildren().add(title);
 		
 
-	}
+	}*/
 	
 	public void setRegionPreferences() {
 
