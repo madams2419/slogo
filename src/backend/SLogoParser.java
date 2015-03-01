@@ -50,7 +50,7 @@ public class SLogoParser {
 		for(StringPair sp : spList) {
 			if (sp.getProperty().equals("ListEnd")) {
 				if (targetNode.getProperty().equals("List")) {
-					((backend.command.List)targetNode).setComplete();
+					((backend.command.CommandList)targetNode).setComplete();
 					targetNode = bubbleUp(targetNode);
 				} else {
 					System.out.println("ERROR: list ending where there shouldn't be one.");

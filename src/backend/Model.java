@@ -3,12 +3,14 @@ package backend;
 import java.awt.Dimension;
 import java.awt.Point;
 import java.awt.Color;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
+import java.util.Scanner;
 import java.util.Stack;
 import java.util.Map.Entry;
 import java.util.regex.Pattern;
@@ -119,20 +121,28 @@ public class Model {
 		return helpPagePath;
 	}
 
-	public static void main (String[] args) {
+	public static void main (String[] args) throws FileNotFoundException {
 		//String userInput = "fd 50\n" + "right 45\n" + "fd 100";
 
 		//String userInput = "make :test fd 50\n" + "fd :test\n" + "fd :test\n";
 
-		String userInput = "if difference 1 0 [ fd 50 ]";
+		//String userInput = "if difference 1 0 [ fd 50 ]";
+		
+		String fileName = "test.logo";
+		
+		String userInput = new Scanner(new File(fileName)).useDelimiter("\\Z").next();
 
 		Model m = new Model();
 
 		m.parseProgram(userInput);
 
 		m.executeAllCommands();
-
-		ArrayList<Line> lines = m.getGrid().getLines();
+		
+		//m.printLines();
+	}
+	
+	private void printLines() {
+		ArrayList<Line> lines = getGrid().getLines();
 
 		for(Line l : lines) {
 			System.out.println(l);

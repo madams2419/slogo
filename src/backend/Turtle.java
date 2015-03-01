@@ -25,7 +25,9 @@ public class Turtle {
 	public void move(Double magnitude) {
 		double deltaX = Math.cos(heading.getAngleRads()) * magnitude;
 		double deltaY = Math.sin(heading.getAngleRads()) * magnitude;
-		Point nextLocation = new Point(location.x + (int) deltaX, location.y + (int) deltaY);
+		int newX = location.x + (int) Math.round(deltaX);
+		int newY = location.y + (int) Math.round(deltaY);
+		Point nextLocation = new Point(newX, newY);
 		
 		System.out.println("Next loc: " + nextLocation);
 
@@ -42,6 +44,8 @@ public class Turtle {
 	public void rotateRight(double degrees) {
 		double newHeading = heading.getAngle() - degrees;
 		setHeading(newHeading);
+		
+		System.out.println("New heading: " + newHeading);
 	}
 
 	public void rotateLeft(double degrees) {

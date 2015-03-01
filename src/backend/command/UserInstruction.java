@@ -16,7 +16,7 @@ public class UserInstruction extends Command {
 	}
 
 	public Double execute() {
-		return userCommands.get(getValue()).execute((List) getParam(0));
+		return userCommands.get(getValue()).execute((CommandList) getParam(0));
 	}
 
 }

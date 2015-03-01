@@ -2,11 +2,11 @@ package backend.command;
 
 import backend.StringPair;
 
-public class List extends Command {
+public class CommandList extends Command {
 
 	private boolean listComplete;
 
-	public List(StringPair stringPair, Command parent) {
+	public CommandList(StringPair stringPair, Command parent) {
 		super(stringPair, 0, parent);
 		listComplete = false;
 	}

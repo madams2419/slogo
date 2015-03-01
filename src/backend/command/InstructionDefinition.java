@@ -10,10 +10,10 @@ import backend.command.*;
 public class InstructionDefinition extends Command {
 
 	HashMap<String, Double> userVariables;
-	List paramNames;
-	List commandList;
+	CommandList paramNames;
+	CommandList commandList;
 
-	public InstructionDefinition(StringPair sp, List paramNames, List commandList, HashMap<String, Double> userVariables, Command parent) {
+	public InstructionDefinition(StringPair sp, CommandList paramNames, CommandList commandList, HashMap<String, Double> userVariables, Command parent) {
 		super(sp, 0, parent);
 		this.paramNames = paramNames;
 		this.commandList = commandList;
@@ -24,7 +24,7 @@ public class InstructionDefinition extends Command {
 		return 0.0;
 	}
 
-	public Double execute(List paramValues) {
+	public Double execute(CommandList paramValues) {
 		genVariables(paramValues.getParams());
 		return commandList.execute();
 	}

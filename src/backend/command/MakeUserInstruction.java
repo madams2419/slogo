@@ -17,8 +17,8 @@ public class MakeUserInstruction extends Command {
 
 	public Double execute() {
 		String instName = getParam(0).getValue();
-		List paramNames = (List) getParam(1);
-		List commandList = (List) getParam(2);
+		CommandList paramNames = (CommandList) getParam(1);
+		CommandList commandList = (CommandList) getParam(2);
 		StringPair newSP = new StringPair("Command", instName);
 
 		InstructionDefinition newInstDef = new InstructionDefinition(newSP, paramNames, commandList, userVariables, null);
