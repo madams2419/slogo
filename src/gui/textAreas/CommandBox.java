@@ -27,10 +27,16 @@ public class CommandBox extends AbstractEditableTextBox {
 
 		setRegionPreferences();
 		addTextAreaToRegion();
+		setCommandBoxPromptText("Type a Command...");
 	}
 
 	public String getText(){
 		return this.textArea.getText(); // Right method call?
+	}
+	
+	private void setCommandBoxPromptText(String promptText){
+		
+		this.textArea.setPromptText(promptText);
 	}
 	
 	@Override

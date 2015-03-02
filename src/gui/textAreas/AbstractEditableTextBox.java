@@ -76,7 +76,6 @@ public abstract class AbstractEditableTextBox extends Region{
 	public TextArea makeTextArea() {
 
 		TextArea textArea = new TextArea();
-		addTextToTextArea(textArea);
 		textArea.setPrefRowCount(10);
 		textArea.setPrefWidth(prefWidthRatio * overlayWidth);
 		textArea.setPrefHeight((1 -titleHeightPct) *(prefHeightRatio * overlayHeight));
@@ -87,21 +86,10 @@ public abstract class AbstractEditableTextBox extends Region{
 
 	}
 	
-	private void addTextToTextArea(TextArea ta) {
-		if (this.isPrompt) {
-			ta.setPromptText(this.initText);
-			ta.getText();
-			
-		} else {
-			//ta.setText(this.initText);
-			//makeTitle(this.initText);
-		}
-
-	}
 	
 	private void makeTitle(){
 		
-		Label title = new Label(initText);
+		Label title = new Label("  " + initText);
 		title.setPrefHeight(titleHeightPct * (prefHeightRatio * overlayHeight)); 
 		title.setPrefWidth(overlayWidth * prefWidthRatio);
 		title.setLayoutX(0);
@@ -111,20 +99,6 @@ public abstract class AbstractEditableTextBox extends Region{
 		
 	}
 	
-	//LOTS OF HARD CODED CONSTANTS HERE
-	
-	/*private void makeTitle(String titleText){
-		System.out.println(titleText);
-		Label title = new Label(titleText);
-		//title.setTextFill(Color.RED);
-		//title.setTextAlignment(TextAlignment.CENTER);
-		//title.setFont(new Font(14)); 
-		title.setStyle("-fx-background-color: linear-gradient(#2A5058, #61a2b1);");
-		//title.setStyle("-fx-fill: blue;");
-		this.getChildren().add(title);
-		
-
-	}*/
 	
 	public void setRegionPreferences() {
 
