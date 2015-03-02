@@ -24,12 +24,12 @@ public class RunButtons extends Region{
 		this.setLayoutY(yLocation);
 
 		//Not really sure if these are needed
-		BorderPane border = new BorderPane();
-		border.setPadding(new Insets(0, 0, 20, 20));
+		//BorderPane border = new BorderPane();
+		//border.setPadding(new Insets(0, 0, 20, 20));
 		
 		this.setPrefHeight(overlayHeightPct * screenHeight); 
 		this.setPrefWidth(overlayWidthPct * screenWidth); 
-		this.setStyle("-fx-border-color: black;");
+		//this.setStyle("-fx-border-color: black;");
 		
 		runButton = new Button("Run All");
 		stepButton = new Button("Step");
@@ -39,7 +39,10 @@ public class RunButtons extends Region{
 		runButton.setMaxWidth(Double.MAX_VALUE);
 		stepButton.setMaxWidth(Double.MAX_VALUE);
 		
-		
+		runButton.getStylesheets().add("GUIStyle.css");
+		stepButton.getStylesheets().add("GUIStyle.css");
+
+
 
 
 		VBox vbButtons = new VBox(); 

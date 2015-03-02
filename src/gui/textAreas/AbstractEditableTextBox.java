@@ -25,10 +25,11 @@ public abstract class AbstractEditableTextBox extends Region{
 	protected double overlayHeight;
 	protected String initText;
 	protected TextArea textArea;
+	protected Label label;
 	public boolean isPrompt;
 	
 	//Hard Coded for now
-	private double titleHeightPct = .1;
+	protected double titleHeightPct = .1;
 	
 	public AbstractEditableTextBox(double prefHeightRatio,
 			double prefWidthRatio, double xLocation, double yLocation,
@@ -43,19 +44,14 @@ public abstract class AbstractEditableTextBox extends Region{
 		this.overlayWidth = overlayWidth;
 		this.initText = initText;
 		
-	
-		
-		final String cssDefault = "-fx-border-color: blue;\n"
-                + "-fx-border-insets: 5;\n"
-                + "-fx-border-width: 3;\n"
-                + "-fx-border-style: dashed;\n";
 		this.isPrompt = isPrompt;
 		
-		this.textArea = makeTextArea();
+		
 		//this.setBorder(new Border(new BorderStroke(Color.BLACK, )))
 		setRegionPreferences();
-		addTextAreaToRegion();
+		
 		makeTitle();
+		makeTextArea();
 
 	}
 	
@@ -67,13 +63,17 @@ public abstract class AbstractEditableTextBox extends Region{
 	public TextArea makeTextArea() {
 
 		TextArea textArea = new TextArea();
+		
 		textArea.setPrefRowCount(10);
 		textArea.setPrefWidth(prefWidthRatio * overlayWidth);
 		textArea.setPrefHeight((1 -titleHeightPct) *(prefHeightRatio * overlayHeight));
 		textArea.setLayoutX(0);
 		textArea.setLayoutY(titleHeightPct * (prefHeightRatio * overlayHeight));
 		textArea.getStylesheets().add("GUIStyle.css");
+		textArea.setWrapText(true);
+		this.textArea = textArea;
 		
+		this.getChildren().add(textArea);
 		
 		return textArea;
 
@@ -88,6 +88,7 @@ public abstract class AbstractEditableTextBox extends Region{
 		title.setLayoutX(0);
 		title.setLayoutY(0);
 		title.getStylesheets().add("GUIStyle.css");
+		this.label = title;
 		
 		this.getChildren().add(title);
 		
@@ -103,7 +104,7 @@ public abstract class AbstractEditableTextBox extends Region{
 	
 	public void addTextAreaToRegion() {
 
-		this.getChildren().add(this.textArea);
+		//this.getChildren().add(this.textArea);
 
 	}
 	

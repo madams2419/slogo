@@ -75,10 +75,16 @@ public class Main extends Application {
 		Group root = new Group();
 		scene = new Scene(root, screenHeight, screenWidth);
 
+
+		runButtons = new RunButtons(screenWidth, screenHeight,
+				buttonWidthPct, buttonHeightPct,
+				(infoBoxWidthPct + commandBoxWidthPct) * screenWidth,
+				(1 - buttonHeightPct) * screenHeight);
+		
 		commandBox = new CommandBox(commandBoxHeightPct,
-				commandBoxWidthPct, infoBoxWidthPct * screenWidth, screenHeight
+				commandBoxWidthPct + buttonWidthPct, infoBoxWidthPct * screenWidth, screenHeight
 						* (1 - commandBoxHeightPct), screenWidth, screenHeight,
-				"Type a Command...", true);
+				"Type a Command...", true, runButtons);
 
 		statusBox = new StatusBox(infoBoxHeightPct, infoBoxWidthPct,
 				0, topMenuHeightPct * screenHeight, screenWidth, screenHeight,
@@ -101,10 +107,6 @@ public class Main extends Application {
 		TopMenu topMenu = new TopMenu(screenWidth, screenHeight,
 				topMenuHeightPct);
 
-		runButtons = new RunButtons(screenWidth, screenHeight,
-				buttonWidthPct, buttonHeightPct,
-				(infoBoxWidthPct + commandBoxWidthPct) * screenWidth,
-				(1 - buttonHeightPct) * screenHeight);
 		
 		setButtonActions();
 
@@ -139,7 +141,7 @@ public class Main extends Application {
 
 		root.getChildren().add(commandBox);
 
-		root.getChildren().add(runButtons);
+		//root.getChildren().add(runButtons);
 
 		root.getChildren().add(statusBox);
 		root.getChildren().add(userFunctionsBox);

@@ -44,9 +44,14 @@ public class TopMenu extends Region {
 		createHelpMenuItems(menuHelp);
 
 		MenuBar menuBar = new MenuBar();
+		
+		
+		
 		menuBar.getMenus().addAll(menuFile, menuDisplay, menuLanguage, menuHelp);
 		menuBar.setPrefWidth(overlayWidth);
 		menuBar.setPrefHeight(heightPct * overlayHeight);
+		
+		menuBar.getStylesheets().add("GUIStyle.CSS");
 		this.getChildren().add(menuBar);
 
 	}

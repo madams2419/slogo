@@ -23,6 +23,9 @@ public class UserVariablesBox extends AbstractEditableTextBox {
 		this.isPrompt = isPrompt;
 
 		this.textArea = makeTextArea();
+		
+		this.label.getStyleClass().add("toplabel");
+		
 		myFields = new VBox();
 		setRegionPreferences();
 		addTextAreaToRegion();

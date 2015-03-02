@@ -19,6 +19,8 @@ public class StatusBox extends AbstractEditableTextBox {
 		this.isPrompt = isPrompt;
 		
 		this.textArea = makeTextArea();
+		
+		this.label.getStyleClass().add("toplabel");
 
 		setRegionPreferences();
 		addTextAreaToRegion();

@@ -22,7 +22,8 @@ public class PreviousCommandsBox extends AbstractEditableTextBox {
 		this.overlayWidth = overlayWidth;
 		this.initText = initText;
 		this.isPrompt = isPrompt;
-		
+		this.label.getStyleClass().add("midlabel");
+
 		this.textArea = makeTextArea();
 		this.textArea.setEditable(false);
 		
