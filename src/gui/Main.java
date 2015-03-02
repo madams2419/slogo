@@ -16,6 +16,7 @@ import javafx.geometry.Rectangle2D;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 import javafx.scene.shape.*;
@@ -45,6 +46,7 @@ public class Main extends Application {
 	private DrawingArea turtlePanel;
 	private PreviousCommandsBox prevCommandsBox;
 	private StatusBox statusBox;
+	private UserVariablesBox userVariablesBox;
 	//these shouldn't be instance variables
 	/////////////////////////////////////////
 	
@@ -86,7 +88,7 @@ public class Main extends Application {
 				(topMenuHeightPct + infoBoxHeightPct) * screenHeight,
 				screenWidth, screenHeight,
 				"User Defined Functions and Commands", false);
-		UserVariablesBox userVariablesBox = new UserVariablesBox(
+		userVariablesBox = new UserVariablesBox(
 				infoBoxHeightPct, infoBoxWidthPct, (1 - infoBoxWidthPct)
 						* screenWidth, topMenuHeightPct * screenHeight,
 				screenWidth, screenHeight, "User Defined Variables", false);
@@ -159,12 +161,26 @@ public class Main extends Application {
 		}
 		prevCommandsBox.setText(s.toString());
 		
+		
 		s.setLength(0);
 		for (Turtle t : this.myModel.getGrid().getTurtles()){
-			s.append("Turtle\n" + t.getLocation().getX() + ", " + t.getLocation().getY());
-			
+			s.append("Turtle "+ this.myModel.getGrid().getTurtles().indexOf(t) + ": \n  " + t.getLocation().getX() + ", " + t.getLocation().getY()
+					+ "\n  " + t.getHeading().getAngle());
 		}
 		statusBox.setText(s.toString());
+		
+		s.setLength(0);
+		for(String x : myModel.getUserVariables().keySet())
+			s.append(x + "\n");
+		userVariablesBox.setText(s.toString());
+		setVariablesBox();
+	}
+	
+	private void setVariablesBox(){
+		for (String s : myModel.getUserVariables().keySet())
+			userVariablesBox.getFields().getChildren().add(new TextField(myModel.getUserVariables().get(s).toString())); // FIX THIS DECLARATION
+		
+		
 		
 	}
 	
@@ -173,14 +189,6 @@ public class Main extends Application {
 		Button stepButton = runButtons.getStepButton();
 		
 		runButton.setOnAction((event) -> {
-			//Send backend text using a call to Model
-			//receive and store commands
-			//update various boxes in front end
-			//DRAW
-			// a. do ALL of the commands on the pane
-			// b. DISPLAY it
-			//UPDATE TURTLE POSITION
-			/////////////////////////////////////////////
 			String s = commandBox.getText();
 			myModel.parseProgram(s);
 			myModel.executeAllCommands();

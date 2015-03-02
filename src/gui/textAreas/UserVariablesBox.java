@@ -1,8 +1,12 @@
 package gui.textAreas;
 
+import javafx.scene.layout.VBox;
+
 
 public class UserVariablesBox extends AbstractEditableTextBox {
 
+	private VBox myFields;
+	
 	public UserVariablesBox(double prefHeightRatio, double prefWidthRatio,
 			double xLocation, double yLocation, double overlayWidth,
 			double overlayHeight, String initText, boolean isPrompt) {
@@ -16,15 +20,18 @@ public class UserVariablesBox extends AbstractEditableTextBox {
 		this.overlayHeight = overlayHeight;
 		this.overlayWidth = overlayWidth;
 		this.initText = initText;
-		this.setStyle("-fx-border-color: black;");
 		this.isPrompt = isPrompt;
 
 		this.textArea = makeTextArea();
-
+		myFields = new VBox();
 		setRegionPreferences();
 		addTextAreaToRegion();
 	}
 
+	public VBox getFields(){
+		return myFields;
+	}
+	
 	@Override
 	public void updateText() {
 		// TODO Auto-generated method stub

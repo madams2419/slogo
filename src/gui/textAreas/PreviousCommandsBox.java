@@ -21,7 +21,6 @@ public class PreviousCommandsBox extends AbstractEditableTextBox {
 		this.overlayHeight = overlayHeight; 
 		this.overlayWidth = overlayWidth;
 		this.initText = initText;
-		this.setStyle("-fx-border-color: black;");
 		this.isPrompt = isPrompt;
 		
 		this.textArea = makeTextArea();

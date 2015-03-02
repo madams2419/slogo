@@ -44,21 +44,11 @@ public abstract class AbstractEditableTextBox extends Region{
 		this.initText = initText;
 		
 	
-		this.setStyle("-fx-border-width: 200;");
-		this.setStyle("-fx-border-style: dashed;");
-		this.setStyle("-fx-border-radius: 20;");
-		this.setStyle("-fx-border-insets: 67;");
-		this.setStyle("-fx-border-color: red;");
 		
 		final String cssDefault = "-fx-border-color: blue;\n"
                 + "-fx-border-insets: 5;\n"
                 + "-fx-border-width: 3;\n"
                 + "-fx-border-style: dashed;\n";
-       
-   
-        //this.setStyle(cssDefault);
-		
-
 		this.isPrompt = isPrompt;
 		
 		this.textArea = makeTextArea();
@@ -71,6 +61,7 @@ public abstract class AbstractEditableTextBox extends Region{
 	
 	public void setText(String s){
 		this.textArea.setText(s);
+		this.textArea.getStylesheets().add("GUIStyle.css");
 	}
 	
 	public TextArea makeTextArea() {
@@ -81,7 +72,9 @@ public abstract class AbstractEditableTextBox extends Region{
 		textArea.setPrefHeight((1 -titleHeightPct) *(prefHeightRatio * overlayHeight));
 		textArea.setLayoutX(0);
 		textArea.setLayoutY(titleHeightPct * (prefHeightRatio * overlayHeight));
-
+		textArea.getStylesheets().add("GUIStyle.css");
+		
+		
 		return textArea;
 
 	}
@@ -94,6 +87,7 @@ public abstract class AbstractEditableTextBox extends Region{
 		title.setPrefWidth(overlayWidth * prefWidthRatio);
 		title.setLayoutX(0);
 		title.setLayoutY(0);
+		title.getStylesheets().add("GUIStyle.css");
 		
 		this.getChildren().add(title);
 		

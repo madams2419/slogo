@@ -1,0 +1,19 @@
+.text-area .scroll-pane *.content{
+	-fx-font: 16px "Courier";
+	-fx-background-color: navy;
+	-fx-text-fill: white;
+	-fx-border-color: white;
+	-fx-border-width: 0;
+	-fx-border-insets: 0;
+}
+
+.label {
+	-fx-font: 12px "Courier";
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+    -fx-background-color: cornflowerblue;
+    -fx-border-width: 0;
+    -fx-alignment: center; 
+    -fx-border-insets: 0;
+}
+

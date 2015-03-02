@@ -19,7 +19,6 @@ public class CommandBox extends AbstractEditableTextBox {
 		this.overlayWidth = overlayWidth;
 		this.initText = initText;
 		
-		this.setStyle("-fx-border-color: black;");
 		
 		this.isPrompt = isPrompt;
 		
@@ -37,6 +36,7 @@ public class CommandBox extends AbstractEditableTextBox {
 	private void setCommandBoxPromptText(String promptText){
 		
 		this.textArea.setPromptText(promptText);
+		
 	}
 	
 	@Override
