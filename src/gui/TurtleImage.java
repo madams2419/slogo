@@ -12,12 +12,18 @@ public class TurtleImage extends ImageView{
 	private double turtleWidthPct = .025;
 	private double turtleHeightPct = .025;
 	
-	public TurtleImage(String imagePath){
+	public TurtleImage(){
 		
+		String imagePath = "/sea_turtle.png";
 		this.imagePath = imagePath;
-		Image image = new Image(imagePath);
+		Image image = new Image(getClass().getResourceAsStream(
+				"/sea_turtle.png"));
 		this.setImage(image); 
 		
+		
+	}
+	
+	public void setImagePath(String imagePath){
 		
 	}
 	
@@ -33,8 +39,11 @@ public class TurtleImage extends ImageView{
 		this.setRotate(turtle.getHeading().getAngle()); 
 	}
 	
-	public void setLocation(Turtle turtle){
-		Point Location = turtle.getLocation();
+	public void setLocation(Turtle t){
+		
+		this.setLayoutX(t.getLocation().getX()); 
+		this.setLayoutY(t.getLocation().getY());
+		
 	}
 
 }

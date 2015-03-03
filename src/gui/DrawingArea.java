@@ -54,17 +54,26 @@ public class DrawingArea extends Region {
 		
 		
 		for (Turtle t: turtles){
+			
+			TurtleImage turtleImage = new TurtleImage();
+			turtleImage.setLocation(t);
+			turtleImage.orientTurtle(t);
+		
 			double x = t.getLocation().getX();
 			double y = t.getLocation().getY();
 			double[] xlocs = {x - 10, x + 10, x};
 			double[] ylocs = {y, y, y + 20};
-			Polygon p = new Polygon(xlocs[0], ylocs[0], xlocs[1], ylocs[1], xlocs[2], ylocs[2]);
+			
+			//Polygon p = new Polygon(xlocs[0], ylocs[0], xlocs[1], ylocs[1], xlocs[2], ylocs[2]);
 			//this.drawingCanvas.getGraphicsContext2D().
+			this.getChildren().add(turtleImage);
 			this.drawingCanvas.getGraphicsContext2D().fillPolygon(xlocs, ylocs, 3);
 			
 			
 		}
 	}
+	
+	
 
 
 	private void drawShapes(GraphicsContext gc) {
