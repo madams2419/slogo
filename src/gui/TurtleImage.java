@@ -9,15 +9,14 @@ import javafx.scene.image.ImageView;
 public class TurtleImage extends ImageView{
 	
 	protected String imagePath;
-	private double turtleWidthPct = .025;
-	private double turtleHeightPct = .025;
+	protected double turtleWidthPct = .05;
 	
 	public TurtleImage(){
 		
 		String imagePath = "/sea_turtle.png";
 		this.imagePath = imagePath;
 		Image image = new Image(getClass().getResourceAsStream(
-				"/sea_turtle.png"));
+				"../resources/sea_turtle.png"));
 		this.setImage(image); 
 		
 		
@@ -29,20 +28,23 @@ public class TurtleImage extends ImageView{
 	
 	public void sizeTurtle(double screenWidth, double screenHeight){
 		
-		this.setFitWidth(turtleWidthPct * screenWidth);
-		this.setFitHeight(turtleHeightPct * screenHeight); 
+		this.setFitWidth(screenWidth * turtleWidthPct);
+        this.setPreserveRatio(true);
+        this.setSmooth(true);
+        this.setCache(true);
 				
 	}
 	
 	public void orientTurtle(Turtle turtle){
 		
-		this.setRotate(turtle.getHeading().getAngle()); 
+		this.setRotate(turtle.getHeading().getAngle() - 90); 
+		System.out.println(turtle.getHeading().getAngle());
 	}
 	
-	public void setLocation(Turtle t){
+	public void setLocation(Point p){
 		
-		this.setLayoutX(t.getLocation().getX()); 
-		this.setLayoutY(t.getLocation().getY());
+		this.setLayoutX(p.getX()); 
+		this.setLayoutY(p.getY());
 		
 	}
 

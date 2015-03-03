@@ -124,6 +124,7 @@ public class Main extends Application {
 
 		turtlePanel.setLayoutX(statusBox.getWidth());
 		turtlePanel.setLayoutY(screenHeight * topMenuHeightPct);
+		//turtlePanel.setInitTurtleImage(myModel.getGrid().getTurtles());
 
 		statusBox.setLayoutX(statusBox.getxLocation());
 		statusBox.setLayoutY(statusBox.getyLocation());
