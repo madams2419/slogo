@@ -16,9 +16,11 @@ import javafx.geometry.Rectangle2D;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Hyperlink;
 import javafx.scene.control.TextField;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
+import javafx.scene.layout.VBox;
 import javafx.scene.shape.*;
 import backend.Line;
 import backend.Model;
@@ -157,11 +159,18 @@ public class Main extends Application {
 
 	private void updatePanels(){
 		Stack<Command> comList = myModel.getExecutedCommands();
+		ArrayList<Hyperlink> fields = new ArrayList<>();
 		StringBuilder s = new StringBuilder();
 		for (Command c : comList){
-			s.append(c.toString() + "\n");
+			Hyperlink h = new Hyperlink(c.toString());
+			h.getStylesheets().add("GUIStyle.css");
+			h.setOnAction(event -> {
+		            //TODO: implement what happens when the Link is clicked
+		            // ie. call the model with appropriate command data
+		        });
+			fields.add(h);
 		}
-		prevCommandsBox.setText(s.toString());
+		prevCommandsBox.setBoxes(fields);
 		
 		
 		s.setLength(0);
@@ -214,7 +223,7 @@ public class Main extends Application {
 			turtlePanel.drawLines(backLines);			
 			ArrayList<backend.Turtle> turtles = myModel.getGrid().getTurtles();
 			turtlePanel.drawTurtles(turtles);
-			
+			updatePanels();
 		});
 		
 	}

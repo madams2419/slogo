@@ -24,6 +24,25 @@
     -fx-background-color: transparent;
 }
 
+.hyperlink {
+	-fx-font: 13px "Courier";
+	-fx-text-fill: deepskyblue;
+	-fx-focus-color: transparent;	
+}
+
+.hyperlink:hover{
+	-fx-background-color: purple;
+	-fx-underline: false;
+}
+
+.hyperlink:focused{
+	-fx-underline: true;
+}
+
+.hyperlink:visited {
+	-fx-underline: false;
+}
+
 .overlay {
 	-fx-background-color: black;
 }
@@ -66,7 +85,7 @@
 }
 
 .button:hover {
-    -fx-background-color: orange;
+    -fx-background-color: purple;
 }
 
 .statuslabel{
@@ -90,4 +109,3 @@
 	-fx-border-insets: 0;
 	
 }
-
