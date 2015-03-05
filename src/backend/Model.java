@@ -126,7 +126,7 @@ public class Model {
 
 		//String userInput = "make :test fd 50\n" + "fd :test\n" + "fd :test\n";
 
-		String userInput = "if difference 1 0 [ fd 50 ]";
+		String userInput = "if less? 1 2 [ fd 50 ]";
 
 		Model m = new Model();
 

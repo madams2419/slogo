@@ -2,9 +2,9 @@ package backend.command;
 
 import backend.StringPair;
 
-public class Greater extends BinaryBooleanOperation{
+public class GreaterThan extends BinaryBooleanOperation{
 
-	public Greater(StringPair stringPair, Command parent) {
+	public GreaterThan(StringPair stringPair, Command parent) {
 		super(stringPair, parent);
 	}
 

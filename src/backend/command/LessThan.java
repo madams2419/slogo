@@ -2,10 +2,10 @@ package backend.command;
 
 import backend.StringPair;
 
-public class Less extends BinaryBooleanOperation {
+public class LessThan extends BinaryBooleanOperation {
 
 
-	public Less(StringPair stringPair, Command parent) {
+	public LessThan(StringPair stringPair, Command parent) {
 		super(stringPair, parent);
 	}
 
