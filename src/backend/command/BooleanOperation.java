@@ -2,10 +2,9 @@ package backend.command;
 
 import backend.StringPair;
 
-public abstract class BooleanOperation extends Command{
+public abstract class BooleanOperation extends BinaryMathOperation{
 
-	public BooleanOperation(StringPair stringPair, int numParams, Command parent) {
-		super(stringPair, 2, parent);
+	public BooleanOperation(StringPair stringPair, Command parent) {
+		super(stringPair, parent);
 	}
-
 }
