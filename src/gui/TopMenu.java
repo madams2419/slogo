@@ -132,7 +132,7 @@ public class TopMenu extends Region {
 		choosePenColor.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent t){
 				System.out.println("You are choosing a new Pen color");
-				Turtle.setPenColor(paintToAwt(openColorPicker()));
+				myModel.getGrid().getActiveTurtle().setPenColor(paintToAwt(openColorPicker()));
 				//Grid.setPenColor(color)
 			}
 		});
