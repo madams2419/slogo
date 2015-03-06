@@ -9,7 +9,7 @@ public class Turtle {
 	private String imagePath;
 	private Point location;
 	private Heading heading;
-	private static Color penColor;
+	private Color penColor;
 	private boolean penDown;
 	private ArrayList<Line> lines;
 
@@ -28,7 +28,7 @@ public class Turtle {
 		int newX = location.x + (int) Math.round(deltaX);
 		int newY = location.y + (int) Math.round(deltaY);
 		Point nextLocation = new Point(newX, newY);
-		
+
 		System.out.println("Next loc: " + nextLocation);
 
 		Line newLine = new Line(location, nextLocation, (penDown) ? penColor : null);
@@ -37,15 +37,24 @@ public class Turtle {
 		lines.add(newLine);
 	}
 
-	public void setHeading(double degrees) {
-		heading.setAngle(degrees);
+	public double setHeading(double newAngle) {
+		double angleChange = newAngle - heading.getAngle();
+		heading.setAngle(newAngle);
+		System.out.println("New heading: " + newAngle);
+		return angleChange;
+	}
+
+	public double faceTowards(Point target) {
+		double deltaX = target.getX() - location.getX();
+		double deltaY = target.getY() - location.getY();
+		double newHeading = Math.toDegrees(Math.atan2(deltaX, deltaY));
+
+		return setHeading(newHeading);
 	}
 
 	public void rotateRight(double degrees) {
 		double newHeading = heading.getAngle() - degrees;
 		setHeading(newHeading);
-		
-		System.out.println("New heading: " + newHeading);
 	}
 
 	public void rotateLeft(double degrees) {
@@ -57,7 +66,7 @@ public class Turtle {
 		this.imagePath = imagePath;
 	}
 
-	public static void setPenColor(Color newPenColor) {
+	public void setPenColor(Color newPenColor) {
 		penColor = newPenColor;
 	}
 
