@@ -59,6 +59,12 @@ public class Model {
 		pendingCommands = parser.parseProgram(prog);
 		printCommandTree();
 	}
+	
+	public Command executeCommand(Command command) {
+		command.execute();
+		executedCommands.push(command);
+		return command;
+	}
 
 	public Command executeNextCommand() {
 		Command targetCommand = pendingCommands.poll();
@@ -131,7 +137,7 @@ public class Model {
 		
 		String userInput = new Scanner(new File("test.logo")).useDelimiter("\\Z").next();
 
-		String userInput = "if less? 1 2 [ fd 50 ]";
+		//String userInput = "if less? 1 2 [ fd 50 ]";
 
 		Model m = new Model();
 
