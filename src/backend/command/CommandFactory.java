@@ -21,7 +21,7 @@ public class CommandFactory {
 		this.userVariables = userVariables;
 	}
 
-	public Command getCommand(StringPair stringPair, Command parent) {
+	public Command getCommand(StringPair stringPair, Command parent)  {
 		Command newCommand;
 		String comClassName = "backend.command." + stringPair.getProperty();
 		
@@ -48,9 +48,7 @@ public class CommandFactory {
 			}
 
 		} catch (Exception e) {
-			// TODO add some actual error handling
-			e.printStackTrace();
-			newCommand = null;
+		  throw new NullPointerException("Command Not Found");
 		}
 
 		return newCommand;

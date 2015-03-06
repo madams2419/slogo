@@ -41,7 +41,7 @@ public class SLogoParser {
 	}
 
 	// Should probably refactor this into a recursive implementation (that will be much cleaner)
-	public Queue<Command> parseProgram(String prog) {
+	public Queue<Command> parseProgram(String prog) throws IllegalArgumentException{
 		ArrayList<StringPair> spList = genPropertyList(prog.split("\\p{Space}"), patterns);
 
 		Command targetNode = null;
@@ -53,11 +53,9 @@ public class SLogoParser {
 					((CommandList)targetNode).setComplete();
 					targetNode = bubbleUp(targetNode);
 				} else {
-					System.out.println("ERROR: list ending where there shouldn't be one.");
-					//TODO error, throw some sort of exception or somethings
+					throw new IllegalArgumentException("Invalid ListEnd Parameter");
 				}
 
-				// assumption is that targetNode is null or needs more params
 			} else if (targetNode == null) {
 				targetNode = comFactory.getCommand(sp, null);
 
@@ -130,7 +128,7 @@ public class SLogoParser {
 					}
 				}
 				if (! matched) {
-					System.out.println(String.format("%s not matched", s));
+					throw new IllegalArgumentException("Invalid Command");
 				}
 			}
 		}

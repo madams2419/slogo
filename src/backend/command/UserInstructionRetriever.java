@@ -3,6 +3,10 @@ package backend.command;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+
+
+
+
 import backend.*;
 
 public class UserInstructionRetriever extends Command {
@@ -11,14 +15,14 @@ public class UserInstructionRetriever extends Command {
 	HashMap<String, UserInstructionContainer> userInstructions;
 	UserInstructionContainer uic;
 
-	public UserInstructionRetriever(StringPair stringPair, HashMap<String, UserInstructionContainer> userInstructions, HashMap<String, Variable> userVariables, Command parent) {
+	public UserInstructionRetriever(StringPair stringPair, HashMap<String, UserInstructionContainer> userInstructions, HashMap<String, Variable> userVariables, Command parent) throws NullPointerException{
 		super(stringPair, 0, parent);
 		this.userInstructions = userInstructions;
 		this.userVariables = userVariables;
 
 		if(parent == null || !parent.getProperty().equals("MakeUserInstruction"))
 			if((uic = getUIC()) == null)
-				System.out.println("Error: No command defintion found."); //TODO proper error handling
+				throw new NullPointerException("Command not Found");
 			else
 				numParams = getNumParams();
 	}
