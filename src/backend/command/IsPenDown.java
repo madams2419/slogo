@@ -9,7 +9,7 @@ public class IsPenDown extends TurtleQuery {
 	}
 
 	public Double execute() {
-		return turtle.penStatus();
+		return turtle.isPenDown();
 	}
 
 }
