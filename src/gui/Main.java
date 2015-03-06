@@ -7,6 +7,7 @@ import gui.textAreas.UserFunctionsAndCommands;
 import gui.textAreas.UserVariablesBox;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Stack;
 
 import javafx.animation.KeyFrame;
@@ -159,7 +160,7 @@ public class Main extends Application {
 	}
 
 	private void updatePanels(){
-		Stack<Command> comList = myModel.getExecutedCommands();
+		List<Command> comList = myModel.getExecutedCommands();
 		ArrayList<Hyperlink> fields = new ArrayList<>();
 		StringBuilder s = new StringBuilder();
 		for (Command c : comList){
