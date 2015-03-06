@@ -16,9 +16,8 @@ public class UserFunctionsAndCommands extends AbstractEditableTextBox{
 		this.overlayHeight = overlayHeight; 
 		this.overlayWidth = overlayWidth;
 		this.initText = initText;
-		this.setStyle("-fx-border-color: black;");
 		this.isPrompt = isPrompt;
-		
+		this.label.getStyleClass().add("midlabel");
 		this.textArea = makeTextArea();
 
 		setRegionPreferences();

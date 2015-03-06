@@ -1,10 +1,16 @@
 package gui;
 
+import java.awt.Point;
+import java.util.ArrayList;
+import java.util.HashMap;
+
+import backend.Turtle;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.layout.Region;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.ArcType;
+import javafx.scene.shape.Polygon;
 
 public class DrawingArea extends Region {
 
@@ -13,6 +19,7 @@ public class DrawingArea extends Region {
 	protected double drawingAreaXLocation;
 	protected double drawingAreaYLocation;
 	protected Canvas drawingCanvas;
+	protected HashMap<Turtle, TurtleImage> turtleMap = new HashMap<>();
 
 	public DrawingArea(double drawingAreaWidth, double drawingAreaHeight,
 			double drawingAreaXLocation, double drawingAreaYLocation) {
@@ -31,28 +38,93 @@ public class DrawingArea extends Region {
 		//this.setStyle("-fx-border-color: black;");
 
 	}
-
-	private void drawShapes(GraphicsContext gc) {
-		gc.setFill(Color.GREEN);
-		gc.setStroke(Color.BLUE);
-		gc.setLineWidth(5);
-		gc.strokeLine(40, 10, 10, 40);
-		gc.fillOval(10, 60, 30, 30);
-		gc.strokeOval(60, 60, 30, 30);
-		gc.fillRoundRect(110, 60, 30, 30, 10, 10);
-		gc.strokeRoundRect(160, 60, 30, 30, 10, 10);
-		gc.fillArc(10, 110, 30, 30, 45, 240, ArcType.OPEN);
-		gc.fillArc(60, 110, 30, 30, 45, 240, ArcType.CHORD);
-		gc.fillArc(110, 110, 30, 30, 45, 240, ArcType.ROUND);
-		gc.strokeArc(10, 160, 30, 30, 45, 240, ArcType.OPEN);
-		gc.strokeArc(60, 160, 30, 30, 45, 240, ArcType.CHORD);
-		gc.strokeArc(110, 160, 30, 30, 45, 240, ArcType.ROUND);
-		gc.fillPolygon(new double[] { 10, 40, 10, 40 }, new double[] { 210,
-				210, 240, 240 }, 4);
-		gc.strokePolygon(new double[] { 60, 90, 60, 90 }, new double[] { 210,
-				210, 240, 240 }, 4);
-		gc.strokePolyline(new double[] { 110, 140, 110, 140 }, new double[] {
-				210, 210, 240, 240 }, 4);
+	
+	protected void drawLines(ArrayList<backend.Line> lines){
+		this.drawingCanvas.getGraphicsContext2D().setLineWidth(5);
+		this.drawingCanvas.getGraphicsContext2D().setStroke(Color.BLUE);
+		for (backend.Line l : lines){
+			Point adjustedLStartPoint = convertCoordinates(l.getStartPoint());
+			Point adjustedLEndPoint = convertCoordinates(l.getEndPoint());
+			this.drawingCanvas.getGraphicsContext2D().strokeLine(adjustedLStartPoint.getX(), adjustedLStartPoint.getY(), 
+					adjustedLEndPoint.getX(), adjustedLEndPoint.getY());
+		}
+		
+		System.out.println("drawLines complete");
 	}
+	
+	protected void drawTurtles(ArrayList<Turtle> turtles){
+		this.drawingCanvas.getGraphicsContext2D().setLineWidth(50);
+		this.drawingCanvas.getGraphicsContext2D().setStroke(Color.RED);
+		
+		
+		for (Turtle t: turtles){
+			
+			TurtleImage turtleImage;
+			if(turtleMap.get(t) == null){
+				turtleImage = new TurtleImage();
+				turtleMap.put(t, turtleImage);
+			}
+			else{
+				turtleImage = turtleMap.get(t);
+			}
+			turtleImage.sizeTurtle(drawingAreaWidth, drawingAreaHeight); 
+			
+			Point adjustedTurtleLocation = convertCoordinates(t.getLocation());
+			adjustedTurtleLocation = positionPointRelativeToLines(adjustedTurtleLocation, turtleImage);
+			turtleImage.setLocation(adjustedTurtleLocation);
+			turtleImage.orientTurtle(t);
+		
+			double x = t.getLocation().getX();
+			double y = t.getLocation().getY();
+			double[] xlocs = {x - 10, x + 10, x};
+			double[] ylocs = {y, y, y + 20};
+			
+			//Polygon p = new Polygon(xlocs[0], ylocs[0], xlocs[1], ylocs[1], xlocs[2], ylocs[2]);
+			//this.drawingCanvas.getGraphicsContext2D().
+			this.getChildren().add(turtleImage);
+			this.drawingCanvas.getGraphicsContext2D().fillPolygon(xlocs, ylocs, 3);
+			
+			
+		}
+	}
+	
+	private Point positionPointRelativeToLines(Point turtleLocation, TurtleImage turtleImage) {
+		Point adjustedturtleLocation = new Point();
+		double xLocation = turtleLocation.getX();
+		double yLocation = turtleLocation.getY();
+		xLocation = xLocation - (.5 * drawingAreaWidth * turtleImage.turtleWidthPct);
+		yLocation = yLocation + (turtleImage.getFitHeight());
+		System.out.println(turtleImage.getFitHeight());
+		adjustedturtleLocation.setLocation(xLocation, yLocation); 
+		return adjustedturtleLocation;
+	}
+
+	protected Point convertCoordinates(Point point){ 
+		
+		Point adjustedCoordinatePoint = new Point();
+		
+		double xLocation = point.getX();
+		double yLocation = point.getY();
+		
+		xLocation = xLocation + (.5 * drawingAreaWidth);
+		yLocation = (.5 * drawingAreaHeight) + yLocation;
+		
+		adjustedCoordinatePoint.setLocation(xLocation, yLocation);
+		return adjustedCoordinatePoint;
+	}
+	
+	public void setInitTurtleImage(ArrayList<Turtle> turtles) {
+
+		TurtleImage turtleImage = new TurtleImage();
+		turtleImage.sizeTurtle(drawingAreaWidth, drawingAreaHeight);
+
+		Point initTurtleLocation = new Point(0, 0);
+
+		initTurtleLocation = convertCoordinates(initTurtleLocation);
+		turtleImage.setLocation(initTurtleLocation);
+		this.getChildren().add(turtleImage);
+
+	}
+	
 
 }

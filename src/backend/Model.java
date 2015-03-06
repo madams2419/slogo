@@ -52,6 +52,8 @@ public class Model {
 		comFactory = new CommandFactory(grid, userInstructions, userVariables);
 		parser = new SLogoParser(comFactory);
 	}
+	
+	
 
 	public void parseProgram(String prog) {
 		pendingCommands = parser.parseProgram(prog);
@@ -127,9 +129,9 @@ public class Model {
 
 		//String userInput = "if difference 1 0 [ fd 50 ]";
 		
-		String fileName = "test.logo";
-		
-		String userInput = new Scanner(new File(fileName)).useDelimiter("\\Z").next();
+		String userInput = new Scanner(new File("test.logo")).useDelimiter("\\Z").next();
+
+		String userInput = "if less? 1 2 [ fd 50 ]";
 
 		Model m = new Model();
 
