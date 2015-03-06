@@ -23,8 +23,8 @@ public class Model {
 	////////////////////////////////////////////////////////////////////
 	//TODO define these fields with an XML config file or resource file
 	////////////////////////////////////////////////////////////////////
-	private static final int gridWidth = 1000;
-	private static final int gridHeight = 1000;
+	private static final int gridWidth = 10000;
+	private static final int gridHeight = 10000;
 	private static final Color gridColor = Color.WHITE;
 
 	private static final String turtleImgPath = "turtle.jpg";
