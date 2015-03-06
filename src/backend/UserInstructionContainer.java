@@ -1,4 +1,6 @@
-package backend.command;
+package backend;
+
+import backend.command.CommandList;
 
 public class UserInstructionContainer {
 

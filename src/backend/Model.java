@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 import java.util.Queue;
 import java.util.Scanner;
 import java.util.Stack;
@@ -22,8 +23,8 @@ public class Model {
 	////////////////////////////////////////////////////////////////////
 	//TODO define these fields with an XML config file or resource file
 	////////////////////////////////////////////////////////////////////
-	private static final int gridWidth = 1000;
-	private static final int gridHeight = 1000;
+	private static final int gridWidth = 10000;
+	private static final int gridHeight = 10000;
 	private static final Color gridColor = Color.WHITE;
 
 	private static final String turtleImgPath = "turtle.jpg";
@@ -35,7 +36,7 @@ public class Model {
 	private Grid grid;
 	private Queue<Command> pendingCommands;
 	private static Stack<Command> executedCommands;
-	private HashMap<String, Double> userVariables;
+	private HashMap<String, Variable> userVariables;
 	private HashMap<String, UserInstructionContainer> userInstructions;
 	private String helpPagePath;
 	private CommandFactory comFactory;
@@ -59,6 +60,12 @@ public class Model {
 		pendingCommands = parser.parseProgram(prog);
 		printCommandTree();
 	}
+	
+	public Command executeCommand(Command command) {
+		command.execute();
+		executedCommands.push(command);
+		return command;
+	}
 
 	public Command executeNextCommand() {
 		Command targetCommand = pendingCommands.poll();
@@ -67,7 +74,7 @@ public class Model {
 		return targetCommand;
 	}
 	
-	public Stack<Command> executeAllCommands() {
+	public List<Command> executeAllCommands() {
 		while(!pendingCommands.isEmpty()) {
 			executeNextCommand();
 			Turtle t = grid.getActiveTurtle();
@@ -94,8 +101,19 @@ public class Model {
 		}
 	}
 
-	public void setVariable(String name, Double val) {
-		userVariables.put(name, val);
+	public void setUserVariable(String name, Variable newVar) {
+		userVariables.put(name, newVar);
+	}
+	
+	public void setUserVariable(String name, double val) {
+		Variable newVar = new Variable(name, val);
+		setUserVariable(name, newVar);
+	}
+	
+	public void setUserVariable(Variable var, double val) {
+		String name = var.getName();
+		Variable newVar = new Variable(name, val);
+		setUserVariable(name, newVar);
 	}
 
 	public void setLanguage(String language) {
@@ -106,15 +124,19 @@ public class Model {
 		return grid;
 	}
 
-	public Stack<Command> getExecutedCommands() {
+	public List<Command> getExecutedCommands() {
 		return executedCommands;
 	}
+	
+	public List<Command> getPendingCommands() {
+		return (List<Command>) pendingCommands;
+	}
 
-	public HashMap<String, Double> getUserVariables() {
+	public Map<String, Variable> getUserVariables() {
 		return userVariables;
 	}
 
-	public HashMap<String, UserInstructionContainer> getUserFunctions() {
+	public Map<String, UserInstructionContainer> getUserFunctions() {
 		return userInstructions;
 	}
 
@@ -131,7 +153,7 @@ public class Model {
 		
 		String userInput = new Scanner(new File("test.logo")).useDelimiter("\\Z").next();
 
-		String userInput = "if less? 1 2 [ fd 50 ]";
+		//String userInput = "if less? 1 2 [ fd 50 ]";
 
 		Model m = new Model();
 

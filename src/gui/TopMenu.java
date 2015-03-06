@@ -22,9 +22,11 @@ public class TopMenu extends Region {
 	protected double overlayWidth;
 	protected double overlayHeight;
 	protected double heightPct;
+
 	protected Model myModel;
 
 	public TopMenu(double overlayWidth, double overlayHeight, double heightPct, Model myModel) {
+
 
 		this.overlayWidth = overlayWidth;
 		this.overlayHeight = overlayHeight;
@@ -122,7 +124,7 @@ public class TopMenu extends Region {
 		chooseBackgroundColor.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent t){
 				System.out.println("You are choosing a new Background Color");
-				Grid.setBGColor(paintToAwt(openColorPicker()));
+				myModel.getGrid().setBGColor(paintToAwt(openColorPicker()));
 				//Grid.setBGColor(color); 
 			}
 		});
