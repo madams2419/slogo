@@ -1,13 +1,13 @@
 package backend;
 
-import java.awt.Dimension; 
+import java.awt.Dimension;
 import java.util.ArrayList;
 import java.awt.Color;
 
 public class Grid {
 
 	private Dimension size;
-	protected static Color bgColor;
+	protected Color bgColor;
 	private ArrayList<Turtle> turtles;
 
 	public Grid(Dimension size, Color bgColor) {
@@ -21,7 +21,7 @@ public class Grid {
 		turtles.add(turtle);
 	}
 
-	public static void setBGColor(Color newBGColor) {
+	public void setBGColor(Color newBGColor) {
 		bgColor = newBGColor;
 	}
 
@@ -40,7 +40,7 @@ public class Grid {
 	public ArrayList<Turtle> getTurtles() {
 		return turtles;
 	}
-	
+
 	public Turtle getActiveTurtle() {
 		return turtles.get(0);
 	}
