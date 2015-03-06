@@ -107,7 +107,7 @@ public class Main extends Application {
 				"Previously Executed Commands", false);
 
 		TopMenu topMenu = new TopMenu(screenWidth, screenHeight,
-				topMenuHeightPct);
+				topMenuHeightPct, myModel);
 
 		
 		setButtonActions();

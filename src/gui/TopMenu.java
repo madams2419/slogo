@@ -22,13 +22,14 @@ public class TopMenu extends Region {
 	protected double overlayWidth;
 	protected double overlayHeight;
 	protected double heightPct;
-	protected Model model = new Model();
+	protected Model myModel;
 
-	public TopMenu(double overlayWidth, double overlayHeight, double heightPct) {
+	public TopMenu(double overlayWidth, double overlayHeight, double heightPct, Model myModel) {
 
 		this.overlayWidth = overlayWidth;
 		this.overlayHeight = overlayHeight;
 		this.heightPct = heightPct;
+		this.myModel = myModel;
 		addMenuBar();
 
 	}
@@ -91,8 +92,10 @@ public class TopMenu extends Region {
 			public void handle(ActionEvent t){
 				// Turtle.setImage();
 				System.out.println("You are choosing a new Turtle");
+				File initTurtleImage = new File("../resources/sea_turtle.png");
 				Stage fileChooserStage = new Stage();
 				FileChooser fileChooser = new FileChooser();
+				//fileChooser.setInitialDirectory(initTurtleImage);
 				fileChooser.setTitle("Choose a Turtle Image"); 
 				fileChooser.getExtensionFilters().addAll(
 					    new FileChooser.ExtensionFilter("All Images", "*.*"),
@@ -103,11 +106,14 @@ public class TopMenu extends Region {
 					    );
                 File file = fileChooser.showOpenDialog(fileChooserStage);
                 String imagePath = file.getAbsolutePath();
-                ArrayList<Turtle> turtles = model.getGrid().getTurtles();
+                ArrayList<Turtle> turtles = myModel.getGrid().getTurtles();
                 for(Turtle turtle : turtles){
                 	
-                	turtle.setImagePath(imagePath); 
-                	
+                	try {
+                		turtle.setImagePath(imagePath); 
+					} catch (Exception e1) {
+						e1.printStackTrace();
+					}
                 }
 			}
 		});
@@ -138,14 +144,14 @@ public class TopMenu extends Region {
 		MenuItem English = new MenuItem("English");
 		English.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent t) {
-				model.setLanguage(English.getText());
+				myModel.setLanguage(English.getText());
 				System.out.println("Your Language Choice is: English");
 			}
 		});
 		MenuItem French = new MenuItem("French");
 		French.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent t) {
-				model.setLanguage(French.getText());
+				myModel.setLanguage(French.getText());
 				System.out.println("Your Language Choice is: French");
 			}
 		});
@@ -153,14 +159,14 @@ public class TopMenu extends Region {
 		MenuItem Italian = new MenuItem("Italian");
 		Italian.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent t) {
-				model.setLanguage(Italian.getText());
+				myModel.setLanguage(Italian.getText());
 				System.out.println("Your Language Choice is: Italian");
 			}
 		});
 		MenuItem German = new MenuItem("German");
 		German.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent t) {
-				model.setLanguage(German.getText());
+				myModel.setLanguage(German.getText());
 				System.out.println("Your Language Choice is: German");
 			}
 		});

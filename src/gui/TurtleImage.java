@@ -1,6 +1,8 @@
 package gui;
 
 import java.awt.Point;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 
 import backend.Turtle;
 import javafx.scene.image.Image;
@@ -10,13 +12,15 @@ public class TurtleImage extends ImageView{
 	
 	protected String imagePath;
 	protected double turtleWidthPct = .05;
-	
-	public TurtleImage(){
+	protected String defaultImagePath = "../resources/sea_turtle.png";
+	protected Turtle turtle;
+	public TurtleImage(Turtle turtle){
 		
-		String defaultImagePath = "../resources/sea_turtle.png";
+		this.turtle = turtle;
 		this.imagePath = defaultImagePath;
+		setDefaultImagePath();
 		Image image = new Image(getClass().getResourceAsStream(
-				defaultImagePath));
+				turtle.getImagePath()));
 		this.setImage(image); 
 		
 		
@@ -25,16 +29,43 @@ public class TurtleImage extends ImageView{
 	public void setImagePath(){
 		
 		this.imagePath = imagePath;
-		
+		turtle.setImagePath(imagePath);
+		updateImage();
 		
 	}
 	
-	public void updateImage(){
+	public void setDefaultImagePath(){
 		
-		Image image = new Image(getClass().getResourceAsStream(
-				this.imagePath));
-		this.setImage(image);
+		if(turtle.getImagePath() == "turtle.jpg"){
+			turtle.setImagePath(this.defaultImagePath);
+		}
 		
+	}
+	
+	public void updateImage() {
+
+		String imagePath = turtle.getImagePath();
+		imagePath = imagePath.replace("\\", "/");
+		Image newTurtle = null;
+		if (imagePath == defaultImagePath) {
+			newTurtle = new Image(getClass().getResourceAsStream(
+					defaultImagePath));
+		} else {
+
+			FileInputStream in = null;
+			try {
+				in = new FileInputStream(imagePath);
+			} catch (FileNotFoundException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			newTurtle = new Image(in);
+		}
+		
+		// Image image = new Image(getClass().getResourceAsStream(imnew
+		// Image(getClass().getResourceAsStream(imagePath));agePath));
+		this.setImage(newTurtle);
+
 	}
 	
 	

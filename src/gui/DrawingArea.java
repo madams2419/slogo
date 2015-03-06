@@ -61,13 +61,14 @@ public class DrawingArea extends Region {
 			
 			TurtleImage turtleImage;
 			if(turtleMap.get(t) == null){
-				turtleImage = new TurtleImage();
+				turtleImage = new TurtleImage(t);
 				turtleMap.put(t, turtleImage);
 				this.getChildren().add(turtleImage);
 
 			}
 			else{
 				turtleImage = turtleMap.get(t);
+				turtleImage.updateImage();
 			}
 			turtleImage.sizeTurtle(drawingAreaWidth, drawingAreaHeight); 
 			
@@ -116,18 +117,18 @@ public class DrawingArea extends Region {
 		return adjustedCoordinatePoint;
 	}
 	
-	public void setInitTurtleImage(ArrayList<Turtle> turtles) {
-
-		TurtleImage turtleImage = new TurtleImage();
-		turtleImage.sizeTurtle(drawingAreaWidth, drawingAreaHeight);
-
-		Point initTurtleLocation = new Point(0, 0);
-
-		initTurtleLocation = convertCoordinates(initTurtleLocation);
-		turtleImage.setLocation(initTurtleLocation);
-		this.getChildren().add(turtleImage);
-
-	}
+//	public void setInitTurtleImage(ArrayList<Turtle> turtles) {
+//
+//		TurtleImage turtleImage = new TurtleImage();
+//		turtleImage.sizeTurtle(drawingAreaWidth, drawingAreaHeight);
+//
+//		Point initTurtleLocation = new Point(0, 0);
+//
+//		initTurtleLocation = convertCoordinates(initTurtleLocation);
+//		turtleImage.setLocation(initTurtleLocation);
+//		this.getChildren().add(turtleImage);
+//
+//	}
 	
 
 }
