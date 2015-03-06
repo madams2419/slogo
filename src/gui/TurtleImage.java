@@ -13,18 +13,31 @@ public class TurtleImage extends ImageView{
 	
 	public TurtleImage(){
 		
-		String imagePath = "/sea_turtle.png";
-		this.imagePath = imagePath;
+		String defaultImagePath = "../resources/sea_turtle.png";
+		this.imagePath = defaultImagePath;
 		Image image = new Image(getClass().getResourceAsStream(
-				"../resources/sea_turtle.png"));
+				defaultImagePath));
 		this.setImage(image); 
 		
 		
 	}
 	
-	public void setImagePath(String imagePath){
+	public void setImagePath(){
+		
+		this.imagePath = imagePath;
+		
 		
 	}
+	
+	public void updateImage(){
+		
+		Image image = new Image(getClass().getResourceAsStream(
+				this.imagePath));
+		this.setImage(image);
+		
+	}
+	
+	
 	
 	public void sizeTurtle(double screenWidth, double screenHeight){
 		

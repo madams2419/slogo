@@ -63,6 +63,8 @@ public class DrawingArea extends Region {
 			if(turtleMap.get(t) == null){
 				turtleImage = new TurtleImage();
 				turtleMap.put(t, turtleImage);
+				this.getChildren().add(turtleImage);
+
 			}
 			else{
 				turtleImage = turtleMap.get(t);
@@ -81,21 +83,22 @@ public class DrawingArea extends Region {
 			
 			//Polygon p = new Polygon(xlocs[0], ylocs[0], xlocs[1], ylocs[1], xlocs[2], ylocs[2]);
 			//this.drawingCanvas.getGraphicsContext2D().
-			this.getChildren().add(turtleImage);
-			this.drawingCanvas.getGraphicsContext2D().fillPolygon(xlocs, ylocs, 3);
 			
 			
 		}
 	}
 	
 	private Point positionPointRelativeToLines(Point turtleLocation, TurtleImage turtleImage) {
+		
 		Point adjustedturtleLocation = new Point();
 		double xLocation = turtleLocation.getX();
 		double yLocation = turtleLocation.getY();
+		
 		xLocation = xLocation - (.5 * drawingAreaWidth * turtleImage.turtleWidthPct);
 		yLocation = yLocation + (turtleImage.getFitHeight());
-		System.out.println(turtleImage.getFitHeight());
+		
 		adjustedturtleLocation.setLocation(xLocation, yLocation); 
+		
 		return adjustedturtleLocation;
 	}
 

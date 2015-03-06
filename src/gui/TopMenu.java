@@ -1,5 +1,8 @@
 package gui;
 
+import java.io.File;
+import java.util.ArrayList;
+
 import backend.Grid;
 import backend.Model;
 import backend.Turtle;
@@ -11,6 +14,7 @@ import javafx.scene.control.MenuItem;
 import javafx.scene.input.KeyCombination;
 import javafx.scene.layout.Region;
 import javafx.scene.paint.Color;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
 public class TopMenu extends Region {
@@ -87,6 +91,24 @@ public class TopMenu extends Region {
 			public void handle(ActionEvent t){
 				// Turtle.setImage();
 				System.out.println("You are choosing a new Turtle");
+				Stage fileChooserStage = new Stage();
+				FileChooser fileChooser = new FileChooser();
+				fileChooser.setTitle("Choose a Turtle Image"); 
+				fileChooser.getExtensionFilters().addAll(
+					    new FileChooser.ExtensionFilter("All Images", "*.*"),
+					    new FileChooser.ExtensionFilter("JPG", "*.jpg"),
+					    new FileChooser.ExtensionFilter("GIF", "*.gif"),
+					    new FileChooser.ExtensionFilter("BMP", "*.bmp"),
+					    new FileChooser.ExtensionFilter("PNG", "*.png")
+					    );
+                File file = fileChooser.showOpenDialog(fileChooserStage);
+                String imagePath = file.getAbsolutePath();
+                ArrayList<Turtle> turtles = model.getGrid().getTurtles();
+                for(Turtle turtle : turtles){
+                	
+                	turtle.setImagePath(imagePath); 
+                	
+                }
 			}
 		});
 		
