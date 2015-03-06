@@ -11,6 +11,7 @@ public class Turtle {
 	private Heading heading;
 	private Color penColor;
 	private boolean penDown;
+	private boolean visible;
 	private ArrayList<Line> lines;
 
 	public Turtle(String imagePath, Point location, Heading heading, Color penColor) {
@@ -18,23 +19,27 @@ public class Turtle {
 		this.location = location;
 		this.heading = heading;
 		this.penColor = penColor;
-		penDown = true; // DEBUG
+		penDown = true;
+		visible = true;
 		lines = new ArrayList<>();
 	}
 
-	public void move(Double magnitude) {
+	public double move(Double magnitude) {
 		double deltaX = Math.cos(heading.getAngleRads()) * magnitude;
 		double deltaY = Math.sin(heading.getAngleRads()) * magnitude;
 		int newX = location.x + (int) Math.round(deltaX);
 		int newY = location.y + (int) Math.round(deltaY);
 		Point nextLocation = new Point(newX, newY);
+		return moveToPoint(nextLocation);
+	}
 
-		System.out.println("Next loc: " + nextLocation);
-
-		Line newLine = new Line(location, nextLocation, (penDown) ? penColor : null);
-
-		location = nextLocation;
+	public double moveToPoint(Point target) {
+		System.out.println("Next loc: " + target);
+		Line newLine = new Line(location, target, (penDown) ? penColor : null);
+		double distanceMoved = location.distance(target);
+		location = target;
 		lines.add(newLine);
+		return distanceMoved;
 	}
 
 	public double setHeading(double newAngle) {
@@ -66,6 +71,34 @@ public class Turtle {
 		this.imagePath = imagePath;
 	}
 
+	public double setPenDown() {
+		penDown = true;
+		return 1.0;
+	}
+
+	public double setPenUp() {
+		penDown = false;
+		return 0.0;
+	}
+
+	public double isPenDown() {
+		return (penDown) ? 1.0 : 0.0;
+	}
+
+	public double isShowing() {
+		return (visible) ? 1.0 : 0.0;
+	}
+
+	public double show() {
+		visible = true;
+		return 1.0;
+	}
+
+	public double hide() {
+		visible = false;
+		return 0.0;
+	}
+
 	public void setPenColor(Color newPenColor) {
 		penColor = newPenColor;
 	}
@@ -84,6 +117,10 @@ public class Turtle {
 
 	public ArrayList<Line> getLines() {
 		return lines;
+	}
+
+	public void clearLines() {
+		lines.clear();
 	}
 
 }
