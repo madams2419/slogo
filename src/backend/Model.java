@@ -73,7 +73,7 @@ public class Model {
 		return targetCommand;
 	}
 	
-	public Stack<Command> executeAllCommands() {
+	public List<Command> executeAllCommands() {
 		while(!pendingCommands.isEmpty()) {
 			executeNextCommand();
 			Turtle t = grid.getActiveTurtle();
@@ -112,8 +112,12 @@ public class Model {
 		return grid;
 	}
 
-	public Stack<Command> getExecutedCommands() {
+	public List<Command> getExecutedCommands() {
 		return executedCommands;
+	}
+	
+	public List<Command> getPendingCommands() {
+		return (List<Command>) pendingCommands;
 	}
 
 	public HashMap<String, Double> getUserVariables() {
