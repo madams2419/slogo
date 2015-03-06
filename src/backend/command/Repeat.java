@@ -1,13 +1,11 @@
 package backend.command;
 
-import java.util.HashMap;
-
-import backend.StringPair;
+import backend.*;
 
 public class Repeat extends For {
 
-	public Repeat(StringPair stringPair, HashMap<String, Double> userVariables, Command parent) {
-		super(stringPair, userVariables, parent);
+	public Repeat(StringPair stringPair, Command parent, Model model) {
+		super(stringPair, parent, model);
 	}
 
 	public Double execute() {

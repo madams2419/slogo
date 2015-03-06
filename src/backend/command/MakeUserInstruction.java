@@ -1,29 +1,22 @@
 package backend.command;
 
-import java.util.HashMap;
-
 import backend.*;
 
-public class MakeUserInstruction extends Command {
+public class MakeUserInstruction extends ModelCommand {
 
-	HashMap<String, Variable> userVariables;
-	HashMap<String, UserInstructionContainer> userInstructions;
+	private static int NUM_PARAMS = 3;
 
-	//TODO to support recursion, must add self to userInstruction list as soon as params are set
-
-	public MakeUserInstruction(StringPair stringPair, HashMap<String, UserInstructionContainer> userInstructions, HashMap<String, Variable> userVariables, Command parent) {
-		super(stringPair, 3, parent);
-		this.userInstructions = userInstructions;
-		this.userVariables = userVariables;
+	public MakeUserInstruction(StringPair stringPair, Command parent, Model model) {
+		super(stringPair, NUM_PARAMS, parent, model);
 	}
 
 	@Override
 	public void setParam(Command newParam) {
 		super.setParam(newParam);
 
-		if(params.size() == 3)
+		if(params.size() == NUM_PARAMS) {
 			addToInstrList();
-
+		}
 	}
 
 	public Double execute() {
@@ -37,7 +30,7 @@ public class MakeUserInstruction extends Command {
 		UserInstructionContainer newUIC = new UserInstructionContainer(paramNames, commandList);
 
 		// add instruction definition to model list
-		userInstructions.put(instName, newUIC);
+		userInstructions().put(instName, newUIC);
 	}
 
 }

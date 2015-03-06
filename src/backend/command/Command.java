@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import backend.StringPair;
 
 
-public abstract class Command implements Cloneable {
+public abstract class Command {
 
 	private StringPair stringPair;
 	protected int numParams;

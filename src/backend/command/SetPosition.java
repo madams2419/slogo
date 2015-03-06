@@ -1,18 +1,16 @@
 package backend.command;
 
 import java.awt.Point;
-
-import backend.StringPair;
-import backend.Turtle;
+import backend.*;
 
 public class SetPosition extends TurtleCommand {
 
-	public SetPosition(StringPair stringPair, Command parent, Turtle turtle) {
-		super(stringPair, 2, parent, turtle);
+	public SetPosition(StringPair stringPair, Command parent, Model model) {
+		super(stringPair, 2, parent, model);
 	}
 
 	public Double execute() {
-		return turtle.moveToPoint(getNewPosition());
+		return turtle().moveToPoint(getNewPosition());
 	}
 
 	private Point getNewPosition() {

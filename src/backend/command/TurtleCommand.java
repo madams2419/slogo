@@ -2,13 +2,14 @@ package backend.command;
 
 import backend.*;
 
-public abstract class TurtleCommand extends Command {
+public abstract class TurtleCommand extends ModelCommand {
 
-	protected Turtle turtle;
+	public TurtleCommand(StringPair stringPair, int numParams, Command parent, Model model) {
+		super(stringPair, numParams, parent, model);
+	}
 
-	public TurtleCommand(StringPair stringPair, int numParams, Command parent, Turtle turtle) {
-		super(stringPair, numParams, parent);
-		this.turtle = turtle;
+	protected Turtle turtle() {
+		return grid().getActiveTurtle();
 	}
 
 }

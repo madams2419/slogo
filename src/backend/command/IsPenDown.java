@@ -4,12 +4,12 @@ import backend.*;
 
 public class IsPenDown extends TurtleQuery {
 
-	public IsPenDown(StringPair stringPair, Command parent, Turtle turtle) {
-		super(stringPair, parent, turtle);
+	public IsPenDown(StringPair stringPair, Command parent, Model model) {
+		super(stringPair, parent, model);
 	}
 
 	public Double execute() {
-		return turtle.isPenDown();
+		return turtle().isPenDown();
 	}
 
 }

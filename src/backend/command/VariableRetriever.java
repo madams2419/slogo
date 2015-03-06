@@ -1,19 +1,17 @@
 package backend.command;
 
-import java.util.HashMap;
 import backend.*;
 
-public class VariableRetriever extends Command {
+public class VariableRetriever extends ModelCommand {
 
-	HashMap<String, Variable> userVariables;
+	private static final int NUM_PARAMS = 0;
 
-	public VariableRetriever(StringPair stringPair, HashMap<String, Variable> userVariables, Command parent) {
-		super(stringPair, 0, parent);
-		this.userVariables = userVariables;
+	public VariableRetriever(StringPair stringPair, Command parent, Model model) {
+		super(stringPair, NUM_PARAMS, parent, model);
 	}
 
 	public Double execute() {
-		return userVariables.get(getTypedString()).getValue();
+		return userVariables().get(getTypedString()).getValue();
 	}
 
 }

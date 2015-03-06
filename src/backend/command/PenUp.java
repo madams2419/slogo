@@ -1,16 +1,15 @@
 package backend.command;
 
-import backend.StringPair;
-import backend.Turtle;
+import backend.*;
 
 public class PenUp extends TurtleCommand {
 
-	public PenUp(StringPair stringPair, Command parent, Turtle turtle) {
-		super(stringPair, 0, parent, turtle);
+	public PenUp(StringPair stringPair, Command parent, Model model) {
+		super(stringPair, 0, parent, model);
 	}
 
 	public Double execute() {
-		return turtle.setPenUp();
+		return turtle().setPenUp();
 	}
 
 }

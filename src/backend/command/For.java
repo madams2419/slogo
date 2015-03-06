@@ -1,15 +1,13 @@
 package backend.command;
 
-import java.util.HashMap;
+import backend.*;
 
-import backend.StringPair;
-
-public class For extends Command {
-	HashMap<String, Double> userVariables;
+public class For extends ModelCommand {
 	
-	public For(StringPair stringPair, HashMap<String, Double> userVariables, Command parent) {
-		super(stringPair, 2, parent);
-		this.userVariables = userVariables;
+	private static final int NUM_PARAMS = 2;
+	
+	public For(StringPair stringPair, Command parent, Model model) {
+		super(stringPair, NUM_PARAMS, parent, model);
 	}
 
 	public Double execute() {
@@ -25,7 +23,7 @@ public class For extends Command {
 		Double returnVal = 0.0;
 
 		for(int i = start; i <= end; i+=increment) {
-			userVariables.put(countVar, new Double(i));
+			userVariables().put(countVar, new Variable(countVar, i));
 			returnVal = getParam(1).execute();
 		}
 

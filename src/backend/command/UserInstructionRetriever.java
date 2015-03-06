@@ -1,46 +1,38 @@
 package backend.command;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-
-
-
-
-
 import backend.*;
 
-public class UserInstructionRetriever extends Command {
+public class UserInstructionRetriever extends ModelCommand {
+	
+	private static final int NUM_PARAMS = 0;
 
-	HashMap<String, Variable> userVariables;
-	HashMap<String, UserInstructionContainer> userInstructions;
-	UserInstructionContainer uic;
+	public UserInstructionRetriever(StringPair stringPair, Command parent, Model model) throws NullPointerException{
+		super(stringPair, NUM_PARAMS, parent, model);
 
-	public UserInstructionRetriever(StringPair stringPair, HashMap<String, UserInstructionContainer> userInstructions, HashMap<String, Variable> userVariables, Command parent) throws NullPointerException{
-		super(stringPair, 0, parent);
-		this.userInstructions = userInstructions;
-		this.userVariables = userVariables;
-
-		if(parent == null || !parent.getProperty().equals("MakeUserInstruction"))
-			if((uic = getUIC()) == null)
+		if(parent == null || !parent.getProperty().equals("MakeUserInstruction")) {
+			if(uic() == null) {
 				throw new NullPointerException("Command not Found");
-			else
+			} else {
 				numParams = getNumParams();
+			}
+		}
 	}
 
-	private UserInstructionContainer getUIC() {
-		return userInstructions.get(getTypedString());
+	private UserInstructionContainer uic() {
+		return userInstructions().get(getTypedString());
 	}
 
 	private int getNumParams() {
-		return uic.getVarNames().size();
+		return uic().getVarNames().size();
 	}
 
 	public Double execute() {
-		CommandList varNames = uic.getVarNames();
+		CommandList varNames = uic().getVarNames();
 		ArrayList<Command> varValues = params;
 		genVariables(varNames, varValues);
 
-		CommandList commands = uic.getCommands();
+		CommandList commands = uic().getCommands();
 
 		return commands.execute();
 	}
@@ -50,7 +42,7 @@ public class UserInstructionRetriever extends Command {
 			String varName = varNames.getParam(i).getTypedString();
 			Double varValue = varValues.get(i).execute();
 			Variable newVar = new Variable(varName, varValue);
-			userVariables.put(varName, newVar);
+			userVariables().put(varName, newVar);
 		}
 	}
 

@@ -1,17 +1,16 @@
 package backend.command;
 
-import backend.StringPair;
-import backend.Turtle;
+import backend.*;
 
 public class Right extends TurtleCommand {
 
-	public Right(StringPair stringPair, Command parent, Turtle turtle) {
-		super(stringPair, 1, parent, turtle);
+	public Right(StringPair stringPair, Command parent, Model model) {
+		super(stringPair, 1, parent, model);
 	}
 
 	public Double execute() {
 		Double degrees = getParamValue(0);
-		turtle.rotateRight(degrees.doubleValue());
+		turtle().rotateRight(degrees.doubleValue());
 		return degrees;
 	}
 

@@ -4,13 +4,12 @@ import java.util.HashMap;
 
 import backend.*;
 
-public class MakeVariable extends Command {
+public class MakeVariable extends ModelCommand {
+	
+	private static final int NUM_PARAMS = 2;
 
-	HashMap<String, Variable> userVariables;
-
-	public MakeVariable(StringPair sp, HashMap<String, Variable> userVariables, Command parent) {
-		super(sp, 2, parent);
-		this.userVariables = userVariables;
+	public MakeVariable(StringPair sp, Command parent, Model model) {
+		super(sp, NUM_PARAMS, parent, model);
 	}
 
 	public Double execute() {
@@ -19,7 +18,7 @@ public class MakeVariable extends Command {
 		Variable newVar = new Variable(name, value);
 
 		// add variable to model list
-		userVariables.put(name, newVar);
+		userVariables().put(name, newVar);
 
 		return value;
 	}
