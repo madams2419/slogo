@@ -3,15 +3,15 @@ package backend.command;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import backend.StringPair;
+import backend.*;
 
-public class UserInstruction extends Command {
+public class UserInstructionRetriever extends Command {
 
-	HashMap<String, Double> userVariables;
+	HashMap<String, Variable> userVariables;
 	HashMap<String, UserInstructionContainer> userInstructions;
 	UserInstructionContainer uic;
 
-	public UserInstruction(StringPair stringPair, HashMap<String, UserInstructionContainer> userInstructions, HashMap<String, Double> userVariables, Command parent) {
+	public UserInstructionRetriever(StringPair stringPair, HashMap<String, UserInstructionContainer> userInstructions, HashMap<String, Variable> userVariables, Command parent) {
 		super(stringPair, 0, parent);
 		this.userInstructions = userInstructions;
 		this.userVariables = userVariables;
@@ -45,7 +45,8 @@ public class UserInstruction extends Command {
 		for(int i = 0; i < varNames.size(); i++) {
 			String varName = varNames.getParam(i).getTypedString();
 			Double varValue = varValues.get(i).execute();
-			userVariables.put(varName, varValue);
+			Variable newVar = new Variable(varName, varValue);
+			userVariables.put(varName, newVar);
 		}
 	}
 

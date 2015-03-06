@@ -13,9 +13,9 @@ public class CommandFactory {
 
 	Grid grid;
 	HashMap<String, UserInstructionContainer> userInstructions;
-	HashMap<String, Double> userVariables;
+	HashMap<String, Variable> userVariables;
 
-	public CommandFactory(Grid grid, HashMap<String, UserInstructionContainer> userInstructions, HashMap<String, Double> userVariables) {
+	public CommandFactory(Grid grid, HashMap<String, UserInstructionContainer> userInstructions, HashMap<String, Variable> userVariables) {
 		this.grid = grid;
 		this.userInstructions = userInstructions;
 		this.userVariables = userVariables;
