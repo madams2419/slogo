@@ -90,8 +90,14 @@ public class TopMenu extends Region {
 				tabPanel.makeNewTab();
 			}
 		});
-
-		file.getItems().addAll(save, load, newTab);
+		MenuItem newWorkspace = new MenuItem("New Workspace");
+		newWorkspace.setOnAction(new EventHandler<ActionEvent>() {
+			public void handle(ActionEvent t) {
+				tabPanel.makeNewTab();
+			}
+		});
+		
+		file.getItems().addAll(newWorkspace, save, load, newTab);
 
 	}
  

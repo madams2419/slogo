@@ -51,7 +51,7 @@ public class TabPanel extends TabPane{
 		SlogoTab slogoTab = new SlogoTab();
 		tabSlogoTabMap.put(tab, slogoTab);
 		main.setActiveTab(slogoTab);
-		this.getSelectionModel().select(tab);
+		//this.getSelectionModel().select(tab);
 		
 	}
 	
