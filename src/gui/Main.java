@@ -7,6 +7,7 @@ import gui.textAreas.UserFunctionsAndCommands;
 import gui.textAreas.UserVariablesBox;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Stack;
 
@@ -18,49 +19,35 @@ import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Hyperlink;
+import javafx.scene.control.Tab;
+import javafx.scene.control.TabPane;
 import javafx.scene.control.TextField;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
-import javafx.scene.layout.VBox;
-import javafx.scene.shape.*;
-import backend.Line;
+
 import backend.Model;
-import backend.Turtle;
-import backend.command.Command;
+
 
 
 public class Main extends Application {
 
-	private Timeline timeline;
-	private KeyFrame keyFrame;
-	private Group root;
-	private long lastTime;
-	private double infoBoxWidthPct = .2;
-	private double infoBoxHeightPct = .475;
-	private double commandBoxWidthPct = .5;
-	private double commandBoxHeightPct = .25;
-	private double topMenuHeightPct = .05;
-	private double buttonWidthPct = .1;
-	private double buttonHeightPct = .25;
-	
-	//////////////////////////////////////////
-	private RunButtons runButtons;
-	private CommandBox commandBox;
-	private DrawingArea turtlePanel;
-	private PreviousCommandsBox prevCommandsBox;
-	private StatusBox statusBox;
-	private UserVariablesBox userVariablesBox;
-	//these shouldn't be instance variables
-	/////////////////////////////////////////
-	
-	
-	
-	
-	private Model myModel = new Model();
+	private double topMenuHeightPct = .025;
+	private double tabPanelHeightPct = .03;
+	private SlogoTab activeTab;
+	private HashMap<SlogoTab, Model> tabMap = new HashMap<>();
+	private HashMap<Tab, SlogoTab> tabSLogoTabMap = new HashMap<>();
+	private Group root = new Group();
+	//TAKE THIS OUT, ONLY HERE FOR TESTING
+	//THERE SHOULD BE A NEW MODEL FOR EACH TAB
+	Model myModel = new Model();
 
 
 	Stage stage;
 	Scene scene;
+	public Main(){
+		
+		
+	}
 
 	@Override
 	public void start(Stage primaryStage) throws Exception {
@@ -75,91 +62,24 @@ public class Main extends Application {
 		double screenWidth = this.getScreenWidth(bounds);
 
 		setStageToFillWindow(screenWidth, screenHeight);
-		Group root = new Group();
+		//Group root = new Group();
+		//this.root = root;
 		scene = new Scene(root, screenHeight, screenWidth);
 
-
-		runButtons = new RunButtons(screenWidth, screenHeight,
-				buttonWidthPct, buttonHeightPct,
-				(infoBoxWidthPct + commandBoxWidthPct) * screenWidth,
-				(1 - buttonHeightPct) * screenHeight);
+		TabPanel tabPanel = new TabPanel(tabPanelHeightPct, screenHeight, screenWidth, this);
 		
-		commandBox = new CommandBox(commandBoxHeightPct,
-				commandBoxWidthPct + buttonWidthPct, infoBoxWidthPct * screenWidth, screenHeight
-						* (1 - commandBoxHeightPct), screenWidth, screenHeight,
-				"Type a Command...", true, runButtons);
-
-		statusBox = new StatusBox(infoBoxHeightPct, infoBoxWidthPct,
-				0, topMenuHeightPct * screenHeight, screenWidth, screenHeight,
-				"Status", false);
-		UserFunctionsAndCommands userFunctionsBox = new UserFunctionsAndCommands(
-				infoBoxHeightPct, infoBoxWidthPct, 0,
-				(topMenuHeightPct + infoBoxHeightPct) * screenHeight,
-				screenWidth, screenHeight,
-				"User Defined Functions and Commands", false);
-		userVariablesBox = new UserVariablesBox(
-				infoBoxHeightPct, infoBoxWidthPct, (1 - infoBoxWidthPct)
-						* screenWidth, topMenuHeightPct * screenHeight,
-				screenWidth, screenHeight, "User Defined Variables", false);
-		prevCommandsBox = new PreviousCommandsBox(
-				infoBoxHeightPct, infoBoxWidthPct, (1 - infoBoxWidthPct)
-						* screenWidth, (topMenuHeightPct + infoBoxHeightPct)
-						* screenHeight, screenWidth, screenHeight,
-				"Previously Executed Commands", false);
-
-
 		TopMenu topMenu = new TopMenu(screenWidth, screenHeight,
 				topMenuHeightPct, myModel);
 
 
-		
-		setButtonActions();
-
-	   turtlePanel = new DrawingArea(screenWidth
-				- 2*(screenWidth * infoBoxWidthPct), screenHeight
-				- (screenHeight * (commandBoxHeightPct + topMenuHeightPct)),
-				infoBoxWidthPct, screenHeight
-						- (screenHeight * topMenuHeightPct));
-
-		// TODO
-		// Determine this location based on other values
-
-		commandBox.setLayoutX(commandBox.getxLocation());
-		commandBox.setLayoutY(commandBox.getyLocation());
-
-		turtlePanel.setLayoutX(statusBox.getWidth());
-		turtlePanel.setLayoutY(screenHeight * topMenuHeightPct);
-		//turtlePanel.setInitTurtleImage(myModel.getGrid().getTurtles());
-
-		statusBox.setLayoutX(statusBox.getxLocation());
-		statusBox.setLayoutY(statusBox.getyLocation());
-
-		userFunctionsBox.setLayoutX(userFunctionsBox.getxLocation());
-		userFunctionsBox.setLayoutY(userFunctionsBox.getyLocation());
-
-		userVariablesBox.setLayoutX(userVariablesBox.getxLocation());
-		userVariablesBox.setLayoutY(userVariablesBox.getyLocation());
-
-		prevCommandsBox.setLayoutX(prevCommandsBox.getxLocation());
-		prevCommandsBox.setLayoutY(prevCommandsBox.getyLocation());
-
 		root.getChildren().add(topMenu);
-
-		root.getChildren().add(commandBox);
-
-		//root.getChildren().add(runButtons);
-
-		root.getChildren().add(statusBox);
-		root.getChildren().add(userFunctionsBox);
-		root.getChildren().add(userVariablesBox);
-		root.getChildren().add(prevCommandsBox);
-
-		root.getChildren().add(turtlePanel);
+		root.getChildren().add(tabPanel);
 
 		// ApplicationView av = new ApplicationView(screenWidth, screenHeight);
 		primaryStage.setScene(scene);
 		primaryStage.show();
 	}
+<<<<<<< HEAD
 
 	private void updatePanels(){
 		
@@ -240,6 +160,8 @@ public class Main extends Application {
 		});
 		
 	}
+=======
+>>>>>>> addTabs
 	
 	private void setStageToFillWindow(Double screenWidth, Double screenHeight) {
 
@@ -267,6 +189,22 @@ public class Main extends Application {
 
 	public static void main(String[] args) {
 		launch(args);
+	}
+
+	public SlogoTab getActiveTab() {
+		return activeTab;
+	}
+
+	public void setActiveTab(SlogoTab activeTab) {
+		if(this.activeTab != null){
+			this.root.getChildren().remove(this.activeTab);
+		}
+		this.activeTab = activeTab;
+		this.activeTab.setLayoutX(0);
+		this.activeTab.setLayoutY(0);
+		root.getChildren().add(this.activeTab);
+		
+		
 	}
 
 }
