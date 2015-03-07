@@ -1,6 +1,8 @@
 package gui;
 
+import java.awt.Desktop;
 import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 
 import backend.Grid;
@@ -194,7 +196,17 @@ public class TopMenu extends Region {
 	public void createHelpMenuItems(Menu help) {
 
 		MenuItem documentation = new MenuItem("Documentation");
-
+		documentation.setOnAction(new EventHandler<ActionEvent>() {
+			public void handle(ActionEvent t) {
+				File file = new File("src/resources/help.html");
+				Desktop desktop = Desktop.getDesktop();
+				try {
+					desktop.open(file);
+				} catch (IOException e1) {
+					e1.printStackTrace();
+				}
+			}
+		});
 		help.getItems().addAll(documentation);
 
 	}
