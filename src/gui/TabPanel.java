@@ -26,37 +26,32 @@ public class TabPanel extends TabPane{
 		
 		makeTabPane(tabPaneHeightPct);
 		
-		//final Tab tab = new Tab("Tab " + (tabs.getTabs().size() + 1));
-		
-		
 	}
 	
-	
-
 	private void makeTabPane(Double tabPaneHeightPct) {
 		
 		this.setPrefHeight(tabPaneHeightPct * screenHeight); 
 		this.setPrefWidth(screenWidth);
 		this.setLayoutX(0);
 		this.setLayoutY(topOffsetPct * screenHeight); 
-		makeNewTab();
 		
 		this.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<Tab>() {
 
             @Override
             public void changed(ObservableValue<? extends Tab> arg0,
                     Tab arg1, Tab arg2) {
-            	main.setActiveTab( tabSlogoTabMap.get(arg0));
+            	main.setActiveTab(tabSlogoTabMap.get(arg2));
             }
         });
 	}
 	
-	private void makeNewTab(){
+	public void makeNewTab(){
 		final Tab tab = new Tab("Tab " + (this.getTabs().size() + 1));
 		this.getTabs().add(tab);
 		SlogoTab slogoTab = new SlogoTab();
 		tabSlogoTabMap.put(tab, slogoTab);
 		main.setActiveTab(slogoTab);
+		//this.getSelectionModel().select(tab);
 		
 	}
 	

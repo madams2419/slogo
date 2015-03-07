@@ -24,14 +24,16 @@ public class TopMenu extends Region {
 	protected double heightPct;
 
 	protected Model myModel;
+	protected TabPanel tabPanel;
 
-	public TopMenu(double overlayWidth, double overlayHeight, double heightPct, Model myModel) {
+	public TopMenu(double overlayWidth, double overlayHeight, double heightPct, Model myModel, TabPanel tabPanel) {
 
 
 		this.overlayWidth = overlayWidth;
 		this.overlayHeight = overlayHeight;
 		this.heightPct = heightPct;
 		this.myModel = myModel;
+		this.tabPanel = tabPanel;
 		addMenuBar();
 
 	}
@@ -82,8 +84,20 @@ public class TopMenu extends Region {
 				System.out.println("Your workspace is loading...");
 			}
 		});
-
-		file.getItems().addAll(save, load);
+		MenuItem newTab = new MenuItem("New Tab");
+		newTab.setOnAction(new EventHandler<ActionEvent>() {
+			public void handle(ActionEvent t) {
+				tabPanel.makeNewTab();
+			}
+		});
+		MenuItem newWorkspace = new MenuItem("New Workspace");
+		newWorkspace.setOnAction(new EventHandler<ActionEvent>() {
+			public void handle(ActionEvent t) {
+				tabPanel.makeNewTab();
+			}
+		});
+		
+		file.getItems().addAll(newWorkspace, save, load, newTab);
 
 	}
  

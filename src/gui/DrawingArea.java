@@ -7,6 +7,7 @@ import java.util.HashMap;
 import backend.Turtle;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.Region;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.ArcType;
@@ -32,10 +33,20 @@ public class DrawingArea extends Region {
 		this.drawingAreaYLocation = drawingAreaYLocation;
 
 		this.drawingCanvas = drawingCanvas;
-		this.getChildren().add(drawingCanvas);
 		this.setHeight(drawingAreaHeight);
 		this.setWidth(drawingAreaWidth);
-		//this.setStyle("-fx-border-color: black;");
+		
+		ScrollPane scrollPane = new ScrollPane(drawingCanvas);
+		scrollPane.setPrefSize(drawingAreaWidth, drawingAreaHeight);
+        scrollPane.setMaxSize(Double.MAX_VALUE, Double.MAX_VALUE);
+        scrollPane.setFitToWidth(true);
+        scrollPane.setFitToHeight(true);
+        scrollPane.setStyle("-fx-focus-color: transparent;");
+        
+        
+		this.getChildren().add(drawingCanvas);
+		this.getChildren().add(scrollPane);
+		
 
 	}
 	
@@ -77,15 +88,6 @@ public class DrawingArea extends Region {
 			turtleImage.setLocation(adjustedTurtleLocation);
 			turtleImage.orientTurtle(t);
 		
-			double x = t.getLocation().getX();
-			double y = t.getLocation().getY();
-			double[] xlocs = {x - 10, x + 10, x};
-			double[] ylocs = {y, y, y + 20};
-			
-			//Polygon p = new Polygon(xlocs[0], ylocs[0], xlocs[1], ylocs[1], xlocs[2], ylocs[2]);
-			//this.drawingCanvas.getGraphicsContext2D().
-			
-			
 		}
 	}
 	
@@ -117,18 +119,4 @@ public class DrawingArea extends Region {
 		return adjustedCoordinatePoint;
 	}
 	
-//	public void setInitTurtleImage(ArrayList<Turtle> turtles) {
-//
-//		TurtleImage turtleImage = new TurtleImage();
-//		turtleImage.sizeTurtle(drawingAreaWidth, drawingAreaHeight);
-//
-//		Point initTurtleLocation = new Point(0, 0);
-//
-//		initTurtleLocation = convertCoordinates(initTurtleLocation);
-//		turtleImage.setLocation(initTurtleLocation);
-//		this.getChildren().add(turtleImage);
-//
-//	}
-	
-
 }
