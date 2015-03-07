@@ -143,35 +143,43 @@ public class SlogoTab extends Region {
 		// primaryStage.show();
 	}
 
-	private void updatePanels() {
+private void updatePanels(){
+		
+		//updating command panel
 		List<Command> comList = myModel.getExecutedCommands();
 		ArrayList<Hyperlink> fields = new ArrayList<>();
 		StringBuilder s = new StringBuilder();
-		for (Command c : comList) {
+		for (Command c : comList){
 			Hyperlink h = new Hyperlink(c.toString());
 			h.getStylesheets().add("GUIStyle.css");
 			h.setOnAction(event -> {
-				// TODO: implement what happens when the Link is clicked
-				// ie. call the model with appropriate command data
-			});
+				System.out.println("Link click");
+				myModel.executeCommand(c);
+				
+				ArrayList<backend.Line> backLines = myModel.getGrid().getLines();
+				turtlePanel.drawLines(backLines);			
+				ArrayList<backend.Turtle> turtles = myModel.getGrid().getTurtles();
+				turtlePanel.drawTurtles(turtles);
+				updatePanels();
+				
+				//is this bad? ^^^ it is pseudo-recursive
+				
+		        });
 			fields.add(h);
 		}
 		prevCommandsBox.setBoxes(fields);
-
+		
+		//updating status box
 		s.setLength(0);
-		for (Turtle t : this.myModel.getGrid().getTurtles()) {
-			s.append("Turtle " + this.myModel.getGrid().getTurtles().indexOf(t)
-					+ ": \n  " + t.getLocation().getX() + ", "
-					+ t.getLocation().getY() + "\n  "
-					+ t.getHeading().getAngle());
+		for (Turtle t : this.myModel.getGrid().getTurtles()){
+			s.append("Turtle "+ this.myModel.getGrid().getTurtles().indexOf(t) + ": \n  " + t.getLocation().getX() + ", " + t.getLocation().getY()
+					+ "\n  " + t.getHeading().getAngle());
 		}
 		statusBox.setText(s.toString());
-
-		s.setLength(0);
-		for (String x : myModel.getUserVariables().keySet())
-			s.append(x + "\n");
-		userVariablesBox.setText(s.toString());
+		
+		//updating variables
 		setVariablesBox();
+		
 	}
 
 	private void setVariablesBox() {
