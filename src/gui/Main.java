@@ -53,7 +53,7 @@ public class Main extends Application {
 	public void start(Stage primaryStage) throws Exception {
 		// TODO Auto-generated method stub
 
-		stage = primaryStage;
+		this.stage = primaryStage;
 		primaryStage.setTitle("Slogo Interpreter");
 		Screen screen = Screen.getPrimary();
 		Rectangle2D bounds = screen.getVisualBounds();
@@ -69,7 +69,7 @@ public class Main extends Application {
 		TabPanel tabPanel = new TabPanel(tabPanelHeightPct, screenHeight, screenWidth, this);
 		
 		TopMenu topMenu = new TopMenu(screenWidth, screenHeight,
-				topMenuHeightPct, myModel);
+				topMenuHeightPct, myModel, tabPanel);
 
 
 		root.getChildren().add(topMenu);
@@ -117,9 +117,10 @@ public class Main extends Application {
 			this.root.getChildren().remove(this.activeTab);
 		}
 		this.activeTab = activeTab;
-		this.activeTab.setLayoutX(0);
-		this.activeTab.setLayoutY(0);
-		root.getChildren().add(this.activeTab);
+		this.root.getChildren().add(activeTab);
+		activeTab.toBack();
+		activeTab.setLayoutX(0);
+		activeTab.setLayoutY(0);
 		
 		
 	}

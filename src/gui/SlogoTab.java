@@ -46,7 +46,7 @@ public class SlogoTab extends Region {
 	private Model myModel = new Model();
 
 	public SlogoTab() {
-		// TODO Auto-generated method stub
+
 
 		// stage = primaryStage;
 		// primaryStage.setTitle("Slogo Interpreter");
