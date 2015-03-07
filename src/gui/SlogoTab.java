@@ -15,12 +15,14 @@ import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Hyperlink;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Region;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 import backend.Model;
 import backend.Turtle;
+import backend.Variable;
 import backend.command.Command;
 
 public class SlogoTab extends Region {
@@ -145,6 +147,8 @@ public class SlogoTab extends Region {
 
 private void updatePanels(){
 		
+		setVariablesBox();	
+	
 		//updating command panel
 		List<Command> comList = myModel.getExecutedCommands();
 		ArrayList<Hyperlink> fields = new ArrayList<>();
@@ -178,18 +182,35 @@ private void updatePanels(){
 		statusBox.setText(s.toString());
 		
 		//updating variables
-		setVariablesBox();
+		
 		
 	}
 
 	private void setVariablesBox() {
-		for (String s : myModel.getUserVariables().keySet())
-			userVariablesBox
-					.getFields()
-					.getChildren()
-					.add(new TextField(myModel.getUserVariables().get(s)
-							.toString())); // FIX THIS DECLARATION
-
+		
+		userVariablesBox.getLabels().getChildren().clear();
+		userVariablesBox.getFields().getChildren().clear();
+		
+		for (String s : myModel.getUserVariables().keySet()){
+			
+			Label l = new Label(myModel.getUserVariables().get(s).toString());
+			l.getStylesheets().add("GUIStyle.css");
+			l.getStyleClass().add("varlabel");
+			
+			double val  = myModel.getUserVariables().get(s).getValue();
+			
+			TextField t = new TextField(Double.toString(val));
+			t.getStylesheets().add("GUIStyle.css");
+			t.getStyleClass().add("varfield");
+			t.setOnAction((event) -> {
+				myModel.setUserVariable(myModel.getUserVariables().get(s).toString(), 
+						new Variable(myModel.getUserVariables().get(s).toString(), Double.parseDouble(t.getText())));
+			});
+			
+			userVariablesBox.getLabels().getChildren().add(l);
+			userVariablesBox.getFields().getChildren().add(t);
+			
+		}
 	}
 
 	private void setButtonActions() {
