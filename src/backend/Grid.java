@@ -2,6 +2,7 @@ package backend;
 
 import java.awt.Dimension;
 import java.util.ArrayList;
+import java.util.List;
 import java.awt.Color;
 
 public class Grid {
@@ -37,7 +38,7 @@ public class Grid {
 		return bgColor;
 	}
 
-	public ArrayList<Turtle> getTurtles() {
+	public List<Turtle> getTurtles() {
 		return turtles;
 	}
 
@@ -45,7 +46,7 @@ public class Grid {
 		return turtles.get(0);
 	}
 
-	public ArrayList<Line> getLines() {
+	public List<Line> getLines() {
 		ArrayList<Line> allLines = new ArrayList<>();
 
 		for(Turtle t : turtles) {

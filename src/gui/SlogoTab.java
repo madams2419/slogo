@@ -160,9 +160,9 @@ private void updatePanels(){
 				System.out.println("Link click");
 				myModel.executeCommand(c);
 				
-				ArrayList<backend.Line> backLines = myModel.getGrid().getLines();
+				List<backend.Line> backLines = myModel.getGrid().getLines();
 				turtlePanel.drawLines(backLines);			
-				ArrayList<backend.Turtle> turtles = myModel.getGrid().getTurtles();
+				List<backend.Turtle> turtles = myModel.getGrid().getTurtles();
 				turtlePanel.drawTurtles(turtles);
 				updatePanels();
 				
@@ -222,9 +222,9 @@ private void updatePanels(){
 			myModel.parseProgram(s);
 			myModel.executeAllCommands();
 
-			ArrayList<backend.Line> backLines = myModel.getGrid().getLines();
+			List<backend.Line> backLines = myModel.getGrid().getLines();
 			turtlePanel.drawLines(backLines);
-			ArrayList<backend.Turtle> turtles = myModel.getGrid().getTurtles();
+			List<backend.Turtle> turtles = myModel.getGrid().getTurtles();
 			turtlePanel.drawTurtles(turtles);
 			updatePanels();
 
@@ -237,10 +237,10 @@ private void updatePanels(){
 
 			// Null check here?
 
-				ArrayList<backend.Line> backLines = myModel.getGrid()
+				List<backend.Line> backLines = myModel.getGrid()
 						.getLines();
 				turtlePanel.drawLines(backLines);
-				ArrayList<backend.Turtle> turtles = myModel.getGrid()
+				List<backend.Turtle> turtles = myModel.getGrid()
 						.getTurtles();
 				turtlePanel.drawTurtles(turtles);
 				updatePanels();

@@ -1,7 +1,7 @@
 package gui;
 
 import java.awt.Point;
-import java.util.ArrayList;
+import java.util.List;
 import java.util.HashMap;
 
 import backend.Turtle;
@@ -50,7 +50,7 @@ public class DrawingArea extends Region {
 
 	}
 	
-	protected void drawLines(ArrayList<backend.Line> lines){
+	protected void drawLines(List<backend.Line> lines){
 		this.drawingCanvas.getGraphicsContext2D().setLineWidth(5);
 		this.drawingCanvas.getGraphicsContext2D().setStroke(Color.BLUE);
 		for (backend.Line l : lines){
@@ -63,7 +63,7 @@ public class DrawingArea extends Region {
 		System.out.println("drawLines complete");
 	}
 	
-	protected void drawTurtles(ArrayList<Turtle> turtles){
+	protected void drawTurtles(List<Turtle> turtles){
 		this.drawingCanvas.getGraphicsContext2D().setLineWidth(50);
 		this.drawingCanvas.getGraphicsContext2D().setStroke(Color.RED);
 		

@@ -166,7 +166,7 @@ public class Model {
 	}
 	
 	private void printLines() {
-		ArrayList<Line> lines = getGrid().getLines();
+		List<Line> lines = getGrid().getLines();
 
 		for(Line l : lines) {
 			System.out.println(l);
