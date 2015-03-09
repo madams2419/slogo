@@ -1,6 +1,7 @@
 package backend.command;
 
 import backend.StringPair;
+import java.util.*;
 
 public class CommandList extends Command {
 
@@ -21,11 +22,16 @@ public class CommandList extends Command {
 	}
 
 	public Double execute() {
-		Double returnVal = 0.0;
+		List<Double> listVals = executeList();
+		return listVals.get(listVals.size() - 1);
+	}
+
+	public List<Double> executeList() {
+		List<Double> listVals = new ArrayList<>();
 		for(Command param : params) {
-			returnVal = param.execute();
+			listVals.add(param.execute());
 		}
-		return returnVal;
+		return listVals;
 	}
 
 	public int size() {

@@ -8,8 +8,12 @@ public abstract class TurtleCommand extends ModelCommand {
 		super(stringPair, numParams, parent, model);
 	}
 
-	protected Turtle turtle() {
+	protected Turtle activeTurtle() {
 		return grid().getActiveTurtle();
+	}
+
+	protected List<Turtle> turtles() {
+		return grid().getAllTurtles();
 	}
 
 }

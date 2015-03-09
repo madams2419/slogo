@@ -1,8 +1,6 @@
 package backend;
 
 import java.awt.Dimension;
-import java.awt.Point;
-import java.awt.Color;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
@@ -13,25 +11,11 @@ import java.util.Map;
 import java.util.Queue;
 import java.util.Scanner;
 import java.util.Stack;
-import java.util.Map.Entry;
-import java.util.regex.Pattern;
 
 import backend.command.*;
+import static backend.Constants.*;
 
 public class Model {
-
-	////////////////////////////////////////////////////////////////////
-	//TODO define these fields with an XML config file or resource file
-	////////////////////////////////////////////////////////////////////
-	private static final int gridWidth = 10000;
-	private static final int gridHeight = 10000;
-	private static final Color gridColor = Color.WHITE;
-
-	private static final String turtleImgPath = "turtle.jpg";
-	private static final Color turtlePenColor = Color.BLACK;
-
-	private static final String helpPgPath = "help.html";
-	////////////////////////////////////////////////////////////////////
 
 	private Grid grid;
 	private Queue<Command> pendingCommands;
@@ -43,13 +27,13 @@ public class Model {
 	private SLogoParser parser;
 
 	public Model() {
-		Turtle turtle = new Turtle(turtleImgPath, new Point(0, 0), new Heading(90), turtlePenColor);
-		grid = new Grid(new Dimension(gridWidth, gridHeight), gridColor, turtle);
+		Turtle turtle = new Turtle(0);
+		grid = new Grid(new Dimension(GRID_WIDTH, GRID_HEIGHT), GRID_COLOR, turtle);
 		pendingCommands = new LinkedList<>();
 		executedCommands = new Stack<>();
 		userVariables = new HashMap<>();
 		userInstructions = new HashMap<>();
-		helpPagePath = helpPgPath;
+		helpPagePath = HELP_PAGE_PATH;
 		comFactory = new CommandFactory(this);
 		parser = new SLogoParser(comFactory);
 	}

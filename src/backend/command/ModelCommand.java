@@ -12,15 +12,15 @@ public abstract class ModelCommand extends Command {
 		super(stringPair, numParams, parent);
 		this.model = model;
 	}
-	
+
 	protected Map<String, Variable> userVariables() {
 		return model.getUserVariables();
 	}
-	
+
 	protected Map<String, UserInstructionContainer> userInstructions() {
 		return model.getUserFunctions();
 	}
-	
+
 	protected Grid grid() {
 		return model.getGrid();
 	}

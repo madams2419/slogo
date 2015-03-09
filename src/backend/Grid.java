@@ -8,13 +8,17 @@ import java.awt.Color;
 public class Grid {
 
 	private Dimension size;
-	protected Color bgColor;
+	private Color bgColor;
 	private ArrayList<Turtle> turtles;
+	private ArrayList<Turtle> activeTurtles;
+	private Turtle targetTurtle;
 
 	public Grid(Dimension size, Color bgColor) {
 		this.size = size;
 		this.bgColor = bgColor;
 		turtles = new ArrayList<>();
+		activeTurtles = new ArrayList<>();
+		targetTurtle = null;
 	}
 
 	public Grid(Dimension size, Color bgColor, Turtle turtle) {
@@ -44,6 +48,16 @@ public class Grid {
 
 	public Turtle getActiveTurtle() {
 		return turtles.get(0);
+	}
+
+	public void setActiveTurtles(List<Double> turtleIds) {
+		for(Turtle turtle : turtles) {
+			turtle.setActivation(false);
+		}
+
+		for(int i = 0; i < turtleIds.size(); i++) {
+			turtles.get(i).setActivation(true);
+		}
 	}
 
 	public List<Line> getLines() {

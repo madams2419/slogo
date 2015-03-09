@@ -3,9 +3,11 @@ package backend;
 import java.lang.Math;
 import java.awt.*;
 import java.util.ArrayList;
+import static backend.Constants.*;
 
 public class Turtle {
 
+	private int id;
 	private String imagePath;
 	private Point location;
 	private Heading heading;
@@ -15,7 +17,8 @@ public class Turtle {
 	private boolean active;
 	private ArrayList<Line> lines;
 
-	public Turtle(String imagePath, Point location, Heading heading, Color penColor) {
+	public Turtle(int id, String imagePath, Point location, Heading heading, Color penColor) {
+		this.id = id;
 		this.imagePath = imagePath;
 		this.location = location;
 		this.heading = heading;
@@ -24,6 +27,10 @@ public class Turtle {
 		visible = true;
 		active = true;
 		lines = new ArrayList<>();
+	}
+
+	public Turtle(int id) {
+		this(id, TURTLE_IMG_PATH, TURTLE_START_POINT, TURTLE_START_HEADING, TURTLE_PEN_COLOR);
 	}
 
 	public double move(Double magnitude) {
@@ -123,6 +130,14 @@ public class Turtle {
 
 	public void clearLines() {
 		lines.clear();
+	}
+
+	public void setActivation(boolean status) {
+		active = status;
+	}
+
+	public int getID() {
+		return id;
 	}
 
 }

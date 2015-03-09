@@ -3,9 +3,8 @@ package gui;
 import java.awt.Desktop;
 import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
+import java.util.List;
 
-import backend.Grid;
 import backend.Model;
 import backend.Turtle;
 import javafx.event.ActionEvent;
@@ -124,7 +123,7 @@ public class TopMenu extends Region {
 					    );
                 File file = fileChooser.showOpenDialog(fileChooserStage);
                 String imagePath = file.getAbsolutePath();
-                ArrayList<Turtle> turtles = myModel.getGrid().getTurtles();
+                List<Turtle> turtles = myModel.getGrid().getTurtles();
                 for(Turtle turtle : turtles){
                 	
                 	try {
