@@ -8,7 +8,7 @@ public class XCoordinate extends TurtleQuery {
 		super(stringPair, parent, model);
 	}
 
-	public Double turtleOperation(Turtle turtle) {
+	public Double execute(Turtle turtle) {
 		return turtle.getLocation().getX();
 	}
 
