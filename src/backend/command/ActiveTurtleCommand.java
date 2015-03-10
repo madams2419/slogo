@@ -19,6 +19,7 @@ public abstract class ActiveTurtleCommand extends TurtleCommand {
 		List<Turtle> activeTurtles = activeTurtles();
 		Double ret = 0.0;
 		for(Turtle turtle : activeTurtles) {
+			System.out.println("Execute: Turtle #" + turtle.getID());
 			grid().setActiveTurtle(turtle);
 			ret = execute(turtle);
 		}

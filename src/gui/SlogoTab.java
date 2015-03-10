@@ -176,7 +176,7 @@ private void updatePanels(){
 		//updating status box
 		s.setLength(0);
 		for (Turtle t : this.myModel.getGrid().getAllTurtles()){
-			s.append("Turtle "+ this.myModel.getGrid().getAllTurtles().indexOf(t) + ": \n  " + t.getLocation().getX() + ", " + t.getLocation().getY()
+			s.append("Turtle "+ t.getID() + ": \n  " + t.getLocation().getX() + ", " + t.getLocation().getY()
 					+ "\n  " + t.getHeading().getAngle() + "\n");
 		}
 		statusBox.setText(s.toString());

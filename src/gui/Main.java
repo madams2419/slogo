@@ -117,17 +117,8 @@ public class Main extends Application {
 			this.root.getChildren().remove(this.activeTab);
 		}
 		this.activeTab = activeTab;
-//<<<<<<< HEAD
 		this.activeTab.setLayoutX(0);
 		this.activeTab.setLayoutY(0);
 		root.getChildren().add(this.activeTab);
-//=======
-		
-		activeTab.toBack();
-		activeTab.setLayoutX(0);
-		activeTab.setLayoutY(0);
-		
-		
-//>>>>>>> 75366e5ca4c5ec85f23aeb2f77ec54892291e5fe
 	}
 }

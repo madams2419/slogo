@@ -51,8 +51,7 @@ public class Turtle {
 
 	public double setHeading(double newAngle) {
 		double angleChange = newAngle - heading.getAngle();
-		heading.setAngle(newAngle);
-		System.out.println("New heading: " + newAngle);
+		heading = new Heading(newAngle);
 		return angleChange;
 	}
 
