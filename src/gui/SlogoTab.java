@@ -162,7 +162,7 @@ private void updatePanels(){
 				
 				List<backend.Line> backLines = myModel.getGrid().getLines();
 				turtlePanel.drawLines(backLines);			
-				List<backend.Turtle> turtles = myModel.getGrid().getTurtles();
+				List<backend.Turtle> turtles = myModel.getGrid().getAllTurtles();
 				turtlePanel.drawTurtles(turtles);
 				updatePanels();
 				
@@ -175,9 +175,9 @@ private void updatePanels(){
 		
 		//updating status box
 		s.setLength(0);
-		for (Turtle t : this.myModel.getGrid().getTurtles()){
-			s.append("Turtle "+ this.myModel.getGrid().getTurtles().indexOf(t) + ": \n  " + t.getLocation().getX() + ", " + t.getLocation().getY()
-					+ "\n  " + t.getHeading().getAngle());
+		for (Turtle t : this.myModel.getGrid().getAllTurtles()){
+			s.append("Turtle "+ this.myModel.getGrid().getAllTurtles().indexOf(t) + ": \n  " + t.getLocation().getX() + ", " + t.getLocation().getY()
+					+ "\n  " + t.getHeading().getAngle() + "\n");
 		}
 		statusBox.setText(s.toString());
 		
@@ -224,7 +224,7 @@ private void updatePanels(){
 
 			List<backend.Line> backLines = myModel.getGrid().getLines();
 			turtlePanel.drawLines(backLines);
-			List<backend.Turtle> turtles = myModel.getGrid().getTurtles();
+			List<backend.Turtle> turtles = myModel.getGrid().getAllTurtles();
 			turtlePanel.drawTurtles(turtles);
 			updatePanels();
 
@@ -241,7 +241,7 @@ private void updatePanels(){
 						.getLines();
 				turtlePanel.drawLines(backLines);
 				List<backend.Turtle> turtles = myModel.getGrid()
-						.getTurtles();
+						.getAllTurtles();
 				turtlePanel.drawTurtles(turtles);
 				updatePanels();
 			});

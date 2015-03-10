@@ -14,7 +14,6 @@ public class Turtle {
 	private Color penColor;
 	private boolean penDown;
 	private boolean visible;
-	private boolean active;
 	private ArrayList<Line> lines;
 
 	public Turtle(int id, String imagePath, Point location, Heading heading, Color penColor) {
@@ -25,7 +24,6 @@ public class Turtle {
 		this.penColor = penColor;
 		penDown = true;
 		visible = true;
-		active = true;
 		lines = new ArrayList<>();
 	}
 
@@ -130,10 +128,6 @@ public class Turtle {
 
 	public void clearLines() {
 		lines.clear();
-	}
-
-	public void setActivation(boolean status) {
-		active = status;
 	}
 
 	public int getID() {

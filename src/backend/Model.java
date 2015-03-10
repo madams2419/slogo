@@ -27,7 +27,7 @@ public class Model {
 	private SLogoParser parser;
 
 	public Model() {
-		Turtle turtle = new Turtle(0);
+		Turtle turtle = new Turtle(1);
 		grid = new Grid(new Dimension(GRID_WIDTH, GRID_HEIGHT), GRID_COLOR, turtle);
 		pendingCommands = new LinkedList<>();
 		executedCommands = new Stack<>();
@@ -37,8 +37,6 @@ public class Model {
 		comFactory = new CommandFactory(this);
 		parser = new SLogoParser(comFactory);
 	}
-	
-	
 
 	public void parseProgram(String prog) {
 		pendingCommands = parser.parseProgram(prog);
@@ -61,11 +59,17 @@ public class Model {
 	public List<Command> executeAllCommands() {
 		while(!pendingCommands.isEmpty()) {
 			executeNextCommand();
-			Turtle t = grid.getActiveTurtle();
-			System.out.println("Turtle (x,y): " + t.getLocation().getX() + ", " + t.getLocation().getY());
+			//printTurtleLocations();
 		}
 		
 		return executedCommands;
+	}
+	
+	private void printTurtleLocations() {
+		List<Turtle> turtles = grid.getAllTurtles();
+		for(Turtle t : turtles) {
+			System.out.printf("Turtle #%d at (%f, %f)\n", t.getID(), t.getLocation().getX(), t.getLocation().getY());
+		}
 	}
 
 	public void printCommandTree() {

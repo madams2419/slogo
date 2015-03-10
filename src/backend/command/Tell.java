@@ -1,6 +1,7 @@
 package backend.command;
 
 import backend.*;
+import java.util.*;
 
 public class Tell extends TurtleCommand {
 
@@ -11,12 +12,20 @@ public class Tell extends TurtleCommand {
 	}
 
 	public Double execute() {
-		List<Double> turtleIDs = newActiveTurtleIds();
-		grid().setActiveTurtles(newActiveTurtleIds());
+		return grid().setActiveTurtles(newActiveTurtles());
 	}
 
-	public List<Double> newActiveTurtleIds() {
-		return params.get(0).executeList();
+	private List<Turtle> newActiveTurtles() {
+		List<Turtle> turtles = new ArrayList<>();
+		List<Double> ids = newActiveTurtleIds();
+		for(Double id : ids) {
+			turtles.add(grid().getTurtleById(id.intValue()));
+		}
+		return turtles;
+	}
+
+	private List<Double> newActiveTurtleIds() {
+		return ((CommandList)params.get(0)).executeList();
 	}
 
 }

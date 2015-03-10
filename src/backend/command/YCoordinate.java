@@ -8,8 +8,8 @@ public class YCoordinate extends TurtleQuery {
 		super(stringPair, parent, model);
 	}
 
-	public Double execute() {
-		return turtle().getLocation().getY();
+	public Double turtleOperation(Turtle turtle) {
+		return turtle.getLocation().getY();
 	}
 
 }

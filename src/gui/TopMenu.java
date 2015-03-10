@@ -123,7 +123,7 @@ public class TopMenu extends Region {
 					    );
                 File file = fileChooser.showOpenDialog(fileChooserStage);
                 String imagePath = file.getAbsolutePath();
-                List<Turtle> turtles = myModel.getGrid().getTurtles();
+                List<Turtle> turtles = myModel.getGrid().getAllTurtles();
                 for(Turtle turtle : turtles){
                 	
                 	try {
@@ -147,7 +147,7 @@ public class TopMenu extends Region {
 		choosePenColor.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent t){
 				System.out.println("You are choosing a new Pen color");
-				myModel.getGrid().getActiveTurtle().setPenColor(paintToAwt(openColorPicker()));
+				myModel.getGrid().setPenColor(paintToAwt(openColorPicker()));
 				//Grid.setPenColor(color)
 			}
 		});
