@@ -8,8 +8,8 @@ public class Heading extends TurtleQuery {
 		super(stringPair, parent, model);
 	}
 
-	public Double execute() {
-		return turtle().getHeading().getAngle();
+	public Double execute(Turtle turtle) {
+		return turtle.getHeading().getAngle();
 	}
 
 }

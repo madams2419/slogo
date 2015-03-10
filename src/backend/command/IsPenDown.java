@@ -8,8 +8,8 @@ public class IsPenDown extends TurtleQuery {
 		super(stringPair, parent, model);
 	}
 
-	public Double execute() {
-		return turtle().isPenDown();
+	public Double execute(Turtle turtle) {
+		return turtle.isPenDown();
 	}
 
 }

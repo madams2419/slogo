@@ -22,7 +22,7 @@ public abstract class SpecifiedTurtleCommand extends TurtleCommand {
 	}
 
 	private List<Double> paramTurtleIds() {
-		return ((CommandList)params.get(0)).executeList();
+		return getParam(0, CommandList.class).executeList();
 	}
 
 }

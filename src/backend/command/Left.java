@@ -2,16 +2,14 @@ package backend.command;
 
 import backend.*;
 
-public class Left extends TurtleCommand {
+public class Left extends DegreesTurtleCommand {
 	
 	public Left(StringPair stringPair, Command parent, Model model) {
-		super(stringPair, 1, parent, model);
+		super(stringPair, parent, model);
 	}
 
-	public Double execute() {
-		Double degrees = getParamValue(0);
-		turtle().rotateLeft(degrees.doubleValue());
-		return degrees;
+	public Double execute(Turtle turtle) {
+		return turtle.rotateLeft(degrees());
 	}
 
 }

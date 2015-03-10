@@ -2,7 +2,7 @@ package backend.command;
 
 import backend.*;
 
-public class ID extends TurtleCommand {
+public class ID extends ActiveTurtleCommand {
 
 	private final static int NUM_PARAMS = 0;
 
@@ -10,8 +10,8 @@ public class ID extends TurtleCommand {
 		super(stringPair, NUM_PARAMS, parent, model);
 	}
 
-	public Double execute() {
-		return new Double(activeTurtle().getID());
+	public Double execute(Turtle turtle) {
+		return new Double(turtle.getID());
 	}
 
 }

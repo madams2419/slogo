@@ -1,6 +1,7 @@
 package backend.command;
 
 import java.util.ArrayList;
+
 import backend.StringPair;
 
 
@@ -40,15 +41,15 @@ public abstract class Command {
 		params.add(newParam);
 	}
 
-	public Command getParam(int index) {
-		return params.get(index);
+	public <T extends Command> T getParam(int index, Class<T> type) {
+		return type.cast(params.get(index));
 	}
 
 	public boolean hasParent() {
 		return parent != null;
 	}
 
-	public Double getParamValue(int paramIndex) {
+	public Double executeParam(int paramIndex) {
 		return params.get(paramIndex).execute();
 	}
 

@@ -9,7 +9,7 @@ public class Repeat extends For {
 	}
 
 	public Double execute() {
-		int limit = getParamValue(0).intValue();
+		int limit = executeParam(0).intValue();
 		return forLoop(1, limit, 1, ":repcount");
 	}
 

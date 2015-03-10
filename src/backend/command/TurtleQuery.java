@@ -2,7 +2,7 @@ package backend.command;
 
 import backend.*;
 
-public abstract class TurtleQuery extends TurtleCommand {
+public abstract class TurtleQuery extends ActiveTurtleCommand {
 	
 	private final static int NUM_PARAMS = 0;
 

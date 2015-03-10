@@ -11,9 +11,9 @@ public class For extends ModelCommand {
 	}
 
 	public Double execute() {
-		int start = getParam(0).getParamValue(1).intValue();
-		int end = getParam(0).getParamValue(2).intValue();
-		int increment = getParam(0).getParamValue(3).intValue();
+		int start = getParam(0).executeParam(1).intValue();
+		int end = getParam(0).executeParam(2).intValue();
+		int increment = getParam(0).executeParam(3).intValue();
 		String countVar = getParam(0).getParam(0).getTypedString();
 
 		return forLoop(start, end, increment, countVar);

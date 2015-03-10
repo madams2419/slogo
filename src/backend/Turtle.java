@@ -64,14 +64,16 @@ public class Turtle {
 		return setHeading(newHeading);
 	}
 
-	public void rotateRight(double degrees) {
+	public double rotateRight(double degrees) {
 		double newHeading = heading.getAngle() - degrees;
 		setHeading(newHeading);
+		return degrees;
 	}
 
-	public void rotateLeft(double degrees) {
+	public double rotateLeft(double degrees) {
 		double newHeading = heading.getAngle() + degrees;
 		setHeading(newHeading);
+		return degrees;
 	}
 
 	public void setImagePath(String imagePath) {
