@@ -11,7 +11,7 @@ public class Turtles extends TurtleCommand {
 	}
 
 	public Double execute() {
-		return new Double(turtles().size());
+		return new Double(allTurtles().size());
 	}
 
 }

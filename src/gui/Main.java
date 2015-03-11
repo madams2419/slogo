@@ -120,5 +120,6 @@ public class Main extends Application {
 		this.activeTab.setLayoutX(0);
 		this.activeTab.setLayoutY(0);
 		root.getChildren().add(this.activeTab);
+		this.activeTab.toBack();
 	}
 }
