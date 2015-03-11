@@ -11,23 +11,36 @@ public class For extends ModelCommand {
 	}
 
 	public Double execute() {
-		int start = getParam(0).executeParam(1).intValue();
-		int end = getParam(0).executeParam(2).intValue();
-		int increment = getParam(0).executeParam(3).intValue();
-		String countVar = getParam(0).getParam(0).getTypedString();
-
-		return forLoop(start, end, increment, countVar);
+		return forLoop(start(), end(), increment(), countVar());
 	}
 
 	protected Double forLoop(int start, int end, int increment, String countVar) {
 		Double returnVal = 0.0;
-
 		for(int i = start; i <= end; i+=increment) {
 			userVariables().put(countVar, new Variable(countVar, i));
 			returnVal = getParam(1).execute();
 		}
-
 		return returnVal;
+	}
+	
+	protected String countVar() {
+		return forVarList().getParam(0, VariableRetriever.class).getTypedString();
+	}
+	
+	protected int start() {
+		return forVarList().executeParam(1).intValue();
+	}
+	
+	protected int end() {
+		return forVarList().executeParam(2).intValue();
+	}
+	
+	protected int increment() {
+		return forVarList().executeParam(3).intValue();
+	}
+	
+	protected CommandList forVarList() {
+		return getParam(0, CommandList.class);
 	}
 
 }

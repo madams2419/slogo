@@ -44,6 +44,10 @@ public abstract class Command {
 	public <T extends Command> T getParam(int index, Class<T> type) {
 		return type.cast(params.get(index));
 	}
+	
+	public Command getParam(int index) {
+		return getParam(index, Command.class);
+	}
 
 	public boolean hasParent() {
 		return parent != null;

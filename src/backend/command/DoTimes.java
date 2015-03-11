@@ -6,7 +6,6 @@ import backend.StringPair;
 
 public class DoTimes extends For {
 
-
 	public DoTimes(StringPair stringPair, HashMap<String, Double> userVariables, Command parent) {
 		super(stringPair, userVariables, parent);
 	}
