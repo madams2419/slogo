@@ -11,18 +11,57 @@ public abstract class Command {
 	protected int numParams;
 	protected ArrayList<Command> params;
 	protected Command parent;
+	int indentLevel;
 
 	public Command(StringPair stringPair, int numParams, Command parent) {
 		this.stringPair = stringPair;
 		this.numParams = numParams;
 		this.parent = parent;
 		params = new ArrayList<>();
+		indentLevel = (hasParent()) ? parent.getIndentLevel() : 0;
+		System.out.println("Parent is list: " + parentIsList());
+		if(parentIsList()) {
+			indentLevel++;
+		}
 	}
 
 	public abstract Double execute();
 
 	public String toString() {
-		return stringPair.getProperty();
+		StringBuilder sb = new StringBuilder();
+		sb.append(preParamsFormatString());
+		for(Command param : params) {
+			sb.append(param.toString());
+			if(!param.equals(params.get(params.size() - 1))) {
+				sb.append(interParamFormatString());
+			}
+		}
+		sb.append(postParamsFormatString());
+		return sb.toString();
+	}
+
+	protected String preParamsFormatString() {
+		return indentString() + getTypedString() + " ";
+	}
+
+	protected String indentString() {
+		if(parentIsList()) {
+			StringBuilder sb = new StringBuilder();
+			for(int i = 0; i < indentLevel; i++) {
+				sb.append("  ");
+			}
+			return sb.toString();
+		} else {
+			return "";
+		}
+	}
+
+	protected String postParamsFormatString() {
+		return "";
+	}
+
+	protected String interParamFormatString() {
+		return "";
 	}
 
 	public String getTypedString() {
@@ -44,7 +83,7 @@ public abstract class Command {
 	public <T extends Command> T getParam(int index, Class<T> type) {
 		return type.cast(params.get(index));
 	}
-	
+
 	public Command getParam(int index) {
 		return getParam(index, Command.class);
 	}
@@ -65,5 +104,16 @@ public abstract class Command {
 		return parent;
 	}
 
+	public int getIndentLevel() {
+		return indentLevel;
+	}
+
+	protected boolean parentIsList() {
+		if(hasParent()) {
+			return parent.getClass().equals(CommandList.class);
+		} else {
+			return false;
+		}
+	}
 
 }

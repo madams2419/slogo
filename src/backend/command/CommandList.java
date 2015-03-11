@@ -11,6 +11,21 @@ public class CommandList extends Command {
 		super(stringPair, 0, parent);
 		listComplete = false;
 	}
+	
+	@Override
+	protected String preParamsFormatString() {
+		return "\n" + parent.indentString() + getTypedString() + "\n";
+	}
+	
+	@Override
+	protected String postParamsFormatString() {
+		return "\n" + parent.indentString() +"]";
+	}
+	
+	@Override
+	protected String interParamFormatString() {
+		return "\n";
+	}
 
 	@Override
 	public boolean needsParams() {
