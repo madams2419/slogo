@@ -41,12 +41,20 @@ public class Turtle {
 	}
 
 	public double moveToPoint(Point target) {
-		System.out.println("Next loc: " + target);
-		Line newLine = new Line(location, target, (penDown) ? penColor : null);
+		drawLine(location, target);
+		return jumpToPoint(target);
+	}
+	
+	private void drawLine(Point start, Point end) {
+		if(!penDown) return;
+		Line newLine = new Line(start, end, penColor);
+		lines.add(newLine);
+	}
+	
+	public double jumpToPoint(Point target) {
 		double distanceMoved = location.distance(target);
 		location = target;
-		lines.add(newLine);
-		return distanceMoved;
+		return distanceMoved;		
 	}
 
 	public double setHeading(double newAngle) {

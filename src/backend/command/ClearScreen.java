@@ -6,16 +6,15 @@ import backend.Model;
 import backend.StringPair;
 import backend.Turtle;
 
-public class ClearScreen extends TurtleCommand {
+public class ClearScreen extends ActiveTurtleCommand {
 
 	public ClearScreen(StringPair stringPair, Command parent, Model model) {
 		super(stringPair, 0, parent, model);
 	}
 
-	public Double execute() {
-		double distanceMoved = turtle().moveToPoint(new Point(0, 0));
-		turtle().clearLines();
-		return distanceMoved;
+	public Double execute(Turtle turtle) {
+		turtle.clearLines();
+		return turtle.jumpToPoint(new Point(0, 0));
 	}
 
 }
