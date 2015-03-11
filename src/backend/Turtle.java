@@ -84,11 +84,9 @@ public class Turtle implements DrawableImage {
 		setImageByFullPath(Defaults.IMAGE_DIRECTORY + imageName);
 	}
 
-	public double stamp() {
+	public void stamp() {
 		Stamp newStamp = new Stamp(this);
 		stamps.add(newStamp);
-		//TODO image index lookup
-		return 1.0;
 	}
 
 	public List<Stamp> getStamps() {
@@ -143,8 +141,17 @@ public class Turtle implements DrawableImage {
 		return pen.getLines();
 	}
 
-	public void clearLines() {
-		pen.clearLines();
+	public boolean clearLines() {
+		return pen.clearLines();
+	}
+
+	public boolean clearStamps() {
+		boolean stampsCleared = false;
+		if(stamps.size() > 0) {
+			stampsCleared = true;
+			stamps.clear();
+		}
+		return stampsCleared;
 	}
 
 	public int getID() {

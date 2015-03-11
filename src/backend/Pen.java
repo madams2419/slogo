@@ -31,8 +31,13 @@ public class Pen {
 		return lines;
 	}
 
-	public void clearLines() {
-		lines.clear();
+	public boolean clearLines() {
+		boolean linesCleared = false;
+		if(lines.size() > 0) {
+			linesCleared = true;
+			lines.clear();
+		}
+		return linesCleared;
 	}
 
 	public boolean isDown() {
