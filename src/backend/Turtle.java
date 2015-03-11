@@ -2,7 +2,9 @@ package backend;
 
 import java.lang.Math;
 import java.awt.*;
+import java.util.ArrayList;
 import java.util.List;
+
 import static backend.Constants.*;
 
 public class Turtle implements DrawableImage {
@@ -12,6 +14,7 @@ public class Turtle implements DrawableImage {
 	private Point location;
 	private Heading heading;
 	private Pen pen;
+	ArrayList<Stamp> stamps;
 	private boolean isVisible;
 
 	public Turtle(int id, String imagePath, Point location, Heading heading, Color penColor, int penWidth) {
@@ -20,6 +23,7 @@ public class Turtle implements DrawableImage {
 		this.location = location;
 		this.heading = heading;
 		this.pen = new Pen(penColor, penWidth, true);
+		stamps = new ArrayList<>();
 		isVisible = true;
 	}
 
@@ -76,6 +80,17 @@ public class Turtle implements DrawableImage {
 
 	public void setImagePath(String imagePath) {
 		this.imagePath = imagePath;
+	}
+	
+	public double stamp() {
+		Stamp newStamp = new Stamp(this);
+		stamps.add(newStamp);
+		//TODO image index lookup
+		return 1.0;
+	}
+	
+	public List<Stamp> getStamps() {
+		return stamps;
 	}
 
 	public double setPenDown() {

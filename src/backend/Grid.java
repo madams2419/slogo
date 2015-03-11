@@ -56,6 +56,16 @@ public class Grid {
 	public List<Turtle> getActiveTurtles() {
 		return (ArrayList<Turtle>) activeTurtles.clone();
 	}
+	
+	public List<Turtle> getShowingTurtles() {
+		List<Turtle> showingTurtles = new ArrayList<>();
+		for(Turtle turtle : getAllTurtles()) {
+			if(turtle.isShowing() == 1.0) {
+				showingTurtles.add(turtle);
+			}
+		}
+		return showingTurtles;
+	}
 
 	public Turtle getTurtleById(int id) {
 		if(allTurtles.containsKey(id)) {
@@ -85,20 +95,25 @@ public class Grid {
 		while(it.hasNext()) {
 			allLines.addAll(it.next().getLines());
 		}
-
 		return allLines;
 	}
 	
 	//TODO refactor with method extraction for this and the above method
 	public List<Stamp> getStamps() {
-		ArrayList<Line> allStamps = new ArrayList<>();
+		ArrayList<Stamp> allStamps = new ArrayList<>();
 		Iterator<Turtle> it = allTurtles.values().iterator();
 
 		while(it.hasNext()) {
 			allStamps.addAll(it.next().getStamps());
 		}
-
 		return allStamps;
+	}
+	
+	public List<DrawableImage> getDrawableImages() {
+		List<DrawableImage> dbis = new ArrayList<>();
+		dbis.addAll((List)getShowingTurtles());
+		dbis.addAll((List)getStamps());
+		return dbis;
 	}
 	
 	public void setDimensions(int width, int height) {
