@@ -1,15 +1,13 @@
 package backend;
 
+import java.awt.Color;
 import java.awt.Dimension;
-import java.io.File;
-import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Queue;
-import java.util.Scanner;
 import java.util.Stack;
 
 import backend.command.*;
@@ -25,6 +23,8 @@ public class Model {
 	private String helpPagePath;
 	private CommandFactory comFactory;
 	private SLogoParser parser;
+	private BiMap<Integer, Color> colorMap;
+	private BiMap<Integer, String> imageMap;
 
 	public Model() {
 		Turtle turtle = new Turtle(1);
@@ -36,12 +36,22 @@ public class Model {
 		helpPagePath = HELP_PAGE_PATH;
 		comFactory = new CommandFactory(this);
 		parser = new SLogoParser(comFactory);
+		colorMap = new BiMap<>();
+		imageMap = new BiMap<>();
+	}
+
+	public BiMap<Integer, Color> getColorMap() {
+		return colorMap;
+	}
+
+	public BiMap<Integer, String> getImageMap() {
+		return imageMap;
 	}
 
 	public void parseProgram(String prog) {
 		pendingCommands = parser.parseProgram(prog);
 	}
-	
+
 	public Command executeCommand(Command command) {
 		command.execute();
 		executedCommands.push(command);
@@ -54,24 +64,24 @@ public class Model {
 		executedCommands.push(targetCommand);
 		return targetCommand;
 	}
-	
+
 	public List<Command> executeAllCommands() {
 		while(!pendingCommands.isEmpty()) {
 			executeNextCommand();
 		}
-		
+
 		return executedCommands;
 	}
 
 	public void setUserVariable(String name, Variable newVar) {
 		userVariables.put(name, newVar);
 	}
-	
+
 	public void setUserVariable(String name, double val) {
 		Variable newVar = new Variable(name, val);
 		setUserVariable(name, newVar);
 	}
-	
+
 	public void setUserVariable(Variable var, double val) {
 		String name = var.getName();
 		Variable newVar = new Variable(name, val);
@@ -89,7 +99,7 @@ public class Model {
 	public List<Command> getExecutedCommands() {
 		return executedCommands;
 	}
-	
+
 	public List<Command> getPendingCommands() {
 		return (List<Command>) pendingCommands;
 	}
@@ -105,7 +115,7 @@ public class Model {
 	public String getHelpPagePath() {
 		return helpPagePath;
 	}
-	
+
 	// Debug methods
 	private void printLines() {
 		List<Line> lines = getGrid().getLines();
@@ -131,7 +141,7 @@ public class Model {
 			printCommands(subParams);
 		}
 	}
-	
+
 	private void printTurtleLocations() {
 		List<Turtle> turtles = grid.getAllTurtles();
 		for(Turtle t : turtles) {

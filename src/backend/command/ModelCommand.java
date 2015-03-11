@@ -1,5 +1,6 @@
 package backend.command;
 
+import java.awt.Color;
 import java.util.Map;
 
 import backend.*;
@@ -23,6 +24,19 @@ public abstract class ModelCommand extends Command {
 
 	protected Grid grid() {
 		return model.getGrid();
+	}
+
+	protected BiMap<Integer, Color> colorMap() {
+		return model.getColorMap();
+	}
+
+	protected BiMap<Integer, String> imageMap() {
+		return model.getImageMap();
+	}
+
+	protected Color paramToColor(int paramIndex) {
+		int colorIndex = executeParam(paramIndex).intValue();
+		return colorMap().getValue(colorIndex);
 	}
 
 }

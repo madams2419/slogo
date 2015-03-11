@@ -44,11 +44,11 @@ public class Turtle implements DrawableImage {
 		pen.drawLine(location, target);
 		return jumpToPoint(target);
 	}
-	
+
 	public double jumpToPoint(Point target) {
 		double distanceMoved = location.distance(target);
 		location = target;
-		return distanceMoved;		
+		return distanceMoved;
 	}
 
 	public double setHeading(double newAngle) {
@@ -81,14 +81,14 @@ public class Turtle implements DrawableImage {
 	public void setImagePath(String imagePath) {
 		this.imagePath = imagePath;
 	}
-	
+
 	public double stamp() {
 		Stamp newStamp = new Stamp(this);
 		stamps.add(newStamp);
 		//TODO image index lookup
 		return 1.0;
 	}
-	
+
 	public List<Stamp> getStamps() {
 		return stamps;
 	}
@@ -143,6 +143,10 @@ public class Turtle implements DrawableImage {
 
 	public int getID() {
 		return id;
+	}
+
+	public Pen getPen() {
+		return pen;
 	}
 
 }

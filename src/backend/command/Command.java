@@ -12,6 +12,7 @@ public abstract class Command {
 	protected ArrayList<Command> params;
 	protected Command parent;
 	int indentLevel;
+	Double returnVal;
 
 	public Command(StringPair stringPair, int numParams, Command parent) {
 		this.stringPair = stringPair;
@@ -22,6 +23,7 @@ public abstract class Command {
 		if(parentIsList()) {
 			indentLevel++;
 		}
+		returnVal = null;
 	}
 
 	public abstract Double execute();
@@ -92,7 +94,16 @@ public abstract class Command {
 	}
 
 	public Double executeParam(int paramIndex) {
-		return params.get(paramIndex).execute();
+		returnVal = params.get(paramIndex).execute();
+		return returnVal;
+	}
+
+	public Double getReturnVal() {
+		return returnVal;
+	}
+
+	public Double getParamReturnVal(int paramIndex) {
+		return getParam(paramIndex).getReturnVal();
 	}
 
 	public ArrayList<Command> getParams() {
