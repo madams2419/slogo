@@ -1,21 +1,26 @@
 package backend.command;
 
-import java.util.HashMap;
-
-import backend.StringPair;
+import backend.*;
 
 public class DoTimes extends For {
 
-	public DoTimes(StringPair stringPair, HashMap<String, Double> userVariables, Command parent) {
-		super(stringPair, userVariables, parent);
+	public DoTimes(StringPair stringPair, Model model, Command parent) {
+		super(stringPair, parent, model);
 	}
-
-	public Double execute() {
-		int limit = getParam(0).executeParam(1).intValue();
-		String countVar = getParam(0).getParam(0).getTypedString();
-
-		return forLoop(1, limit, 1, countVar);
+	
+	@Override
+	public int start() {
+		return 1;
 	}
-
+	
+	@Override
+	public int end() {
+		return forVarList().executeParam(1).intValue();
+	}
+	
+	@Override
+	public int increment() {
+		return 1;
+	}
 
 }
