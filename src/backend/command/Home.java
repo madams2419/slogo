@@ -11,7 +11,7 @@ public class Home extends ActiveTurtleCommand {
 	}
 
 	public Double execute(Turtle turtle) {
-		return turtle.moveToPoint(Constants.TURTLE_START_POINT);
+		return turtle.moveToPoint(Defaults.TURTLE_START_POINT);
 	}
 
 }

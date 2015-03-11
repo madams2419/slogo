@@ -2,10 +2,14 @@ package backend;
 
 public class BiIndex<V> extends BiMap<Integer, V> {
 	
-	public BiIndex(V[] values) {
+	public BiIndex() {
 		super();
-		for(int i = 0; i < values.length; i++) {
-			put(new Integer(i), values[i]);
+	}
+	
+	public BiIndex(V[] initValues) {
+		this();
+		for(int i = 0; i < initValues.length; i++) {
+			put(new Integer(i), initValues[i]);
 		}
 	}
 	

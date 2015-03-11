@@ -10,58 +10,29 @@ import javafx.scene.image.ImageView;
 
 public class TurtleImage extends ImageView{
 	
-	protected String imagePath;
 	protected double turtleWidthPct = .05;
 	protected String defaultImagePath = "../resources/sea_turtle.png";
 	protected Turtle turtle;
 	public TurtleImage(Turtle turtle){
 		
 		this.turtle = turtle;
-		this.imagePath = turtle.getImagePath();
 		//setDefaultImagePath();
-		Image image = new Image(getClass().getResourceAsStream(
-				turtle.getImagePath()));
-		this.setImage(image); 
-		
-		
-	}
-	
-	public void setImagePath(){
-		
-		this.imagePath = imagePath;
-		turtle.setImagePath(imagePath);
 		updateImage();
+		
 		
 	}
 	
 	public void setDefaultImagePath(){
 		
 		if(turtle.getImagePath() == "turtle.jpg"){
-			turtle.setImagePath(this.defaultImagePath);
+			turtle.setImageFullPath(this.defaultImagePath);
 		}
 		
 	}
 	
 	public void updateImage() {
 
-		String imagePath = turtle.getImagePath();
-		imagePath = imagePath.replace("\\", "/");
-		Image newTurtle = null;
-		if (imagePath == defaultImagePath) {
-			newTurtle = new Image(getClass().getResourceAsStream(
-					defaultImagePath));
-		} else {
-
-			FileInputStream in = null;
-			try {
-				in = new FileInputStream(imagePath);
-			} catch (FileNotFoundException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			newTurtle = new Image(in);
-		}
-		
+		Image newTurtle = new Image(getClass().getResourceAsStream(turtle.getImagePath()));
 		// Image image = new Image(getClass().getResourceAsStream(imnew
 		// Image(getClass().getResourceAsStream(imagePath));agePath));
 		this.setImage(newTurtle);

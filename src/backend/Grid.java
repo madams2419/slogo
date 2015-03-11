@@ -13,16 +13,20 @@ public class Grid {
 	private Color bgColor;
 	private HashMap<Integer, Turtle> allTurtles;
 	private ArrayList<Turtle> activeTurtles;
+	private BiIndex<Color> colorMap;
+	private BiIndex<String> imageMap;
 
-	public Grid(Dimension size, Color bgColor) {
+	public Grid(Dimension size, BiIndex<Color> colorMap, BiIndex<String> imageMap) {
 		this.size = size;
-		this.bgColor = bgColor;
+		this.bgColor = colorMap.getValue(Defaults.GRID_COLOR_INDEX);
+		this.colorMap = colorMap;
+		this.imageMap = imageMap;
 		allTurtles = new HashMap<>();
 		activeTurtles = new ArrayList<>();
 	}
 
-	public Grid(Dimension size, Color bgColor, Turtle turtle) {
-		this(size, bgColor);
+	public Grid(Dimension size, BiIndex<Color> colorMap, BiIndex<String> imageMap, Turtle turtle) {
+		this(size, colorMap, imageMap);
 		addTurtle(turtle);
 	}
 
@@ -71,7 +75,7 @@ public class Grid {
 		if(allTurtles.containsKey(id)) {
 			return allTurtles.get(id);
 		} else {
-			Turtle newTurtle = new Turtle(id);
+			Turtle newTurtle = new Turtle(id, colorMap, imageMap);
 			allTurtles.put(id, newTurtle);
 			return newTurtle;
 		}

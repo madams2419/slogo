@@ -5,8 +5,6 @@ import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 
-import static backend.Constants.*;
-
 public class Turtle implements DrawableImage {
 
 	private int id;
@@ -17,9 +15,9 @@ public class Turtle implements DrawableImage {
 	ArrayList<Stamp> stamps;
 	private boolean isVisible;
 
-	public Turtle(int id, String imagePath, Point location, Heading heading, Color penColor, int penWidth) {
+	public Turtle(int id, String imageName, Point location, Heading heading, Color penColor, int penWidth) {
 		this.id = id;
-		this.imagePath = imagePath;
+		setImageName(imageName);
 		this.location = location;
 		this.heading = heading;
 		this.pen = new Pen(penColor, penWidth, true);
@@ -27,8 +25,8 @@ public class Turtle implements DrawableImage {
 		isVisible = true;
 	}
 
-	public Turtle(int id) {
-		this(id, TURTLE_IMG_PATH, TURTLE_START_POINT, TURTLE_START_HEADING, TURTLE_PEN_COLOR, TURTLE_PEN_WIDTH);
+	public Turtle(int id, BiIndex<Color> colorMap, BiIndex<String> imageMap) {
+		this(id, imageMap.getValue(Defaults.TURTLE_IMG_INDEX), Defaults.TURTLE_START_POINT, Defaults.TURTLE_START_HEADING, colorMap.getValue(Defaults.PEN_COLOR_INDEX), Defaults.PEN_WIDTH);
 	}
 
 	public double move(Double magnitude) {
@@ -78,8 +76,12 @@ public class Turtle implements DrawableImage {
 		return degrees;
 	}
 
-	public void setImagePath(String imagePath) {
+	public void setImageFullPath(String imagePath) {
 		this.imagePath = imagePath;
+	}
+	
+	public void setImageName(String imageName) {
+		setImageFullPath(Defaults.IMAGE_DIRECTORY + imageName);
 	}
 
 	public double stamp() {

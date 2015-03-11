@@ -11,10 +11,11 @@ import java.util.Queue;
 import java.util.Stack;
 
 import backend.command.*;
-import static backend.Constants.*;
 
 public class Model {
 
+	private BiIndex<Color> colorMap;
+	private BiIndex<String> imageMap;
 	private Grid grid;
 	private Queue<Command> pendingCommands;
 	private static Stack<Command> executedCommands;
@@ -23,21 +24,19 @@ public class Model {
 	private String helpPagePath;
 	private CommandFactory comFactory;
 	private SLogoParser parser;
-	private BiMap<Integer, Color> colorMap;
-	private BiMap<Integer, String> imageMap;
 
 	public Model() {
-		Turtle turtle = new Turtle(1);
-		grid = new Grid(new Dimension(GRID_WIDTH, GRID_HEIGHT), GRID_COLOR, turtle);
+		colorMap = new BiIndex<>(Defaults.COLOR_MAP);
+		imageMap = new BiIndex<>(Defaults.IMAGE_MAP);
+		Turtle turtle = new Turtle(1, colorMap, imageMap);
+		grid = new Grid(new Dimension(Defaults.GRID_WIDTH, Defaults.GRID_HEIGHT), colorMap, imageMap, turtle);
 		pendingCommands = new LinkedList<>();
 		executedCommands = new Stack<>();
 		userVariables = new HashMap<>();
 		userInstructions = new HashMap<>();
-		helpPagePath = HELP_PAGE_PATH;
+		helpPagePath = Defaults.HELP_PAGE_PATH;
 		comFactory = new CommandFactory(this);
 		parser = new SLogoParser(comFactory);
-		colorMap = new BiMap<>();
-		imageMap = new BiMap<>();
 	}
 
 	public BiMap<Integer, Color> getColorMap() {

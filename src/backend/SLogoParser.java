@@ -25,7 +25,7 @@ public class SLogoParser {
 	}
 
 	public SLogoParser(CommandFactory comFactory) {
-		this(comFactory, Constants.DEFAULT_LANGUAGE);
+		this(comFactory, Defaults.LANGUAGE);
 	}
 
 	public void genPatternList() {

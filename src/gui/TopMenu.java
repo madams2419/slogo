@@ -127,7 +127,7 @@ public class TopMenu extends Region {
                 for(Turtle turtle : turtles){
                 	
                 	try {
-                		turtle.setImagePath(imagePath); 
+                		turtle.setImageFullPath(imagePath); 
 					} catch (Exception e1) {
 						e1.printStackTrace();
 					}
