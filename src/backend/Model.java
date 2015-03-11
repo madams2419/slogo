@@ -40,7 +40,6 @@ public class Model {
 
 	public void parseProgram(String prog) {
 		pendingCommands = parser.parseProgram(prog);
-		printCommandTree();
 	}
 	
 	public Command executeCommand(Command command) {
@@ -59,34 +58,9 @@ public class Model {
 	public List<Command> executeAllCommands() {
 		while(!pendingCommands.isEmpty()) {
 			executeNextCommand();
-			//printTurtleLocations();
 		}
 		
 		return executedCommands;
-	}
-	
-	private void printTurtleLocations() {
-		List<Turtle> turtles = grid.getAllTurtles();
-		for(Turtle t : turtles) {
-			System.out.printf("Turtle #%d at (%f, %f)\n", t.getID(), t.getLocation().getX(), t.getLocation().getY());
-		}
-	}
-
-	public void printCommandTree() {
-		Command root = pendingCommands.peek();
-
-		System.out.println(root);
-
-		printCommands(root.getParams());
-	}
-
-	public void printCommands(ArrayList<Command> params) {
-		for(Command c : params) {
-			System.out.println(c);
-
-			ArrayList<Command> subParams = c.getParams();
-			printCommands(subParams);
-		}
 	}
 
 	public void setUserVariable(String name, Variable newVar) {
@@ -132,11 +106,36 @@ public class Model {
 		return helpPagePath;
 	}
 	
+	// Debug methods
 	private void printLines() {
 		List<Line> lines = getGrid().getLines();
 
 		for(Line l : lines) {
 			System.out.println(l);
+		}
+	}
+
+	public void printCommandTree() {
+		Command root = pendingCommands.peek();
+
+		System.out.println(root);
+
+		printCommands(root.getParams());
+	}
+
+	public void printCommands(ArrayList<Command> params) {
+		for(Command c : params) {
+			System.out.println(c);
+
+			ArrayList<Command> subParams = c.getParams();
+			printCommands(subParams);
+		}
+	}
+	
+	private void printTurtleLocations() {
+		List<Turtle> turtles = grid.getAllTurtles();
+		for(Turtle t : turtles) {
+			System.out.printf("Turtle #%d at (%f, %f)\n", t.getID(), t.getLocation().getX(), t.getLocation().getY());
 		}
 	}
 

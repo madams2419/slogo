@@ -157,7 +157,7 @@ private void updatePanels(){
 			Hyperlink h = new Hyperlink(c.toString());
 			h.getStylesheets().add("GUIStyle.css");
 			h.setOnAction(event -> {
-				System.out.println("Link click");
+				//System.out.println("Link click");
 				myModel.executeCommand(c);
 				
 				List<backend.Line> backLines = myModel.getGrid().getLines();

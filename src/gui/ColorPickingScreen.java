@@ -33,7 +33,7 @@ public class ColorPickingScreen extends Application {
         
         colorPicker.setOnAction(new EventHandler<ActionEvent>() {
             public void handle(ActionEvent t) {  
-                System.out.println(colorPicker.getValue());
+                //System.out.println(colorPicker.getValue());
                 setColor(colorPicker.getValue());
                 
             }

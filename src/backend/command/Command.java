@@ -19,7 +19,6 @@ public abstract class Command {
 		this.parent = parent;
 		params = new ArrayList<>();
 		indentLevel = (hasParent()) ? parent.getIndentLevel() : 0;
-		System.out.println("Parent is list: " + parentIsList());
 		if(parentIsList()) {
 			indentLevel++;
 		}

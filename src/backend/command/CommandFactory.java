@@ -14,7 +14,6 @@ public class CommandFactory {
 
 	public Command getCommand(StringPair stringPair, Command parent)  {
 		String comClassName = "backend.command." + stringPair.getProperty();
-		System.out.println("Command created: " + stringPair.getProperty());
 
 		try {
 			Class<?> comClass = Class.forName(comClassName);

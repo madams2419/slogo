@@ -82,7 +82,7 @@ public class TurtleImage extends ImageView{
 	public void orientTurtle(Turtle turtle){
 		
 		this.setRotate(turtle.getHeading().getAngle() - 90); 
-		System.out.println(turtle.getHeading().getAngle());
+		//System.out.println(turtle.getHeading().getAngle());
 	}
 	
 	public void setLocation(Point p){
