@@ -50,10 +50,10 @@ public class DrawingArea extends Region {
 
 	}
 	
-	protected void drawLines(List<backend.Line> lines, int width, Color color){
-		this.drawingCanvas.getGraphicsContext2D().setLineWidth(5);
-		this.drawingCanvas.getGraphicsContext2D().setStroke(Color.BLUE);
+	protected void drawLines(List<backend.Line> lines){
 		for (backend.Line l : lines){
+			this.drawingCanvas.getGraphicsContext2D().setLineWidth(l.getWidth());
+			this.drawingCanvas.getGraphicsContext2D().setStroke(awtToPaint(l.getColor()));
 			Point adjustedLStartPoint = convertCoordinates(l.getStartPoint());
 			Point adjustedLEndPoint = convertCoordinates(l.getEndPoint());
 			this.drawingCanvas.getGraphicsContext2D().strokeLine(adjustedLStartPoint.getX(), adjustedLStartPoint.getY(), 
@@ -117,6 +117,11 @@ public class DrawingArea extends Region {
 		
 		adjustedCoordinatePoint.setLocation(xLocation, yLocation);
 		return adjustedCoordinatePoint;
+	}
+	
+	
+	public javafx.scene.paint.Color awtToPaint(java.awt.Color c) {
+		return Color.rgb(c.getRed(), c.getGreen(), c.getBlue());
 	}
 	
 }

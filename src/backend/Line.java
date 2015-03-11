@@ -24,8 +24,12 @@ public class Line extends Line2D.Double {
 		return color == null;
 	}
 
-	protected Color getColor() {
+	public Color getColor() {
 		return color;
+	}
+	
+	public int getWidth() {
+		return width;
 	}
 
 	public Point getStartPoint() {
