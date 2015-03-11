@@ -17,7 +17,7 @@ public class Turtle implements DrawableImage {
 
 	public Turtle(int id, String imageName, Point location, Heading heading, Color penColor, int penWidth) {
 		this.id = id;
-		setImageName(imageName);
+		setImageByName(imageName);
 		this.location = location;
 		this.heading = heading;
 		this.pen = new Pen(penColor, penWidth, true);
@@ -76,12 +76,12 @@ public class Turtle implements DrawableImage {
 		return degrees;
 	}
 
-	public void setImageFullPath(String imagePath) {
+	public void setImageByFullPath(String imagePath) {
 		this.imagePath = imagePath;
 	}
 	
-	public void setImageName(String imageName) {
-		setImageFullPath(Defaults.IMAGE_DIRECTORY + imageName);
+	public void setImageByName(String imageName) {
+		setImageByFullPath(Defaults.IMAGE_DIRECTORY + imageName);
 	}
 
 	public double stamp() {

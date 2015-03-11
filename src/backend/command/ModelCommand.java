@@ -39,4 +39,9 @@ public abstract class ModelCommand extends Command {
 		return colorMap().getValue(colorIndex);
 	}
 
+	protected String paramToImage(int paramIndex) {
+		int imageIndex = executeParam(paramIndex).intValue();
+		return imageMap().getValue(imageIndex);
+	}
+
 }

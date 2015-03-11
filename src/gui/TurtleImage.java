@@ -25,7 +25,7 @@ public class TurtleImage extends ImageView{
 	public void setDefaultImagePath(){
 		
 		if(turtle.getImagePath() == "turtle.jpg"){
-			turtle.setImageFullPath(this.defaultImagePath);
+			turtle.setImageByFullPath(this.defaultImagePath);
 		}
 		
 	}
