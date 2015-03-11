@@ -4,7 +4,7 @@ import backend.*;
 
 public class DoTimes extends For {
 
-	public DoTimes(StringPair stringPair, Model model, Command parent) {
+	public DoTimes(StringPair stringPair, Command parent, Model model) {
 		super(stringPair, parent, model);
 	}
 	

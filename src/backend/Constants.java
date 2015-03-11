@@ -5,8 +5,8 @@ import java.awt.Point;
 
 public class Constants {
 
-	public static final int GRID_WIDTH = 1000;
-	public static final int GRID_HEIGHT = 1000;
+	public static final int GRID_WIDTH = 400;
+	public static final int GRID_HEIGHT = 400;
 	public static final Color GRID_COLOR = Color.WHITE;
 
 	public static final String TURTLE_IMG_PATH = "turtle.jpg";
