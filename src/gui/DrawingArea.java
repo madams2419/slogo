@@ -60,7 +60,7 @@ public class DrawingArea extends Region {
 					adjustedLEndPoint.getX(), adjustedLEndPoint.getY());
 		}
 		
-		System.out.println("drawLines complete");
+		//System.out.println("drawLines complete");
 	}
 	
 	protected void drawTurtles(List<Turtle> turtles){
