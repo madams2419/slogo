@@ -68,8 +68,6 @@ public class Model {
 		while(!pendingCommands.isEmpty()) {
 			executeNextCommand();
 		}
-		printDrawableImages();
-
 		return executedCommands;
 	}
 
