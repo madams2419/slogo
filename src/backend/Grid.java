@@ -89,6 +89,18 @@ public class Grid {
 		return allLines;
 	}
 	
+	//TODO refactor with method extraction for this and the above method
+	public List<Stamp> getStamps() {
+		ArrayList<Line> allStamps = new ArrayList<>();
+		Iterator<Turtle> it = allTurtles.values().iterator();
+
+		while(it.hasNext()) {
+			allStamps.addAll(it.next().getStamps());
+		}
+
+		return allStamps;
+	}
+	
 	public void setDimensions(int width, int height) {
 		size = new Dimension(width, height);
 	}

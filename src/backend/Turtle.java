@@ -5,7 +5,7 @@ import java.awt.*;
 import java.util.List;
 import static backend.Constants.*;
 
-public class Turtle {
+public class Turtle implements DrawableImage {
 
 	private int id;
 	private String imagePath;

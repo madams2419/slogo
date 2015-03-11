@@ -64,8 +64,8 @@ public class DrawingArea extends Region {
 	}
 	
 	protected void drawTurtles(List<Turtle> turtles){
-		this.drawingCanvas.getGraphicsContext2D().setLineWidth(50);
-		this.drawingCanvas.getGraphicsContext2D().setStroke(Color.RED);
+		// this.drawingCanvas.getGraphicsContext2D().setLineWidth(50);
+		// this.drawingCanvas.getGraphicsContext2D().setStroke(Color.RED);
 		
 		
 		for (Turtle t: turtles){
