@@ -79,7 +79,7 @@ public class Turtle implements DrawableImage {
 	public void setImageByFullPath(String imagePath) {
 		this.imagePath = imagePath;
 	}
-	
+
 	public void setImageByName(String imageName) {
 		setImageByFullPath(Defaults.IMAGE_DIRECTORY + imageName);
 	}
@@ -125,6 +125,10 @@ public class Turtle implements DrawableImage {
 
 	public String getImagePath() {
 		return imagePath;
+	}
+
+	public String getImageName() {
+		return imagePath.replace(Defaults.IMAGE_DIRECTORY, "");
 	}
 
 	public Point getLocation() {
