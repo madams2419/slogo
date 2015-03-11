@@ -88,5 +88,9 @@ public class Grid {
 
 		return allLines;
 	}
+	
+	public void setDimensions(int width, int height) {
+		size = new Dimension(width, height);
+	}
 
 }
