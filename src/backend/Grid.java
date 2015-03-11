@@ -34,10 +34,6 @@ public class Grid {
 		bgColor = newBGColor;
 	}
 
-	public void setPenColor(Color newPenColor) {
-		//TODO
-	}
-
 	public void addTurtle(Turtle newTurtle) {
 		allTurtles.put(newTurtle.getID(), newTurtle);
 		if(activeTurtles.isEmpty()) {
@@ -60,7 +56,7 @@ public class Grid {
 	public List<Turtle> getActiveTurtles() {
 		return (ArrayList<Turtle>) activeTurtles.clone();
 	}
-	
+
 	public List<Turtle> getShowingTurtles() {
 		List<Turtle> showingTurtles = new ArrayList<>();
 		for(Turtle turtle : getAllTurtles()) {
@@ -101,7 +97,7 @@ public class Grid {
 		}
 		return allLines;
 	}
-	
+
 	//TODO refactor with method extraction for this and the above method
 	public List<Stamp> getStamps() {
 		ArrayList<Stamp> allStamps = new ArrayList<>();
@@ -112,14 +108,14 @@ public class Grid {
 		}
 		return allStamps;
 	}
-	
+
 	public List<DrawableImage> getDrawableImages() {
 		List<DrawableImage> dbis = new ArrayList<>();
 		dbis.addAll((List)getShowingTurtles());
 		dbis.addAll((List)getStamps());
 		return dbis;
 	}
-	
+
 	public void setDimensions(int width, int height) {
 		size = new Dimension(width, height);
 	}

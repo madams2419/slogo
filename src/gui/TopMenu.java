@@ -139,7 +139,7 @@ public class TopMenu extends Region {
 		chooseBackgroundColor.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent t){
 				System.out.println("You are choosing a new Background Color");
-				myModel.getGrid().setBGColor(paintToAwt(openColorPicker()));
+				//myModel.getGrid().setBGColor(paintToAwt(openColorPicker()));
 				//Grid.setBGColor(color); 
 			}
 		});
@@ -147,7 +147,7 @@ public class TopMenu extends Region {
 		choosePenColor.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent t){
 				System.out.println("You are choosing a new Pen color");
-				myModel.getGrid().setPenColor(paintToAwt(openColorPicker()));
+				//myModel.setDefaultPenColor(paintToAwt(openColorPicker()));
 				//Grid.setPenColor(color)
 			}
 		});
