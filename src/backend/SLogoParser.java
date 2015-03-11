@@ -8,7 +8,6 @@ import java.util.List;
 import java.util.Queue;
 import java.util.Map.Entry;
 import java.util.ResourceBundle;
-import java.util.Scanner;
 import java.util.regex.Pattern;
 
 import backend.command.*;
@@ -26,7 +25,7 @@ public class SLogoParser {
 	}
 
 	public SLogoParser(CommandFactory comFactory) {
-		this(comFactory, "English");
+		this(comFactory, Constants.DEFAULT_LANGUAGE);
 	}
 
 	public void genPatternList() {
@@ -40,9 +39,8 @@ public class SLogoParser {
 		genPatternList();
 	}
 
-	// Should probably refactor this into a recursive implementation (that will be much cleaner)
 	public Queue<Command> parseProgram(String prog) throws IllegalArgumentException{
-		ArrayList<StringPair> spList = genPropertyList(prog.split("\\p{Space}"), patterns);
+		ArrayList<StringPair> spList = genPropertyList(prog.split("\\p{Space}"));
 
 		Command targetNode = null;
 		Queue<Command> commandQueue = new LinkedList<>();
@@ -100,21 +98,21 @@ public class SLogoParser {
 		// return input.matches(regex);
 	}
 
-	private List<Entry<String, Pattern>> makePatterns (String syntax) {
+	private List<Entry<String, Pattern>> makePatterns(String syntax) {
 		ResourceBundle resources = ResourceBundle.getBundle(syntax);
-		List<Entry<String, Pattern>> patterns = new ArrayList<>();
+		List<Entry<String, Pattern>> locPatterns = new ArrayList<>();
 		Enumeration<String> iter = resources.getKeys();
 		while (iter.hasMoreElements()) {
 			String key = iter.nextElement();
 			String regex = resources.getString(key);
-			patterns.add(new SimpleEntry<String, Pattern>(key,
+			locPatterns.add(new SimpleEntry<String, Pattern>(key,
 					// THIS IS THE KEY LINE
 					Pattern.compile(regex, Pattern.CASE_INSENSITIVE)));
 		}
-		return patterns;
+		return locPatterns;
 	}
 
-	private ArrayList<StringPair> genPropertyList(String[] tests, List<Entry<String, Pattern>> patterns) {
+	private ArrayList<StringPair> genPropertyList(String[] tests) {
 		ArrayList<StringPair> propList = new ArrayList<>();
 		for (String s : tests) {
 			boolean matched = false;

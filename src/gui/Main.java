@@ -66,7 +66,7 @@ public class Main extends Application {
 		//this.root = root;
 		scene = new Scene(root, screenHeight, screenWidth);
 
-		TabPanel tabPanel = new TabPanel(tabPanelHeightPct, screenHeight, screenWidth, this);
+		TabPanel tabPanel = new TabPanel(tabPanelHeightPct, screenHeight, screenWidth, this, myModel);
 		
 		TopMenu topMenu = new TopMenu(screenWidth, screenHeight,
 				topMenuHeightPct, myModel, tabPanel);

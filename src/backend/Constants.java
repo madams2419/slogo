@@ -4,7 +4,9 @@ import java.awt.Color;
 import java.awt.Point;
 
 public class Constants {
-
+	
+	public static final String DEFAULT_LANGUAGE =  "English";
+	
 	public static final int GRID_WIDTH = 400;
 	public static final int GRID_HEIGHT = 400;
 	public static final Color GRID_COLOR = Color.WHITE;

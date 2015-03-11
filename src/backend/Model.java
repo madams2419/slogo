@@ -105,7 +105,7 @@ public class Model {
 	}
 
 	public void setLanguage(String language) {
-		//TODO
+		parser.changeLanguage(language);
 	}
 
 	public Grid getGrid() {
@@ -130,27 +130,6 @@ public class Model {
 
 	public String getHelpPagePath() {
 		return helpPagePath;
-	}
-
-	public static void main (String[] args) throws FileNotFoundException {
-		//String userInput = "fd 50\n" + "right 45\n" + "fd 100";
-
-		//String userInput = "make :test fd 50\n" + "fd :test\n" + "fd :test\n";
-
-		//String userInput = "if difference 0 0 [ fd 50 ]";
-		//String userInput = "towards 45 -45";
-		
-		String userInput = new Scanner(new File("test.logo")).useDelimiter("\\Z").next();
-
-		//String userInput = "if less? 1 2 [ fd 50 ]";
-
-		Model m = new Model();
-
-		m.parseProgram(userInput);
-
-		m.executeAllCommands();
-		
-		//m.printLines();
 	}
 	
 	private void printLines() {

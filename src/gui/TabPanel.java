@@ -2,6 +2,7 @@ package gui;
 
 import java.util.HashMap;
 
+import backend.Model;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.scene.control.Tab;
@@ -15,14 +16,16 @@ public class TabPanel extends TabPane{
 	double topOffsetPct = .025;
 	Main main;
 	private HashMap<Tab, SlogoTab> tabSlogoTabMap = new HashMap<>(); 
+	Model myModel;
 	
 	
-	public TabPanel(Double tabPanelHeightPct, Double screenHeight, Double screenWidth, Main main){
+	public TabPanel(Double tabPanelHeightPct, Double screenHeight, Double screenWidth, Main main, Model model){
 		
 		this.screenHeight = screenHeight;
 		this.screenWidth = screenWidth;
 		this.tabPaneHeightPct = tabPanelHeightPct;
 		this.main = main;
+		myModel = model;
 		
 		makeTabPane(tabPaneHeightPct);
 		
@@ -48,7 +51,7 @@ public class TabPanel extends TabPane{
 	public void makeNewTab(){
 		final Tab tab = new Tab("Tab " + (this.getTabs().size() + 1));
 		this.getTabs().add(tab);
-		SlogoTab slogoTab = new SlogoTab();
+		SlogoTab slogoTab = new SlogoTab(myModel);
 		tabSlogoTabMap.put(tab, slogoTab);
 		main.setActiveTab(slogoTab);
 		//this.getSelectionModel().select(tab);

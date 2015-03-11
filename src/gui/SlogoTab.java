@@ -45,10 +45,10 @@ public class SlogoTab extends Region {
 	// these shouldn't be instance variables
 	// ///////////////////////////////////////
 
-	private Model myModel = new Model();
+	private Model myModel;
 
-	public SlogoTab() {
-
+	public SlogoTab(Model model) {
+		myModel = model;
 
 		// stage = primaryStage;
 		// primaryStage.setTitle("Slogo Interpreter");
