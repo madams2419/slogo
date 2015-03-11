@@ -68,6 +68,7 @@ public class Model {
 		while(!pendingCommands.isEmpty()) {
 			executeNextCommand();
 		}
+		printDrawableImages();
 
 		return executedCommands;
 	}
@@ -141,10 +142,10 @@ public class Model {
 		}
 	}
 
-	private void printTurtleLocations() {
-		List<Turtle> turtles = grid.getAllTurtles();
-		for(Turtle t : turtles) {
-			System.out.printf("Turtle #%d at (%f, %f)\n", t.getID(), t.getLocation().getX(), t.getLocation().getY());
+	private void printDrawableImages() {
+		List<DrawableImage> dbis = grid.getDrawableImages();
+		for(DrawableImage t : dbis) {
+			System.out.printf("%s at (%f, %f) with image %s\n", t.getClass().getName(), t.getLocation().getX(), t.getLocation().getY(), t.getImagePath());
 		}
 	}
 
