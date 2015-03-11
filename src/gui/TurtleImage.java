@@ -17,8 +17,8 @@ public class TurtleImage extends ImageView{
 	public TurtleImage(Turtle turtle){
 		
 		this.turtle = turtle;
-		this.imagePath = defaultImagePath;
-		setDefaultImagePath();
+		this.imagePath = turtle.getImagePath();
+		//setDefaultImagePath();
 		Image image = new Image(getClass().getResourceAsStream(
 				turtle.getImagePath()));
 		this.setImage(image); 

@@ -50,7 +50,7 @@ public class DrawingArea extends Region {
 
 	}
 	
-	protected void drawLines(List<backend.Line> lines){
+	protected void drawLines(List<backend.Line> lines, int width, Color color){
 		this.drawingCanvas.getGraphicsContext2D().setLineWidth(5);
 		this.drawingCanvas.getGraphicsContext2D().setStroke(Color.BLUE);
 		for (backend.Line l : lines){

@@ -2,7 +2,7 @@ package backend;
 
 import java.lang.Math;
 import java.awt.*;
-import java.util.ArrayList;
+import java.util.List;
 import static backend.Constants.*;
 
 public class Turtle {
@@ -11,24 +11,20 @@ public class Turtle {
 	private String imagePath;
 	private Point location;
 	private Heading heading;
-	private Color penColor;
-	private boolean penDown;
-	private boolean visible;
-	private ArrayList<Line> lines;
+	private Pen pen;
+	private boolean isVisible;
 
-	public Turtle(int id, String imagePath, Point location, Heading heading, Color penColor) {
+	public Turtle(int id, String imagePath, Point location, Heading heading, Color penColor, int penWidth) {
 		this.id = id;
 		this.imagePath = imagePath;
 		this.location = location;
 		this.heading = heading;
-		this.penColor = penColor;
-		penDown = true;
-		visible = true;
-		lines = new ArrayList<>();
+		this.pen = new Pen(penColor, penWidth, true);
+		isVisible = true;
 	}
 
 	public Turtle(int id) {
-		this(id, TURTLE_IMG_PATH, TURTLE_START_POINT, TURTLE_START_HEADING, TURTLE_PEN_COLOR);
+		this(id, TURTLE_IMG_PATH, TURTLE_START_POINT, TURTLE_START_HEADING, TURTLE_PEN_COLOR, TURTLE_PEN_WIDTH);
 	}
 
 	public double move(Double magnitude) {
@@ -41,14 +37,8 @@ public class Turtle {
 	}
 
 	public double moveToPoint(Point target) {
-		drawLine(location, target);
+		pen.drawLine(location, target);
 		return jumpToPoint(target);
-	}
-	
-	private void drawLine(Point start, Point end) {
-		if(!penDown) return;
-		Line newLine = new Line(start, end, penColor);
-		lines.add(newLine);
 	}
 	
 	public double jumpToPoint(Point target) {
@@ -89,35 +79,31 @@ public class Turtle {
 	}
 
 	public double setPenDown() {
-		penDown = true;
+		pen.setDown(true);
 		return 1.0;
 	}
 
 	public double setPenUp() {
-		penDown = false;
+		pen.setDown(false);
 		return 0.0;
 	}
 
 	public double isPenDown() {
-		return (penDown) ? 1.0 : 0.0;
+		return (pen.isDown()) ? 1.0 : 0.0;
 	}
 
 	public double isShowing() {
-		return (visible) ? 1.0 : 0.0;
+		return (isVisible) ? 1.0 : 0.0;
 	}
 
 	public double show() {
-		visible = true;
+		isVisible = true;
 		return 1.0;
 	}
 
 	public double hide() {
-		visible = false;
+		isVisible = false;
 		return 0.0;
-	}
-
-	public void setPenColor(Color newPenColor) {
-		penColor = newPenColor;
 	}
 
 	public String getImagePath() {
@@ -132,12 +118,12 @@ public class Turtle {
 		return heading;
 	}
 
-	public ArrayList<Line> getLines() {
-		return lines;
+	public List<Line> getLines() {
+		return pen.getLines();
 	}
 
 	public void clearLines() {
-		lines.clear();
+		pen.clearLines();
 	}
 
 	public int getID() {

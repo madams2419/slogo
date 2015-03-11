@@ -8,10 +8,12 @@ public class Line extends Line2D.Double {
 
 	private static final long serialVersionUID = 1;
 	private Color color;
+	private int width;
 
-	public Line(Point start, Point end, Color color) {
+	public Line(Point start, Point end, Color color, int width) {
 		super(start, end);
 		this.color = color;
+		this.width = width;
 	}
 
 	protected boolean intersects(Line otherLine) {
