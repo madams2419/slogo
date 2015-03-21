@@ -1,3 +1,5 @@
+// This entire file is part of my masterpiece.
+// Sajal Kantha (skk21)
 package gui;
 
 import java.awt.Desktop;
@@ -107,12 +109,10 @@ public class TopMenu extends Region {
 		MenuItem chooseTurtle = new MenuItem("Choose Turtle Image");
 		chooseTurtle.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent t){
-				// Turtle.setImage();
 				System.out.println("You are choosing a new Turtle");
 				File initTurtleImage = new File("../resources/sea_turtle.png");
 				Stage fileChooserStage = new Stage();
 				FileChooser fileChooser = new FileChooser();
-				//fileChooser.setInitialDirectory(initTurtleImage);
 				fileChooser.setTitle("Choose a Turtle Image"); 
 				fileChooser.getExtensionFilters().addAll(
 					    new FileChooser.ExtensionFilter("All Images", "*.*"),

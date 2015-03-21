@@ -1,3 +1,5 @@
+// This entire file is part of my masterpiece.
+// Sajal Kantha (skk21)
 package gui;
 
 import java.util.HashMap;
@@ -14,17 +16,17 @@ public class TabPanel extends TabPane{
 	double screenWidth;
 	double tabPaneHeightPct;
 	double topOffsetPct = .025;
-	Main main;
+	RunSlogo runSlogo;
 	private HashMap<Tab, SlogoTab> tabSlogoTabMap = new HashMap<>(); 
 	Model myModel;
 	
 	
-	public TabPanel(Double tabPanelHeightPct, Double screenHeight, Double screenWidth, Main main, Model model){
+	public TabPanel(Double tabPanelHeightPct, Double screenHeight, Double screenWidth, RunSlogo main, Model model){
 		
 		this.screenHeight = screenHeight;
 		this.screenWidth = screenWidth;
 		this.tabPaneHeightPct = tabPanelHeightPct;
-		this.main = main;
+		this.runSlogo = main;
 		myModel = model;
 		
 		makeTabPane(tabPaneHeightPct);
@@ -43,7 +45,7 @@ public class TabPanel extends TabPane{
             @Override
             public void changed(ObservableValue<? extends Tab> arg0,
                     Tab arg1, Tab arg2) {
-            	main.setActiveTab(tabSlogoTabMap.get(arg2));
+            	runSlogo.setActiveTab(tabSlogoTabMap.get(arg2));
             }
         });
 	}
@@ -53,9 +55,7 @@ public class TabPanel extends TabPane{
 		this.getTabs().add(tab);
 		SlogoTab slogoTab = new SlogoTab(myModel);
 		tabSlogoTabMap.put(tab, slogoTab);
-		main.setActiveTab(slogoTab);
-		//this.getSelectionModel().select(tab);
-		
+		runSlogo.setActiveTab(slogoTab);
 	}
 	
 	

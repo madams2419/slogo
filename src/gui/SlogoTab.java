@@ -1,3 +1,5 @@
+// This entire file is part of my masterpiece.
+// Sajal Kantha (skk21)
 package gui;
 
 import gui.textAreas.CommandBox;
@@ -5,21 +7,15 @@ import gui.textAreas.PreviousCommandsBox;
 import gui.textAreas.StatusBox;
 import gui.textAreas.UserFunctionsAndCommands;
 import gui.textAreas.UserVariablesBox;
-
 import java.util.ArrayList;
 import java.util.List;
-
-import javafx.application.Application;
 import javafx.geometry.Rectangle2D;
-import javafx.scene.Group;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Region;
 import javafx.stage.Screen;
-import javafx.stage.Stage;
 import backend.Model;
 import backend.Turtle;
 import backend.Variable;
@@ -34,24 +30,19 @@ public class SlogoTab extends Region {
 	private double topMenuHeightPct = .055;
 	private double buttonWidthPct = .1;
 	private double buttonHeightPct = .25;
-
-	// ////////////////////////////////////////
 	private RunButtons runButtons;
 	private CommandBox commandBox;
 	private DrawingArea turtlePanel;
 	private PreviousCommandsBox prevCommandsBox;
 	private StatusBox statusBox;
 	private UserVariablesBox userVariablesBox;
-	// these shouldn't be instance variables
-	// ///////////////////////////////////////
 
 	private Model myModel;
 
+	
 	public SlogoTab(Model model) {
+		
 		myModel = model;
-
-		// stage = primaryStage;
-		// primaryStage.setTitle("Slogo Interpreter");
 		Screen screen = Screen.getPrimary();
 		Rectangle2D bounds = screen.getVisualBounds();
 
@@ -62,10 +53,6 @@ public class SlogoTab extends Region {
 		this.setPrefWidth(screenWidth);
 		this.setLayoutX(0);
 		this.setLayoutY(0);
-
-		// setStageToFillWindow(screenWidth, screenHeight);
-		// Group root = new Group();
-		// scene = new Scene(root, screenHeight, screenWidth);
 
 		runButtons = new RunButtons(screenWidth, screenHeight, buttonWidthPct,
 				buttonHeightPct, (infoBoxWidthPct + commandBoxWidthPct)
@@ -79,23 +66,23 @@ public class SlogoTab extends Region {
 		statusBox = new StatusBox(infoBoxHeightPct, infoBoxWidthPct, 0,
 				topMenuHeightPct * screenHeight, screenWidth, screenHeight,
 				"Status", false);
+		
 		UserFunctionsAndCommands userFunctionsBox = new UserFunctionsAndCommands(
 				infoBoxHeightPct, infoBoxWidthPct, 0,
 				(topMenuHeightPct + infoBoxHeightPct) * screenHeight,
 				screenWidth, screenHeight,
 				"User Defined Functions and Commands", false);
+		
 		userVariablesBox = new UserVariablesBox(infoBoxHeightPct,
 				infoBoxWidthPct, (1 - infoBoxWidthPct) * screenWidth,
 				topMenuHeightPct * screenHeight, screenWidth, screenHeight,
 				"User Defined Variables", false);
+		
 		prevCommandsBox = new PreviousCommandsBox(infoBoxHeightPct,
 				infoBoxWidthPct, (1 - infoBoxWidthPct) * screenWidth,
 				(topMenuHeightPct + infoBoxHeightPct) * screenHeight,
 				screenWidth, screenHeight, "Previously Executed Commands",
 				false);
-
-		// TopMenu topMenu = new TopMenu(screenWidth, screenHeight,
-		// topMenuHeightPct, myModel);
 
 		setButtonActions();
 		Double drawingAreaWidth = screenWidth - 2 * (screenWidth * infoBoxWidthPct);
@@ -105,15 +92,11 @@ public class SlogoTab extends Region {
 		
 		myModel.getGrid().setDimensions(drawingAreaWidth.intValue(), drawingAreaHeight.intValue());
 
-		// TODO
-		// Determine this location based on other values
-
 		commandBox.setLayoutX(commandBox.getxLocation());
 		commandBox.setLayoutY(commandBox.getyLocation());
 
 		turtlePanel.setLayoutX(statusBox.getWidth());
 		turtlePanel.setLayoutY(screenHeight * topMenuHeightPct);
-		// turtlePanel.setInitTurtleImage(myModel.getGrid().getTurtles());
 
 		statusBox.setLayoutX(statusBox.getxLocation());
 		statusBox.setLayoutY(statusBox.getyLocation());
@@ -127,22 +110,14 @@ public class SlogoTab extends Region {
 		prevCommandsBox.setLayoutX(prevCommandsBox.getxLocation());
 		prevCommandsBox.setLayoutY(prevCommandsBox.getyLocation());
 
-		// root.getChildren().add(topMenu);
 
 		this.getChildren().add(commandBox);
-
-		// root.getChildren().add(runButtons);
-
 		this.getChildren().add(statusBox);
 		this.getChildren().add(userFunctionsBox);
 		this.getChildren().add(userVariablesBox);
 		this.getChildren().add(prevCommandsBox);
-
 		this.getChildren().add(turtlePanel);
 
-		// ApplicationView av = new ApplicationView(screenWidth, screenHeight);
-		// primaryStage.setScene(scene);
-		// primaryStage.show();
 	}
 
 private void updatePanels(){
@@ -165,25 +140,16 @@ private void updatePanels(){
 				List<backend.Turtle> turtles = myModel.getGrid().getAllTurtles();
 				turtlePanel.drawTurtles(turtles);
 				updatePanels();
-				
-				//is this bad? ^^^ it is pseudo-recursive
-				
 		        });
 			fields.add(h);
 		}
 		prevCommandsBox.setBoxes(fields);
-		
-		//updating status box
 		s.setLength(0);
 		for (Turtle t : this.myModel.getGrid().getAllTurtles()){
 			s.append("Turtle "+ t.getID() + ": \n  " + t.getLocation().getX() + ", " + t.getLocation().getY()
 					+ "\n  " + t.getHeading().getAngle() + "\n");
 		}
 		statusBox.setText(s.toString());
-		
-		//updating variables
-		
-		
 	}
 
 	private void setVariablesBox() {
@@ -235,8 +201,6 @@ private void updatePanels(){
 			myModel.parseProgram(s);
 			myModel.executeNextCommand();
 
-			// Null check here?
-
 				List<backend.Line> backLines = myModel.getGrid()
 						.getLines();
 				turtlePanel.drawLines(backLines);
@@ -248,28 +212,14 @@ private void updatePanels(){
 
 	}
 
-	private void setStageToFillWindow(Double screenWidth, Double screenHeight) {
-
-//		stage.setX(0);
-//		stage.setY(0);
-//
-//		stage.setWidth(screenWidth);
-//		stage.setHeight(screenHeight);
-
-	}
-
 	private double getScreenHeight(Rectangle2D bounds) {
-
 		double screenHeight = bounds.getHeight();
 		return screenHeight;
-
 	}
 
 	private double getScreenWidth(Rectangle2D bounds) {
-
 		double screenWidth = bounds.getWidth();
 		return screenWidth;
-
 	}
 
 }
