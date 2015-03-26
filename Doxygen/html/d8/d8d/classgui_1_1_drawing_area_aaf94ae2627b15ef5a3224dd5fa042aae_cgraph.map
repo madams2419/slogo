@@ -1,0 +1,11 @@
+<map id="gui.DrawingArea.drawTurtles" name="gui.DrawingArea.drawTurtles">
+<area shape="rect" id="node2" href="$d8/d8d/classgui_1_1_drawing_area.html#a32586c1f6aee95492f73590ffc366546" title="gui.DrawingArea.convertCoordinates" alt="" coords="257,5,511,32"/>
+<area shape="rect" id="node3" href="$d2/d89/classgui_1_1_turtle_image.html#a632edfc5b5937c0ad906304ba225aadb" title="gui.TurtleImage.orientTurtle" alt="" coords="287,56,481,83"/>
+<area shape="rect" id="node6" href="$d8/d8d/classgui_1_1_drawing_area.html#a0f39c1d3d8302435454d2cdc3366e2fd" title="gui.DrawingArea.position\lPointRelativeToLines" alt="" coords="294,107,474,149"/>
+<area shape="rect" id="node7" href="$d2/d89/classgui_1_1_turtle_image.html#af95ae9f6f053b6e1877c48c4532c871b" title="gui.TurtleImage.setLocation" alt="" coords="285,173,483,200"/>
+<area shape="rect" id="node8" href="$d2/d89/classgui_1_1_turtle_image.html#a7efec119de1fb36ed2cbf71ecc80ac4b" title="gui.TurtleImage.sizeTurtle" alt="" coords="293,224,475,251"/>
+<area shape="rect" id="node9" href="$d2/d89/classgui_1_1_turtle_image.html#af1e79192e9a4ec13ef28b42e4f354124" title="gui.TurtleImage.updateImage" alt="" coords="280,275,488,301"/>
+<area shape="rect" id="node4" href="$df/de2/classbackend_1_1_turtle.html#aaefef90d2377833d5e721222660deccc" title="backend.Turtle.getHeading" alt="" coords="568,31,760,57"/>
+<area shape="rect" id="node5" href="$d8/d98/classbackend_1_1_heading.html#a184d1ef92b62ea73e6edc57e07d3c0d4" title="backend.Heading.getAngle" alt="" coords="567,81,761,108"/>
+<area shape="rect" id="node10" href="$df/de2/classbackend_1_1_turtle.html#a6ee2aa85c5d0c1138e49e243dc751332" title="backend.Turtle.getImagePath" alt="" coords="561,275,767,301"/>
+</map>

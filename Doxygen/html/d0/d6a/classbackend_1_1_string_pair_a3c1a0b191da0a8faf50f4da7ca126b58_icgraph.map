@@ -1,0 +1,9 @@
+<map id="backend.StringPair.getProperty" name="backend.StringPair.getProperty">
+<area shape="rect" id="node2" href="$d3/dd9/classbackend_1_1command_1_1_command_factory.html#a9bab90874aa013a30c13ea158ca54a1b" title="backend.command.CommandFactory.get\lCommand" alt="" coords="272,5,557,46"/>
+<area shape="rect" id="node7" href="$dc/d83/classbackend_1_1command_1_1_command.html#aac0449fd9cdf430b469cc3bef39218e6" title="backend.command.Command.get\lProperty" alt="" coords="294,70,535,111"/>
+<area shape="rect" id="node3" href="$da/d26/classbackend_1_1_s_logo_parser.html#a86664390860bb0e249880e3116024485" title="backend.SLogoParser.parse\lProgram" alt="" coords="630,5,829,46"/>
+<area shape="rect" id="node4" href="$d3/dac/classbackend_1_1_model.html#adbef0c902e277446afa17a84278c15ba" title="backend.Model.parseProgram" alt="" coords="901,12,1115,39"/>
+<area shape="rect" id="node5" href="$d5/d8a/classgui_1_1_slogo_tab.html#a2a016875b2ea48fa761cd4408a78dd21" title="gui.SlogoTab.setButtonActions" alt="" coords="1163,12,1379,39"/>
+<area shape="rect" id="node6" href="$d5/d8a/classgui_1_1_slogo_tab.html#adaa134bc95e1dcf4eb30b3a185c75175" title="gui.SlogoTab.SlogoTab" alt="" coords="1427,12,1589,39"/>
+<area shape="rect" id="node8" href="$d4/d4b/classbackend_1_1command_1_1_user_instruction_retriever.html#a19a54335927c20b9d9121db5c8b2aea2" title="backend.command.UserInstruction\lRetriever.UserInstructionRetriever" alt="" coords="606,70,853,111"/>
+</map>

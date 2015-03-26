@@ -1,0 +1,6 @@
+<map id="backend.command.SetPenSize.execute" name="backend.command.SetPenSize.execute">
+<area shape="rect" id="node2" href="$df/de2/classbackend_1_1_turtle.html#af7565ec48a667f209aec621b2dbe3505" title="backend.Turtle.getPen" alt="" coords="359,5,521,32"/>
+<area shape="rect" id="node3" href="$df/d09/classbackend_1_1command_1_1_pixels_turtle_command.html#af33732612b4329d162ffab3c28f41274" title="backend.command.PixelsTurtle\lCommand.pixels" alt="" coords="331,57,549,98"/>
+<area shape="rect" id="node5" href="$de/dc9/classbackend_1_1_pen.html#a50fc235c0639c2d2a74cd3f9b2404f34" title="backend.Pen.setWidth" alt="" coords="359,123,521,149"/>
+<area shape="rect" id="node4" href="$dc/d83/classbackend_1_1command_1_1_command.html#ae218516ae55b1b0d4820d55c901793ea" title="backend.command.Command.execute\lParam" alt="" coords="598,57,869,98"/>
+</map>

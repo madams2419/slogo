@@ -1,0 +1,9 @@
+<map id="gui.Main.setActiveTab" name="gui.Main.setActiveTab">
+<area shape="rect" id="node2" href="$d5/d23/classgui_1_1_tab_panel.html#adf5298f1b0589f5c363b667b7155e87b" title="gui.TabPanel.makeNewTab" alt="" coords="215,64,403,91"/>
+<area shape="rect" id="node7" href="$d5/d23/classgui_1_1_tab_panel.html#ab83601f6975c8ba9e8d3de2f271ace94" title="gui.TabPanel.makeTabPane" alt="" coords="213,119,405,145"/>
+<area shape="rect" id="node3" href="$df/dc3/classgui_1_1_main.html#a81b36f2aea2f0cb5823e1e7b1546487c" title="gui.Main.start" alt="" coords="500,5,609,32"/>
+<area shape="rect" id="node4" href="$dd/d24/classgui_1_1_top_menu.html#ad230c298835163fed6e9f41a18b168cd" title="gui.TopMenu.createFileMenu\lItems" alt="" coords="454,57,655,98"/>
+<area shape="rect" id="node5" href="$dd/d24/classgui_1_1_top_menu.html#a2b756e05f495e2d1a4f7ea156ae612d2" title="gui.TopMenu.addMenuBar" alt="" coords="704,64,891,91"/>
+<area shape="rect" id="node6" href="$dd/d24/classgui_1_1_top_menu.html#a842402ab5dfa877cfac4e5677809675a" title="gui.TopMenu.TopMenu" alt="" coords="939,64,1101,91"/>
+<area shape="rect" id="node8" href="$d5/d23/classgui_1_1_tab_panel.html#aa57acfe283c113dd2193f287d7f0ce08" title="gui.TabPanel.TabPanel" alt="" coords="475,123,634,149"/>
+</map>
