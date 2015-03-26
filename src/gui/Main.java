@@ -70,7 +70,7 @@ public class Main extends Application {
 		
 		TopMenu topMenu = new TopMenu(screenWidth, screenHeight,
 				topMenuHeightPct, myModel, tabPanel);
-
+		topMenu.tabPanel.makeNewTab();
 
 		root.getChildren().add(topMenu);
 		root.getChildren().add(tabPanel);
