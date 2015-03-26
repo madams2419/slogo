@@ -139,16 +139,15 @@ public class TopMenu extends Region {
 		chooseBackgroundColor.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent t){
 				System.out.println("You are choosing a new Background Color");
-				//myModel.getGrid().setBGColor(paintToAwt(openColorPicker()));
-				//Grid.setBGColor(color); 
+				Color c = openColorPicker();
+				
 			}
 		});
 		MenuItem choosePenColor = new MenuItem("Pen Color");
 		choosePenColor.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent t){
 				System.out.println("You are choosing a new Pen color");
-				//myModel.setDefaultPenColor(paintToAwt(openColorPicker()));
-				//Grid.setPenColor(color)
+				Color c = openColorPicker();
 			}
 		});
 		
