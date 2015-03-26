@@ -1,7 +1,0 @@
-<map id="gui.Main.start" name="gui.Main.start">
-<area shape="rect" id="node2" href="$df/dc3/classgui_1_1_main.html#a3bd25198b8e65c2ccd129b7d98eb1c3a" title="gui.Main.getScreenHeight" alt="" coords="176,5,363,32"/>
-<area shape="rect" id="node3" href="$df/dc3/classgui_1_1_main.html#ad867604e4943983d4695f283127103a9" title="gui.Main.getScreenWidth" alt="" coords="179,56,359,83"/>
-<area shape="rect" id="node4" href="$d5/d23/classgui_1_1_tab_panel.html#adf5298f1b0589f5c363b667b7155e87b" title="gui.TabPanel.makeNewTab" alt="" coords="175,107,363,133"/>
-<area shape="rect" id="node6" href="$df/dc3/classgui_1_1_main.html#a9a0094e9b73b9c5c72220b56e26a1171" title="gui.Main.setStageToFillWindow" alt="" coords="163,157,375,184"/>
-<area shape="rect" id="node5" href="$df/dc3/classgui_1_1_main.html#ad9b02558bc225d0ee0bf37fb04d5c4b6" title="gui.Main.setActiveTab" alt="" coords="425,107,583,133"/>
-</map>

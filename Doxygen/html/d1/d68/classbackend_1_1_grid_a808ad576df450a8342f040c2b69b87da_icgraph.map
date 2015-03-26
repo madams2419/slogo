@@ -1,4 +1,0 @@
-<map id="backend.Grid.setActiveTurtles" name="backend.Grid.setActiveTurtles">
-<area shape="rect" id="node2" href="$de/dcc/classbackend_1_1command_1_1_tell.html#a9efd790cb410947936aed1289e7fc246" title="backend.command.Tell.execute" alt="" coords="266,5,489,32"/>
-<area shape="rect" id="node3" href="$d4/d75/classbackend_1_1command_1_1_ask.html#a453b95a58b91a82a2cca53f444a31ff6" title="backend.command.Ask.execute" alt="" coords="264,56,491,83"/>
-</map>

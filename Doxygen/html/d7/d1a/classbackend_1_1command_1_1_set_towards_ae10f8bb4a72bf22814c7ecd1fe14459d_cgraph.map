@@ -1,7 +1,0 @@
-<map id="backend.command.SetTowards.execute" name="backend.command.SetTowards.execute">
-<area shape="rect" id="node2" href="$df/de2/classbackend_1_1_turtle.html#a15c8fa47008e482e5d40b4310d2bf8e7" title="backend.Turtle.faceTowards" alt="" coords="341,5,536,32"/>
-<area shape="rect" id="node5" href="$d5/dcb/classbackend_1_1command_1_1_point_turtle_command.html#aa0619a24fc2c3157992c0b6e41ded4a8" title="backend.command.PointTurtle\lCommand.point" alt="" coords="331,57,546,98"/>
-<area shape="rect" id="node3" href="$df/de2/classbackend_1_1_turtle.html#a05bda1daddb116c72fb4e62e87d6c88b" title="backend.Turtle.setHeading" alt="" coords="635,5,826,32"/>
-<area shape="rect" id="node4" href="$d8/d98/classbackend_1_1_heading.html#a184d1ef92b62ea73e6edc57e07d3c0d4" title="backend.Heading.getAngle" alt="" coords="915,5,1109,32"/>
-<area shape="rect" id="node6" href="$dc/d83/classbackend_1_1command_1_1_command.html#ae218516ae55b1b0d4820d55c901793ea" title="backend.command.Command.execute\lParam" alt="" coords="595,57,866,98"/>
-</map>

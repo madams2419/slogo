@@ -1,7 +1,0 @@
-<map id="gui.TurtleImage.updateImage" name="gui.TurtleImage.updateImage">
-<area shape="rect" id="node2" href="$d8/d8d/classgui_1_1_drawing_area.html#aaf94ae2627b15ef5a3224dd5fa042aae" title="gui.DrawingArea.drawTurtles" alt="" coords="262,5,463,32"/>
-<area shape="rect" id="node6" href="$d2/d89/classgui_1_1_turtle_image.html#a6c0eb7ee18bcb84ee7d82e7522431429" title="gui.TurtleImage.TurtleImage" alt="" coords="264,56,461,83"/>
-<area shape="rect" id="node3" href="$d5/d8a/classgui_1_1_slogo_tab.html#a2a016875b2ea48fa761cd4408a78dd21" title="gui.SlogoTab.setButtonActions" alt="" coords="752,5,968,32"/>
-<area shape="rect" id="node5" href="$d5/d8a/classgui_1_1_slogo_tab.html#a9ccb322bec15528476c85f84e53f14d9" title="gui.SlogoTab.updatePanels" alt="" coords="512,31,704,57"/>
-<area shape="rect" id="node4" href="$d5/d8a/classgui_1_1_slogo_tab.html#adaa134bc95e1dcf4eb30b3a185c75175" title="gui.SlogoTab.SlogoTab" alt="" coords="1016,5,1179,32"/>
-</map>

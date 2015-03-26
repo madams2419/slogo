@@ -1,6 +1,0 @@
-<map id="backend.Grid.getLines" name="backend.Grid.getLines">
-<area shape="rect" id="node2" href="$d3/dac/classbackend_1_1_model.html#a982b678868b80d568a91f8d9dabcc9b0" title="backend.Model.printLines" alt="" coords="223,5,407,32"/>
-<area shape="rect" id="node3" href="$d5/d8a/classgui_1_1_slogo_tab.html#a2a016875b2ea48fa761cd4408a78dd21" title="gui.SlogoTab.setButtonActions" alt="" coords="459,81,675,108"/>
-<area shape="rect" id="node5" href="$d5/d8a/classgui_1_1_slogo_tab.html#a9ccb322bec15528476c85f84e53f14d9" title="gui.SlogoTab.updatePanels" alt="" coords="219,107,411,133"/>
-<area shape="rect" id="node4" href="$d5/d8a/classgui_1_1_slogo_tab.html#adaa134bc95e1dcf4eb30b3a185c75175" title="gui.SlogoTab.SlogoTab" alt="" coords="723,81,885,108"/>
-</map>

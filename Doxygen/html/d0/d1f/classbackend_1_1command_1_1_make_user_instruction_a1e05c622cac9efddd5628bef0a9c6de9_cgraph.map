@@ -1,6 +1,0 @@
-<map id="backend.command.MakeUserInstruction.setParam" name="backend.command.MakeUserInstruction.setParam">
-<area shape="rect" id="node2" href="$d0/d1f/classbackend_1_1command_1_1_make_user_instruction.html#a7e3e6ee2e96187d9bbbcef435311b39c" title="backend.command.MakeUser\lInstruction.addToInstrList" alt="" coords="267,38,480,79"/>
-<area shape="rect" id="node3" href="$dc/d83/classbackend_1_1command_1_1_command.html#a606032e5ef26d465113f65e6e3c09bef" title="backend.command.Command.get\lParam" alt="" coords="551,5,793,46"/>
-<area shape="rect" id="node4" href="$dc/d67/classbackend_1_1command_1_1_model_command.html#a73e8a709d97712856afafc9b8557d0cf" title="backend.command.ModelCommand.user\lInstructions" alt="" coords="529,70,815,111"/>
-<area shape="rect" id="node5" href="$d3/dac/classbackend_1_1_model.html#aed0f0ffe97b8ccaf1394797941f8e54c" title="backend.Model.getUserFunctions" alt="" coords="865,77,1098,104"/>
-</map>

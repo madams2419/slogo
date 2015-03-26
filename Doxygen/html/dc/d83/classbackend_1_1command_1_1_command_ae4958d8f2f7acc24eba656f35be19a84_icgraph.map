@@ -1,8 +1,0 @@
-<map id="backend.command.Command.parentIsList" name="backend.command.Command.parentIsList">
-<area shape="rect" id="node2" href="$dc/d83/classbackend_1_1command_1_1_command.html#ab12778aa04c91f6f26c3d7b98884bc12" title="backend.command.Command.\lCommand" alt="" coords="338,5,558,46"/>
-<area shape="rect" id="node3" href="$dc/d83/classbackend_1_1command_1_1_command.html#ae6daac55e32c39adcf91e40d0ae80d19" title="backend.command.Command.indent\lString" alt="" coords="318,70,578,111"/>
-<area shape="rect" id="node4" href="$d5/d3e/classbackend_1_1command_1_1_command_list.html#af427a74a7bc458045e15a395460d2a5a" title="backend.command.CommandList.post\lParamsFormatString" alt="" coords="627,5,898,46"/>
-<area shape="rect" id="node5" href="$d5/d3e/classbackend_1_1command_1_1_command_list.html#aaab71298167606e84682b5f456ea3475" title="backend.command.CommandList.pre\lParamsFormatString" alt="" coords="631,70,894,111"/>
-<area shape="rect" id="node6" href="$dc/d83/classbackend_1_1command_1_1_command.html#a76e855bf634004f877b68a2cdadc256f" title="backend.command.Command.pre\lParamsFormatString" alt="" coords="642,135,883,177"/>
-<area shape="rect" id="node7" href="$dc/d83/classbackend_1_1command_1_1_command.html#ade2d360ddca8d9edca2ebcd424a8745b" title="backend.command.Command.to\lString" alt="" coords="947,135,1181,177"/>
-</map>

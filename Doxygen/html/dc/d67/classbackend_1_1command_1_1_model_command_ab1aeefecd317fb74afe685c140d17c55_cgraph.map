@@ -1,5 +1,0 @@
-<map id="backend.command.ModelCommand.paramToColor" name="backend.command.ModelCommand.paramToColor">
-<area shape="rect" id="node2" href="$dc/d67/classbackend_1_1command_1_1_model_command.html#aa459b6ae4744fa0705aa08b95f7d9b0f" title="backend.command.ModelCommand.colorMap" alt="" coords="355,5,671,32"/>
-<area shape="rect" id="node4" href="$dc/d83/classbackend_1_1command_1_1_command.html#ae218516ae55b1b0d4820d55c901793ea" title="backend.command.Command.execute\lParam" alt="" coords="378,57,649,98"/>
-<area shape="rect" id="node3" href="$d3/dac/classbackend_1_1_model.html#ae02bd05f40dd7ecd9be30847d70faf89" title="backend.Model.getColorMap" alt="" coords="720,5,923,32"/>
-</map>
