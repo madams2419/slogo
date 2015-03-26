@@ -1,0 +1,5 @@
+<map id="backend.command.GetShape.execute" name="backend.command.GetShape.execute">
+<area shape="rect" id="node2" href="$df/de2/classbackend_1_1_turtle.html#a7fc07799239a8a55283a0114080d9f87" title="backend.Turtle.getImageName" alt="" coords="376,5,595,32"/>
+<area shape="rect" id="node3" href="$dc/d67/classbackend_1_1command_1_1_model_command.html#a3154dab6e0552c7d13b825dab24d1a54" title="backend.command.ModelCommand.imageMap" alt="" coords="323,56,648,83"/>
+<area shape="rect" id="node4" href="$d3/dac/classbackend_1_1_model.html#ab973b5efcf575443127eeb36485cec29" title="backend.Model.getImageMap" alt="" coords="696,56,907,83"/>
+</map>

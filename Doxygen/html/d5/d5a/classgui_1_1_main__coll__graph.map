@@ -1,0 +1,16 @@
+<map id="gui.Main" name="gui.Main">
+<area shape="rect" id="node6" href="$d5/d8a/classgui_1_1_slogo_tab.html" title="gui.SlogoTab" alt="" coords="1289,415,1391,441"/>
+<area shape="rect" id="node9" href="$d8/d85/classgui_1_1text_areas_1_1_abstract_editable_text_box.html" title="gui.textAreas.AbstractEditable\lTextBox" alt="" coords="363,351,579,393"/>
+<area shape="rect" id="node14" href="$d8/d8d/classgui_1_1_drawing_area.html" title="gui.DrawingArea" alt="" coords="407,68,534,95"/>
+<area shape="rect" id="node20" href="$db/d89/classgui_1_1_run_buttons.html" title="gui.RunButtons" alt="" coords="411,459,530,485"/>
+<area shape="rect" id="node8" href="$d3/d45/classgui_1_1text_areas_1_1_user_variables_box.html" title="gui.textAreas.UserVariablesBox" alt="" coords="786,252,1009,279"/>
+<area shape="rect" id="node17" href="$de/da4/classgui_1_1text_areas_1_1_previous_commands_box.html" title="gui.textAreas.PreviousCommandsBox" alt="" coords="766,341,1029,368"/>
+<area shape="rect" id="node18" href="$db/d0f/classgui_1_1text_areas_1_1_status_box.html" title="gui.textAreas.StatusBox" alt="" coords="809,392,986,419"/>
+<area shape="rect" id="node19" href="$db/dbc/classgui_1_1text_areas_1_1_command_box.html" title="gui.textAreas.CommandBox" alt="" coords="796,505,999,532"/>
+<area shape="rect" id="node22" href="$d3/dac/classbackend_1_1_model.html" title="backend.Model" alt="" coords="838,789,957,816"/>
+<area shape="rect" id="node28" href="$d3/dd9/classbackend_1_1command_1_1_command_factory.html" title="backend.command.CommandFactory" alt="" coords="1209,813,1471,840"/>
+<area shape="rect" id="node26" href="$da/d26/classbackend_1_1_s_logo_parser.html" title="backend.SLogoParser" alt="" coords="1635,813,1795,840"/>
+<area shape="rect" id="node29" href="$d1/d68/classbackend_1_1_grid.html" title="backend.Grid" alt="" coords="417,757,524,784"/>
+<area shape="rect" id="node31" href="$df/d77/classbackend_1_1_bi_index.html" title="backend.BiIndex\&lt; String \&gt;" alt="" coords="12,593,207,620"/>
+<area shape="rect" id="node35" href="$df/d77/classbackend_1_1_bi_index.html" title="backend.BiIndex\&lt; Color \&gt;" alt="" coords="15,880,204,907"/>
+</map>

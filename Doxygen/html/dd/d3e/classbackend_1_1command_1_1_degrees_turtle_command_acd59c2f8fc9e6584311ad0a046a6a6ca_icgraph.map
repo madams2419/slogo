@@ -1,0 +1,5 @@
+<map id="backend.command.DegreesTurtleCommand.degrees" name="backend.command.DegreesTurtleCommand.degrees">
+<area shape="rect" id="node2" href="$d1/d93/classbackend_1_1command_1_1_left.html#a06ab89eec275560592d65c8eaf3fc61c" title="backend.command.Left.execute" alt="" coords="317,5,545,32"/>
+<area shape="rect" id="node3" href="$d8/d92/classbackend_1_1command_1_1_set_heading.html#aae201c4671003d1ad516dfd4886db55d" title="backend.command.SetHeading.execute" alt="" coords="291,56,570,83"/>
+<area shape="rect" id="node4" href="$d6/dcb/classbackend_1_1command_1_1_right.html#acdc2fa5040cde9b0ffabb1013a7dda38" title="backend.command.Right.execute" alt="" coords="313,107,549,133"/>
+</map>

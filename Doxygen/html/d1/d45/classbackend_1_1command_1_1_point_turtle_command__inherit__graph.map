@@ -1,0 +1,8 @@
+<map id="backend.command.PointTurtleCommand" name="backend.command.PointTurtleCommand">
+<area shape="rect" id="node6" href="$d5/db7/classbackend_1_1command_1_1_set_position.html" title="backend.command.SetPosition" alt="" coords="5,411,227,437"/>
+<area shape="rect" id="node7" href="$d7/d1a/classbackend_1_1command_1_1_set_towards.html" title="backend.command.SetTowards" alt="" coords="251,411,472,437"/>
+<area shape="rect" id="node2" href="$d8/db4/classbackend_1_1command_1_1_active_turtle_command.html" title="backend.command.ActiveTurtle\lCommand" alt="" coords="127,230,349,271"/>
+<area shape="rect" id="node3" href="$d5/dfc/classbackend_1_1command_1_1_turtle_command.html" title="backend.command.TurtleCommand" alt="" coords="113,155,364,181"/>
+<area shape="rect" id="node4" href="$dc/d67/classbackend_1_1command_1_1_model_command.html" title="backend.command.ModelCommand" alt="" coords="111,80,365,107"/>
+<area shape="rect" id="node5" href="$dc/d83/classbackend_1_1command_1_1_command.html" title="backend.command.Command" alt="" coords="131,5,347,32"/>
+</map>

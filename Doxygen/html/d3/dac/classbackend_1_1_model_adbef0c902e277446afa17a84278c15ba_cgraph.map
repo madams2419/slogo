@@ -1,0 +1,12 @@
+<map id="backend.Model.parseProgram" name="backend.Model.parseProgram">
+<area shape="rect" id="node2" href="$da/d26/classbackend_1_1_s_logo_parser.html#a86664390860bb0e249880e3116024485" title="backend.SLogoParser.parse\lProgram" alt="" coords="267,118,466,159"/>
+<area shape="rect" id="node3" href="$da/d26/classbackend_1_1_s_logo_parser.html#a92ec53b6f04874545e5907a2127a2ec6" title="backend.SLogoParser.genPropertyList" alt="" coords="526,13,789,40"/>
+<area shape="rect" id="node5" href="$da/d26/classbackend_1_1_s_logo_parser.html#abf912baf814309e272be917bb52deb44" title="backend.SLogoParser.bubbleUp" alt="" coords="545,125,769,152"/>
+<area shape="rect" id="node6" href="$dc/d83/classbackend_1_1command_1_1_command.html#a797a1969764a5e1f6c4f1c546900467f" title="backend.command.Command.needs\lParams" alt="" coords="848,57,1107,98"/>
+<area shape="rect" id="node9" href="$d3/dd9/classbackend_1_1command_1_1_command_factory.html#a9bab90874aa013a30c13ea158ca54a1b" title="backend.command.CommandFactory.get\lCommand" alt="" coords="515,177,800,218"/>
+<area shape="rect" id="node11" href="$dc/d83/classbackend_1_1command_1_1_command.html#a9ef994d5348efbb5d5d07aae9e95f8c7" title="backend.command.Command.set\lParam" alt="" coords="537,242,777,283"/>
+<area shape="rect" id="node4" href="$da/d26/classbackend_1_1_s_logo_parser.html#a41ac32c750f00046deec48038e19664c" title="backend.SLogoParser.match" alt="" coords="875,5,1079,32"/>
+<area shape="rect" id="node7" href="$dc/d83/classbackend_1_1command_1_1_command.html#ac25177ccf23f2721bbe77b69a31c1bf7" title="backend.command.Command.has\lParent" alt="" coords="856,122,1099,163"/>
+<area shape="rect" id="node8" href="$dc/d83/classbackend_1_1command_1_1_command.html#a31b43fc38f3817b961dd64f94b2e8b30" title="backend.command.Command.get\lParent" alt="" coords="857,187,1098,229"/>
+<area shape="rect" id="node10" href="$d0/d6a/classbackend_1_1_string_pair.html#a3c1a0b191da0a8faf50f4da7ca126b58" title="backend.StringPair.getProperty" alt="" coords="868,253,1087,280"/>
+</map>

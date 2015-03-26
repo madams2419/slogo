@@ -1,0 +1,5 @@
+<map id="backend.command.ClearScreen.execute" name="backend.command.ClearScreen.execute">
+<area shape="rect" id="node2" href="$df/de2/classbackend_1_1_turtle.html#a8bb7b6d88d2696aa884d1e2c5d7dc812" title="backend.Turtle.clearLines" alt="" coords="342,5,525,32"/>
+<area shape="rect" id="node4" href="$df/de2/classbackend_1_1_turtle.html#af37d25ad088eda24bbfd1a22df39c1cc" title="backend.Turtle.jumpToPoint" alt="" coords="336,56,531,83"/>
+<area shape="rect" id="node3" href="$de/dc9/classbackend_1_1_pen.html#a3cdef5c7981973c48c55944219981c5f" title="backend.Pen.clearLines" alt="" coords="579,5,751,32"/>
+</map>
