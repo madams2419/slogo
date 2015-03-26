@@ -1,0 +1,6 @@
+<map id="backend.command.Home.execute" name="backend.command.Home.execute">
+<area shape="rect" id="node2" href="$df/de2/classbackend_1_1_turtle.html#a86c40ae8c6731af071b31f3bbbe21deb" title="backend.Turtle.moveToPoint" alt="" coords="297,31,495,57"/>
+<area shape="rect" id="node3" href="$de/dc9/classbackend_1_1_pen.html#a135b3b945d4033d3a3e8e56552ff8782" title="backend.Pen.drawLine" alt="" coords="559,5,723,32"/>
+<area shape="rect" id="node5" href="$df/de2/classbackend_1_1_turtle.html#af37d25ad088eda24bbfd1a22df39c1cc" title="backend.Turtle.jumpToPoint" alt="" coords="544,56,739,83"/>
+<area shape="rect" id="node4" href="$de/dc9/classbackend_1_1_pen.html#abfd32c7785accc4f570322aa0b29f650" title="backend.Pen.isDown" alt="" coords="787,5,941,32"/>
+</map>

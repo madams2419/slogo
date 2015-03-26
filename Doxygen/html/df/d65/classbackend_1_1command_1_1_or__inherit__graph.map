@@ -1,0 +1,5 @@
+<map id="backend.command.Or" name="backend.command.Or">
+<area shape="rect" id="node2" href="$d9/d65/classbackend_1_1command_1_1_binary_boolean_operation.html" title="backend.command.BinaryBoolean\lOperation" alt="" coords="5,171,245,213"/>
+<area shape="rect" id="node3" href="$dc/d64/classbackend_1_1command_1_1_binary_math_operation.html" title="backend.command.BinaryMath\lOperation" alt="" coords="15,81,236,122"/>
+<area shape="rect" id="node4" href="$dc/d83/classbackend_1_1command_1_1_command.html" title="backend.command.Command" alt="" coords="17,5,233,32"/>
+</map>

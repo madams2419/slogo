@@ -1,0 +1,6 @@
+<map id="backend.command.Command.setParam" name="backend.command.Command.setParam">
+<area shape="rect" id="node2" href="$da/d26/classbackend_1_1_s_logo_parser.html#a86664390860bb0e249880e3116024485" title="backend.SLogoParser.parse\lProgram" alt="" coords="294,5,493,46"/>
+<area shape="rect" id="node3" href="$d3/dac/classbackend_1_1_model.html#adbef0c902e277446afa17a84278c15ba" title="backend.Model.parseProgram" alt="" coords="541,12,755,39"/>
+<area shape="rect" id="node4" href="$d5/d8a/classgui_1_1_slogo_tab.html#a2a016875b2ea48fa761cd4408a78dd21" title="gui.SlogoTab.setButtonActions" alt="" coords="803,12,1019,39"/>
+<area shape="rect" id="node5" href="$d5/d8a/classgui_1_1_slogo_tab.html#adaa134bc95e1dcf4eb30b3a185c75175" title="gui.SlogoTab.SlogoTab" alt="" coords="1067,12,1229,39"/>
+</map>

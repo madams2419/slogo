@@ -1,0 +1,4 @@
+<map id="backend.command.PointTurtleCommand.point" name="backend.command.PointTurtleCommand.point">
+<area shape="rect" id="node2" href="$d5/db7/classbackend_1_1command_1_1_set_position.html#ad352a4e88e36db0d2360299d1d0f54ec" title="backend.command.SetPosition.execute" alt="" coords="270,5,546,32"/>
+<area shape="rect" id="node3" href="$d7/d1a/classbackend_1_1command_1_1_set_towards.html#ae10f8bb4a72bf22814c7ecd1fe14459d" title="backend.command.SetTowards.execute" alt="" coords="270,56,546,83"/>
+</map>

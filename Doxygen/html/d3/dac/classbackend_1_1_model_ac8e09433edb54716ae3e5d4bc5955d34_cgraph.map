@@ -1,0 +1,6 @@
+<map id="backend.Model.printDrawableImages" name="backend.Model.printDrawableImages">
+<area shape="rect" id="node2" href="$d1/d68/classbackend_1_1_grid.html#a76f49502892f69c6f9b7449ab579a179" title="backend.Grid.getDrawable\lImages" alt="" coords="265,23,455,65"/>
+<area shape="rect" id="node3" href="$d1/d68/classbackend_1_1_grid.html#a523fd99c5d2ae8145c0b8f8a12bb53ce" title="backend.Grid.getShowingTurtles" alt="" coords="505,5,730,32"/>
+<area shape="rect" id="node5" href="$d1/d68/classbackend_1_1_grid.html#ac00d6f94ec04b6031de67557147249ea" title="backend.Grid.getStamps" alt="" coords="527,56,708,83"/>
+<area shape="rect" id="node4" href="$d1/d68/classbackend_1_1_grid.html#ac089ef72a1531ec8e0cf131de056d0b2" title="backend.Grid.getAllTurtles" alt="" coords="779,5,965,32"/>
+</map>

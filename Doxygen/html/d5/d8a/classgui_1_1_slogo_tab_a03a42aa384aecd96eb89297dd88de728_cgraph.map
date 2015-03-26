@@ -1,0 +1,6 @@
+<map id="gui.SlogoTab.setVariablesBox" name="gui.SlogoTab.setVariablesBox">
+<area shape="rect" id="node2" href="$d3/d45/classgui_1_1text_areas_1_1_user_variables_box.html#a278ebe1beb1043521d7bb4b77167722f" title="gui.textAreas.UserVariables\lBox.getFields" alt="" coords="278,5,477,46"/>
+<area shape="rect" id="node3" href="$d3/d45/classgui_1_1text_areas_1_1_user_variables_box.html#a2edcafc51bb0a7512a136b40a856b46c" title="gui.textAreas.UserVariables\lBox.getLabels" alt="" coords="278,70,477,111"/>
+<area shape="rect" id="node4" href="$d3/dac/classbackend_1_1_model.html#a834151b5a74c7a2a136f51ed6a1a709f" title="backend.Model.getUserVariables" alt="" coords="262,136,493,163"/>
+<area shape="rect" id="node5" href="$d3/dac/classbackend_1_1_model.html#a222c40805c83296a76bd758f7f12dd43" title="backend.Model.setUserVariable" alt="" coords="266,187,489,213"/>
+</map>
