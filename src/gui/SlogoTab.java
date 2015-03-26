@@ -128,11 +128,11 @@ private void updatePanels(){
 				
 				myModel.executeCommand(c);
 				List<backend.Line> backLines = myModel.getGrid().getLines();
+				
 				turtlePanel.drawLines(backLines);			
 				List<backend.Turtle> turtles = myModel.getGrid().getAllTurtles();
 				turtlePanel.drawTurtles(turtles);
 				updatePanels();
-			
 				
 		        });
 			fields.add(h);
@@ -200,6 +200,7 @@ private void updatePanels(){
 	
 	
 	private void updateLines(){
+		//turtlePanel.setBackground(myModel.getGrid().getBGColor());
 		List<backend.Line> backLines = myModel.getGrid().getLines();
 		turtlePanel.drawLines(backLines);
 		List<backend.Turtle> turtles = myModel.getGrid().getAllTurtles();

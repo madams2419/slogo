@@ -6,12 +6,10 @@ import java.util.HashMap;
 
 import backend.Turtle;
 import javafx.scene.canvas.Canvas;
-import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.Region;
 import javafx.scene.paint.Color;
-import javafx.scene.shape.ArcType;
-import javafx.scene.shape.Polygon;
+
 
 public class DrawingArea extends Region {
 
@@ -51,6 +49,7 @@ public class DrawingArea extends Region {
 	}
 	
 	protected void drawLines(List<backend.Line> lines){
+		this.drawingCanvas.getGraphicsContext2D().clearRect(-1000, -1000, 2000, 2000);
 		for (backend.Line l : lines){
 			this.drawingCanvas.getGraphicsContext2D().setLineWidth(l.getWidth());
 			this.drawingCanvas.getGraphicsContext2D().setStroke(awtToPaint(l.getColor()));
@@ -59,22 +58,21 @@ public class DrawingArea extends Region {
 			this.drawingCanvas.getGraphicsContext2D().strokeLine(adjustedLStartPoint.getX(), adjustedLStartPoint.getY(), 
 					adjustedLEndPoint.getX(), adjustedLEndPoint.getY());
 		}
-		
-		//System.out.println("drawLines complete");
+
 	}
 	
 	protected void drawTurtles(List<Turtle> turtles){
-		// this.drawingCanvas.getGraphicsContext2D().setLineWidth(50);
-		// this.drawingCanvas.getGraphicsContext2D().setStroke(Color.RED);
-		
-		
+
 		for (Turtle t: turtles){
 			
 			TurtleImage turtleImage;
 			if(turtleMap.get(t) == null){
 				turtleImage = new TurtleImage(t);
 				turtleMap.put(t, turtleImage);
-				this.getChildren().add(turtleImage);
+				if(t.isShowing() == 1.0)
+					this.getChildren().add(turtleImage);
+				else
+					this.getChildren().remove(turtleImage);
 
 			}
 			else{
