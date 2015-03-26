@@ -1,6 +1,0 @@
-<map id="backend.command.For" name="backend.command.For">
-<area shape="rect" id="node4" href="$db/d27/classbackend_1_1command_1_1_do_times.html" title="backend.command.DoTimes" alt="" coords="5,229,211,256"/>
-<area shape="rect" id="node5" href="$d0/dca/classbackend_1_1command_1_1_repeat.html" title="backend.command.Repeat" alt="" coords="235,229,428,256"/>
-<area shape="rect" id="node2" href="$dc/d67/classbackend_1_1command_1_1_model_command.html" title="backend.command.ModelCommand" alt="" coords="93,80,347,107"/>
-<area shape="rect" id="node3" href="$dc/d83/classbackend_1_1command_1_1_command.html" title="backend.command.Command" alt="" coords="112,5,328,32"/>
-</map>

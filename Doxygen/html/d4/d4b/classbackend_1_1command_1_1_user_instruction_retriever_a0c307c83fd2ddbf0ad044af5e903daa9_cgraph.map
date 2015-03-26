@@ -1,6 +1,0 @@
-<map id="backend.command.UserInstructionRetriever.uic" name="backend.command.UserInstructionRetriever.uic">
-<area shape="rect" id="node2" href="$dc/d83/classbackend_1_1command_1_1_command.html#a30ab16925e876eb02790426a494a0516" title="backend.command.Command.get\lTypedString" alt="" coords="325,5,566,46"/>
-<area shape="rect" id="node4" href="$dc/d67/classbackend_1_1command_1_1_model_command.html#a73e8a709d97712856afafc9b8557d0cf" title="backend.command.ModelCommand.user\lInstructions" alt="" coords="302,70,589,111"/>
-<area shape="rect" id="node3" href="$d0/d6a/classbackend_1_1_string_pair.html#a453e5442c32c1bd7df15dc48f2da4624" title="backend.StringPair.getValue" alt="" coords="655,12,855,39"/>
-<area shape="rect" id="node5" href="$d3/dac/classbackend_1_1_model.html#aed0f0ffe97b8ccaf1394797941f8e54c" title="backend.Model.getUserFunctions" alt="" coords="638,77,871,104"/>
-</map>

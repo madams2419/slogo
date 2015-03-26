@@ -1,5 +1,0 @@
-<map id="gui.TopMenu.openColorPicker" name="gui.TopMenu.openColorPicker">
-<area shape="rect" id="node2" href="$d1/d13/classgui_1_1_color_picking_screen.html#ab17b04bb72d930e22dc7866650df2cd5" title="gui.ColorPickingScreen.get\lColor" alt="" coords="267,5,459,46"/>
-<area shape="rect" id="node3" href="$d1/d13/classgui_1_1_color_picking_screen.html#abbcb8f5c4fde57b70c6163c7110a7471" title="gui.ColorPickingScreen.start" alt="" coords="262,71,463,97"/>
-<area shape="rect" id="node4" href="$d1/d13/classgui_1_1_color_picking_screen.html#a028a68b11c04d1e8e179403c50321f6b" title="gui.ColorPickingScreen.set\lColor" alt="" coords="513,63,703,105"/>
-</map>

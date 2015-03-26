@@ -1,9 +1,0 @@
-<map id="backend.Turtle.setHeading" name="backend.Turtle.setHeading">
-<area shape="rect" id="node2" href="$d8/d92/classbackend_1_1command_1_1_set_heading.html#aae201c4671003d1ad516dfd4886db55d" title="backend.command.SetHeading.execute" alt="" coords="246,5,525,32"/>
-<area shape="rect" id="node3" href="$df/de2/classbackend_1_1_turtle.html#a15c8fa47008e482e5d40b4310d2bf8e7" title="backend.Turtle.faceTowards" alt="" coords="288,56,483,83"/>
-<area shape="rect" id="node5" href="$df/de2/classbackend_1_1_turtle.html#a382a75a93f59498cf7605d2c394ca531" title="backend.Turtle.rotateLeft" alt="" coords="295,107,476,133"/>
-<area shape="rect" id="node7" href="$df/de2/classbackend_1_1_turtle.html#a9ef2c2fdb902135f0f2c26045c160677" title="backend.Turtle.rotateRight" alt="" coords="291,157,480,184"/>
-<area shape="rect" id="node4" href="$d7/d1a/classbackend_1_1command_1_1_set_towards.html#ae10f8bb4a72bf22814c7ecd1fe14459d" title="backend.command.SetTowards.execute" alt="" coords="574,56,850,83"/>
-<area shape="rect" id="node6" href="$d1/d93/classbackend_1_1command_1_1_left.html#a06ab89eec275560592d65c8eaf3fc61c" title="backend.command.Left.execute" alt="" coords="598,107,826,133"/>
-<area shape="rect" id="node8" href="$d6/dcb/classbackend_1_1command_1_1_right.html#acdc2fa5040cde9b0ffabb1013a7dda38" title="backend.command.Right.execute" alt="" coords="594,157,830,184"/>
-</map>
