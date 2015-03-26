@@ -70,7 +70,7 @@ public class Main extends Application {
 		
 		TopMenu topMenu = new TopMenu(screenWidth, screenHeight,
 				topMenuHeightPct, myModel, tabPanel);
-		topMenu.tabPanel.makeNewTab();
+		
 
 		root.getChildren().add(topMenu);
 		root.getChildren().add(tabPanel);
@@ -78,6 +78,8 @@ public class Main extends Application {
 		// ApplicationView av = new ApplicationView(screenWidth, screenHeight);
 		primaryStage.setScene(scene);
 		primaryStage.show();
+		
+		topMenu.tabPanel.makeNewTab();
 	}
 	
 	private void setStageToFillWindow(Double screenWidth, Double screenHeight) {
