@@ -1,5 +1,0 @@
-<map id="gui.textAreas.AbstractEditableTextBox.addTextAreaToRegion" name="gui.textAreas.AbstractEditableTextBox.addTextAreaToRegion">
-<area shape="rect" id="node2" href="$db/d0f/classgui_1_1text_areas_1_1_status_box.html#a1da51210e4cc758dbac9299c60251cbd" title="gui.textAreas.StatusBox.\lStatusBox" alt="" coords="336,5,517,46"/>
-<area shape="rect" id="node3" href="$da/dce/classgui_1_1text_areas_1_1_user_functions_and_commands.html#ad86ca7c06037341dccfa5db3a33b4a81" title="gui.textAreas.UserFunctions\lAndCommands.UserFunctionsAndCommands" alt="" coords="269,70,584,111"/>
-<area shape="rect" id="node4" href="$d3/d45/classgui_1_1text_areas_1_1_user_variables_box.html#ae2cb55905d6ad4944791a34a99c7a966" title="gui.textAreas.UserVariables\lBox.UserVariablesBox" alt="" coords="327,135,526,177"/>
-</map>

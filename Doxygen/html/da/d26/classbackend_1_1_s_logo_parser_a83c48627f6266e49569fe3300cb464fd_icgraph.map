@@ -1,6 +1,0 @@
-<map id="backend.SLogoParser.changeLanguage" name="backend.SLogoParser.changeLanguage">
-<area shape="rect" id="node2" href="$d3/dac/classbackend_1_1_model.html#af35843b86c053f153827af5c7387eda6" title="backend.Model.setLanguage" alt="" coords="264,12,469,39"/>
-<area shape="rect" id="node3" href="$dd/d24/classgui_1_1_top_menu.html#aa9f461ca1d36369a75efbb935391e413" title="gui.TopMenu.createLanguage\lMenuItems" alt="" coords="518,5,727,46"/>
-<area shape="rect" id="node4" href="$dd/d24/classgui_1_1_top_menu.html#a2b756e05f495e2d1a4f7ea156ae612d2" title="gui.TopMenu.addMenuBar" alt="" coords="776,12,963,39"/>
-<area shape="rect" id="node5" href="$dd/d24/classgui_1_1_top_menu.html#a842402ab5dfa877cfac4e5677809675a" title="gui.TopMenu.TopMenu" alt="" coords="1011,12,1173,39"/>
-</map>

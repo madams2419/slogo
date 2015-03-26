@@ -1,4 +1,0 @@
-<map id="gui.TopMenu.createFileMenuItems" name="gui.TopMenu.createFileMenuItems">
-<area shape="rect" id="node2" href="$d5/d23/classgui_1_1_tab_panel.html#adf5298f1b0589f5c363b667b7155e87b" title="gui.TabPanel.makeNewTab" alt="" coords="257,12,445,39"/>
-<area shape="rect" id="node3" href="$df/dc3/classgui_1_1_main.html#ad9b02558bc225d0ee0bf37fb04d5c4b6" title="gui.Main.setActiveTab" alt="" coords="494,12,653,39"/>
-</map>

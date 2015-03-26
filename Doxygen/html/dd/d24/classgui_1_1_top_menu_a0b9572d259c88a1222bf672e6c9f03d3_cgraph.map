@@ -1,8 +1,0 @@
-<map id="gui.TopMenu.createDisplayMenuItems" name="gui.TopMenu.createDisplayMenuItems">
-<area shape="rect" id="node2" href="$d1/d68/classbackend_1_1_grid.html#ac089ef72a1531ec8e0cf131de056d0b2" title="backend.Grid.getAllTurtles" alt="" coords="256,5,443,32"/>
-<area shape="rect" id="node3" href="$d3/dac/classbackend_1_1_model.html#a341c789b1a3e0bf796fb626603928e95" title="backend.Model.getGrid" alt="" coords="265,56,434,83"/>
-<area shape="rect" id="node4" href="$dd/d24/classgui_1_1_top_menu.html#a064cbee3d706b9ccb27b5df43f3e4482" title="gui.TopMenu.openColorPicker" alt="" coords="245,107,453,133"/>
-<area shape="rect" id="node5" href="$d1/d13/classgui_1_1_color_picking_screen.html#abbcb8f5c4fde57b70c6163c7110a7471" title="gui.ColorPickingScreen.start" alt="" coords="502,77,703,104"/>
-<area shape="rect" id="node7" href="$d1/d13/classgui_1_1_color_picking_screen.html#ab17b04bb72d930e22dc7866650df2cd5" title="gui.ColorPickingScreen.get\lColor" alt="" coords="507,129,699,170"/>
-<area shape="rect" id="node6" href="$d1/d13/classgui_1_1_color_picking_screen.html#a028a68b11c04d1e8e179403c50321f6b" title="gui.ColorPickingScreen.set\lColor" alt="" coords="753,70,943,111"/>
-</map>

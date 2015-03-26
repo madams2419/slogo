@@ -1,4 +1,0 @@
-<map id="backend.Turtle.move" name="backend.Turtle.move">
-<area shape="rect" id="node2" href="$dc/d25/classbackend_1_1command_1_1_backward.html#a8555647247f244625e7e60bc10753202" title="backend.command.Backward.execute" alt="" coords="209,5,474,32"/>
-<area shape="rect" id="node3" href="$d8/d49/classbackend_1_1command_1_1_forward.html#a007c0c9940ad2e960dfd044388fcee0f" title="backend.command.Forward.execute" alt="" coords="214,56,469,83"/>
-</map>

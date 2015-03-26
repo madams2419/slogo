@@ -1,7 +1,0 @@
-<map id="backend.command.SpecifiedTurtleCommand" name="backend.command.SpecifiedTurtleCommand">
-<area shape="rect" id="node5" href="$d4/d75/classbackend_1_1command_1_1_ask.html" title="backend.command.Ask" alt="" coords="5,320,176,347"/>
-<area shape="rect" id="node6" href="$de/dcc/classbackend_1_1command_1_1_tell.html" title="backend.command.Tell" alt="" coords="201,320,369,347"/>
-<area shape="rect" id="node2" href="$d5/dfc/classbackend_1_1command_1_1_turtle_command.html" title="backend.command.TurtleCommand" alt="" coords="63,155,313,181"/>
-<area shape="rect" id="node3" href="$dc/d67/classbackend_1_1command_1_1_model_command.html" title="backend.command.ModelCommand" alt="" coords="61,80,315,107"/>
-<area shape="rect" id="node4" href="$dc/d83/classbackend_1_1command_1_1_command.html" title="backend.command.Command" alt="" coords="80,5,296,32"/>
-</map>

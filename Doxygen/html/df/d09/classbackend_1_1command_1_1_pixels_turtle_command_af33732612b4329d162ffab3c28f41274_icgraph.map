@@ -1,5 +1,0 @@
-<map id="backend.command.PixelsTurtleCommand.pixels" name="backend.command.PixelsTurtleCommand.pixels">
-<area shape="rect" id="node2" href="$dc/d25/classbackend_1_1command_1_1_backward.html#a8555647247f244625e7e60bc10753202" title="backend.command.Backward.execute" alt="" coords="278,5,543,32"/>
-<area shape="rect" id="node3" href="$d8/d3e/classbackend_1_1command_1_1_set_pen_size.html#abeaea63d9ee389a2f90055b25c8cd7ad" title="backend.command.SetPenSize.execute" alt="" coords="272,56,549,83"/>
-<area shape="rect" id="node4" href="$d8/d49/classbackend_1_1command_1_1_forward.html#a007c0c9940ad2e960dfd044388fcee0f" title="backend.command.Forward.execute" alt="" coords="283,107,538,133"/>
-</map>

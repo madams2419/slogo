@@ -1,8 +1,0 @@
-<map id="backend.Model.getColorMap" name="backend.Model.getColorMap">
-<area shape="rect" id="node2" href="$dc/d67/classbackend_1_1command_1_1_model_command.html#aa459b6ae4744fa0705aa08b95f7d9b0f" title="backend.command.ModelCommand.colorMap" alt="" coords="257,64,573,91"/>
-<area shape="rect" id="node3" href="$d9/d61/classbackend_1_1command_1_1_get_pen_color.html#a51ab64bb7cf54b848f05198278a3b20f" title="backend.command.GetPenColor.execute" alt="" coords="631,5,913,32"/>
-<area shape="rect" id="node4" href="$dc/d67/classbackend_1_1command_1_1_model_command.html#ab1aeefecd317fb74afe685c140d17c55" title="backend.command.ModelCommand.param\lToColor" alt="" coords="622,57,922,98"/>
-<area shape="rect" id="node7" href="$d6/db5/classbackend_1_1command_1_1_set_palette.html#af4a93cf60d2c74b3de7c350e690f0911" title="backend.command.SetPalette.execute" alt="" coords="637,123,907,149"/>
-<area shape="rect" id="node5" href="$de/d47/classbackend_1_1command_1_1_set_background.html#a32cf6de8fa8a7b154fa1124e2efb6c5c" title="backend.command.SetBackground.execute" alt="" coords="971,39,1274,65"/>
-<area shape="rect" id="node6" href="$df/df8/classbackend_1_1command_1_1_set_pen_color.html#ae59f12abe2013dd21d4090d7c94c669d" title="backend.command.SetPenColor.execute" alt="" coords="981,89,1264,116"/>
-</map>

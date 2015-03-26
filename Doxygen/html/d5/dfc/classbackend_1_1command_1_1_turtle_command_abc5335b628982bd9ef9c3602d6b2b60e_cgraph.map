@@ -1,5 +1,0 @@
-<map id="backend.command.TurtleCommand.activeTurtles" name="backend.command.TurtleCommand.activeTurtles">
-<area shape="rect" id="node2" href="$d1/d68/classbackend_1_1_grid.html#af86d95bc9c540e24acaf580162d2f8b1" title="backend.Grid.getActiveTurtles" alt="" coords="383,5,593,32"/>
-<area shape="rect" id="node3" href="$dc/d67/classbackend_1_1command_1_1_model_command.html#ab57d058d26b965a9038487f69f40c066" title="backend.command.ModelCommand.grid" alt="" coords="347,56,629,83"/>
-<area shape="rect" id="node4" href="$d3/dac/classbackend_1_1_model.html#a341c789b1a3e0bf796fb626603928e95" title="backend.Model.getGrid" alt="" coords="678,56,847,83"/>
-</map>

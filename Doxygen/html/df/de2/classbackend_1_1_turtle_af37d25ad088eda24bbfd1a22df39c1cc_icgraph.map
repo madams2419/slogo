@@ -1,9 +1,0 @@
-<map id="backend.Turtle.jumpToPoint" name="backend.Turtle.jumpToPoint">
-<area shape="rect" id="node2" href="$d0/d99/classbackend_1_1command_1_1_clear_screen.html#acbfb39c1cc575e85b075b11a96d8d026" title="backend.command.ClearScreen.execute" alt="" coords="248,5,531,32"/>
-<area shape="rect" id="node3" href="$df/de2/classbackend_1_1_turtle.html#a86c40ae8c6731af071b31f3bbbe21deb" title="backend.Turtle.moveToPoint" alt="" coords="290,56,489,83"/>
-<area shape="rect" id="node4" href="$df/d00/classbackend_1_1command_1_1_home.html#adcadf9a1ca80334c0def5dd86ae1a6dc" title="backend.command.Home.execute" alt="" coords="596,5,839,32"/>
-<area shape="rect" id="node5" href="$d5/db7/classbackend_1_1command_1_1_set_position.html#ad352a4e88e36db0d2360299d1d0f54ec" title="backend.command.SetPosition.execute" alt="" coords="579,56,855,83"/>
-<area shape="rect" id="node6" href="$df/de2/classbackend_1_1_turtle.html#a1b45c4ecc2d7cd43cd947fdf9429305b" title="backend.Turtle.move" alt="" coords="640,107,795,133"/>
-<area shape="rect" id="node7" href="$dc/d25/classbackend_1_1command_1_1_backward.html#a8555647247f244625e7e60bc10753202" title="backend.command.Backward.execute" alt="" coords="905,81,1170,108"/>
-<area shape="rect" id="node8" href="$d8/d49/classbackend_1_1command_1_1_forward.html#a007c0c9940ad2e960dfd044388fcee0f" title="backend.command.Forward.execute" alt="" coords="910,132,1165,159"/>
-</map>

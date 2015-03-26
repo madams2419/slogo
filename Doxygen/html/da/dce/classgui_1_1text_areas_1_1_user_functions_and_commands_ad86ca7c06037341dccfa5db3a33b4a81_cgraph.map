@@ -1,7 +1,0 @@
-<map id="gui.textAreas.UserFunctionsAndCommands.UserFunctionsAndCommands" name="gui.textAreas.UserFunctionsAndCommands.UserFunctionsAndCommands">
-<area shape="rect" id="node2" href="$d8/d85/classgui_1_1text_areas_1_1_abstract_editable_text_box.html#ad4fad0a869cb08703d66e5af3c947ad8" title="gui.textAreas.AbstractEditable\lTextBox.addTextAreaToRegion" alt="" coords="368,5,584,46"/>
-<area shape="rect" id="node3" href="$d8/d85/classgui_1_1text_areas_1_1_abstract_editable_text_box.html#af6fc5d24e81e96264642b5009ba5509b" title="gui.textAreas.AbstractEditable\lTextBox.makeTextArea" alt="" coords="368,70,584,111"/>
-<area shape="rect" id="node4" href="$d8/d85/classgui_1_1text_areas_1_1_abstract_editable_text_box.html#a2b5153268bf760e7f8a12b7c677a0230" title="gui.textAreas.AbstractEditable\lTextBox.setRegionPreferences" alt="" coords="368,135,584,177"/>
-<area shape="rect" id="node5" href="$d8/d85/classgui_1_1text_areas_1_1_abstract_editable_text_box.html#a4d11b0e2189de6b7bc4a7a248ce3a00d" title="gui.textAreas.AbstractEditable\lTextBox.setxLocation" alt="" coords="368,201,584,242"/>
-<area shape="rect" id="node6" href="$d8/d85/classgui_1_1text_areas_1_1_abstract_editable_text_box.html#a26ca62985a5feafd0b04eb6fb707e376" title="gui.textAreas.AbstractEditable\lTextBox.setyLocation" alt="" coords="368,266,584,307"/>
-</map>

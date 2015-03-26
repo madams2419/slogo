@@ -1,9 +1,0 @@
-<map id="backend.command.Command.execute" name="backend.command.Command.execute">
-<area shape="rect" id="node2" href="$d4/d75/classbackend_1_1command_1_1_ask.html#a453b95a58b91a82a2cca53f444a31ff6" title="backend.command.Ask.execute" alt="" coords="332,5,559,32"/>
-<area shape="rect" id="node3" href="$d3/dac/classbackend_1_1_model.html#a4ad1ab45a05d4bc905bd82c0cad71c2a" title="backend.Model.executeCommand" alt="" coords="325,56,565,83"/>
-<area shape="rect" id="node7" href="$d3/dac/classbackend_1_1_model.html#a35eb5f238db8bb7d76ebf7f820643a2b" title="backend.Model.executeNext\lCommand" alt="" coords="344,107,547,149"/>
-<area shape="rect" id="node4" href="$d5/d8a/classgui_1_1_slogo_tab.html#a9ccb322bec15528476c85f84e53f14d9" title="gui.SlogoTab.updatePanels" alt="" coords="613,56,805,83"/>
-<area shape="rect" id="node5" href="$d5/d8a/classgui_1_1_slogo_tab.html#a2a016875b2ea48fa761cd4408a78dd21" title="gui.SlogoTab.setButtonActions" alt="" coords="853,107,1069,133"/>
-<area shape="rect" id="node6" href="$d5/d8a/classgui_1_1_slogo_tab.html#adaa134bc95e1dcf4eb30b3a185c75175" title="gui.SlogoTab.SlogoTab" alt="" coords="1117,107,1280,133"/>
-<area shape="rect" id="node8" href="$d3/dac/classbackend_1_1_model.html#a6f4aa1ad8c07ad86d249671d525fbea3" title="backend.Model.executeAll\lCommands" alt="" coords="615,158,803,199"/>
-</map>
