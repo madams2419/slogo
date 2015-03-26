@@ -51,6 +51,7 @@ public class DrawingArea extends Region {
 	}
 	
 	protected void drawLines(List<backend.Line> lines){
+		this.drawingCanvas.getGraphicsContext2D().clearRect(-1000, -1000, 2000, 2000);
 		for (backend.Line l : lines){
 			this.drawingCanvas.getGraphicsContext2D().setLineWidth(l.getWidth());
 			this.drawingCanvas.getGraphicsContext2D().setStroke(awtToPaint(l.getColor()));
