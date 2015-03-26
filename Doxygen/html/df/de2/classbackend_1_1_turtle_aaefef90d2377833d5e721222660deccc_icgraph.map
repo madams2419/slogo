@@ -1,0 +1,8 @@
+<map id="backend.Turtle.getHeading" name="backend.Turtle.getHeading">
+<area shape="rect" id="node2" href="$d7/da5/classbackend_1_1command_1_1_heading.html#aa93f5e881fa6145268b8b13ea4903c15" title="backend.command.Heading.execute" alt="" coords="246,5,503,32"/>
+<area shape="rect" id="node3" href="$d2/d89/classgui_1_1_turtle_image.html#a632edfc5b5937c0ad906304ba225aadb" title="gui.TurtleImage.orientTurtle" alt="" coords="277,56,472,83"/>
+<area shape="rect" id="node4" href="$d8/d8d/classgui_1_1_drawing_area.html#aaf94ae2627b15ef5a3224dd5fa042aae" title="gui.DrawingArea.drawTurtles" alt="" coords="553,56,754,83"/>
+<area shape="rect" id="node5" href="$d5/d8a/classgui_1_1_slogo_tab.html#a9ccb322bec15528476c85f84e53f14d9" title="gui.SlogoTab.updatePanels" alt="" coords="803,31,995,57"/>
+<area shape="rect" id="node6" href="$d5/d8a/classgui_1_1_slogo_tab.html#a2a016875b2ea48fa761cd4408a78dd21" title="gui.SlogoTab.setButtonActions" alt="" coords="1043,56,1259,83"/>
+<area shape="rect" id="node7" href="$d5/d8a/classgui_1_1_slogo_tab.html#adaa134bc95e1dcf4eb30b3a185c75175" title="gui.SlogoTab.SlogoTab" alt="" coords="1307,56,1469,83"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="gui.DrawingArea.convertCoordinates" name="gui.DrawingArea.convertCoordinates">
+<area shape="rect" id="node2" href="$d8/d8d/classgui_1_1_drawing_area.html#a1522d175379504dfbf03fe9e6b75f53d" title="gui.DrawingArea.drawLines" alt="" coords="314,5,507,32"/>
+<area shape="rect" id="node6" href="$d8/d8d/classgui_1_1_drawing_area.html#aaf94ae2627b15ef5a3224dd5fa042aae" title="gui.DrawingArea.drawTurtles" alt="" coords="310,56,511,83"/>
+<area shape="rect" id="node3" href="$d5/d8a/classgui_1_1_slogo_tab.html#a9ccb322bec15528476c85f84e53f14d9" title="gui.SlogoTab.updatePanels" alt="" coords="560,31,752,57"/>
+<area shape="rect" id="node4" href="$d5/d8a/classgui_1_1_slogo_tab.html#a2a016875b2ea48fa761cd4408a78dd21" title="gui.SlogoTab.setButtonActions" alt="" coords="800,31,1016,57"/>
+<area shape="rect" id="node5" href="$d5/d8a/classgui_1_1_slogo_tab.html#adaa134bc95e1dcf4eb30b3a185c75175" title="gui.SlogoTab.SlogoTab" alt="" coords="1064,31,1227,57"/>
+</map>

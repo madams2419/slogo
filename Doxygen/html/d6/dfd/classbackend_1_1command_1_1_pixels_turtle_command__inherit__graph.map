@@ -1,0 +1,9 @@
+<map id="backend.command.PixelsTurtleCommand" name="backend.command.PixelsTurtleCommand">
+<area shape="rect" id="node6" href="$dc/d25/classbackend_1_1command_1_1_backward.html" title="backend.command.Backward" alt="" coords="5,411,215,437"/>
+<area shape="rect" id="node7" href="$d8/d49/classbackend_1_1command_1_1_forward.html" title="backend.command.Forward" alt="" coords="239,411,437,437"/>
+<area shape="rect" id="node8" href="$d8/d3e/classbackend_1_1command_1_1_set_pen_size.html" title="backend.command.SetPenSize" alt="" coords="462,411,684,437"/>
+<area shape="rect" id="node2" href="$d8/db4/classbackend_1_1command_1_1_active_turtle_command.html" title="backend.command.ActiveTurtle\lCommand" alt="" coords="227,230,449,271"/>
+<area shape="rect" id="node3" href="$d5/dfc/classbackend_1_1command_1_1_turtle_command.html" title="backend.command.TurtleCommand" alt="" coords="213,155,464,181"/>
+<area shape="rect" id="node4" href="$dc/d67/classbackend_1_1command_1_1_model_command.html" title="backend.command.ModelCommand" alt="" coords="211,80,465,107"/>
+<area shape="rect" id="node5" href="$dc/d83/classbackend_1_1command_1_1_command.html" title="backend.command.Command" alt="" coords="231,5,447,32"/>
+</map>

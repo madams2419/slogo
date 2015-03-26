@@ -1,0 +1,12 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node2" href="$d8/d8d/classgui_1_1_drawing_area.html" title="gui.DrawingArea" alt="" coords="162,5,289,32"/>
+<area shape="rect" id="node3" href="$db/d89/classgui_1_1_run_buttons.html" title="gui.RunButtons" alt="" coords="166,56,285,83"/>
+<area shape="rect" id="node4" href="$d5/d8a/classgui_1_1_slogo_tab.html" title="gui.SlogoTab" alt="" coords="174,107,277,133"/>
+<area shape="rect" id="node5" href="$d8/d85/classgui_1_1text_areas_1_1_abstract_editable_text_box.html" title="gui.textAreas.AbstractEditable\lTextBox" alt="" coords="117,158,333,199"/>
+<area shape="rect" id="node11" href="$dd/d24/classgui_1_1_top_menu.html" title="gui.TopMenu" alt="" coords="175,224,276,251"/>
+<area shape="rect" id="node6" href="$db/dbc/classgui_1_1text_areas_1_1_command_box.html" title="gui.textAreas.CommandBox" alt="" coords="412,64,615,91"/>
+<area shape="rect" id="node7" href="$de/da4/classgui_1_1text_areas_1_1_previous_commands_box.html" title="gui.textAreas.PreviousCommandsBox" alt="" coords="382,115,645,141"/>
+<area shape="rect" id="node8" href="$db/d0f/classgui_1_1text_areas_1_1_status_box.html" title="gui.textAreas.StatusBox" alt="" coords="425,165,602,192"/>
+<area shape="rect" id="node9" href="$da/dce/classgui_1_1text_areas_1_1_user_functions_and_commands.html" title="gui.textAreas.UserFunctions\lAndCommands" alt="" coords="413,217,614,258"/>
+<area shape="rect" id="node10" href="$d3/d45/classgui_1_1text_areas_1_1_user_variables_box.html" title="gui.textAreas.UserVariablesBox" alt="" coords="402,283,625,309"/>
+</map>

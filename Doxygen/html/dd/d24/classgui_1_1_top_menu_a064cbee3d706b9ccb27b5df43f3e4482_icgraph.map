@@ -1,0 +1,5 @@
+<map id="gui.TopMenu.openColorPicker" name="gui.TopMenu.openColorPicker">
+<area shape="rect" id="node2" href="$dd/d24/classgui_1_1_top_menu.html#a0b9572d259c88a1222bf672e6c9f03d3" title="gui.TopMenu.createDisplay\lMenuItems" alt="" coords="261,5,453,46"/>
+<area shape="rect" id="node3" href="$dd/d24/classgui_1_1_top_menu.html#a2b756e05f495e2d1a4f7ea156ae612d2" title="gui.TopMenu.addMenuBar" alt="" coords="501,12,688,39"/>
+<area shape="rect" id="node4" href="$dd/d24/classgui_1_1_top_menu.html#a842402ab5dfa877cfac4e5677809675a" title="gui.TopMenu.TopMenu" alt="" coords="737,12,898,39"/>
+</map>

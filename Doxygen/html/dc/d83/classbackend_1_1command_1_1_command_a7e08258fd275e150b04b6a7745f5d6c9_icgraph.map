@@ -1,0 +1,5 @@
+<map id="backend.command.Command.getParamReturnVal" name="backend.command.Command.getParamReturnVal">
+<area shape="rect" id="node2" href="$d5/dfe/classbackend_1_1command_1_1_set_shape.html#a45d3d7dfe3b3b7853d1818c84bf29be2" title="backend.command.SetShape.execute" alt="" coords="315,5,581,32"/>
+<area shape="rect" id="node3" href="$de/d47/classbackend_1_1command_1_1_set_background.html#a32cf6de8fa8a7b154fa1124e2efb6c5c" title="backend.command.SetBackground.execute" alt="" coords="297,56,599,83"/>
+<area shape="rect" id="node4" href="$df/df8/classbackend_1_1command_1_1_set_pen_color.html#ae59f12abe2013dd21d4090d7c94c669d" title="backend.command.SetPenColor.execute" alt="" coords="307,107,589,133"/>
+</map>

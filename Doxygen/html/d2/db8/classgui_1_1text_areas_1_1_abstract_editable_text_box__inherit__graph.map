@@ -1,0 +1,7 @@
+<map id="gui.textAreas.AbstractEditableTextBox" name="gui.textAreas.AbstractEditableTextBox">
+<area shape="rect" id="node3" href="$db/dbc/classgui_1_1text_areas_1_1_command_box.html" title="gui.textAreas.CommandBox" alt="" coords="412,5,615,32"/>
+<area shape="rect" id="node4" href="$de/da4/classgui_1_1text_areas_1_1_previous_commands_box.html" title="gui.textAreas.PreviousCommandsBox" alt="" coords="382,56,645,83"/>
+<area shape="rect" id="node5" href="$db/d0f/classgui_1_1text_areas_1_1_status_box.html" title="gui.textAreas.StatusBox" alt="" coords="425,107,602,133"/>
+<area shape="rect" id="node6" href="$da/dce/classgui_1_1text_areas_1_1_user_functions_and_commands.html" title="gui.textAreas.UserFunctions\lAndCommands" alt="" coords="413,158,614,199"/>
+<area shape="rect" id="node7" href="$d3/d45/classgui_1_1text_areas_1_1_user_variables_box.html" title="gui.textAreas.UserVariablesBox" alt="" coords="402,224,625,251"/>
+</map>

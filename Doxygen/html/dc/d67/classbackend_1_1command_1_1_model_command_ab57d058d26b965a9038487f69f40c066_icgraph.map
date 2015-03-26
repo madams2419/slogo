@@ -1,0 +1,11 @@
+<map id="backend.command.ModelCommand.grid" name="backend.command.ModelCommand.grid">
+<area shape="rect" id="node2" href="$d5/dfc/classbackend_1_1command_1_1_turtle_command.html#abc5335b628982bd9ef9c3602d6b2b60e" title="backend.command.TurtleCommand.active\lTurtles" alt="" coords="342,48,634,90"/>
+<area shape="rect" id="node3" href="$d8/db4/classbackend_1_1command_1_1_active_turtle_command.html#a57112668aa5ac898122c5bd1a426afcd" title="backend.command.ActiveTurtle\lCommand.execute" alt="" coords="721,19,943,60"/>
+<area shape="rect" id="node4" href="$d4/d75/classbackend_1_1command_1_1_ask.html#a453b95a58b91a82a2cca53f444a31ff6" title="backend.command.Ask.execute" alt="" coords="719,114,945,141"/>
+<area shape="rect" id="node5" href="$d5/dfc/classbackend_1_1command_1_1_turtle_command.html#a7f974873733f7c940acf4ffa8d6bd32b" title="backend.command.TurtleCommand.all\lTurtles" alt="" coords="354,283,622,324"/>
+<area shape="rect" id="node8" href="$de/dcc/classbackend_1_1command_1_1_tell.html#a9efd790cb410947936aed1289e7fc246" title="backend.command.Tell.execute" alt="" coords="721,202,943,229"/>
+<area shape="rect" id="node9" href="$de/d47/classbackend_1_1command_1_1_set_background.html#a32cf6de8fa8a7b154fa1124e2efb6c5c" title="backend.command.SetBackground.execute" alt="" coords="337,349,639,376"/>
+<area shape="rect" id="node10" href="$d4/d68/classbackend_1_1command_1_1_specified_turtle_command.html#abd0266fe718a56aae9fd137321772c0c" title="backend.command.Specified\lTurtleCommand.specifiedTurtles" alt="" coords="376,166,600,207"/>
+<area shape="rect" id="node6" href="$d9/d32/classbackend_1_1command_1_1_clear_stamps.html#a72929c501b515e1a35243bdc05f14f8d" title="backend.command.ClearStamps.execute" alt="" coords="689,272,975,298"/>
+<area shape="rect" id="node7" href="$da/d05/classbackend_1_1command_1_1_turtles.html#a0b113f00307be40c09e2e917f1982d62" title="backend.command.Turtles.execute" alt="" coords="709,322,955,349"/>
+</map>

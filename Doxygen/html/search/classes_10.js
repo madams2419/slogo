@@ -1,0 +1,20 @@
+var searchData=
+[
+  ['setbackground',['SetBackground',['../de/d47/classbackend_1_1command_1_1_set_background.html',1,'backend::command']]],
+  ['setheading',['SetHeading',['../d8/d92/classbackend_1_1command_1_1_set_heading.html',1,'backend::command']]],
+  ['setpalette',['SetPalette',['../d6/db5/classbackend_1_1command_1_1_set_palette.html',1,'backend::command']]],
+  ['setpencolor',['SetPenColor',['../df/df8/classbackend_1_1command_1_1_set_pen_color.html',1,'backend::command']]],
+  ['setpensize',['SetPenSize',['../d8/d3e/classbackend_1_1command_1_1_set_pen_size.html',1,'backend::command']]],
+  ['setposition',['SetPosition',['../d5/db7/classbackend_1_1command_1_1_set_position.html',1,'backend::command']]],
+  ['setshape',['SetShape',['../d5/dfe/classbackend_1_1command_1_1_set_shape.html',1,'backend::command']]],
+  ['settowards',['SetTowards',['../d7/d1a/classbackend_1_1command_1_1_set_towards.html',1,'backend::command']]],
+  ['sine',['Sine',['../db/dcc/classbackend_1_1command_1_1_sine.html',1,'backend::command']]],
+  ['slogoparser',['SLogoParser',['../da/d26/classbackend_1_1_s_logo_parser.html',1,'backend']]],
+  ['slogotab',['SlogoTab',['../d5/d8a/classgui_1_1_slogo_tab.html',1,'gui']]],
+  ['specifiedturtlecommand',['SpecifiedTurtleCommand',['../d4/d68/classbackend_1_1command_1_1_specified_turtle_command.html',1,'backend::command']]],
+  ['stamp',['Stamp',['../de/d8f/classbackend_1_1command_1_1_stamp.html',1,'backend::command']]],
+  ['stamp',['Stamp',['../df/d41/classbackend_1_1_stamp.html',1,'backend']]],
+  ['statusbox',['StatusBox',['../db/d0f/classgui_1_1text_areas_1_1_status_box.html',1,'gui::textAreas']]],
+  ['stringpair',['StringPair',['../d0/d6a/classbackend_1_1_string_pair.html',1,'backend']]],
+  ['sum',['Sum',['../db/d48/classbackend_1_1command_1_1_sum.html',1,'backend::command']]]
+];

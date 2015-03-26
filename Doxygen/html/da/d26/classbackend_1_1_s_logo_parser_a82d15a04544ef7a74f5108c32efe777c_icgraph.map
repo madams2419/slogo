@@ -1,0 +1,8 @@
+<map id="backend.SLogoParser.genPatternList" name="backend.SLogoParser.genPatternList">
+<area shape="rect" id="node2" href="$da/d26/classbackend_1_1_s_logo_parser.html#a83c48627f6266e49569fe3300cb464fd" title="backend.SLogoParser.change\lLanguage" alt="" coords="309,5,520,46"/>
+<area shape="rect" id="node7" href="$da/d26/classbackend_1_1_s_logo_parser.html#a96c2f326bee6a9d8434f43119d4dea12" title="backend.SLogoParser.SLogo\lParser" alt="" coords="313,70,516,111"/>
+<area shape="rect" id="node3" href="$d3/dac/classbackend_1_1_model.html#af35843b86c053f153827af5c7387eda6" title="backend.Model.setLanguage" alt="" coords="568,12,773,39"/>
+<area shape="rect" id="node4" href="$dd/d24/classgui_1_1_top_menu.html#aa9f461ca1d36369a75efbb935391e413" title="gui.TopMenu.createLanguage\lMenuItems" alt="" coords="822,5,1031,46"/>
+<area shape="rect" id="node5" href="$dd/d24/classgui_1_1_top_menu.html#a2b756e05f495e2d1a4f7ea156ae612d2" title="gui.TopMenu.addMenuBar" alt="" coords="1080,12,1267,39"/>
+<area shape="rect" id="node6" href="$dd/d24/classgui_1_1_top_menu.html#a842402ab5dfa877cfac4e5677809675a" title="gui.TopMenu.TopMenu" alt="" coords="1315,12,1477,39"/>
+</map>
