@@ -4,6 +4,7 @@ import java.awt.Point;
 import java.util.List;
 import java.util.HashMap;
 
+import backend.DrawableImage;
 import backend.Turtle;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
@@ -20,7 +21,7 @@ public class DrawingArea extends Region {
 	protected double drawingAreaXLocation;
 	protected double drawingAreaYLocation;
 	protected Canvas drawingCanvas;
-	protected HashMap<Turtle, TurtleImage> turtleMap = new HashMap<>();
+	protected HashMap<DrawableImage, DrawableImageView> turtleMap = new HashMap<>();
 
 	public DrawingArea(double drawingAreaWidth, double drawingAreaHeight,
 			double drawingAreaXLocation, double drawingAreaYLocation) {
@@ -64,16 +65,16 @@ public class DrawingArea extends Region {
 		//System.out.println("drawLines complete");
 	}
 	
-	protected void drawTurtles(List<Turtle> turtles){
+	protected void drawTurtles(List<DrawableImage> turtles, double imageWidthPct){
 		// this.drawingCanvas.getGraphicsContext2D().setLineWidth(50);
 		// this.drawingCanvas.getGraphicsContext2D().setStroke(Color.RED);
 		
 		
-		for (Turtle t: turtles){
+		for (DrawableImage t: turtles){
 			
-			TurtleImage turtleImage;
+			DrawableImageView turtleImage;
 			if(turtleMap.get(t) == null){
-				turtleImage = new TurtleImage(t);
+				turtleImage = new DrawableImageView(t, imageWidthPct);
 				turtleMap.put(t, turtleImage);
 				this.getChildren().add(turtleImage);
 
@@ -82,23 +83,23 @@ public class DrawingArea extends Region {
 				turtleImage = turtleMap.get(t);
 				turtleImage.updateImage();
 			}
-			turtleImage.sizeTurtle(drawingAreaWidth, drawingAreaHeight); 
+			turtleImage.setImageSize(drawingAreaWidth, drawingAreaHeight); 
 			
 			Point adjustedTurtleLocation = convertCoordinates(t.getLocation());
 			adjustedTurtleLocation = positionPointRelativeToLines(adjustedTurtleLocation, turtleImage);
 			turtleImage.setLocation(adjustedTurtleLocation);
-			turtleImage.orientTurtle(t);
+			turtleImage.orientImage();
 		
 		}
 	}
 	
-	private Point positionPointRelativeToLines(Point turtleLocation, TurtleImage turtleImage) {
+	private Point positionPointRelativeToLines(Point turtleLocation, DrawableImageView turtleImage) {
 		
 		Point adjustedturtleLocation = new Point();
 		double xLocation = turtleLocation.getX();
 		double yLocation = turtleLocation.getY();
 		
-		xLocation = xLocation - (.5 * drawingAreaWidth * turtleImage.turtleWidthPct);
+		xLocation = xLocation - (.5 * drawingAreaWidth * turtleImage.getImageWidthPct());
 		yLocation = yLocation + (turtleImage.getFitHeight());
 		
 		adjustedturtleLocation.setLocation(xLocation, yLocation); 

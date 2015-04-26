@@ -161,5 +161,9 @@ public class Turtle implements DrawableImage {
 	public Pen getPen() {
 		return pen;
 	}
+	
+	public double getOrientation() {
+		return getHeading().getAngle();
+	}
 
 }

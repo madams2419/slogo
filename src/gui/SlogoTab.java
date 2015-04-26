@@ -34,6 +34,7 @@ public class SlogoTab extends Region {
 	private double topMenuHeightPct = .055;
 	private double buttonWidthPct = .1;
 	private double buttonHeightPct = .25;
+	private double imageWidthPct = .05; 
 
 	// ////////////////////////////////////////
 	private RunButtons runButtons;
@@ -162,8 +163,8 @@ private void updatePanels(){
 				
 				List<backend.Line> backLines = myModel.getGrid().getLines();
 				turtlePanel.drawLines(backLines);			
-				List<backend.Turtle> turtles = myModel.getGrid().getAllTurtles();
-				turtlePanel.drawTurtles(turtles);
+				List<backend.DrawableImage> turtles = myModel.getGrid().getDrawableImages();
+				turtlePanel.drawTurtles(turtles, imageWidthPct);
 				updatePanels();
 				
 				//is this bad? ^^^ it is pseudo-recursive
@@ -224,8 +225,8 @@ private void updatePanels(){
 
 			List<backend.Line> backLines = myModel.getGrid().getLines();
 			turtlePanel.drawLines(backLines);
-			List<backend.Turtle> turtles = myModel.getGrid().getAllTurtles();
-			turtlePanel.drawTurtles(turtles);
+			List<backend.DrawableImage> turtles = myModel.getGrid().getDrawableImages();
+			turtlePanel.drawTurtles(turtles, imageWidthPct);
 			updatePanels();
 
 		});
@@ -240,9 +241,9 @@ private void updatePanels(){
 				List<backend.Line> backLines = myModel.getGrid()
 						.getLines();
 				turtlePanel.drawLines(backLines);
-				List<backend.Turtle> turtles = myModel.getGrid()
-						.getAllTurtles();
-				turtlePanel.drawTurtles(turtles);
+				List<backend.DrawableImage> turtles = myModel.getGrid()
+						.getDrawableImages();
+				turtlePanel.drawTurtles(turtles, imageWidthPct);
 				updatePanels();
 			});
 

@@ -1,0 +1,597 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+ActiveTurtleCommand	command/ActiveTurtleCommand.java	/^	public ActiveTurtleCommand(StringPair stringPair, int numParams, Command parent, Model model) {$/;"	m	class:ActiveTurtleCommand
+ActiveTurtleCommand	command/ActiveTurtleCommand.java	/^public abstract class ActiveTurtleCommand extends TurtleCommand {$/;"	c
+And	command/And.java	/^	public And(StringPair stringPair, Command parent) {$/;"	m	class:And
+And	command/And.java	/^public class And extends BinaryBooleanOperation{$/;"	c
+ArcTangent	command/ArcTangent.java	/^	public ArcTangent(StringPair stringPair, Command parent) {$/;"	m	class:ArcTangent
+ArcTangent	command/ArcTangent.java	/^public class ArcTangent extends UnaryMathOperation {$/;"	c
+Ask	command/Ask.java	/^	public Ask(StringPair stringPair, Command parent, Model model) {$/;"	m	class:Ask
+Ask	command/Ask.java	/^public class Ask extends SpecifiedTurtleCommand {$/;"	c
+BLUE_PARAM	command/SetPalette.java	/^	private final static int BLUE_PARAM = 3;$/;"	f	class:SetPalette	file:
+Backward	command/Backward.java	/^	public Backward(StringPair stringPair, Command parent, Model model) {$/;"	m	class:Backward
+Backward	command/Backward.java	/^public class Backward extends PixelsTurtleCommand {$/;"	c
+BiIndex	BiIndex.java	/^	public BiIndex() {$/;"	m	class:BiIndex
+BiIndex	BiIndex.java	/^	public BiIndex(V[] initValues) {$/;"	m	class:BiIndex
+BiIndex	BiIndex.java	/^public class BiIndex<V> extends BiMap<Integer, V> {$/;"	c
+BiMap	BiMap.java	/^	public BiMap() {$/;"	m	class:BiMap
+BiMap	BiMap.java	/^public class BiMap<K, V> {$/;"	c
+BinaryBooleanOperation	command/BinaryBooleanOperation.java	/^	public BinaryBooleanOperation(StringPair stringPair, Command parent) {$/;"	m	class:BinaryBooleanOperation
+BinaryBooleanOperation	command/BinaryBooleanOperation.java	/^public abstract class BinaryBooleanOperation extends BinaryMathOperation{$/;"	c
+BinaryMathOperation	command/BinaryMathOperation.java	/^	public BinaryMathOperation(StringPair stringPair, Command parent) {$/;"	m	class:BinaryMathOperation
+BinaryMathOperation	command/BinaryMathOperation.java	/^public abstract class BinaryMathOperation extends Command {$/;"	c
+COLOR_MAP	Defaults.java	/^	public static final Color[] COLOR_MAP = {Color.WHITE, Color.RED, Color.GREEN, Color.BLUE, Color.BLACK};$/;"	f	class:Defaults
+COLOR_PARAM	command/SetBackground.java	/^	private final static int COLOR_PARAM = 0;$/;"	f	class:SetBackground	file:
+COLOR_PARAM	command/SetPenColor.java	/^	private final static int COLOR_PARAM = 0;$/;"	f	class:SetPenColor	file:
+ClearScreen	command/ClearScreen.java	/^	public ClearScreen(StringPair stringPair, Command parent, Model model) {$/;"	m	class:ClearScreen
+ClearScreen	command/ClearScreen.java	/^public class ClearScreen extends ActiveTurtleCommand {$/;"	c
+ClearStamps	command/ClearStamps.java	/^	public ClearStamps(StringPair stringPair, Command parent, Model model) {$/;"	m	class:ClearStamps
+ClearStamps	command/ClearStamps.java	/^public class ClearStamps extends TurtleCommand {$/;"	c
+Command	command/Command.java	/^	public Command(StringPair stringPair, int numParams, Command parent) {$/;"	m	class:Command
+Command	command/Command.java	/^public abstract class Command {$/;"	c
+CommandFactory	command/CommandFactory.java	/^	public CommandFactory(Model model) {$/;"	m	class:CommandFactory
+CommandFactory	command/CommandFactory.java	/^public class CommandFactory {$/;"	c
+CommandList	command/CommandList.java	/^	public CommandList(StringPair stringPair, Command parent) {$/;"	m	class:CommandList
+CommandList	command/CommandList.java	/^public class CommandList extends Command {$/;"	c
+Constant	command/Constant.java	/^	public Constant(StringPair stringPair, Command parent) {$/;"	m	class:Constant
+Constant	command/Constant.java	/^public class Constant extends Command {$/;"	c
+Cosine	command/Cosine.java	/^	public Cosine(StringPair stringPair, Command parent) {$/;"	m	class:Cosine
+Cosine	command/Cosine.java	/^public class Cosine extends UnaryMathOperation {$/;"	c
+Defaults	Defaults.java	/^public class Defaults {$/;"	c
+DegreesTurtleCommand	command/DegreesTurtleCommand.java	/^	public DegreesTurtleCommand(StringPair stringPair, Command parent, Model model) {$/;"	m	class:DegreesTurtleCommand
+DegreesTurtleCommand	command/DegreesTurtleCommand.java	/^public abstract class DegreesTurtleCommand extends ActiveTurtleCommand {$/;"	c
+Difference	command/Difference.java	/^	public Difference(StringPair stringPair, Command parent) {$/;"	m	class:Difference
+Difference	command/Difference.java	/^public class Difference extends BinaryMathOperation {$/;"	c
+DoTimes	command/DoTimes.java	/^	public DoTimes(StringPair stringPair, Command parent, Model model) {$/;"	m	class:DoTimes
+DoTimes	command/DoTimes.java	/^public class DoTimes extends For {$/;"	c
+DrawableImage	DrawableImage.java	/^public interface DrawableImage {$/;"	i
+Equal	command/Equal.java	/^	public Equal(StringPair stringPair, Command parent) {$/;"	m	class:Equal
+Equal	command/Equal.java	/^public class Equal extends BinaryBooleanOperation {$/;"	c
+For	command/For.java	/^	public For(StringPair stringPair, Command parent, Model model) {$/;"	m	class:For
+For	command/For.java	/^public class For extends ModelCommand {$/;"	c
+Forward	command/Forward.java	/^	public Forward(StringPair stringPair, Command parent, Model model) {$/;"	m	class:Forward
+Forward	command/Forward.java	/^public class Forward extends PixelsTurtleCommand {$/;"	c
+GREEN_PARAM	command/SetPalette.java	/^	private final static int GREEN_PARAM = 2;$/;"	f	class:SetPalette	file:
+GRID_COLOR_INDEX	Defaults.java	/^	public static final int GRID_COLOR_INDEX = 0; $/;"	f	class:Defaults
+GRID_HEIGHT	Defaults.java	/^	public static final int GRID_HEIGHT = 400;$/;"	f	class:Defaults
+GRID_WIDTH	Defaults.java	/^	public static final int GRID_WIDTH = 400;$/;"	f	class:Defaults
+GetPenColor	command/GetPenColor.java	/^	public GetPenColor(StringPair stringPair, Command parent, Model model) {$/;"	m	class:GetPenColor
+GetPenColor	command/GetPenColor.java	/^public class GetPenColor extends TurtleQuery {$/;"	c
+GetShape	command/GetShape.java	/^	public GetShape(StringPair stringPair, Command parent, Model model) {$/;"	m	class:GetShape
+GetShape	command/GetShape.java	/^public class GetShape extends TurtleQuery {$/;"	c
+GreaterThan	command/GreaterThan.java	/^	public GreaterThan(StringPair stringPair, Command parent) {$/;"	m	class:GreaterThan
+GreaterThan	command/GreaterThan.java	/^public class GreaterThan extends BinaryBooleanOperation{$/;"	c
+Grid	Grid.java	/^	public Grid(Dimension size, BiIndex<Color> colorMap, BiIndex<String> imageMap) {$/;"	m	class:Grid
+Grid	Grid.java	/^	public Grid(Dimension size, BiIndex<Color> colorMap, BiIndex<String> imageMap, Turtle turtle) {$/;"	m	class:Grid
+Grid	Grid.java	/^public class Grid {$/;"	c
+HELP_PAGE_PATH	Defaults.java	/^	public static final String HELP_PAGE_PATH = "http:\/\/www.cs.duke.edu\/courses\/compsci308\/spring15\/assign\/03_slogo\/commands.php";$/;"	f	class:Defaults
+Heading	Heading.java	/^	public Heading(double angle) {$/;"	m	class:Heading
+Heading	Heading.java	/^public class Heading {$/;"	c
+Heading	command/Heading.java	/^	public Heading(StringPair stringPair, Command parent, Model model) {$/;"	m	class:Heading
+Heading	command/Heading.java	/^public class Heading extends TurtleQuery {$/;"	c
+Home	command/Home.java	/^	public Home(StringPair stringPair, Command parent, Model model) {$/;"	m	class:Home
+Home	command/Home.java	/^public class Home extends ActiveTurtleCommand {$/;"	c
+ID	command/ID.java	/^	public ID(StringPair stringPair, Command parent, Model model) {$/;"	m	class:ID
+ID	command/ID.java	/^public class ID extends ActiveTurtleCommand {$/;"	c
+IMAGE_DIRECTORY	Defaults.java	/^	public static final String IMAGE_DIRECTORY = "..\/resources\/";$/;"	f	class:Defaults
+IMAGE_MAP	Defaults.java	/^	public static final String[] IMAGE_MAP = {"sea_turtle.png", "otherTurtle.jpg"};$/;"	f	class:Defaults
+INDEX_PARAM	command/SetPalette.java	/^	private final static int INDEX_PARAM = 0;$/;"	f	class:SetPalette	file:
+If	command/If.java	/^	public If(StringPair stringPair, Command parent) {$/;"	m	class:If
+If	command/If.java	/^public class If extends Command{$/;"	c
+IfElse	command/IfElse.java	/^	public IfElse(StringPair stringPair, Command parent) {$/;"	m	class:IfElse
+IfElse	command/IfElse.java	/^public class IfElse extends Command{$/;"	c
+IsPenDown	command/IsPenDown.java	/^	public IsPenDown(StringPair stringPair, Command parent, Model model) {$/;"	m	class:IsPenDown
+IsPenDown	command/IsPenDown.java	/^public class IsPenDown extends TurtleQuery {$/;"	c
+IsShowing	command/IsShowing.java	/^	public IsShowing(StringPair stringPair, Command parent, Model model) {$/;"	m	class:IsShowing
+IsShowing	command/IsShowing.java	/^public class IsShowing extends TurtleQuery {$/;"	c
+LANGUAGE	Defaults.java	/^	public static final String LANGUAGE =  "English";$/;"	f	class:Defaults
+Left	command/Left.java	/^	public Left(StringPair stringPair, Command parent, Model model) {$/;"	m	class:Left
+Left	command/Left.java	/^public class Left extends DegreesTurtleCommand {$/;"	c
+LessThan	command/LessThan.java	/^	public LessThan(StringPair stringPair, Command parent) {$/;"	m	class:LessThan
+LessThan	command/LessThan.java	/^public class LessThan extends BinaryBooleanOperation {$/;"	c
+Line	Line.java	/^	public Line(Point start, Point end, Color color, int width) {$/;"	m	class:Line
+Line	Line.java	/^public class Line extends Line2D.Double {$/;"	c
+MakeUserInstruction	command/MakeUserInstruction.java	/^	public MakeUserInstruction(StringPair stringPair, Command parent, Model model) {$/;"	m	class:MakeUserInstruction
+MakeUserInstruction	command/MakeUserInstruction.java	/^public class MakeUserInstruction extends ModelCommand {$/;"	c
+MakeVariable	command/MakeVariable.java	/^	public MakeVariable(StringPair sp, Command parent, Model model) {$/;"	m	class:MakeVariable
+MakeVariable	command/MakeVariable.java	/^public class MakeVariable extends ModelCommand {$/;"	c
+MathOperation	command/MathOperation.java	/^	public MathOperation(StringPair stringPair, int numParams, Command parent) {$/;"	m	class:MathOperation
+MathOperation	command/MathOperation.java	/^public abstract class MathOperation extends Command {$/;"	c
+Minus	command/Minus.java	/^	public Minus(StringPair stringPair, Command parent) {$/;"	m	class:Minus
+Minus	command/Minus.java	/^public class Minus extends UnaryMathOperation {$/;"	c
+Model	Model.java	/^	public Model() {$/;"	m	class:Model
+Model	Model.java	/^public class Model {$/;"	c
+ModelCommand	command/ModelCommand.java	/^	public ModelCommand(StringPair stringPair, int numParams, Command parent, Model model) {$/;"	m	class:ModelCommand
+ModelCommand	command/ModelCommand.java	/^public abstract class ModelCommand extends Command {$/;"	c
+NUM_PARAMS	command/Ask.java	/^	private final static int NUM_PARAMS = 2;$/;"	f	class:Ask	file:
+NUM_PARAMS	command/ClearScreen.java	/^	private static final int NUM_PARAMS = 0;$/;"	f	class:ClearScreen	file:
+NUM_PARAMS	command/ClearStamps.java	/^	private static final int NUM_PARAMS = 0;$/;"	f	class:ClearStamps	file:
+NUM_PARAMS	command/DegreesTurtleCommand.java	/^	private static final int NUM_PARAMS = 1;$/;"	f	class:DegreesTurtleCommand	file:
+NUM_PARAMS	command/For.java	/^	private static final int NUM_PARAMS = 2;$/;"	f	class:For	file:
+NUM_PARAMS	command/Home.java	/^	private final static int NUM_PARAMS = 0;$/;"	f	class:Home	file:
+NUM_PARAMS	command/ID.java	/^	private final static int NUM_PARAMS = 0;$/;"	f	class:ID	file:
+NUM_PARAMS	command/MakeUserInstruction.java	/^	private static int NUM_PARAMS = 3;$/;"	f	class:MakeUserInstruction	file:
+NUM_PARAMS	command/MakeVariable.java	/^	private static final int NUM_PARAMS = 2;$/;"	f	class:MakeVariable	file:
+NUM_PARAMS	command/PixelsTurtleCommand.java	/^	private static final int NUM_PARAMS = 1;$/;"	f	class:PixelsTurtleCommand	file:
+NUM_PARAMS	command/PointTurtleCommand.java	/^	private static final int NUM_PARAMS = 2;$/;"	f	class:PointTurtleCommand	file:
+NUM_PARAMS	command/SetBackground.java	/^	private final static int NUM_PARAMS = 1;$/;"	f	class:SetBackground	file:
+NUM_PARAMS	command/SetPalette.java	/^	private final static int NUM_PARAMS = 4;$/;"	f	class:SetPalette	file:
+NUM_PARAMS	command/SetPenColor.java	/^	private final static int NUM_PARAMS = 1;$/;"	f	class:SetPenColor	file:
+NUM_PARAMS	command/SetShape.java	/^	private final static int NUM_PARAMS = 1;$/;"	f	class:SetShape	file:
+NUM_PARAMS	command/Tell.java	/^	private final static int NUM_PARAMS = 1;$/;"	f	class:Tell	file:
+NUM_PARAMS	command/TurtleQuery.java	/^	private final static int NUM_PARAMS = 0;$/;"	f	class:TurtleQuery	file:
+NUM_PARAMS	command/Turtles.java	/^	private final static int NUM_PARAMS = 0;$/;"	f	class:Turtles	file:
+NUM_PARAMS	command/UserInstructionRetriever.java	/^	private static final int NUM_PARAMS = 0;$/;"	f	class:UserInstructionRetriever	file:
+NUM_PARAMS	command/VariableRetriever.java	/^	private static final int NUM_PARAMS = 0;$/;"	f	class:VariableRetriever	file:
+NaturalLog	command/NaturalLog.java	/^	public NaturalLog(StringPair stringPair, Command parent) {$/;"	m	class:NaturalLog
+NaturalLog	command/NaturalLog.java	/^public class NaturalLog extends UnaryMathOperation {$/;"	c
+Not	command/Not.java	/^	public Not(StringPair stringPair, Command parent) {$/;"	m	class:Not
+Not	command/Not.java	/^public class Not extends UnaryBooleanOperation{$/;"	c
+NotEqual	command/NotEqual.java	/^	public NotEqual(StringPair stringPair, Command parent) {$/;"	m	class:NotEqual
+NotEqual	command/NotEqual.java	/^public class NotEqual extends BinaryBooleanOperation{$/;"	c
+Or	command/Or.java	/^	public Or(StringPair stringPair, Command parent) {$/;"	m	class:Or
+Or	command/Or.java	/^public class Or extends BinaryBooleanOperation{$/;"	c
+PEN_COLOR_INDEX	Defaults.java	/^	public static final int PEN_COLOR_INDEX = 1;$/;"	f	class:Defaults
+PEN_WIDTH	Defaults.java	/^	public static final int PEN_WIDTH = 1;$/;"	f	class:Defaults
+Pen	Pen.java	/^	public Pen(Color color, int width, boolean isDown) {$/;"	m	class:Pen
+Pen	Pen.java	/^public class Pen {$/;"	c
+PenDown	command/PenDown.java	/^	public PenDown(StringPair stringPair, Command parent, Model model) {$/;"	m	class:PenDown
+PenDown	command/PenDown.java	/^public class PenDown extends ActiveTurtleCommand {$/;"	c
+PenUp	command/PenUp.java	/^	public PenUp(StringPair stringPair, Command parent, Model model) {$/;"	m	class:PenUp
+PenUp	command/PenUp.java	/^public class PenUp extends ActiveTurtleCommand {$/;"	c
+PixelsTurtleCommand	command/PixelsTurtleCommand.java	/^	public PixelsTurtleCommand(StringPair stringPair, Command parent, Model model) {$/;"	m	class:PixelsTurtleCommand
+PixelsTurtleCommand	command/PixelsTurtleCommand.java	/^public abstract class PixelsTurtleCommand extends ActiveTurtleCommand {$/;"	c
+PointTurtleCommand	command/PointTurtleCommand.java	/^	public PointTurtleCommand(StringPair stringPair, Command parent, Model model) {$/;"	m	class:PointTurtleCommand
+PointTurtleCommand	command/PointTurtleCommand.java	/^public abstract class PointTurtleCommand extends ActiveTurtleCommand {$/;"	c
+Power	command/Power.java	/^	public Power(StringPair stringPair, Command parent) {$/;"	m	class:Power
+Power	command/Power.java	/^public class Power extends BinaryMathOperation {$/;"	c
+Product	command/Product.java	/^	public Product(StringPair stringPair, Command parent) {$/;"	m	class:Product
+Product	command/Product.java	/^public class Product extends BinaryMathOperation {$/;"	c
+Quotient	command/Quotient.java	/^	public Quotient(StringPair stringPair, Command parent) {$/;"	m	class:Quotient
+Quotient	command/Quotient.java	/^public class Quotient extends BinaryMathOperation {$/;"	c
+RED_PARAM	command/SetPalette.java	/^	private final static int RED_PARAM = 1;$/;"	f	class:SetPalette	file:
+Random	command/Random.java	/^	public Random(StringPair stringPair, Command parent) {$/;"	m	class:Random
+Random	command/Random.java	/^public class Random extends UnaryMathOperation {$/;"	c
+Remainder	command/Remainder.java	/^	public Remainder(StringPair stringPair, Command parent) {$/;"	m	class:Remainder
+Remainder	command/Remainder.java	/^public class Remainder extends BinaryMathOperation {$/;"	c
+Repeat	command/Repeat.java	/^	public Repeat(StringPair stringPair, Command parent, Model model) {$/;"	m	class:Repeat
+Repeat	command/Repeat.java	/^public class Repeat extends For {$/;"	c
+Right	command/Right.java	/^	public Right(StringPair stringPair, Command parent, Model model) {$/;"	m	class:Right
+Right	command/Right.java	/^public class Right extends DegreesTurtleCommand {$/;"	c
+SHAPE_PARAM	command/SetShape.java	/^	private final static int SHAPE_PARAM = 0;$/;"	f	class:SetShape	file:
+SLogoParser	SLogoParser.java	/^	public SLogoParser(CommandFactory comFactory) {$/;"	m	class:SLogoParser
+SLogoParser	SLogoParser.java	/^	public SLogoParser(CommandFactory comFactory, String language) {$/;"	m	class:SLogoParser
+SLogoParser	SLogoParser.java	/^public class SLogoParser {$/;"	c
+SetBackground	command/SetBackground.java	/^	public SetBackground(StringPair stringPair, Command parent, Model model) {$/;"	m	class:SetBackground
+SetBackground	command/SetBackground.java	/^public class SetBackground extends ModelCommand {$/;"	c
+SetHeading	command/SetHeading.java	/^	public SetHeading(StringPair stringPair, Command parent, Model model) {$/;"	m	class:SetHeading
+SetHeading	command/SetHeading.java	/^public class SetHeading extends DegreesTurtleCommand {$/;"	c
+SetPalette	command/SetPalette.java	/^	public SetPalette(StringPair stringPair, Command parent, Model model) {$/;"	m	class:SetPalette
+SetPalette	command/SetPalette.java	/^public class SetPalette extends ModelCommand {$/;"	c
+SetPenColor	command/SetPenColor.java	/^	public SetPenColor(StringPair stringPair, Command parent, Model model) {$/;"	m	class:SetPenColor
+SetPenColor	command/SetPenColor.java	/^public class SetPenColor extends ActiveTurtleCommand {$/;"	c
+SetPenSize	command/SetPenSize.java	/^	public SetPenSize(StringPair stringPair, Command parent, Model model) {$/;"	m	class:SetPenSize
+SetPenSize	command/SetPenSize.java	/^public class SetPenSize extends PixelsTurtleCommand {$/;"	c
+SetPosition	command/SetPosition.java	/^	public SetPosition(StringPair stringPair, Command parent, Model model) {$/;"	m	class:SetPosition
+SetPosition	command/SetPosition.java	/^public class SetPosition extends PointTurtleCommand {$/;"	c
+SetShape	command/SetShape.java	/^	public SetShape(StringPair stringPair, Command parent, Model model) {$/;"	m	class:SetShape
+SetShape	command/SetShape.java	/^public class SetShape extends ActiveTurtleCommand {$/;"	c
+SetTowards	command/SetTowards.java	/^	public SetTowards(StringPair stringPair, Command parent, Model model) {$/;"	m	class:SetTowards
+SetTowards	command/SetTowards.java	/^public class SetTowards extends PointTurtleCommand {$/;"	c
+Sine	command/Sine.java	/^	public Sine(StringPair stringPair, Command parent) {$/;"	m	class:Sine
+Sine	command/Sine.java	/^public class Sine extends UnaryMathOperation {$/;"	c
+SpecifiedTurtleCommand	command/SpecifiedTurtleCommand.java	/^	public SpecifiedTurtleCommand(StringPair stringPair, int numParams, Command parent, Model model) {$/;"	m	class:SpecifiedTurtleCommand
+SpecifiedTurtleCommand	command/SpecifiedTurtleCommand.java	/^public abstract class SpecifiedTurtleCommand extends TurtleCommand {$/;"	c
+Stamp	Stamp.java	/^	public Stamp(DrawableImage dImage) {$/;"	m	class:Stamp
+Stamp	Stamp.java	/^	public Stamp(String imagePath, Point location) {$/;"	m	class:Stamp
+Stamp	Stamp.java	/^public class Stamp implements DrawableImage {$/;"	c
+Stamp	command/Stamp.java	/^	public Stamp(StringPair stringPair, Command parent, Model model) {$/;"	m	class:Stamp
+Stamp	command/Stamp.java	/^public class Stamp extends GetShape {$/;"	c
+StringPair	StringPair.java	/^	public StringPair(String prop, String val) {$/;"	m	class:StringPair
+StringPair	StringPair.java	/^public class StringPair {$/;"	c
+Sum	command/Sum.java	/^	public Sum(StringPair stringPair, Command parent) {$/;"	m	class:Sum
+Sum	command/Sum.java	/^public class Sum extends BinaryMathOperation {$/;"	c
+TURTLE_IMG_INDEX	Defaults.java	/^	public static final int TURTLE_IMG_INDEX = 0;$/;"	f	class:Defaults
+TURTLE_START_HEADING	Defaults.java	/^	public static final Heading TURTLE_START_HEADING = new Heading(90);$/;"	f	class:Defaults
+TURTLE_START_POINT	Defaults.java	/^	public static final Point TURTLE_START_POINT = new Point(0,0);$/;"	f	class:Defaults
+Tangent	command/Tangent.java	/^	public Tangent(StringPair stringPair, Command parent) {$/;"	m	class:Tangent
+Tangent	command/Tangent.java	/^public class Tangent extends UnaryMathOperation {$/;"	c
+Tell	command/Tell.java	/^	public Tell(StringPair stringPair, Command parent, Model model) {$/;"	m	class:Tell
+Tell	command/Tell.java	/^public class Tell extends SpecifiedTurtleCommand {$/;"	c
+Turtle	Turtle.java	/^	public Turtle(int id, BiIndex<Color> colorMap, BiIndex<String> imageMap) {$/;"	m	class:Turtle
+Turtle	Turtle.java	/^	public Turtle(int id, String imageName, Point location, Heading heading, Color penColor, int penWidth) {$/;"	m	class:Turtle
+Turtle	Turtle.java	/^public class Turtle implements DrawableImage {$/;"	c
+TurtleCommand	command/TurtleCommand.java	/^	public TurtleCommand(StringPair stringPair, int numParams, Command parent, Model model) {$/;"	m	class:TurtleCommand
+TurtleCommand	command/TurtleCommand.java	/^public abstract class TurtleCommand extends ModelCommand {$/;"	c
+TurtleQuery	command/TurtleQuery.java	/^	public TurtleQuery(StringPair stringPair, Command parent, Model model) {$/;"	m	class:TurtleQuery
+TurtleQuery	command/TurtleQuery.java	/^public abstract class TurtleQuery extends ActiveTurtleCommand {$/;"	c
+Turtles	command/Turtles.java	/^	public Turtles(StringPair stringPair, Command parent, Model model) {$/;"	m	class:Turtles
+Turtles	command/Turtles.java	/^public class Turtles extends TurtleCommand {$/;"	c
+UnaryBooleanOperation	command/UnaryBooleanOperation.java	/^	public UnaryBooleanOperation(StringPair stringPair, Command parent) {$/;"	m	class:UnaryBooleanOperation
+UnaryBooleanOperation	command/UnaryBooleanOperation.java	/^public abstract class UnaryBooleanOperation extends UnaryMathOperation{$/;"	c
+UnaryMathOperation	command/UnaryMathOperation.java	/^	public UnaryMathOperation(StringPair stringPair, Command parent) {$/;"	m	class:UnaryMathOperation
+UnaryMathOperation	command/UnaryMathOperation.java	/^public abstract class UnaryMathOperation extends Command {$/;"	c
+UserInstructionContainer	UserInstructionContainer.java	/^	public UserInstructionContainer(CommandList vars, CommandList coms) {$/;"	m	class:UserInstructionContainer
+UserInstructionContainer	UserInstructionContainer.java	/^public class UserInstructionContainer {$/;"	c
+UserInstructionRetriever	command/UserInstructionRetriever.java	/^	public UserInstructionRetriever(StringPair stringPair, Command parent, Model model) throws NullPointerException{$/;"	m	class:UserInstructionRetriever
+UserInstructionRetriever	command/UserInstructionRetriever.java	/^public class UserInstructionRetriever extends ModelCommand {$/;"	c
+Variable	Variable.java	/^	public Variable(String name, double value) {$/;"	m	class:Variable
+Variable	Variable.java	/^public class Variable {$/;"	c
+VariableRetriever	command/VariableRetriever.java	/^	public VariableRetriever(StringPair stringPair, Command parent, Model model) {$/;"	m	class:VariableRetriever
+VariableRetriever	command/VariableRetriever.java	/^public class VariableRetriever extends ModelCommand {$/;"	c
+XCoordinate	command/XCoordinate.java	/^	public XCoordinate(StringPair stringPair, Command parent, Model model) {$/;"	m	class:XCoordinate
+XCoordinate	command/XCoordinate.java	/^public class XCoordinate extends TurtleQuery {$/;"	c
+YCoordinate	command/YCoordinate.java	/^	public YCoordinate(StringPair stringPair, Command parent, Model model) {$/;"	m	class:YCoordinate
+YCoordinate	command/YCoordinate.java	/^public class YCoordinate extends TurtleQuery {$/;"	c
+activeTurtles	Grid.java	/^	private ArrayList<Turtle> activeTurtles;$/;"	f	class:Grid	file:
+activeTurtles	command/TurtleCommand.java	/^	protected List<Turtle> activeTurtles() {$/;"	m	class:TurtleCommand
+addToInstrList	command/MakeUserInstruction.java	/^	private void addToInstrList() {$/;"	m	class:MakeUserInstruction	file:
+addTurtle	Grid.java	/^	public void addTurtle(Turtle newTurtle) {$/;"	m	class:Grid
+allTurtles	Grid.java	/^	private HashMap<Integer, Turtle> allTurtles;$/;"	f	class:Grid	file:
+allTurtles	command/TurtleCommand.java	/^	protected List<Turtle> allTurtles() {$/;"	m	class:TurtleCommand
+angle	Heading.java	/^	private double angle;$/;"	f	class:Heading	file:
+backend	BiIndex.java	/^package backend;$/;"	p
+backend	BiMap.java	/^package backend;$/;"	p
+backend	Defaults.java	/^package backend;$/;"	p
+backend	DrawableImage.java	/^package backend;$/;"	p
+backend	Grid.java	/^package backend;$/;"	p
+backend	Heading.java	/^package backend;$/;"	p
+backend	Line.java	/^package backend;$/;"	p
+backend	Model.java	/^package backend;$/;"	p
+backend	Pen.java	/^package backend;$/;"	p
+backend	SLogoParser.java	/^package backend;$/;"	p
+backend	Stamp.java	/^package backend;$/;"	p
+backend	StringPair.java	/^package backend;$/;"	p
+backend	Turtle.java	/^package backend;$/;"	p
+backend	UserInstructionContainer.java	/^package backend;$/;"	p
+backend	Variable.java	/^package backend;$/;"	p
+backend.command	command/ActiveTurtleCommand.java	/^package backend.command;$/;"	p
+backend.command	command/And.java	/^package backend.command;$/;"	p
+backend.command	command/ArcTangent.java	/^package backend.command;$/;"	p
+backend.command	command/Ask.java	/^package backend.command;$/;"	p
+backend.command	command/Backward.java	/^package backend.command;$/;"	p
+backend.command	command/BinaryBooleanOperation.java	/^package backend.command;$/;"	p
+backend.command	command/BinaryMathOperation.java	/^package backend.command;$/;"	p
+backend.command	command/ClearScreen.java	/^package backend.command;$/;"	p
+backend.command	command/ClearStamps.java	/^package backend.command;$/;"	p
+backend.command	command/Command.java	/^package backend.command;$/;"	p
+backend.command	command/CommandFactory.java	/^package backend.command;$/;"	p
+backend.command	command/CommandList.java	/^package backend.command;$/;"	p
+backend.command	command/Constant.java	/^package backend.command;$/;"	p
+backend.command	command/Cosine.java	/^package backend.command;$/;"	p
+backend.command	command/DegreesTurtleCommand.java	/^package backend.command;$/;"	p
+backend.command	command/Difference.java	/^package backend.command;$/;"	p
+backend.command	command/DoTimes.java	/^package backend.command;$/;"	p
+backend.command	command/Equal.java	/^package backend.command;$/;"	p
+backend.command	command/For.java	/^package backend.command;$/;"	p
+backend.command	command/Forward.java	/^package backend.command;$/;"	p
+backend.command	command/GetPenColor.java	/^package backend.command;$/;"	p
+backend.command	command/GetShape.java	/^package backend.command;$/;"	p
+backend.command	command/GreaterThan.java	/^package backend.command;$/;"	p
+backend.command	command/Heading.java	/^package backend.command;$/;"	p
+backend.command	command/Home.java	/^package backend.command;$/;"	p
+backend.command	command/ID.java	/^package backend.command;$/;"	p
+backend.command	command/If.java	/^package backend.command;$/;"	p
+backend.command	command/IfElse.java	/^package backend.command;$/;"	p
+backend.command	command/IsPenDown.java	/^package backend.command;$/;"	p
+backend.command	command/IsShowing.java	/^package backend.command;$/;"	p
+backend.command	command/Left.java	/^package backend.command;$/;"	p
+backend.command	command/LessThan.java	/^package backend.command;$/;"	p
+backend.command	command/MakeUserInstruction.java	/^package backend.command;$/;"	p
+backend.command	command/MakeVariable.java	/^package backend.command;$/;"	p
+backend.command	command/MathOperation.java	/^package backend.command;$/;"	p
+backend.command	command/Minus.java	/^package backend.command;$/;"	p
+backend.command	command/ModelCommand.java	/^package backend.command;$/;"	p
+backend.command	command/NaturalLog.java	/^package backend.command;$/;"	p
+backend.command	command/Not.java	/^package backend.command;$/;"	p
+backend.command	command/NotEqual.java	/^package backend.command;$/;"	p
+backend.command	command/Or.java	/^package backend.command;$/;"	p
+backend.command	command/PenDown.java	/^package backend.command;$/;"	p
+backend.command	command/PenUp.java	/^package backend.command;$/;"	p
+backend.command	command/PixelsTurtleCommand.java	/^package backend.command;$/;"	p
+backend.command	command/PointTurtleCommand.java	/^package backend.command;$/;"	p
+backend.command	command/Power.java	/^package backend.command;$/;"	p
+backend.command	command/Product.java	/^package backend.command;$/;"	p
+backend.command	command/Quotient.java	/^package backend.command;$/;"	p
+backend.command	command/Random.java	/^package backend.command;$/;"	p
+backend.command	command/Remainder.java	/^package backend.command;$/;"	p
+backend.command	command/Repeat.java	/^package backend.command;$/;"	p
+backend.command	command/Right.java	/^package backend.command;$/;"	p
+backend.command	command/SetBackground.java	/^package backend.command;$/;"	p
+backend.command	command/SetHeading.java	/^package backend.command;$/;"	p
+backend.command	command/SetPalette.java	/^package backend.command;$/;"	p
+backend.command	command/SetPenColor.java	/^package backend.command;$/;"	p
+backend.command	command/SetPenSize.java	/^package backend.command;$/;"	p
+backend.command	command/SetPosition.java	/^package backend.command;$/;"	p
+backend.command	command/SetShape.java	/^package backend.command;$/;"	p
+backend.command	command/SetTowards.java	/^package backend.command;$/;"	p
+backend.command	command/Sine.java	/^package backend.command;$/;"	p
+backend.command	command/SpecifiedTurtleCommand.java	/^package backend.command;$/;"	p
+backend.command	command/Stamp.java	/^package backend.command;$/;"	p
+backend.command	command/Sum.java	/^package backend.command;$/;"	p
+backend.command	command/Tangent.java	/^package backend.command;$/;"	p
+backend.command	command/Tell.java	/^package backend.command;$/;"	p
+backend.command	command/TurtleCommand.java	/^package backend.command;$/;"	p
+backend.command	command/TurtleQuery.java	/^package backend.command;$/;"	p
+backend.command	command/Turtles.java	/^package backend.command;$/;"	p
+backend.command	command/UnaryBooleanOperation.java	/^package backend.command;$/;"	p
+backend.command	command/UnaryMathOperation.java	/^package backend.command;$/;"	p
+backend.command	command/UserInstructionRetriever.java	/^package backend.command;$/;"	p
+backend.command	command/VariableRetriever.java	/^package backend.command;$/;"	p
+backend.command	command/XCoordinate.java	/^package backend.command;$/;"	p
+backend.command	command/YCoordinate.java	/^package backend.command;$/;"	p
+bgColor	Grid.java	/^	private Color bgColor;$/;"	f	class:Grid	file:
+bubbleUp	SLogoParser.java	/^	private Command bubbleUp(Command targetNode) {$/;"	m	class:SLogoParser	file:
+changeLanguage	SLogoParser.java	/^	public void changeLanguage(String newLanguage) {$/;"	m	class:SLogoParser
+clearLines	Pen.java	/^	public boolean clearLines() {$/;"	m	class:Pen
+clearLines	Turtle.java	/^	public boolean clearLines() {$/;"	m	class:Turtle
+clearStamps	Turtle.java	/^	public boolean clearStamps() {$/;"	m	class:Turtle
+color	Line.java	/^	private Color color;$/;"	f	class:Line	file:
+color	Pen.java	/^	private Color color;$/;"	f	class:Pen	file:
+colorMap	Grid.java	/^	private BiIndex<Color> colorMap;$/;"	f	class:Grid	file:
+colorMap	Model.java	/^	private BiIndex<Color> colorMap;$/;"	f	class:Model	file:
+colorMap	command/ModelCommand.java	/^	protected BiMap<Integer, Color> colorMap() {$/;"	m	class:ModelCommand
+comFactory	Model.java	/^	private CommandFactory comFactory;$/;"	f	class:Model	file:
+comFactory	SLogoParser.java	/^	private CommandFactory comFactory;$/;"	f	class:SLogoParser	file:
+commands	UserInstructionContainer.java	/^	private CommandList commands;$/;"	f	class:UserInstructionContainer	file:
+convertDoublePoint	Line.java	/^	private Point convertDoublePoint(Point2D ptd) {$/;"	m	class:Line	file:
+countVar	command/For.java	/^	protected String countVar() {$/;"	m	class:For
+degrees	command/DegreesTurtleCommand.java	/^	protected Double degrees() {$/;"	m	class:DegreesTurtleCommand
+directMap	BiMap.java	/^	private HashMap<K, V> directMap;$/;"	f	class:BiMap	file:
+drawLine	Pen.java	/^	public Line drawLine(Point start, Point end) {$/;"	m	class:Pen
+end	command/DoTimes.java	/^	public int end() {$/;"	m	class:DoTimes
+end	command/For.java	/^	protected int end() {$/;"	m	class:For
+execute	command/ActiveTurtleCommand.java	/^	protected abstract Double execute(Turtle turtle);$/;"	m	class:ActiveTurtleCommand
+execute	command/ActiveTurtleCommand.java	/^	public Double execute() {$/;"	m	class:ActiveTurtleCommand
+execute	command/Ask.java	/^	public Double execute() {$/;"	m	class:Ask
+execute	command/Backward.java	/^	protected Double execute(Turtle turtle) {$/;"	m	class:Backward
+execute	command/BinaryMathOperation.java	/^	public Double execute() {$/;"	m	class:BinaryMathOperation
+execute	command/ClearScreen.java	/^	public Double execute(Turtle turtle) {$/;"	m	class:ClearScreen
+execute	command/ClearStamps.java	/^	public Double execute() {$/;"	m	class:ClearStamps
+execute	command/Command.java	/^	public abstract Double execute();$/;"	m	class:Command
+execute	command/CommandList.java	/^	public Double execute() {$/;"	m	class:CommandList
+execute	command/Constant.java	/^	public Double execute() {$/;"	m	class:Constant
+execute	command/For.java	/^	public Double execute() {$/;"	m	class:For
+execute	command/Forward.java	/^	protected Double execute(Turtle turtle) {$/;"	m	class:Forward
+execute	command/GetPenColor.java	/^	public Double execute(Turtle t) {$/;"	m	class:GetPenColor
+execute	command/GetShape.java	/^	public Double execute(Turtle t) {$/;"	m	class:GetShape
+execute	command/Heading.java	/^	public Double execute(Turtle turtle) {$/;"	m	class:Heading
+execute	command/Home.java	/^	public Double execute(Turtle turtle) {$/;"	m	class:Home
+execute	command/ID.java	/^	public Double execute(Turtle turtle) {$/;"	m	class:ID
+execute	command/If.java	/^	public Double execute(){$/;"	m	class:If
+execute	command/IfElse.java	/^	public Double execute(){$/;"	m	class:IfElse
+execute	command/IsPenDown.java	/^	public Double execute(Turtle turtle) {$/;"	m	class:IsPenDown
+execute	command/IsShowing.java	/^	public Double execute(Turtle turtle) {$/;"	m	class:IsShowing
+execute	command/Left.java	/^	public Double execute(Turtle turtle) {$/;"	m	class:Left
+execute	command/MakeUserInstruction.java	/^	public Double execute() {$/;"	m	class:MakeUserInstruction
+execute	command/MakeVariable.java	/^	public Double execute() {$/;"	m	class:MakeVariable
+execute	command/PenDown.java	/^	public Double execute(Turtle turtle) {$/;"	m	class:PenDown
+execute	command/PenUp.java	/^	public Double execute(Turtle turtle) {$/;"	m	class:PenUp
+execute	command/Repeat.java	/^	public Double execute() {$/;"	m	class:Repeat
+execute	command/Right.java	/^	public Double execute(Turtle turtle) {$/;"	m	class:Right
+execute	command/SetBackground.java	/^	public Double execute() {$/;"	m	class:SetBackground
+execute	command/SetHeading.java	/^	public Double execute(Turtle turtle) {$/;"	m	class:SetHeading
+execute	command/SetPalette.java	/^	public Double execute() {$/;"	m	class:SetPalette
+execute	command/SetPenColor.java	/^	public Double execute(Turtle t) {$/;"	m	class:SetPenColor
+execute	command/SetPenSize.java	/^	public Double execute(Turtle t) {$/;"	m	class:SetPenSize
+execute	command/SetPosition.java	/^	public Double execute(Turtle turtle) {$/;"	m	class:SetPosition
+execute	command/SetShape.java	/^	public Double execute(Turtle turtle) {$/;"	m	class:SetShape
+execute	command/SetTowards.java	/^	public Double execute(Turtle turtle) {$/;"	m	class:SetTowards
+execute	command/Stamp.java	/^	public Double execute(Turtle turtle) {$/;"	m	class:Stamp
+execute	command/Tell.java	/^	public Double execute() {$/;"	m	class:Tell
+execute	command/Turtles.java	/^	public Double execute() {$/;"	m	class:Turtles
+execute	command/UnaryMathOperation.java	/^	public Double execute() {$/;"	m	class:UnaryMathOperation
+execute	command/UserInstructionRetriever.java	/^	public Double execute() {$/;"	m	class:UserInstructionRetriever
+execute	command/VariableRetriever.java	/^	public Double execute() {$/;"	m	class:VariableRetriever
+execute	command/XCoordinate.java	/^	public Double execute(Turtle turtle) {$/;"	m	class:XCoordinate
+execute	command/YCoordinate.java	/^	public Double execute(Turtle turtle) {$/;"	m	class:YCoordinate
+executeAllCommands	Model.java	/^	public List<Command> executeAllCommands() {$/;"	m	class:Model
+executeCommand	Model.java	/^	public Command executeCommand(Command command) {$/;"	m	class:Model
+executeList	command/CommandList.java	/^	public List<Double> executeList() {$/;"	m	class:CommandList
+executeNextCommand	Model.java	/^	public Command executeNextCommand() {$/;"	m	class:Model
+executeParam	command/Command.java	/^	public Double executeParam(int paramIndex) {$/;"	m	class:Command
+executedCommands	Model.java	/^	private static Stack<Command> executedCommands;$/;"	f	class:Model	file:
+faceTowards	Turtle.java	/^	public double faceTowards(Point target) {$/;"	m	class:Turtle
+forLoop	command/For.java	/^	protected Double forLoop(int start, int end, int increment, String countVar) {$/;"	m	class:For
+forVarList	command/For.java	/^	protected CommandList forVarList() {$/;"	m	class:For
+genPatternList	SLogoParser.java	/^	public void genPatternList() {$/;"	m	class:SLogoParser
+genPropertyList	SLogoParser.java	/^	private ArrayList<StringPair> genPropertyList(String[] tests) {$/;"	m	class:SLogoParser	file:
+genVariables	command/UserInstructionRetriever.java	/^	private void genVariables(CommandList varNames, ArrayList<Command> varValues) {$/;"	m	class:UserInstructionRetriever	file:
+getActiveTurtles	Grid.java	/^	public List<Turtle> getActiveTurtles() {$/;"	m	class:Grid
+getAllTurtles	Grid.java	/^	public List<Turtle> getAllTurtles() {$/;"	m	class:Grid
+getAngle	Heading.java	/^	public double getAngle() {$/;"	m	class:Heading
+getAngleRads	Heading.java	/^	public double getAngleRads() {$/;"	m	class:Heading
+getBGColor	Grid.java	/^	public Color getBGColor() {$/;"	m	class:Grid
+getColor	Line.java	/^	public Color getColor() {$/;"	m	class:Line
+getColor	Pen.java	/^	public Color getColor() {$/;"	m	class:Pen
+getColorMap	Model.java	/^	public BiMap<Integer, Color> getColorMap() {$/;"	m	class:Model
+getCommand	command/CommandFactory.java	/^	public Command getCommand(StringPair stringPair, Command parent)  {$/;"	m	class:CommandFactory
+getCommands	UserInstructionContainer.java	/^	public CommandList getCommands() {$/;"	m	class:UserInstructionContainer
+getDrawableImages	Grid.java	/^	public List<DrawableImage> getDrawableImages() {$/;"	m	class:Grid
+getEndPoint	Line.java	/^	public Point getEndPoint() {$/;"	m	class:Line
+getExecutedCommands	Model.java	/^	public List<Command> getExecutedCommands() {$/;"	m	class:Model
+getGrid	Model.java	/^	public Grid getGrid() {$/;"	m	class:Model
+getHeading	Turtle.java	/^	public Heading getHeading() {$/;"	m	class:Turtle
+getHelpPagePath	Model.java	/^	public String getHelpPagePath() {$/;"	m	class:Model
+getID	Turtle.java	/^	public int getID() {$/;"	m	class:Turtle
+getImageMap	Model.java	/^	public BiMap<Integer, String> getImageMap() {$/;"	m	class:Model
+getImageName	Turtle.java	/^	public String getImageName() {$/;"	m	class:Turtle
+getImagePath	DrawableImage.java	/^	public String getImagePath();$/;"	m	interface:DrawableImage
+getImagePath	Stamp.java	/^	public String getImagePath() {$/;"	m	class:Stamp
+getImagePath	Turtle.java	/^	public String getImagePath() {$/;"	m	class:Turtle
+getIndentLevel	command/Command.java	/^	public int getIndentLevel() {$/;"	m	class:Command
+getKey	BiMap.java	/^	public K getKey(V value) {$/;"	m	class:BiMap
+getLength	Line.java	/^	protected double getLength() {$/;"	m	class:Line
+getLines	Grid.java	/^	public List<Line> getLines() {$/;"	m	class:Grid
+getLines	Pen.java	/^	public List<Line> getLines() {$/;"	m	class:Pen
+getLines	Turtle.java	/^	public List<Line> getLines() {$/;"	m	class:Turtle
+getLocation	DrawableImage.java	/^	public Point getLocation();$/;"	m	interface:DrawableImage
+getLocation	Stamp.java	/^	public Point getLocation() {$/;"	m	class:Stamp
+getLocation	Turtle.java	/^	public Point getLocation() {$/;"	m	class:Turtle
+getName	Variable.java	/^	public String getName() {$/;"	m	class:Variable
+getNumParams	command/UserInstructionRetriever.java	/^	private int getNumParams() {$/;"	m	class:UserInstructionRetriever	file:
+getParam	command/Command.java	/^	public <T extends Command> T getParam(int index, Class<T> type) {$/;"	m	class:Command
+getParam	command/Command.java	/^	public Command getParam(int index) {$/;"	m	class:Command
+getParamReturnVal	command/Command.java	/^	public Double getParamReturnVal(int paramIndex) {$/;"	m	class:Command
+getParams	command/Command.java	/^	public ArrayList<Command> getParams() {$/;"	m	class:Command
+getParent	command/Command.java	/^	public Command getParent() {$/;"	m	class:Command
+getPen	Turtle.java	/^	public Pen getPen() {$/;"	m	class:Turtle
+getPendingCommands	Model.java	/^	public List<Command> getPendingCommands() {$/;"	m	class:Model
+getProperty	StringPair.java	/^	public String getProperty() {$/;"	m	class:StringPair
+getProperty	command/Command.java	/^	public String getProperty() {$/;"	m	class:Command
+getReturnVal	command/Command.java	/^	public Double getReturnVal() {$/;"	m	class:Command
+getShowingTurtles	Grid.java	/^	public List<Turtle> getShowingTurtles() {$/;"	m	class:Grid
+getSize	Grid.java	/^	public Dimension getSize() {$/;"	m	class:Grid
+getStamps	Grid.java	/^	public List<Stamp> getStamps() {$/;"	m	class:Grid
+getStamps	Turtle.java	/^	public List<Stamp> getStamps() {$/;"	m	class:Turtle
+getStartPoint	Line.java	/^	public Point getStartPoint() {$/;"	m	class:Line
+getTurtleById	Grid.java	/^	public Turtle getTurtleById(int id) {$/;"	m	class:Grid
+getTypedString	command/Command.java	/^	public String getTypedString() {$/;"	m	class:Command
+getUserFunctions	Model.java	/^	public Map<String, UserInstructionContainer> getUserFunctions() {$/;"	m	class:Model
+getUserVariables	Model.java	/^	public Map<String, Variable> getUserVariables() {$/;"	m	class:Model
+getValue	BiMap.java	/^	public V getValue(K key) {$/;"	m	class:BiMap
+getValue	StringPair.java	/^	public String getValue() { $/;"	m	class:StringPair
+getValue	Variable.java	/^	public double getValue() {$/;"	m	class:Variable
+getVarNames	UserInstructionContainer.java	/^	public CommandList getVarNames() {$/;"	m	class:UserInstructionContainer
+getWidth	Line.java	/^	public int getWidth() {$/;"	m	class:Line
+getWidth	Pen.java	/^	public int getWidth() {$/;"	m	class:Pen
+grid	Model.java	/^	private Grid grid;$/;"	f	class:Model	file:
+grid	command/ModelCommand.java	/^	protected Grid grid() {$/;"	m	class:ModelCommand
+hasParent	command/Command.java	/^	public boolean hasParent() {$/;"	m	class:Command
+heading	Turtle.java	/^	private Heading heading;$/;"	f	class:Turtle	file:
+helpPagePath	Model.java	/^	private String helpPagePath;$/;"	f	class:Model	file:
+hide	Turtle.java	/^	public double hide() {$/;"	m	class:Turtle
+id	Turtle.java	/^	private int id;$/;"	f	class:Turtle	file:
+imageMap	Grid.java	/^	private BiIndex<String> imageMap;$/;"	f	class:Grid	file:
+imageMap	Model.java	/^	private BiIndex<String> imageMap;$/;"	f	class:Model	file:
+imageMap	command/ModelCommand.java	/^	protected BiMap<Integer, String> imageMap() {$/;"	m	class:ModelCommand
+imagePath	Stamp.java	/^	private String imagePath;$/;"	f	class:Stamp	file:
+imagePath	Turtle.java	/^	private String imagePath;$/;"	f	class:Turtle	file:
+increment	command/DoTimes.java	/^	public int increment() {$/;"	m	class:DoTimes
+increment	command/For.java	/^	protected int increment() {$/;"	m	class:For
+indentLevel	command/Command.java	/^	int indentLevel;$/;"	f	class:Command
+indentString	command/Command.java	/^	protected String indentString() {$/;"	m	class:Command
+interParamFormatString	command/Command.java	/^	protected String interParamFormatString() {$/;"	m	class:Command
+interParamFormatString	command/CommandList.java	/^	protected String interParamFormatString() {$/;"	m	class:CommandList
+intersects	Line.java	/^	protected boolean intersects(Line otherLine) {$/;"	m	class:Line
+inverseMap	BiMap.java	/^	private HashMap<V, K> inverseMap;$/;"	f	class:BiMap	file:
+isDown	Pen.java	/^	private boolean isDown;$/;"	f	class:Pen	file:
+isDown	Pen.java	/^	public boolean isDown() {$/;"	m	class:Pen
+isPenDown	Turtle.java	/^	public double isPenDown() {$/;"	m	class:Turtle
+isShowing	Turtle.java	/^	public double isShowing() {$/;"	m	class:Turtle
+isVisible	Line.java	/^	protected boolean isVisible() {$/;"	m	class:Line
+isVisible	Turtle.java	/^	private boolean isVisible;$/;"	f	class:Turtle	file:
+jumpToPoint	Turtle.java	/^	public double jumpToPoint(Point target) {$/;"	m	class:Turtle
+language	SLogoParser.java	/^	private String language;$/;"	f	class:SLogoParser	file:
+lines	Pen.java	/^	private ArrayList<Line> lines;$/;"	f	class:Pen	file:
+listComplete	command/CommandList.java	/^	private boolean listComplete;$/;"	f	class:CommandList	file:
+location	Stamp.java	/^	private Point location;$/;"	f	class:Stamp	file:
+location	Turtle.java	/^	private Point location;$/;"	f	class:Turtle	file:
+makePatterns	SLogoParser.java	/^	private List<Entry<String, Pattern>> makePatterns(String syntax) {$/;"	m	class:SLogoParser	file:
+match	SLogoParser.java	/^	private boolean match (String input, Pattern regex) {$/;"	m	class:SLogoParser	file:
+model	command/CommandFactory.java	/^	private Model model;$/;"	f	class:CommandFactory	file:
+model	command/ModelCommand.java	/^	private Model model;$/;"	f	class:ModelCommand	file:
+move	Turtle.java	/^	public double move(Double magnitude) {$/;"	m	class:Turtle
+moveToPoint	Turtle.java	/^	public double moveToPoint(Point target) {$/;"	m	class:Turtle
+name	Variable.java	/^	private String name;$/;"	f	class:Variable	file:
+needsParams	command/Command.java	/^	public boolean needsParams() {$/;"	m	class:Command
+needsParams	command/CommandList.java	/^	public boolean needsParams() {$/;"	m	class:CommandList
+numParams	command/Command.java	/^	protected int numParams;$/;"	f	class:Command
+operate	command/And.java	/^	public Double operate(Double expr1, Double expr2) {$/;"	m	class:And
+operate	command/ArcTangent.java	/^	public Double operate(Double degrees) {$/;"	m	class:ArcTangent
+operate	command/BinaryMathOperation.java	/^	public abstract Double operate(Double expr1, Double expr2);$/;"	m	class:BinaryMathOperation
+operate	command/Cosine.java	/^	public Double operate(Double degrees) {$/;"	m	class:Cosine
+operate	command/Difference.java	/^	public Double operate(Double expr1, Double expr2) {$/;"	m	class:Difference
+operate	command/Equal.java	/^	public Double operate(Double expr1, Double expr2) {$/;"	m	class:Equal
+operate	command/GreaterThan.java	/^	public Double operate(Double expr1, Double expr2) {$/;"	m	class:GreaterThan
+operate	command/LessThan.java	/^	public Double operate(Double expr1, Double expr2) {$/;"	m	class:LessThan
+operate	command/Minus.java	/^	public Double operate(Double expr) {$/;"	m	class:Minus
+operate	command/NaturalLog.java	/^	public Double operate(Double expr) {$/;"	m	class:NaturalLog
+operate	command/Not.java	/^	public Double operate(Double expr) {$/;"	m	class:Not
+operate	command/NotEqual.java	/^	public Double operate(Double expr1, Double expr2) {$/;"	m	class:NotEqual
+operate	command/Or.java	/^	public Double operate(Double expr1, Double expr2) {$/;"	m	class:Or
+operate	command/Power.java	/^	public Double operate(Double base, Double exponent) {$/;"	m	class:Power
+operate	command/Product.java	/^	public Double operate(Double expr1, Double expr2) {$/;"	m	class:Product
+operate	command/Quotient.java	/^	public Double operate(Double expr1, Double expr2) {$/;"	m	class:Quotient
+operate	command/Random.java	/^	public Double operate(Double expr) {$/;"	m	class:Random
+operate	command/Remainder.java	/^	public Double operate(Double expr1, Double expr2) {$/;"	m	class:Remainder
+operate	command/Sine.java	/^	public Double operate(Double degrees) {$/;"	m	class:Sine
+operate	command/Sum.java	/^	public Double operate(Double expr1, Double expr2) {$/;"	m	class:Sum
+operate	command/Tangent.java	/^	public Double operate(Double degrees) {$/;"	m	class:Tangent
+operate	command/UnaryMathOperation.java	/^	public abstract Double operate(Double expr);$/;"	m	class:UnaryMathOperation
+paramCommandList	command/Ask.java	/^	private Command paramCommandList() {$/;"	m	class:Ask	file:
+paramToColor	command/ModelCommand.java	/^	protected Color paramToColor(int paramIndex) {$/;"	m	class:ModelCommand
+paramToImage	command/ModelCommand.java	/^	protected String paramToImage(int paramIndex) {$/;"	m	class:ModelCommand
+paramTurtleIds	command/SpecifiedTurtleCommand.java	/^	private List<Double> paramTurtleIds() {$/;"	m	class:SpecifiedTurtleCommand	file:
+params	command/Command.java	/^	protected ArrayList<Command> params;$/;"	f	class:Command
+parent	command/Command.java	/^	protected Command parent;$/;"	f	class:Command
+parentIsList	command/Command.java	/^	protected boolean parentIsList() {$/;"	m	class:Command
+parseProgram	Model.java	/^	public void parseProgram(String prog) {$/;"	m	class:Model
+parseProgram	SLogoParser.java	/^	public Queue<Command> parseProgram(String prog) throws IllegalArgumentException{$/;"	m	class:SLogoParser
+parser	Model.java	/^	private SLogoParser parser;$/;"	f	class:Model	file:
+patterns	SLogoParser.java	/^	private List<Entry<String, Pattern>> patterns;$/;"	f	class:SLogoParser	file:
+pen	Turtle.java	/^	private Pen pen;$/;"	f	class:Turtle	file:
+pendingCommands	Model.java	/^	private Queue<Command> pendingCommands;$/;"	f	class:Model	file:
+pixels	command/PixelsTurtleCommand.java	/^	protected Double pixels() {$/;"	m	class:PixelsTurtleCommand
+point	command/PointTurtleCommand.java	/^	protected Point point() {$/;"	m	class:PointTurtleCommand
+postParamsFormatString	command/Command.java	/^	protected String postParamsFormatString() {$/;"	m	class:Command
+postParamsFormatString	command/CommandList.java	/^	protected String postParamsFormatString() {$/;"	m	class:CommandList
+preParamsFormatString	command/Command.java	/^	protected String preParamsFormatString() {$/;"	m	class:Command
+preParamsFormatString	command/CommandList.java	/^	protected String preParamsFormatString() {$/;"	m	class:CommandList
+printCommandTree	Model.java	/^	public void printCommandTree() {$/;"	m	class:Model
+printCommands	Model.java	/^	public void printCommands(ArrayList<Command> params) {$/;"	m	class:Model
+printDrawableImages	Model.java	/^	private void printDrawableImages() {$/;"	m	class:Model	file:
+printLines	Model.java	/^	private void printLines() {$/;"	m	class:Model	file:
+property	StringPair.java	/^	private String property;$/;"	f	class:StringPair	file:
+put	BiMap.java	/^	public void put(K key, V value) {$/;"	m	class:BiMap
+returnVal	command/Command.java	/^	Double returnVal;$/;"	f	class:Command
+rotateLeft	Turtle.java	/^	public double rotateLeft(double degrees) {$/;"	m	class:Turtle
+rotateRight	Turtle.java	/^	public double rotateRight(double degrees) {$/;"	m	class:Turtle
+serialVersionUID	Line.java	/^	private static final long serialVersionUID = 1;$/;"	f	class:Line	file:
+setActiveTurtle	Grid.java	/^	public void setActiveTurtle(Turtle turtle) {$/;"	m	class:Grid
+setActiveTurtles	Grid.java	/^	public double setActiveTurtles(List<Turtle> turtles) {$/;"	m	class:Grid
+setAngle	Heading.java	/^	public void setAngle(double newAngle) {$/;"	m	class:Heading
+setBGColor	Grid.java	/^	public void setBGColor(Color newBGColor) {$/;"	m	class:Grid
+setColor	Pen.java	/^	public void setColor(Color color) {$/;"	m	class:Pen
+setComplete	command/CommandList.java	/^	public void setComplete() {$/;"	m	class:CommandList
+setDimensions	Grid.java	/^	public void setDimensions(int width, int height) {$/;"	m	class:Grid
+setDown	Pen.java	/^	public void setDown(boolean isDown) {$/;"	m	class:Pen
+setHeading	Turtle.java	/^	public double setHeading(double newAngle) {$/;"	m	class:Turtle
+setImageByFullPath	Turtle.java	/^	public void setImageByFullPath(String imagePath) {$/;"	m	class:Turtle
+setImageByName	Turtle.java	/^	public void setImageByName(String imageName) {$/;"	m	class:Turtle
+setLanguage	Model.java	/^	public void setLanguage(String language) {$/;"	m	class:Model
+setParam	command/Command.java	/^	public void setParam(Command newParam) {$/;"	m	class:Command
+setParam	command/MakeUserInstruction.java	/^	public void setParam(Command newParam) {$/;"	m	class:MakeUserInstruction
+setPenDown	Turtle.java	/^	public double setPenDown() {$/;"	m	class:Turtle
+setPenUp	Turtle.java	/^	public double setPenUp() {$/;"	m	class:Turtle
+setUserVariable	Model.java	/^	public void setUserVariable(String name, Variable newVar) {$/;"	m	class:Model
+setUserVariable	Model.java	/^	public void setUserVariable(String name, double val) {$/;"	m	class:Model
+setUserVariable	Model.java	/^	public void setUserVariable(Variable var, double val) {$/;"	m	class:Model
+setWidth	Pen.java	/^	public void setWidth(int width) {$/;"	m	class:Pen
+show	Turtle.java	/^	public double show() {$/;"	m	class:Turtle
+size	Grid.java	/^	private Dimension size;$/;"	f	class:Grid	file:
+size	command/CommandList.java	/^	public int size() {$/;"	m	class:CommandList
+specifiedTurtles	command/SpecifiedTurtleCommand.java	/^	protected List<Turtle> specifiedTurtles() {$/;"	m	class:SpecifiedTurtleCommand
+stamp	Turtle.java	/^	public void stamp() {$/;"	m	class:Turtle
+stamps	Turtle.java	/^	ArrayList<Stamp> stamps;$/;"	f	class:Turtle
+start	command/DoTimes.java	/^	public int start() {$/;"	m	class:DoTimes
+start	command/For.java	/^	protected int start() {$/;"	m	class:For
+stringPair	command/Command.java	/^	private StringPair stringPair;$/;"	f	class:Command	file:
+toString	Line.java	/^	public String toString() {$/;"	m	class:Line
+toString	Variable.java	/^	public String toString() {$/;"	m	class:Variable
+toString	command/Command.java	/^	public String toString() {$/;"	m	class:Command
+uic	command/UserInstructionRetriever.java	/^	private UserInstructionContainer uic() {$/;"	m	class:UserInstructionRetriever	file:
+userInstructions	Model.java	/^	private HashMap<String, UserInstructionContainer> userInstructions;$/;"	f	class:Model	file:
+userInstructions	command/ModelCommand.java	/^	protected Map<String, UserInstructionContainer> userInstructions() {$/;"	m	class:ModelCommand
+userVariables	Model.java	/^	private HashMap<String, Variable> userVariables;$/;"	f	class:Model	file:
+userVariables	command/ModelCommand.java	/^	protected Map<String, Variable> userVariables() {$/;"	m	class:ModelCommand
+value	StringPair.java	/^	private String value;$/;"	f	class:StringPair	file:
+value	Variable.java	/^	private double value;$/;"	f	class:Variable	file:
+value	command/Constant.java	/^	private double value;$/;"	f	class:Constant	file:
+varNames	UserInstructionContainer.java	/^	private CommandList varNames;$/;"	f	class:UserInstructionContainer	file:
+width	Line.java	/^	private int width;$/;"	f	class:Line	file:
+width	Pen.java	/^	private int width;$/;"	f	class:Pen	file:
