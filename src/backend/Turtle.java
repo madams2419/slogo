@@ -14,8 +14,9 @@ public class Turtle implements DrawableImage {
 	private Pen pen;
 	ArrayList<Stamp> stamps;
 	private boolean isVisible;
+	private BoundaryBehavior myBoundaryBehavior;
 
-	public Turtle(int id, String imageName, Point location, Heading heading, Color penColor, int penWidth) {
+	public Turtle(int id, String imageName, Point location, Heading heading, Color penColor, int penWidth, BoundaryBehavior boundary) {
 		this.id = id;
 		setImageByName(imageName);
 		this.location = location;
@@ -23,10 +24,11 @@ public class Turtle implements DrawableImage {
 		this.pen = new Pen(penColor, penWidth, true);
 		stamps = new ArrayList<>();
 		isVisible = true;
+		myBoundaryBehavior = boundary;
 	}
 
-	public Turtle(int id, BiIndex<Color> colorMap, BiIndex<String> imageMap) {
-		this(id, imageMap.getValue(Defaults.TURTLE_IMG_INDEX), Defaults.TURTLE_START_POINT, Defaults.TURTLE_START_HEADING, colorMap.getValue(Defaults.PEN_COLOR_INDEX), Defaults.PEN_WIDTH);
+	public Turtle(int id, BiIndex<Color> colorMap, BiIndex<String> imageMap, BoundaryBehavior boundary) {
+		this(id, imageMap.getValue(Defaults.TURTLE_IMG_INDEX), Defaults.TURTLE_START_POINT, Defaults.TURTLE_START_HEADING, colorMap.getValue(Defaults.PEN_COLOR_INDEX), Defaults.PEN_WIDTH, boundary);
 	}
 
 	public double move(Double magnitude) {
@@ -39,8 +41,9 @@ public class Turtle implements DrawableImage {
 	}
 
 	public double moveToPoint(Point target) {
-		pen.drawLine(location, target);
-		return jumpToPoint(target);
+	  Path correctedPath = myBoundaryBehavior.attemptPath(new Path(location, target), this);
+		pen.drawLine(location, correctedPath.myEnd);
+		return jumpToPoint(correctedPath.myEnd);
 	}
 
 	public double jumpToPoint(Point target) {
