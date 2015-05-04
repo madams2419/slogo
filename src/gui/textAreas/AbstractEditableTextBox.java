@@ -45,9 +45,6 @@ public abstract class AbstractEditableTextBox extends Region{
 		this.initText = initText;
 		
 		this.isPrompt = isPrompt;
-		
-		
-		//this.setBorder(new Border(new BorderStroke(Color.BLACK, )))
 		setRegionPreferences();
 		
 		makeTitle();
@@ -103,8 +100,6 @@ public abstract class AbstractEditableTextBox extends Region{
 	}
 	
 	public void addTextAreaToRegion() {
-
-		//this.getChildren().add(this.textArea);
 
 	}
 	

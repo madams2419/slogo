@@ -106,7 +106,6 @@ public class TopMenu extends Region {
 		MenuItem chooseTurtle = new MenuItem("Choose Turtle Image");
 		chooseTurtle.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent t) {
-				// Turtle.setImage();
 				System.out.println("You are choosing a new Turtle");
 				File initTurtleImage = new File("../resources/sea_turtle.png");
 				Stage fileChooserStage = new Stage();
