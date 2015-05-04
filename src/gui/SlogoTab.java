@@ -26,7 +26,8 @@ import backend.Variable;
 import backend.command.Command;
 
 public class SlogoTab extends Region {
-
+	//Would be better if these values were stored somewhere/read in
+	//possibly resource bundle. 
 	private double infoBoxWidthPct = .2;
 	private double infoBoxHeightPct = .4725;
 	private double commandBoxWidthPct = .5;
@@ -34,24 +35,17 @@ public class SlogoTab extends Region {
 	private double topMenuHeightPct = .055;
 	private double buttonWidthPct = .1;
 	private double buttonHeightPct = .25;
-
-	// ////////////////////////////////////////
 	private RunButtons runButtons;
 	private CommandBox commandBox;
 	private DrawingArea turtlePanel;
 	private PreviousCommandsBox prevCommandsBox;
 	private StatusBox statusBox;
 	private UserVariablesBox userVariablesBox;
-	// these shouldn't be instance variables
-	// ///////////////////////////////////////
-
 	private Model myModel;
 
 	public SlogoTab(Model model) {
 		myModel = model;
 
-		// stage = primaryStage;
-		// primaryStage.setTitle("Slogo Interpreter");
 		Screen screen = Screen.getPrimary();
 		Rectangle2D bounds = screen.getVisualBounds();
 
@@ -62,10 +56,6 @@ public class SlogoTab extends Region {
 		this.setPrefWidth(screenWidth);
 		this.setLayoutX(0);
 		this.setLayoutY(0);
-
-		// setStageToFillWindow(screenWidth, screenHeight);
-		// Group root = new Group();
-		// scene = new Scene(root, screenHeight, screenWidth);
 
 		runButtons = new RunButtons(screenWidth, screenHeight, buttonWidthPct,
 				buttonHeightPct, (infoBoxWidthPct + commandBoxWidthPct)
@@ -94,20 +84,14 @@ public class SlogoTab extends Region {
 				screenWidth, screenHeight, "Previously Executed Commands",
 				false);
 
-		// TopMenu topMenu = new TopMenu(screenWidth, screenHeight,
-		// topMenuHeightPct, myModel);
-
 		setButtonActions();
 		Double drawingAreaWidth = screenWidth - 2 * (screenWidth * infoBoxWidthPct);
 		Double drawingAreaHeight = screenHeight - (screenHeight * (commandBoxHeightPct + topMenuHeightPct));
+		
 		turtlePanel = new DrawingArea(drawingAreaWidth, drawingAreaHeight, infoBoxWidthPct, 
 				screenHeight - (screenHeight * topMenuHeightPct));
 		
 		myModel.getGrid().setDimensions(drawingAreaWidth.intValue(), drawingAreaHeight.intValue());
-
-		// TODO
-		// Determine this location based on other values
-
 		commandBox.setLayoutX(commandBox.getxLocation());
 		commandBox.setLayoutY(commandBox.getyLocation());
 
@@ -140,16 +124,12 @@ public class SlogoTab extends Region {
 
 		this.getChildren().add(turtlePanel);
 
-		// ApplicationView av = new ApplicationView(screenWidth, screenHeight);
-		// primaryStage.setScene(scene);
-		// primaryStage.show();
 	}
 
 private void updatePanels(){
 		
 		setVariablesBox();	
 	
-		//updating command panel
 		List<Command> comList = myModel.getExecutedCommands();
 		ArrayList<Hyperlink> fields = new ArrayList<>();
 		StringBuilder s = new StringBuilder();

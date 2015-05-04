@@ -6,12 +6,9 @@ import java.util.HashMap;
 
 import backend.Turtle;
 import javafx.scene.canvas.Canvas;
-import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.Region;
 import javafx.scene.paint.Color;
-import javafx.scene.shape.ArcType;
-import javafx.scene.shape.Polygon;
 
 public class DrawingArea extends Region {
 
@@ -43,10 +40,8 @@ public class DrawingArea extends Region {
         scrollPane.setFitToHeight(true);
         scrollPane.setStyle("-fx-focus-color: transparent;");
         
-        
 		this.getChildren().add(drawingCanvas);
 		this.getChildren().add(scrollPane);
-		
 
 	}
 	
@@ -60,14 +55,10 @@ public class DrawingArea extends Region {
 			this.drawingCanvas.getGraphicsContext2D().strokeLine(adjustedLStartPoint.getX(), adjustedLStartPoint.getY(), 
 					adjustedLEndPoint.getX(), adjustedLEndPoint.getY());
 		}
-		
-		//System.out.println("drawLines complete");
+
 	}
 	
 	protected void drawTurtles(List<Turtle> turtles){
-		// this.drawingCanvas.getGraphicsContext2D().setLineWidth(50);
-		// this.drawingCanvas.getGraphicsContext2D().setStroke(Color.RED);
-		
 		
 		for (Turtle t: turtles){
 			

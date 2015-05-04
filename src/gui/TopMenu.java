@@ -27,8 +27,8 @@ public class TopMenu extends Region {
 	protected Model myModel;
 	protected TabPanel tabPanel;
 
-	public TopMenu(double overlayWidth, double overlayHeight, double heightPct, Model myModel, TabPanel tabPanel) {
-
+	public TopMenu(double overlayWidth, double overlayHeight, double heightPct,
+			Model myModel, TabPanel tabPanel) {
 
 		this.overlayWidth = overlayWidth;
 		this.overlayHeight = overlayHeight;
@@ -48,19 +48,18 @@ public class TopMenu extends Region {
 		createDisplayMenuItems(menuDisplay);
 
 		Menu menuLanguage = new Menu("Language");
-		createLanguageMenuItems(menuLanguage); 
+		createLanguageMenuItems(menuLanguage);
 
 		Menu menuHelp = new Menu("Help");
 		createHelpMenuItems(menuHelp);
 
 		MenuBar menuBar = new MenuBar();
-		
-		
-		
-		menuBar.getMenus().addAll(menuFile, menuDisplay, menuLanguage, menuHelp);
+
+		menuBar.getMenus()
+				.addAll(menuFile, menuDisplay, menuLanguage, menuHelp);
 		menuBar.setPrefWidth(overlayWidth);
 		menuBar.setPrefHeight(heightPct * overlayHeight);
-		
+
 		menuBar.getStylesheets().add("GUIStyle.CSS");
 		this.getChildren().add(menuBar);
 
@@ -97,63 +96,69 @@ public class TopMenu extends Region {
 				tabPanel.makeNewTab();
 			}
 		});
-		
+
 		file.getItems().addAll(newWorkspace, save, load, newTab);
 
 	}
- 
+
 	public void createDisplayMenuItems(Menu turtle) {
 
 		MenuItem chooseTurtle = new MenuItem("Choose Turtle Image");
 		chooseTurtle.setOnAction(new EventHandler<ActionEvent>() {
-			public void handle(ActionEvent t){
+			public void handle(ActionEvent t) {
 				// Turtle.setImage();
 				System.out.println("You are choosing a new Turtle");
 				File initTurtleImage = new File("../resources/sea_turtle.png");
 				Stage fileChooserStage = new Stage();
 				FileChooser fileChooser = new FileChooser();
-				//fileChooser.setInitialDirectory(initTurtleImage);
-				fileChooser.setTitle("Choose a Turtle Image"); 
+				fileChooser.setTitle("Choose a Turtle Image");
 				fileChooser.getExtensionFilters().addAll(
-					    new FileChooser.ExtensionFilter("All Images", "*.*"),
-					    new FileChooser.ExtensionFilter("JPG", "*.jpg"),
-					    new FileChooser.ExtensionFilter("GIF", "*.gif"),
-					    new FileChooser.ExtensionFilter("BMP", "*.bmp"),
-					    new FileChooser.ExtensionFilter("PNG", "*.png")
-					    );
-                File file = fileChooser.showOpenDialog(fileChooserStage);
-                String imagePath = file.getAbsolutePath();
-                List<Turtle> turtles = myModel.getGrid().getAllTurtles();
-                for(Turtle turtle : turtles){
-                	
-                	try {
-                		turtle.setImageByFullPath(imagePath); 
+						new FileChooser.ExtensionFilter("All Images", "*.*"),
+						new FileChooser.ExtensionFilter("JPG", "*.jpg"),
+						new FileChooser.ExtensionFilter("GIF", "*.gif"),
+						new FileChooser.ExtensionFilter("BMP", "*.bmp"),
+						new FileChooser.ExtensionFilter("PNG", "*.png"));
+				File file = fileChooser.showOpenDialog(fileChooserStage);
+				String imagePath = file.getAbsolutePath();
+				List<Turtle> turtles = myModel.getGrid().getAllTurtles();
+				for (Turtle turtle : turtles) {
+
+					try {
+						turtle.setImageByFullPath(imagePath);
 					} catch (Exception e1) {
 						e1.printStackTrace();
 					}
-                }
+				}
 			}
 		});
-		
+
 		MenuItem chooseBackgroundColor = new MenuItem("Background Color");
 		chooseBackgroundColor.setOnAction(new EventHandler<ActionEvent>() {
-			public void handle(ActionEvent t){
+			public void handle(ActionEvent t) {
 				System.out.println("You are choosing a new Background Color");
 				Color c = openColorPicker();
-				
+
 			}
 		});
-		MenuItem choosePenColor = new MenuItem("Pen Color");
+
+		MenuItem choosePenColor = new MenuItem("Choose Pen Color");
 		choosePenColor.setOnAction(new EventHandler<ActionEvent>() {
-			public void handle(ActionEvent t){
+			public void handle(ActionEvent t) {
 				System.out.println("You are choosing a new Pen color");
 				Color c = openColorPicker();
 			}
 		});
 		
-		turtle.getItems().addAll(chooseTurtle, chooseBackgroundColor);
-	}
+		MenuItem allTurtleViewMode = new MenuItem("Enter All Turtle View");
+		allTurtleViewMode.setOnAction(new EventHandler<ActionEvent>() {
+			public void handle(ActionEvent t){
+				System.out.println("You Are Entering All Turtle View Mode");
+			}
+		});
 
+		turtle.getItems().addAll(chooseTurtle, chooseBackgroundColor,
+				choosePenColor);
+	}
 
 	public void createLanguageMenuItems(Menu language) {
 
@@ -208,22 +213,23 @@ public class TopMenu extends Region {
 		help.getItems().addAll(documentation);
 
 	}
-	
-	public Color openColorPicker(){
-		
+
+	public Color openColorPicker() {
+
 		ColorPickingScreen colorPicker = new ColorPickingScreen();
 		Stage s = new Stage();
 		colorPicker.start(s);
-		System.out.println(colorPicker.getColor()); 
+		System.out.println(colorPicker.getColor());
 		colorPicker.getColor().toString();
 		return colorPicker.getColor();
 	}
-	
+
 	/*
 	 * (takes) javafx.scene.paint.Color --> (returns) java.awt.Color
 	 */
-	public java.awt.Color paintToAwt(javafx.scene.paint.Color c){
-		return new java.awt.Color((float)c.getRed(), (float)c.getGreen(), (float)c.getBlue());
+	public java.awt.Color paintToAwt(javafx.scene.paint.Color c) {
+		return new java.awt.Color((float) c.getRed(), (float) c.getGreen(),
+				(float) c.getBlue());
 	}
 
 }

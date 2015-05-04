@@ -23,16 +23,11 @@ public class CommandBox extends AbstractEditableTextBox {
 		this.getStylesheets().add("GUIStyle.css");
 		this.getStyleClass().add("overlay");
 		
-		//this.label.setPrefHeight(2 * titleHeightPct * (prefHeightRatio * overlayHeight)); 
 		this.label.setPrefWidth(overlayWidth * prefWidthRatio );
 		this.textArea.setPrefWidth(overlayWidth*prefWidthRatio*BOX_RATIO);
 		this.textArea.getStyleClass().add("commandbox");
 		textArea.setLayoutX(SPACING_AMT);
 		textArea.setLayoutY(SPACING_AMT + titleHeightPct * (prefHeightRatio * overlayHeight));
-
-		
-		
-		//addButtons();
 		this.getChildren().add(runButtons);
 		setCommandBoxPromptText("Type a Command...");
 	}

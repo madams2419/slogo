@@ -34,11 +34,7 @@ public class Main extends Application {
 	private double topMenuHeightPct = .025;
 	private double tabPanelHeightPct = .03;
 	private SlogoTab activeTab;
-	private HashMap<SlogoTab, Model> tabMap = new HashMap<>();
-	private HashMap<Tab, SlogoTab> tabSLogoTabMap = new HashMap<>();
 	private Group root = new Group();
-	//TAKE THIS OUT, ONLY HERE FOR TESTING
-	//THERE SHOULD BE A NEW MODEL FOR EACH TAB
 	Model myModel = new Model();
 
 
@@ -62,8 +58,6 @@ public class Main extends Application {
 		double screenWidth = this.getScreenWidth(bounds);
 
 		setStageToFillWindow(screenWidth, screenHeight);
-		//Group root = new Group();
-		//this.root = root;
 		scene = new Scene(root, screenHeight, screenWidth);
 
 		TabPanel tabPanel = new TabPanel(tabPanelHeightPct, screenHeight, screenWidth, this, myModel);
@@ -75,7 +69,6 @@ public class Main extends Application {
 		root.getChildren().add(topMenu);
 		root.getChildren().add(tabPanel);
 
-		// ApplicationView av = new ApplicationView(screenWidth, screenHeight);
 		primaryStage.setScene(scene);
 		primaryStage.show();
 		
