@@ -28,8 +28,8 @@ public class Model {
 	public Model() {
 		colorMap = new BiIndex<>(Defaults.COLOR_MAP);
 		imageMap = new BiIndex<>(Defaults.IMAGE_MAP);
-		Turtle turtle = new Turtle(1, colorMap, imageMap);
-		grid = new Grid(new Dimension(Defaults.GRID_WIDTH, Defaults.GRID_HEIGHT), colorMap, imageMap, turtle);
+		grid = new Grid(new Dimension(Defaults.GRID_WIDTH, Defaults.GRID_HEIGHT), colorMap, imageMap);
+		grid.addTurtle(new Turtle(1, colorMap, imageMap, grid));
 		pendingCommands = new LinkedList<>();
 		executedCommands = new Stack<>();
 		userVariables = new HashMap<>();

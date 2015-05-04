@@ -56,6 +56,10 @@ public class Pen {
 		this.isDown = isDown;
 	}
 
+	public void drawLines(List<Movement> moves) {
+		moves.forEach(move -> drawLine(move.getStart(), move.getEnd()));
+	}
+
 	public Line drawLine(Point start, Point end) {
 		if(!isDown()) return null;
 		Line newLine = new Line(start, end, color, width);

@@ -9,25 +9,20 @@ import java.awt.Color;
 
 public class Grid {
 
-	private Dimension size;
 	private Color bgColor;
 	private HashMap<Integer, Turtle> allTurtles;
 	private ArrayList<Turtle> activeTurtles;
 	private BiIndex<Color> colorMap;
 	private BiIndex<String> imageMap;
+	private BoundaryHandler bHandler;
 
 	public Grid(Dimension size, BiIndex<Color> colorMap, BiIndex<String> imageMap) {
-		this.size = size;
 		this.bgColor = colorMap.getValue(Defaults.GRID_COLOR_INDEX);
 		this.colorMap = colorMap;
 		this.imageMap = imageMap;
 		allTurtles = new HashMap<>();
 		activeTurtles = new ArrayList<>();
-	}
-
-	public Grid(Dimension size, BiIndex<Color> colorMap, BiIndex<String> imageMap, Turtle turtle) {
-		this(size, colorMap, imageMap);
-		addTurtle(turtle);
+		bHandler = new WindowBoundaryHandler(size.width, size.height);
 	}
 
 	public void setBGColor(Color newBGColor) {
@@ -41,8 +36,12 @@ public class Grid {
 		}
 	}
 
-	public Dimension getSize() {
-		return size;
+	public int getWidth() {
+		return bHandler.getWidth();
+	}
+
+	public int getHeight() {
+		return bHandler.getHeight();
 	}
 
 	public Color getBGColor() {
@@ -71,7 +70,7 @@ public class Grid {
 		if(allTurtles.containsKey(id)) {
 			return allTurtles.get(id);
 		} else {
-			Turtle newTurtle = new Turtle(id, colorMap, imageMap);
+			Turtle newTurtle = new Turtle(id, colorMap, imageMap, this);
 			allTurtles.put(id, newTurtle);
 			return newTurtle;
 		}
@@ -117,7 +116,16 @@ public class Grid {
 	}
 
 	public void setDimensions(int width, int height) {
-		size = new Dimension(width, height);
+		bHandler.setWidth(width);
+		bHandler.setHeight(height);
+	}
+
+	public BoundaryHandler getBoundaryHandler() {
+		return bHandler;
+	}
+	
+	public void setBoundaryHandler(BoundaryHandler bHandler) {
+		this.bHandler = bHandler;
 	}
 
 }

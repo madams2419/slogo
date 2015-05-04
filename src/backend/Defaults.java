@@ -7,8 +7,8 @@ public class Defaults {
 
 	public static final String LANGUAGE =  "English";
 
-	public static final int GRID_WIDTH = 400;
-	public static final int GRID_HEIGHT = 400;
+	public static final int GRID_WIDTH = 700;
+	public static final int GRID_HEIGHT = 700;
 	public static final int GRID_COLOR_INDEX = 0; 
 
 	public static final int TURTLE_IMG_INDEX = 0;

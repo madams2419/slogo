@@ -104,7 +104,7 @@ public class SlogoTab extends Region {
 		turtlePanel = new DrawingArea(drawingAreaWidth, drawingAreaHeight, infoBoxWidthPct, 
 				screenHeight - (screenHeight * topMenuHeightPct));
 		
-		myModel.getGrid().setDimensions(drawingAreaWidth.intValue(), drawingAreaHeight.intValue());
+		//myModel.getGrid().setDimensions(drawingAreaWidth.intValue(), drawingAreaHeight.intValue());
 
 		// TODO
 		// Determine this location based on other values

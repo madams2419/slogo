@@ -27,7 +27,7 @@ public class CommandFactory {
 			}
 
 		} catch (Exception e) {
-		  throw new NullPointerException("Command Not Found");
+		  throw new NullPointerException("Command Not Found: " + comClassName);
 		}
 
 	}

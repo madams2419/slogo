@@ -14,8 +14,9 @@ public class Turtle implements DrawableImage {
 	private Pen pen;
 	ArrayList<Stamp> stamps;
 	private boolean isVisible;
+	private Grid grid;
 
-	public Turtle(int id, String imageName, Point location, Heading heading, Color penColor, int penWidth) {
+	public Turtle(int id, String imageName, Point location, Heading heading, Color penColor, int penWidth, Grid grid) {
 		this.id = id;
 		setImageByName(imageName);
 		this.location = location;
@@ -23,10 +24,11 @@ public class Turtle implements DrawableImage {
 		this.pen = new Pen(penColor, penWidth, true);
 		stamps = new ArrayList<>();
 		isVisible = true;
+		this.grid = grid;
 	}
 
-	public Turtle(int id, BiIndex<Color> colorMap, BiIndex<String> imageMap) {
-		this(id, imageMap.getValue(Defaults.TURTLE_IMG_INDEX), Defaults.TURTLE_START_POINT, Defaults.TURTLE_START_HEADING, colorMap.getValue(Defaults.PEN_COLOR_INDEX), Defaults.PEN_WIDTH);
+	public Turtle(int id, BiIndex<Color> colorMap, BiIndex<String> imageMap, Grid grid) {
+		this(id, imageMap.getValue(Defaults.TURTLE_IMG_INDEX), Defaults.TURTLE_START_POINT, Defaults.TURTLE_START_HEADING, colorMap.getValue(Defaults.PEN_COLOR_INDEX), Defaults.PEN_WIDTH, grid);
 	}
 
 	public double move(Double magnitude) {
@@ -39,8 +41,11 @@ public class Turtle implements DrawableImage {
 	}
 
 	public double moveToPoint(Point target) {
-		pen.drawLine(location, target);
-		return jumpToPoint(target);
+		Movement move = new Movement(location, target);
+		List<Movement> moves = grid.getBoundaryHandler().handleOOBMovement(move, this);
+		pen.drawLines(moves);
+		Point endPoint = moves.get(moves.size() - 1).getEnd();
+		return jumpToPoint(endPoint);
 	}
 
 	public double jumpToPoint(Point target) {
@@ -161,7 +166,7 @@ public class Turtle implements DrawableImage {
 	public Pen getPen() {
 		return pen;
 	}
-	
+
 	public double getOrientation() {
 		return getHeading().getAngle();
 	}

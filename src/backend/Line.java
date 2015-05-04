@@ -27,7 +27,7 @@ public class Line extends Line2D.Double {
 	public Color getColor() {
 		return color;
 	}
-	
+
 	public int getWidth() {
 		return width;
 	}
@@ -39,7 +39,7 @@ public class Line extends Line2D.Double {
 	public Point getEndPoint() {
 		return convertDoublePoint(super.getP2());
 	}
-	
+
 	private Point convertDoublePoint(Point2D ptd) {
 		return new Point((int) ptd.getX(), (int) ptd.getY());
 	}
@@ -49,7 +49,7 @@ public class Line extends Line2D.Double {
 		double dy = super.getY1() - super.getY2();
 		return Math.sqrt(dx*dx + dy*dy);
 	}
-	
+
 	public String toString() {
 		return String.format ("Line: (%d, %d) -> (%d, %d)", getStartPoint().x, getStartPoint().y, getEndPoint().x, getEndPoint().y);
 	}
