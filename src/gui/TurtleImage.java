@@ -33,8 +33,6 @@ public class TurtleImage extends ImageView{
 	public void updateImage() {
 
 		Image newTurtle = new Image(getClass().getResourceAsStream(turtle.getImagePath()));
-		// Image image = new Image(getClass().getResourceAsStream(imnew
-		// Image(getClass().getResourceAsStream(imagePath));agePath));
 		this.setImage(newTurtle);
 
 	}

@@ -122,6 +122,7 @@ public class Turtle implements DrawableImage {
 	}
 
 	public String getImagePath() {
+		System.out.println(imagePath);
 		return imagePath;
 	}
 

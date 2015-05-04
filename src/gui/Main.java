@@ -118,6 +118,8 @@ public class Main extends Application {
 		if(this.activeTab != null){
 			this.root.getChildren().remove(this.activeTab);
 		}
+		if(activeTab == null)
+			return;
 		this.activeTab = activeTab;
 		this.activeTab.setLayoutX(0);
 		this.activeTab.setLayoutY(0);

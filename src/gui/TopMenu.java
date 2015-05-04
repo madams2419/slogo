@@ -9,13 +9,18 @@ import backend.Model;
 import backend.Turtle;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.scene.Parent;
+import javafx.scene.control.Button;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCombination;
 import javafx.scene.layout.Region;
 import javafx.scene.paint.Color;
 import javafx.stage.FileChooser;
+import javafx.stage.Popup;
 import javafx.stage.Stage;
 
 public class TopMenu extends Region {
@@ -105,6 +110,7 @@ public class TopMenu extends Region {
 	public void createDisplayMenuItems(Menu turtle) {
 
 		MenuItem chooseTurtle = new MenuItem("Choose Turtle Image");
+		
 		chooseTurtle.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent t){
 				// Turtle.setImage();
@@ -151,7 +157,54 @@ public class TopMenu extends Region {
 			}
 		});
 		
-		turtle.getItems().addAll(chooseTurtle, chooseBackgroundColor);
+		MenuItem seeAllTurtles = new MenuItem("Show Turtle Images (VOOGASalad analysis)");
+		seeAllTurtles.setOnAction(new EventHandler<ActionEvent>(){
+			@Override
+			public void handle(ActionEvent t) {
+				Popup turtleMenu = new Popup();
+				
+				for(Turtle turtle: myModel.getGrid().getAllTurtles()){
+					Image newTurtle = new Image(getClass().getResourceAsStream(turtle.getImagePath()));
+					Button b = new Button("", new ImageView(newTurtle));
+					b.setOnAction(new EventHandler<ActionEvent>(){
+						public void handle(ActionEvent event) {
+							FileChooser f = new FileChooser();
+							f.setTitle("Choose new Turtle Image");
+							
+							File file = f.showOpenDialog(turtleMenu);
+							if (file != null){
+						
+								System.out.println(file.getAbsolutePath());
+							
+								try {
+									turtle.setImageByFullPath(file.getCanonicalPath());
+								} catch (IOException e) {
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								}
+							}
+							
+						}
+						
+						
+						
+					});
+					
+					turtleMenu.getContent().add(b);
+				}
+				
+				
+				turtleMenu.show(tabPanel, 600, 100);
+				
+				
+			}
+
+			
+		});
+		
+		turtle.getItems().addAll(chooseTurtle, chooseBackgroundColor, choosePenColor, seeAllTurtles);
+		
+		
 	}
 
 
