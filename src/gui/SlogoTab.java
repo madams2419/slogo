@@ -26,8 +26,8 @@ import backend.Variable;
 import backend.command.Command;
 
 public class SlogoTab extends Region {
-	//Would be better if these values were stored somewhere/read in
-	//possibly resource bundle. 
+	// Would be better if these values were stored somewhere/read in
+	// possibly resource bundle.
 	private double infoBoxWidthPct = .2;
 	private double infoBoxHeightPct = .4725;
 	private double commandBoxWidthPct = .5;
@@ -85,19 +85,22 @@ public class SlogoTab extends Region {
 				false);
 
 		setButtonActions();
-		Double drawingAreaWidth = screenWidth - 2 * (screenWidth * infoBoxWidthPct);
-		Double drawingAreaHeight = screenHeight - (screenHeight * (commandBoxHeightPct + topMenuHeightPct));
-		
-		turtlePanel = new DrawingArea(drawingAreaWidth, drawingAreaHeight, infoBoxWidthPct, 
-				screenHeight - (screenHeight * topMenuHeightPct));
-		
-		myModel.getGrid().setDimensions(drawingAreaWidth.intValue(), drawingAreaHeight.intValue());
+		Double drawingAreaWidth = screenWidth - 2
+				* (screenWidth * infoBoxWidthPct);
+		Double drawingAreaHeight = screenHeight
+				- (screenHeight * (commandBoxHeightPct + topMenuHeightPct));
+
+		turtlePanel = new DrawingArea(drawingAreaWidth, drawingAreaHeight,
+				infoBoxWidthPct, screenHeight
+						- (screenHeight * topMenuHeightPct));
+
+		myModel.getGrid().setDimensions(drawingAreaWidth.intValue(),
+				drawingAreaHeight.intValue());
 		commandBox.setLayoutX(commandBox.getxLocation());
 		commandBox.setLayoutY(commandBox.getyLocation());
 
 		turtlePanel.setLayoutX(statusBox.getWidth());
 		turtlePanel.setLayoutY(screenHeight * topMenuHeightPct);
-		// turtlePanel.setInitTurtleImage(myModel.getGrid().getTurtles());
 
 		statusBox.setLayoutX(statusBox.getxLocation());
 		statusBox.setLayoutY(statusBox.getyLocation());
@@ -126,70 +129,72 @@ public class SlogoTab extends Region {
 
 	}
 
-private void updatePanels(){
-		
-		setVariablesBox();	
-	
+	public void updatePanels() {
+
+		setVariablesBox();
+
 		List<Command> comList = myModel.getExecutedCommands();
 		ArrayList<Hyperlink> fields = new ArrayList<>();
 		StringBuilder s = new StringBuilder();
-		for (Command c : comList){
+		for (Command c : comList) {
 			Hyperlink h = new Hyperlink(c.toString());
 			h.getStylesheets().add("GUIStyle.css");
 			h.setOnAction(event -> {
-				//System.out.println("Link click");
+				// System.out.println("Link click");
 				myModel.executeCommand(c);
-				
+
 				List<backend.Line> backLines = myModel.getGrid().getLines();
-				turtlePanel.drawLines(backLines);			
-				List<backend.Turtle> turtles = myModel.getGrid().getAllTurtles();
+				turtlePanel.drawLines(backLines);
+				List<backend.Turtle> turtles = myModel.getGrid()
+						.getAllTurtles();
 				turtlePanel.drawTurtles(turtles);
 				updatePanels();
-				
-				//is this bad? ^^^ it is pseudo-recursive
-				
-		        });
+
+				// is this bad? ^^^ it is pseudo-recursive
+
+			});
 			fields.add(h);
 		}
 		prevCommandsBox.setBoxes(fields);
-		
-		//updating status box
+
+		// updating status box
 		s.setLength(0);
-		for (Turtle t : this.myModel.getGrid().getAllTurtles()){
-			s.append("Turtle "+ t.getID() + ": \n  " + t.getLocation().getX() + ", " + t.getLocation().getY()
-					+ "\n  " + t.getHeading().getAngle() + "\n");
+		for (Turtle t : this.myModel.getGrid().getAllTurtles()) {
+			s.append("Turtle " + t.getID() + ": \n  " + t.getLocation().getX()
+					+ ", " + t.getLocation().getY() + "\n  "
+					+ t.getHeading().getAngle() + "\n");
 		}
 		statusBox.setText(s.toString());
-		
-		//updating variables
-		
-		
+
+		// updating variables
+
 	}
 
 	private void setVariablesBox() {
-		
+
 		userVariablesBox.getLabels().getChildren().clear();
 		userVariablesBox.getFields().getChildren().clear();
-		
-		for (String s : myModel.getUserVariables().keySet()){
-			
+
+		for (String s : myModel.getUserVariables().keySet()) {
+
 			Label l = new Label(myModel.getUserVariables().get(s).toString());
 			l.getStylesheets().add("GUIStyle.css");
 			l.getStyleClass().add("varlabel");
-			
-			double val  = myModel.getUserVariables().get(s).getValue();
-			
+
+			double val = myModel.getUserVariables().get(s).getValue();
+
 			TextField t = new TextField(Double.toString(val));
 			t.getStylesheets().add("GUIStyle.css");
 			t.getStyleClass().add("varfield");
 			t.setOnAction((event) -> {
-				myModel.setUserVariable(myModel.getUserVariables().get(s).toString(), 
-						new Variable(myModel.getUserVariables().get(s).toString(), Double.parseDouble(t.getText())));
+				myModel.setUserVariable(myModel.getUserVariables().get(s)
+						.toString(), new Variable(myModel.getUserVariables()
+						.get(s).toString(), Double.parseDouble(t.getText())));
 			});
-			
+
 			userVariablesBox.getLabels().getChildren().add(l);
 			userVariablesBox.getFields().getChildren().add(t);
-			
+
 		}
 	}
 
@@ -217,8 +222,7 @@ private void updatePanels(){
 
 			// Null check here?
 
-				List<backend.Line> backLines = myModel.getGrid()
-						.getLines();
+				List<backend.Line> backLines = myModel.getGrid().getLines();
 				turtlePanel.drawLines(backLines);
 				List<backend.Turtle> turtles = myModel.getGrid()
 						.getAllTurtles();
@@ -230,11 +234,11 @@ private void updatePanels(){
 
 	private void setStageToFillWindow(Double screenWidth, Double screenHeight) {
 
-//		stage.setX(0);
-//		stage.setY(0);
-//
-//		stage.setWidth(screenWidth);
-//		stage.setHeight(screenHeight);
+		// stage.setX(0);
+		// stage.setY(0);
+		//
+		// stage.setWidth(screenWidth);
+		// stage.setHeight(screenHeight);
 
 	}
 
@@ -250,6 +254,10 @@ private void updatePanels(){
 		double screenWidth = bounds.getWidth();
 		return screenWidth;
 
+	}
+
+	public DrawingArea getDrawingArea() {
+		return this.turtlePanel;
 	}
 
 }

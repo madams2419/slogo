@@ -151,13 +151,30 @@ public class TopMenu extends Region {
 		
 		MenuItem allTurtleViewMode = new MenuItem("Enter All Turtle View");
 		allTurtleViewMode.setOnAction(new EventHandler<ActionEvent>() {
+			//Action works however the show turtles function in the back end appears to be unimplemented
 			public void handle(ActionEvent t){
 				System.out.println("You Are Entering All Turtle View Mode");
+				for (Turtle turt: myModel.getGrid().getAllTurtles()){
+					//sets string equal to show turtle command
+					String s = "ST";
+					myModel.parseProgram(s);
+					myModel.executeNextCommand();
+
+					// Null check here?
+
+						List<backend.Line> backLines = myModel.getGrid()
+								.getLines();
+						tabPanel.main.getActiveTab().getDrawingArea().drawLines(backLines);
+						List<backend.Turtle> turtles = myModel.getGrid()
+								.getAllTurtles();
+						tabPanel.main.getActiveTab().getDrawingArea().drawTurtles(turtles);
+						tabPanel.main.getActiveTab().updatePanels();
+				}
 			}
 		});
 
 		turtle.getItems().addAll(chooseTurtle, chooseBackgroundColor,
-				choosePenColor);
+				choosePenColor, allTurtleViewMode);
 	}
 
 	public void createLanguageMenuItems(Menu language) {
